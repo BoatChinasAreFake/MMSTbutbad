@@ -1,0 +1,782 @@
+{
+  "Afghanistan": {
+    "tag": "AFG",
+    "mod_name": "Afghanistan"
+  },
+  "Albania": {
+    "tag": "ALB",
+    "mod_name": "Albania"
+  },
+  "Algeria": {
+    "tag": "ALG",
+    "mod_name": "Algeria"
+  },
+  "Andorra": {
+    "tag": "ADR",
+    "mod_name": "Andorra"
+  },
+  "Angola": {
+    "tag": "ANG",
+    "mod_name": "Angola"
+  },
+  "Antigua and Barbuda": {
+    "tag": "ANB",
+    "mod_name": "Antigua-Barbuda"
+  },
+  "Argentina": {
+    "tag": "ARG",
+    "mod_name": "Argentina"
+  },
+  "Armenia": {
+    "tag": "ARM",
+    "mod_name": "Armenia"
+  },
+  "Australia": {
+    "tag": "AST",
+    "mod_name": "Australia"
+  },
+  "Austria": {
+    "tag": "AUS",
+    "mod_name": "Austria"
+  },
+  "Azerbaijan": {
+    "tag": "AZR",
+    "mod_name": "Azerbaijan"
+  },
+  "Bahamas": {
+    "tag": "BAH",
+    "mod_name": "Bahamas"
+  },
+  "Bahrain": {
+    "tag": "BHR",
+    "mod_name": "Bahrain"
+  },
+  "Bangladesh": {
+    "tag": "BAN",
+    "mod_name": "Bangladesh"
+  },
+  "Barbados": {
+    "tag": "BAR",
+    "mod_name": "Barbados"
+  },
+  "Belarus": {
+    "tag": "BLR",
+    "mod_name": "Belarus"
+  },
+  "Belgium": {
+    "tag": "BEL",
+    "mod_name": "Belgium"
+  },
+  "Belize": {
+    "tag": "BLZ",
+    "mod_name": "Belize"
+  },
+  "Benin": {
+    "tag": "DAH",
+    "mod_name": "Dahomey"
+  },
+  "Bhutan": {
+    "tag": "BHU",
+    "mod_name": "Bhutan"
+  },
+  "Bolivia": {
+    "tag": "BOL",
+    "mod_name": "Bolivia"
+  },
+  "Bosnia and Herzegovina": {
+    "tag": "BOS",
+    "mod_name": "Bosnia"
+  },
+  "Botswana": {
+    "tag": "BOT",
+    "mod_name": "Botswana"
+  },
+  "Brazil": {
+    "tag": "BRA",
+    "mod_name": "Brazil"
+  },
+  "Brunei": {
+    "tag": "BEI",
+    "mod_name": "Brunei"
+  },
+  "Bulgaria": {
+    "tag": "BUL",
+    "mod_name": "Bulgaria"
+  },
+  "Burkina Faso": {
+    "tag": "VOL",
+    "mod_name": "Upper Volta"
+  },
+  "Burundi": {
+    "tag": "BRD",
+    "mod_name": "Burundi"
+  },
+  "Cabo Verde": {
+    "tag": "CVD",
+    "mod_name": "Cape Verde"
+  },
+  "Cambodia": {
+    "tag": "CAM",
+    "mod_name": "Cambodia"
+  },
+  "Cameroon": {
+    "tag": "CMR",
+    "mod_name": "Cameroon"
+  },
+  "Canada": {
+    "tag": "CAN",
+    "mod_name": "Canada"
+  },
+  "Central African Republic": {
+    "tag": "CAR",
+    "mod_name": "Central African Republic"
+  },
+  "Chad": {
+    "tag": "CHA",
+    "mod_name": "Chad"
+  },
+  "Chile": {
+    "tag": "CHL",
+    "mod_name": "Chile"
+  },
+  "China": {
+    "tag": "CHI",
+    "mod_name": "China"
+  },
+  "Colombia": {
+    "tag": "COL",
+    "mod_name": "Colombia"
+  },
+  "Comoros": {
+    "tag": "COM",
+    "mod_name": "Comoros"
+  },
+  "Congo": {
+    "tag": "COG",
+    "mod_name": "Congo"
+  },
+  "Costa Rica": {
+    "tag": "COS",
+    "mod_name": "Costa Rica"
+  },
+  "Cote d'Ivoire": {
+    "tag": "IVO",
+    "mod_name": "Ivory Coast"
+  },
+  "Croatia": {
+    "tag": "CRO",
+    "mod_name": "Croatia"
+  },
+  "Cuba": {
+    "tag": "CUB",
+    "mod_name": "Cuba"
+  },
+  "Cyprus": {
+    "tag": "CYP",
+    "mod_name": "Cyprus"
+  },
+  "Czechia": {
+    "tag": "CZC",
+    "mod_name": "Czechia"
+  },
+  "North Korea": {
+    "tag": "DPK",
+    "mod_name": "North Korea"
+  },
+  "Democratic Republic of the Congo": {
+    "tag": "RCG",
+    "mod_name": "Republic of Congo"
+  },
+  "Denmark": {
+    "tag": "DEN",
+    "mod_name": "Denmark"
+  },
+  "Djibouti": {
+    "tag": "DJI",
+    "mod_name": "Djibouti"
+  },
+  "Dominica": {
+    "tag": "DMC",
+    "mod_name": "Dominica"
+  },
+  "Dominican Republic": {
+    "tag": "DOM",
+    "mod_name": "Dominica"
+  },
+  "Ecuador": {
+    "tag": "ECU",
+    "mod_name": "Ecuador"
+  },
+  "Egypt": {
+    "tag": "EGY",
+    "mod_name": "Egypt"
+  },
+  "El Salvador": {
+    "tag": "ELS",
+    "mod_name": "El Salvador"
+  },
+  "Equatorial Guinea": {
+    "tag": "EQG",
+    "mod_name": "Equatorial Guinea"
+  },
+  "Eritrea": {
+    "tag": "ERI",
+    "mod_name": "Eritrea"
+  },
+  "Estonia": {
+    "tag": "EST",
+    "mod_name": "Estonia"
+  },
+  "Eswatini": {
+    "tag": "SWZ",
+    "mod_name": "Swaziland"
+  },
+  "Ethiopia": {
+    "tag": "ETH",
+    "mod_name": "Ethiopia"
+  },
+  "Fiji": {
+    "tag": "FIJ",
+    "mod_name": "Fiji"
+  },
+  "Finland": {
+    "tag": "FIN",
+    "mod_name": "Finland"
+  },
+  "France": {
+    "tag": "FRA",
+    "mod_name": "France"
+  },
+  "Gabon": {
+    "tag": "GAB",
+    "mod_name": "Gabon"
+  },
+  "Gambia": {
+    "tag": "GAM",
+    "mod_name": "Gambia"
+  },
+  "Georgia": {
+    "tag": "GEO",
+    "mod_name": "Georgia"
+  },
+  "Germany": {
+    "tag": "GER",
+    "mod_name": "Germany"
+  },
+  "Ghana": {
+    "tag": "GHA",
+    "mod_name": "Ghana"
+  },
+  "Greece": {
+    "tag": "GRE",
+    "mod_name": "Greece"
+  },
+  "Grenada": {
+    "tag": "GDA",
+    "mod_name": "Grenada"
+  },
+  "Guatemala": {
+    "tag": "GUA",
+    "mod_name": "Guatemala"
+  },
+  "Guinea": {
+    "tag": "GNA",
+    "mod_name": "Guinea"
+  },
+  "Guinea-Bissau": {
+    "tag": "GNB",
+    "mod_name": "Guinea-Bissau"
+  },
+  "Guyana": {
+    "tag": "GYA",
+    "mod_name": "Guyana"
+  },
+  "Haiti": {
+    "tag": "HAI",
+    "mod_name": "Haiti"
+  },
+  "Honduras": {
+    "tag": "HON",
+    "mod_name": "Honduras"
+  },
+  "Hungary": {
+    "tag": "HUN",
+    "mod_name": "Hungary"
+  },
+  "Iceland": {
+    "tag": "ICE",
+    "mod_name": "Iceland"
+  },
+  "India": {
+    "tag": "IND",
+    "mod_name": "India"
+  },
+  "Indonesia": {
+    "tag": "IDS",
+    "mod_name": "Indonesia"
+  },
+  "Iran": {
+    "tag": "PER",
+    "mod_name": "Persia"
+  },
+  "Iraq": {
+    "tag": "IRQ",
+    "mod_name": "Iraq"
+  },
+  "Ireland": {
+    "tag": "IRE",
+    "mod_name": "Ireland"
+  },
+  "Israel": {
+    "tag": "ISR",
+    "mod_name": "Israel"
+  },
+  "Italy": {
+    "tag": "ITA",
+    "mod_name": "Italy"
+  },
+  "Jamaica": {
+    "tag": "JAM",
+    "mod_name": "Jamaica"
+  },
+  "Japan": {
+    "tag": "JAP",
+    "mod_name": "Japan"
+  },
+  "Jordan": {
+    "tag": "JOR",
+    "mod_name": "Jordan"
+  },
+  "Kazakhstan": {
+    "tag": "KAZ",
+    "mod_name": "Kazakhstan"
+  },
+  "Kenya": {
+    "tag": "KEN",
+    "mod_name": "Kenya"
+  },
+  "Kiribati": {
+    "tag": "KIR",
+    "mod_name": "Kiribati"
+  },
+  "Kuwait": {
+    "tag": "KUW",
+    "mod_name": "Kuwait"
+  },
+  "Kyrgyzstan": {
+    "tag": "KYR",
+    "mod_name": "Kyrgyzstan"
+  },
+  "Laos": {
+    "tag": "LAO",
+    "mod_name": "Laos"
+  },
+  "Latvia": {
+    "tag": "LAT",
+    "mod_name": "Latvia"
+  },
+  "Lebanon": {
+    "tag": "LEB",
+    "mod_name": "Lebanon"
+  },
+  "Lesotho": {
+    "tag": "LES",
+    "mod_name": "Lesotho"
+  },
+  "Liberia": {
+    "tag": "LIB",
+    "mod_name": "Liberia"
+  },
+  "Libya": {
+    "tag": "LBA",
+    "mod_name": "Libya"
+  },
+  "Liechtenstein": {
+    "tag": "LIE",
+    "mod_name": "Liechtenstein"
+  },
+  "Lithuania": {
+    "tag": "LIT",
+    "mod_name": "Lithuania"
+  },
+  "Luxembourg": {
+    "tag": "LUX",
+    "mod_name": "Luxemburg"
+  },
+  "Madagascar": {
+    "tag": "MAD",
+    "mod_name": "Madagascar"
+  },
+  "Malawi": {
+    "tag": "MLW",
+    "mod_name": "Malawi"
+  },
+  "Malaysia": {
+    "tag": "MAL",
+    "mod_name": "Malaysia"
+  },
+  "Maldives": {
+    "tag": "MLD",
+    "mod_name": "Maldives"
+  },
+  "Mali": {
+    "tag": "MLI",
+    "mod_name": "Mali"
+  },
+  "Malta": {
+    "tag": "MLT",
+    "mod_name": "Malta"
+  },
+  "Marshall Islands": {
+    "tag": "MAR",
+    "mod_name": "Marshall"
+  },
+  "Mauritania": {
+    "tag": "MRT",
+    "mod_name": "Mauritania"
+  },
+  "Mauritius": {
+    "tag": "MRS",
+    "mod_name": "Mauritius"
+  },
+  "Mexico": {
+    "tag": "MEX",
+    "mod_name": "Mexico"
+  },
+  "Micronesia": {
+    "tag": "FSM",
+    "mod_name": "Micronesia"
+  },
+  "Monaco": {
+    "tag": "MCO",
+    "mod_name": "Monaco"
+  },
+  "Mongolia": {
+    "tag": "MON",
+    "mod_name": "Mongolia"
+  },
+  "Montenegro": {
+    "tag": "MNT",
+    "mod_name": "Montenegro"
+  },
+  "Morocco": {
+    "tag": "MOR",
+    "mod_name": "Morocco"
+  },
+  "Mozambique": {
+    "tag": "MZB",
+    "mod_name": "Mozambique"
+  },
+  "Myanmar": {
+    "tag": "BRM",
+    "mod_name": "Burma"
+  },
+  "Namibia": {
+    "tag": "NMB",
+    "mod_name": "Namibia"
+  },
+  "Nauru": {
+    "tag": "NAU",
+    "mod_name": "Nauru"
+  },
+  "Nepal": {
+    "tag": "NEP",
+    "mod_name": "Nepal"
+  },
+  "Netherlands": {
+    "tag": "HOL",
+    "mod_name": "Holland"
+  },
+  "New Zealand": {
+    "tag": "NZL",
+    "mod_name": "New Zealand"
+  },
+  "Nicaragua": {
+    "tag": "NIC",
+    "mod_name": "Nicaragua"
+  },
+  "Niger": {
+    "tag": "NGR",
+    "mod_name": "Niger"
+  },
+  "Nigeria": {
+    "tag": "NGA",
+    "mod_name": "Nigeria"
+  },
+  "North Macedonia": {
+    "tag": "MAC",
+    "mod_name": "Macedonia"
+  },
+  "Norway": {
+    "tag": "NOR",
+    "mod_name": "Norway"
+  },
+  "Oman": {
+    "tag": "IMO",
+    "mod_name": "Oman"
+  },
+  "Pakistan": {
+    "tag": "PAK",
+    "mod_name": "Pakistan"
+  },
+  "Palau": {
+    "tag": "PLU",
+    "mod_name": "Palau"
+  },
+  "Panama": {
+    "tag": "PAN",
+    "mod_name": "Panama"
+  },
+  "Papua New Guinea": {
+    "tag": "PNG",
+    "mod_name": "Papua New Guinea"
+  },
+  "Paraguay": {
+    "tag": "PAR",
+    "mod_name": "Paraguay"
+  },
+  "Peru": {
+    "tag": "PRU",
+    "mod_name": "Peru"
+  },
+  "Philippines": {
+    "tag": "PHI",
+    "mod_name": "Philippines"
+  },
+  "Poland": {
+    "tag": "POL",
+    "mod_name": "Poland"
+  },
+  "Portugal": {
+    "tag": "POR",
+    "mod_name": "Portugal"
+  },
+  "Qatar": {
+    "tag": "QAT",
+    "mod_name": "Qatar"
+  },
+  "South Korea": {
+    "tag": "ROK",
+    "mod_name": "South Korea"
+  },
+  "Moldova": {
+    "tag": "MOL",
+    "mod_name": "Moldova"
+  },
+  "Romania": {
+    "tag": "ROM",
+    "mod_name": "Romania"
+  },
+  "Russia": {
+    "tag": "RUS",
+    "mod_name": "Russia"
+  },
+  "Rwanda": {
+    "tag": "RWA",
+    "mod_name": "Rwanda"
+  },
+  "Saint Kitts and Nevis": {
+    "tag": "SKT",
+    "mod_name": "Saint Kitts"
+  },
+  "Saint Lucia": {
+    "tag": "STL",
+    "mod_name": "Saint Lucia"
+  },
+  "Saint Vincent and the Grenadines": {
+    "tag": "SVC",
+    "mod_name": "Saint Vincent"
+  },
+  "Samoa": {
+    "tag": "SAM",
+    "mod_name": "Samoa"
+  },
+  "San Marino": {
+    "tag": "SMR",
+    "mod_name": "San Marino"
+  },
+  "Sao Tome and Principe": {
+    "tag": "SAO",
+    "mod_name": "Sao Tome"
+  },
+  "Saudi Arabia": {
+    "tag": "SAU",
+    "mod_name": "Saudi Arabia"
+  },
+  "Senegal": {
+    "tag": "SEN",
+    "mod_name": "Senegal"
+  },
+  "Serbia": {
+    "tag": "SER",
+    "mod_name": "Serbia"
+  },
+  "Seychelles": {
+    "tag": "SEY",
+    "mod_name": "Seychelles"
+  },
+  "Sierra Leone": {
+    "tag": "SIE",
+    "mod_name": "Sierra Leone"
+  },
+  "Singapore": {
+    "tag": "SGP",
+    "mod_name": "Singapore"
+  },
+  "Slovakia": {
+    "tag": "SLO",
+    "mod_name": "Slovakia"
+  },
+  "Slovenia": {
+    "tag": "SLV",
+    "mod_name": "Slovenia"
+  },
+  "Solomon Islands": {
+    "tag": "SOL",
+    "mod_name": "Solomon Islands"
+  },
+  "Somalia": {
+    "tag": "SOM",
+    "mod_name": "Somalia"
+  },
+  "South Africa": {
+    "tag": "SAF",
+    "mod_name": "South Africa"
+  },
+  "South Sudan": {
+    "tag": "SSU",
+    "mod_name": "South Sudan"
+  },
+  "Spain": {
+    "tag": "SPR",
+    "mod_name": "Spain"
+  },
+  "Sri Lanka": {
+    "tag": "SRL",
+    "mod_name": "Sri Lanka"
+  },
+  "Sudan": {
+    "tag": "SUD",
+    "mod_name": "Sudan"
+  },
+  "Suriname": {
+    "tag": "SUR",
+    "mod_name": "Suriname"
+  },
+  "Sweden": {
+    "tag": "SWE",
+    "mod_name": "Sweden"
+  },
+  "Switzerland": {
+    "tag": "SWI",
+    "mod_name": "Switzerland"
+  },
+  "Syria": {
+    "tag": "SYR",
+    "mod_name": "Syria"
+  },
+  "Tajikistan": {
+    "tag": "TAJ",
+    "mod_name": "Tajikistan"
+  },
+  "Thailand": {
+    "tag": "SIA",
+    "mod_name": "Siam"
+  },
+  "Timor-Leste": {
+    "tag": "ETM",
+    "mod_name": "East Timor"
+  },
+  "Togo": {
+    "tag": "TOG",
+    "mod_name": "Togo"
+  },
+  "Tonga": {
+    "tag": "TON",
+    "mod_name": "Tonga"
+  },
+  "Trinidad and Tobago": {
+    "tag": "TRI",
+    "mod_name": "Trinidad and Tobago"
+  },
+  "Tunisia": {
+    "tag": "TUN",
+    "mod_name": "Tunisia"
+  },
+  "Turkey": {
+    "tag": "TUR",
+    "mod_name": "Turkey"
+  },
+  "Turkmenistan": {
+    "tag": "TMS",
+    "mod_name": "Turkmenistan"
+  },
+  "Tuvalu": {
+    "tag": "TUV",
+    "mod_name": "Tuvalu"
+  },
+  "Uganda": {
+    "tag": "UGA",
+    "mod_name": "Uganda"
+  },
+  "Ukraine": {
+    "tag": "UKR",
+    "mod_name": "Ukraine"
+  },
+  "United Arab Emirates": {
+    "tag": "UAE",
+    "mod_name": "United Arab Emirates"
+  },
+  "United Kingdom": {
+    "tag": "ENG",
+    "mod_name": "United Kingdom"
+  },
+  "Tanzania": {
+    "tag": "TZN",
+    "mod_name": "Tanzania"
+  },
+  "United States of America": {
+    "tag": "USA",
+    "mod_name": "United States of America"
+  },
+  "Uruguay": {
+    "tag": "URG",
+    "mod_name": "Uruguay"
+  },
+  "Uzbekistan": {
+    "tag": "UZB",
+    "mod_name": "Uzbekistan"
+  },
+  "Vanuatu": {
+    "tag": "VAN",
+    "mod_name": "Vanuatu"
+  },
+  "Venezuela": {
+    "tag": "VEN",
+    "mod_name": "Venezula"
+  },
+  "Vietnam": {
+    "tag": "VIN",
+    "mod_name": "Vietnam"
+  },
+  "Yemen": {
+    "tag": "YEM",
+    "mod_name": "Yeman"
+  },
+  "Zambia": {
+    "tag": "ZAM",
+    "mod_name": "Zambia"
+  },
+  "Zimbabwe": {
+    "tag": "ZIM",
+    "mod_name": "Zimbabwe"
+  },
+  "Vatican City": {
+    "tag": "VCT",
+    "mod_name": "Vatican"
+  },
+  "Palestine": {
+    "tag": "PAL",
+    "mod_name": "Palestine"
+  }
+}
