@@ -68,7 +68,8 @@ manual_overrides = {
     "Georgia": "GEO",
     "Dominican Republic": "DOM",
     "Benin": "DAH",
-    "Luxembourg": "LUX"
+    "Luxembourg": "LUX",
+    "China": "PRC"
 }
 
 

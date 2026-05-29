@@ -66,7 +66,7 @@
         font-weight: 600;
         cursor: pointer;
         transition: all 0.2s ease;
-    ">Box Select</button>
+    ">Box Select (B)</button>
     <button onclick="setTool('lasso')" id="btnToolLasso" style="
         background: rgba(255,255,255,0.05);
         color: rgba(255,255,255,0.8);
@@ -77,7 +77,7 @@
         font-weight: 600;
         cursor: pointer;
         transition: all 0.2s ease;
-    ">Lasso Select</button>
+    ">Lasso Select (L)</button>
     <button onclick="setTool('pan')" id="btnToolPan" style="
         background: rgba(255,255,255,0.05);
         color: rgba(255,255,255,0.8);
@@ -88,7 +88,7 @@
         font-weight: 600;
         cursor: pointer;
         transition: all 0.2s ease;
-    ">Pan / Move</button>
+    ">Pan / Move (H)</button>
     
     <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.15); margin: 0 4px;"></div>
     
@@ -102,7 +102,7 @@
         font-weight: 600;
         cursor: pointer;
         transition: all 0.2s ease;
-    ">Select Country</button>
+    ">Select Country (S)</button>
     
     <select id="selLogicMode" style="
         background: rgba(255,255,255,0.05);
@@ -114,11 +114,25 @@
         cursor: pointer;
         outline: none;
     ">
-        <option value="replace" style="background: #222; color: white;">Replace Mode</option>
-        <option value="add" style="background: #222; color: white;">Add Mode (OR)</option>
-        <option value="subtract" style="background: #222; color: white;">Subtract Mode</option>
-        <option value="intersect" style="background: #222; color: white;">Intersect Mode (AND)</option>
-        <option value="xor" style="background: #222; color: white;">XOR Toggle Mode</option>
+        <option value="replace" style="background: #222; color: white;">Replace Mode (1)</option>
+        <option value="add" style="background: #222; color: white;">Add Mode (2)</option>
+        <option value="subtract" style="background: #222; color: white;">Subtract Mode (3)</option>
+        <option value="intersect" style="background: #222; color: white;">Intersect Mode (4)</option>
+        <option value="xor" style="background: #222; color: white;">XOR Toggle Mode (5)</option>
+    </select>
+    
+    <select id="selMapmode" onchange="setMapmode(this.value)" style="
+        background: rgba(255,255,255,0.05);
+        color: rgba(255,255,255,0.8);
+        border: 1px solid rgba(255,255,255,0.1);
+        padding: 5px;
+        border-radius: 6px;
+        font-size: 12px;
+        cursor: pointer;
+        outline: none;
+    ">
+        <option value="political" style="background: #222; color: white;">Political Mapmode</option>
+        <option value="interest" style="background: #222; color: white;">National Interest</option>
     </select>
     
     <button onclick="clearSelection()" style="
@@ -131,8 +145,8 @@
         font-weight: 600;
         cursor: pointer;
         transition: all 0.2s ease;
-    ">Clear</button>
-
+    ">Clear (C)</button>
+ 
     <button onclick="toggleSelectedWater()" style="
         background: rgba(255, 255, 255, 0.05);
         color: rgba(255, 255, 255, 0.8);
@@ -144,9 +158,9 @@
         cursor: pointer;
         transition: all 0.2s ease;
     ">Toggle Land/Water</button>
-
+ 
     <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.15); margin: 0 4px;"></div>
-
+ 
     <button onclick="paintSelection()" style="
         background: #28a745;
         color: white;
@@ -158,13 +172,13 @@
         cursor: pointer;
         transition: all 0.2s ease;
         box-shadow: 0 2px 8px rgba(40, 167, 69, 0.4);
-    ">Paint Selected</button>
+    ">Paint Selected (Enter)</button>
 </div>
-
+ 
 <div class="ui" style="max-height: 90vh; overflow-y: auto; width: 280px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); backdrop-filter: blur(10px); background: rgba(17,17,17,0.9); border: 1px solid #333; border-radius: 8px; padding: 12px; box-sizing: border-box;">
     <div style="font-weight: bold; color: white; margin-bottom: 8px; font-family: sans-serif;">Map Editor</div>
     <div style="display: flex; gap: 4px; margin-bottom: 8px;">
-        <button id="btnEraser" onclick="setEraser()" style="flex: 1; padding: 4px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; cursor: pointer; font-size: 12px;">Eraser</button>
+        <button id="btnEraser" onclick="setEraser()" style="flex: 1; padding: 4px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; cursor: pointer; font-size: 12px;">Eraser (E)</button>
         <button onclick="resetMap()" style="flex: 1; padding: 4px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; cursor: pointer; font-size: 12px;">Reset</button>
     </div>
     
@@ -179,6 +193,42 @@
     <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #333; display: flex; flex-direction: column; gap: 4px; font-family: sans-serif; font-size: 12px; color: white;">
         <div style="font-weight: bold; color: #007bff;">Selection Status</div>
         <div id="selectionStatus" style="font-size: 11px; color: #aaa; font-style: italic;">Selected: 0 provinces</div>
+    </div>
+
+    <!-- National Interest Panel -->
+    <div id="interestPanel" style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #333; display: flex; flex-direction: column; gap: 6px; font-family: sans-serif; font-size: 12px; color: white;">
+        <div style="font-weight: bold; color: #ff9500; display: flex; align-items: center; justify-content: space-between;">
+            <span>National Interest</span>
+            <span id="interestValueDisp" style="font-family: monospace; font-size: 11px; background: rgba(255, 149, 0, 0.2); padding: 2px 6px; border-radius: 4px;">5</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <input type="range" id="interestSlider" min="1" max="10" value="5" oninput="document.getElementById('interestValueDisp').innerText = this.value" style="flex: 1; accent-color: #ff9500; cursor: pointer;">
+        </div>
+        <div style="display: flex; gap: 4px;">
+            <button onclick="paintInterest()" style="flex: 1.2; padding: 5px; background: #ff9500; color: black; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; font-size: 11px; transition: all 0.2s ease;">Paint Interest (I)</button>
+            <button onclick="clearInterest()" style="flex: 0.8; padding: 5px; background: #444; color: white; border: 1px solid #555; border-radius: 4px; cursor: pointer; font-size: 11px; transition: all 0.2s ease;">Clear</button>
+        </div>
+    </div>
+
+    <!-- Selected Country Panel -->
+    <div id="countryControlsPanel" style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #333; display: flex; flex-direction: column; gap: 6px; font-family: sans-serif; font-size: 12px; color: white;">
+        <div style="font-weight: bold; color: #007bff; display: flex; align-items: center; justify-content: space-between;">
+            <span>Country Options</span>
+            <span id="activeCountryTag" style="font-family: monospace; font-size: 11px; background: rgba(0, 123, 255, 0.2); padding: 2px 6px; border-radius: 4px;">None</span>
+        </div>
+        
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <label style="flex-shrink: 0; width: 60px;">Rename:</label>
+            <input type="text" id="editCountryName" style="flex: 1; background: #222; border: 1px solid #444; color: white; padding: 4px; border-radius: 4px; font-size: 11px;" onchange="handleRenameFromInput(this.value)">
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <label style="flex-shrink: 0; width: 60px;">Recolour:</label>
+            <input type="color" id="editCountryColor" style="width: 40px; height: 22px; border: none; padding: 0; background: none; cursor: pointer;" oninput="handleRecolourFromPicker(this.value)">
+            <button onclick="activateColorPickerTool()" id="btnColorPickerTool" style="flex: 1; padding: 4px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; cursor: pointer; font-size: 11px; transition: all 0.2s ease;">
+                Pick from Map (P)
+            </button>
+        </div>
     </div>
 
     <div id="debugControls" style="
@@ -250,10 +300,53 @@
             <div id="pnlDetailedTerrain" style="font-family: monospace; font-size: 11px; color: #bbb; background: #222; border: 1px solid #333; padding: 5px; border-radius: 4px; word-break: break-all; min-height: 15px;"></div>
         </div>
         <div style="margin-top: 10px; display: flex; gap: 5px;">
-            <button onclick="saveProvinceDetails()" style="flex: 1; padding: 6px; background: #007bff; border: none; color: white; border-radius: 4px; cursor: pointer;">Save</button>
-            <button onclick="exportDefinitions()" style="flex: 1; padding: 6px; background: #28a745; border: none; color: white; border-radius: 4px; cursor: pointer;">Export JSON</button>
+            <button onclick="saveProvinceDetails()" style="flex: 1; padding: 6px; background: #007bff; border: none; color: white; border-radius: 4px; cursor: pointer;">Save Prov</button>
+            <button onclick="exportDefinitions()" style="flex: 1; padding: 6px; background: #28a745; border: none; color: white; border-radius: 4px; cursor: pointer;">Export Defs</button>
         </div>
     </div>
+</div>
+
+<!-- Global Map Controls (Save Preset & Export JSON) -->
+<div style="
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    z-index: 100;
+    background: rgba(20, 20, 20, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 8px 12px;
+    display: flex;
+    gap: 8px;
+    font-family: 'Inter', system-ui, sans-serif;
+">
+    <button onclick="saveWorldPreset()" style="
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 14px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 8px rgba(0, 123, 255, 0.4);
+    ">Save Starting Preset</button>
+    <button onclick="exportWorldJSON()" style="
+        background: #28a745;
+        color: white;
+        border: none;
+        padding: 8px 14px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 8px rgba(40, 167, 69, 0.4);
+    ">Export JSON</button>
 </div>
 <div style="position: relative; width: 100vw; height: 100vh;">
     <canvas id="mapCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
@@ -295,6 +388,8 @@ let startOffsetX = 0;
 let startOffsetY = 0;
 
 let ownership = {};
+let interests = {}; // countryTag -> { provinceId: level (1-10) }
+let activeMapmode = "political"; // "political" or "interest"
 let provinceKeys = [];
 const labelCache = {};
 const provinceCenters = {};
@@ -361,6 +456,25 @@ function selectCountry(tag) {
             item.style.background = "#222";
         }
     });
+
+    // Update Country Options panel
+    const activeTagLabel = document.getElementById("activeCountryTag");
+    if (activeTagLabel) {
+        activeTagLabel.textContent = tag;
+    }
+    const editNameInput = document.getElementById("editCountryName");
+    if (editNameInput) {
+        editNameInput.value = countries[tag] ? countries[tag].name : "";
+    }
+    const editColorInput = document.getElementById("editCountryColor");
+    if (editColorInput && countries[tag]) {
+        const rgb = countries[tag].color;
+        const hex = "#" + ((1 << 24) + (rgb[0] << 16) + (rgb[1] << 8) + rgb[2]).toString(16).slice(1);
+        editColorInput.value = hex;
+    }
+
+    updateAllLutAlphas();
+    requestDraw();
 }
 
 function updateCountryList() {
@@ -462,9 +576,11 @@ function setEraser() {
 function resetMap(){
 
     ownership = {};
+    interests = {};
 
     for(const c in countries){
         countries[c].provinces.clear();
+        interests[c] = {};
     }
 
     dirtyCountries.clear();
@@ -491,7 +607,7 @@ function resetMap(){
             }
         }
         
-        // Reload preset ownership if available
+        // Reload preset ownership and interests if available
         if (presetData) {
             for (const provIdStr in presetData.ownership) {
                 const provId = parseInt(provIdStr);
@@ -508,6 +624,14 @@ function resetMap(){
                     lutData[o+2] = colorRgb[2];
                 }
             }
+            if (presetData.interests) {
+                for (const tag in presetData.interests) {
+                    if (!interests[tag]) interests[tag] = {};
+                    for (const provIdStr in presetData.interests[tag]) {
+                        interests[tag][parseInt(provIdStr)] = parseInt(presetData.interests[tag][provIdStr]);
+                    }
+                }
+            }
         }
         
         lutNeedsUpdate = true;
@@ -517,11 +641,17 @@ function resetMap(){
         dirtyCountries.add(tag);
     }
 
+    updateAllLutAlphas();
     draw();
 }
 function renameCountry(color, newName) {
     if (!countries[color]) return;
     countries[color].name = newName;
+    dirtyCountries.add(color);
+    for (const k in labelCache) {
+        delete labelCache[k];
+    }
+    requestDraw();
 }
 function setCountryTag(color, tag) {
     if (!countries[color]) return;
@@ -594,6 +724,7 @@ const fsSource = `
     uniform float u_showHeightmap;
     uniform vec2 u_mapSize;
     uniform float u_zoom;
+    uniform float u_activeMapmode;
 
     void main() {
         vec4 indexColor = texture2D(u_indexTexture, v_texCoord);
@@ -605,7 +736,9 @@ const fsSource = `
         
         float u = (mod(idx, u_lutWidth) + 0.5) / u_lutWidth;
         float v = (floor(idx / u_lutWidth) + 0.5) / u_lutHeight;
-        vec4 color = texture2D(u_lutTexture, vec2(u, v));
+        vec4 lutColor = texture2D(u_lutTexture, vec2(u, v));
+        vec4 color = vec4(lutColor.rgb, 1.0);
+        vec3 baseCountryColor = color.rgb;
         
         if (u_showHeightmap > 0.5) {
             float h = texture2D(u_heightmapTexture, v_texCoord).r;
@@ -622,76 +755,78 @@ const fsSource = `
             
             float shadow = 0.5 + 0.5 * light;
             shadow = clamp(shadow, 0.6, 1.4);
-            color = vec4(color.rgb * shadow, color.a);
+            color = vec4(color.rgb * shadow, 1.0);
+        }
+
+        // Apply National Interest Overlay
+        if (u_activeMapmode > 0.5) {
+            float interestLevel = floor(lutColor.a * 255.0 + 0.5);
+            if (interestLevel > 0.5) {
+                vec2 mapCoord = v_texCoord * u_mapSize;
+                float baseOpacity = 0.05 + (interestLevel / 10.0) * 0.20;
+                float stripe = sin((mapCoord.x + mapCoord.y) * 0.4);
+                float threshold = 1.0 - (interestLevel / 10.0) * 0.6; 
+                float stripeActive = step(threshold, stripe);
+                vec3 interestColor = vec3(0.95, 0.25, 0.1); 
+                float overlayAlpha = baseOpacity + stripeActive * 0.25 * (interestLevel / 10.0);
+                overlayAlpha = clamp(overlayAlpha, 0.0, 0.7);
+                color.rgb = mix(color.rgb, interestColor, overlayAlpha);
+            } else {
+                // Desaturate non-interest provinces to make the interests stand out
+                color.rgb = mix(color.rgb, vec3(dot(color.rgb, vec3(0.299, 0.587, 0.114))), 0.4);
+            }
         }
         
-        if (u_showBorders > 0.5 && u_zoom >= 1.5) {
-            float isBorder = 0.0;
-            float isCountryBorder = 0.0;
+        if (u_showBorders > 0.5) {
+            // Step size is exactly one screen pixel in texture coordinates!
+            vec2 step = 1.0 / (u_mapSize * u_zoom);
             
-            // Search wider for national borders (to make them thicker)
-            vec2 nationalOffset = min(vec2(2.0) / (u_mapSize * u_zoom), u_texelSize * 2.0);
+            // Check country borders first in all 4 directions with a radius of 2px
+            bool isCountryBorder = false;
             
-            // 2-pixel wider check for national borders
-            vec4 indexColorR2 = texture2D(u_indexTexture, v_texCoord + vec2(nationalOffset.x, 0.0));
-            vec4 indexColorL2 = texture2D(u_indexTexture, v_texCoord + vec2(-nationalOffset.x, 0.0));
-            vec4 indexColorD2 = texture2D(u_indexTexture, v_texCoord + vec2(0.0, nationalOffset.y));
-            vec4 indexColorU2 = texture2D(u_indexTexture, v_texCoord + vec2(0.0, -nationalOffset.y));
+            vec2 offsets[8];
+            offsets[0] = vec2(step.x, 0.0);
+            offsets[1] = vec2(-step.x, 0.0);
+            offsets[2] = vec2(0.0, step.y);
+            offsets[3] = vec2(0.0, -step.y);
+            offsets[4] = vec2(step.x * 2.0, 0.0);
+            offsets[5] = vec2(-step.x * 2.0, 0.0);
+            offsets[6] = vec2(0.0, step.y * 2.0);
+            offsets[7] = vec2(0.0, -step.y * 2.0);
             
-            float idxR2 = floor(indexColorR2.r * 255.0 + 0.5) + floor(indexColorR2.g * 255.0 + 0.5)*256.0 + floor(indexColorR2.b * 255.0 + 0.5)*65536.0;
-            float idxL2 = floor(indexColorL2.r * 255.0 + 0.5) + floor(indexColorL2.g * 255.0 + 0.5)*256.0 + floor(indexColorL2.b * 255.0 + 0.5)*65536.0;
-            float idxD2 = floor(indexColorD2.r * 255.0 + 0.5) + floor(indexColorD2.g * 255.0 + 0.5)*256.0 + floor(indexColorD2.b * 255.0 + 0.5)*65536.0;
-            float idxU2 = floor(indexColorU2.r * 255.0 + 0.5) + floor(indexColorU2.g * 255.0 + 0.5)*256.0 + floor(indexColorU2.b * 255.0 + 0.5)*65536.0;
-            
-            if (idx != idxR2 || idx != idxL2 || idx != idxD2 || idx != idxU2) {
-                // Lookups for colors at nationalOffset boundaries
-                float uR2 = (mod(idxR2, u_lutWidth) + 0.5) / u_lutWidth;
-                float vR2 = (floor(idxR2 / u_lutWidth) + 0.5) / u_lutHeight;
-                vec4 colorR2 = texture2D(u_lutTexture, vec2(uR2, vR2));
-
-                float uL2 = (mod(idxL2, u_lutWidth) + 0.5) / u_lutWidth;
-                float vL2 = (floor(idxL2 / u_lutWidth) + 0.5) / u_lutHeight;
-                vec4 colorL2 = texture2D(u_lutTexture, vec2(uL2, vL2));
-
-                float uD2 = (mod(idxD2, u_lutWidth) + 0.5) / u_lutWidth;
-                float vD2 = (floor(idxD2 / u_lutWidth) + 0.5) / u_lutHeight;
-                vec4 colorD2 = texture2D(u_lutTexture, vec2(uD2, vD2));
-
-                float uU2 = (mod(idxU2, u_lutWidth) + 0.5) / u_lutWidth;
-                float vU2 = (floor(idxU2 / u_lutWidth) + 0.5) / u_lutHeight;
-                vec4 colorU2 = texture2D(u_lutTexture, vec2(uU2, vU2));
-
-                if (idx != idxR2 && distance(color.rgb, colorR2.rgb) > 0.002) isCountryBorder = 1.0;
-                if (idx != idxL2 && distance(color.rgb, colorL2.rgb) > 0.002) isCountryBorder = 1.0;
-                if (idx != idxD2 && distance(color.rgb, colorD2.rgb) > 0.002) isCountryBorder = 1.0;
-                if (idx != idxU2 && distance(color.rgb, colorU2.rgb) > 0.002) isCountryBorder = 1.0;
+            for (int i = 0; i < 8; i++) {
+                vec4 nIdxCol = texture2D(u_indexTexture, v_texCoord + offsets[i]);
+                float nr = floor(nIdxCol.r * 255.0 + 0.5);
+                float ng = floor(nIdxCol.g * 255.0 + 0.5);
+                float nb = floor(nIdxCol.b * 255.0 + 0.5);
+                float nIdx = nr + ng * 256.0 + nb * 65536.0;
+                
+                float nu = (mod(nIdx, u_lutWidth) + 0.5) / u_lutWidth;
+                float nv = (floor(nIdx / u_lutWidth) + 0.5) / u_lutHeight;
+                vec4 nCountryColor = texture2D(u_lutTexture, vec2(nu, nv));
+                
+                if (distance(baseCountryColor, nCountryColor.rgb) > 0.002) {
+                    isCountryBorder = true;
+                    break;
+                }
             }
             
-            if (isCountryBorder > 0.5) {
-                color = vec4(0.0, 0.0, 0.0, 1.0); // Opaque black, wider country borders
-            } else if (u_zoom >= 1.5) {
-                // Search 1 pixel away for normal borders only if zoomed in enough
-                vec2 borderOffset = min(vec2(1.0) / (u_mapSize * u_zoom), u_texelSize);
-                vec4 indexColorR = texture2D(u_indexTexture, v_texCoord + vec2(borderOffset.x, 0.0));
-                vec4 indexColorL = texture2D(u_indexTexture, v_texCoord + vec2(-borderOffset.x, 0.0));
-                vec4 indexColorD = texture2D(u_indexTexture, v_texCoord + vec2(0.0, borderOffset.y));
-                vec4 indexColorU = texture2D(u_indexTexture, v_texCoord + vec2(0.0, -borderOffset.y));
+            if (isCountryBorder) {
+                // Country border: thick solid black line
+                color = vec4(0.0, 0.0, 0.0, 1.0);
+            } else {
+                // Provincial border check (only at 1px distance)
+                vec4 indexColorR = texture2D(u_indexTexture, v_texCoord + vec2(step.x, 0.0));
+                vec4 indexColorD = texture2D(u_indexTexture, v_texCoord + vec2(0.0, step.y));
                 
                 float idxR = floor(indexColorR.r * 255.0 + 0.5) + floor(indexColorR.g * 255.0 + 0.5)*256.0 + floor(indexColorR.b * 255.0 + 0.5)*65536.0;
-                float idxL = floor(indexColorL.r * 255.0 + 0.5) + floor(indexColorL.g * 255.0 + 0.5)*256.0 + floor(indexColorL.b * 255.0 + 0.5)*65536.0;
                 float idxD = floor(indexColorD.r * 255.0 + 0.5) + floor(indexColorD.g * 255.0 + 0.5)*256.0 + floor(indexColorD.b * 255.0 + 0.5)*65536.0;
-                float idxU = floor(indexColorU.r * 255.0 + 0.5) + floor(indexColorU.g * 255.0 + 0.5)*256.0 + floor(indexColorU.b * 255.0 + 0.5)*65536.0;
                 
-                if (idx != idxR || idx != idxD || idx != idxL || idx != idxU) {
-                    isBorder = 1.0;
-                }
-                
-                if (isBorder > 0.5) {
-                    // Fade out provincial borders when zoomed out (smoothly between 1.5 and 3.0 zoom)
-                    float borderAlpha = clamp((u_zoom - 1.5) / 1.5 * 0.3, 0.0, 0.3);
-                    if (borderAlpha > 0.001) {
-                        color = vec4(mix(color.rgb, vec3(0.0), borderAlpha), color.a);
-                    }
+                bool isProvBorder = (idx != idxR) || (idx != idxD);
+                if (isProvBorder) {
+                    // Provincial border opacity scales with zoom to prevent clutter when zoomed out
+                    float provOpacity = clamp((u_zoom - 0.3) * 0.35, 0.0, 0.22);
+                    color = vec4(mix(color.rgb, vec3(0.0), provOpacity), color.a);
                 }
             }
         }
@@ -1088,6 +1223,10 @@ function paintSelection() {
     
     selectedProvinces.clear();
     updateSelectionStatus();
+    updateAllLutAlphas();
+    for (const k in labelCache) {
+        delete labelCache[k];
+    }
     draw();
 }
 
@@ -1110,7 +1249,6 @@ let isDragging = false;
 function selectProvince(key, isShift) {
 	if (key === undefined || key === 0) return;
 	console.log("selectProvince key:", key, "metadata:", provinceCenters[key]);
-	if (provinceCenters[key] && provinceCenters[key].isWater) return;
 
 	if (!eraserMode && isShift) {
 		const clickedCountry = ownership[key];
@@ -1215,13 +1353,185 @@ function exportDefinitions() {
     downloadAnchor.remove();
 }
 
+function getWorldPresetData() {
+    const data = {
+        countries: {},
+        ownership: {},
+        interests: {}
+    };
+    for (const tag in countries) {
+        data.countries[tag] = {
+            name: countries[tag].name,
+            color: countries[tag].color
+        };
+    }
+    for (const provId in ownership) {
+        data.ownership[provId] = ownership[provId];
+    }
+    for (const tag in interests) {
+        if (Object.keys(interests[tag]).length > 0) {
+            data.interests[tag] = {};
+            for (const provId in interests[tag]) {
+                data.interests[tag][provId] = interests[tag][provId];
+            }
+        }
+    }
+    return data;
+}
+
+function saveWorldPreset() {
+    const data = getWorldPresetData();
+    fetch("/save", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data, null, 2)
+    })
+    .then(r => {
+        if (r.ok) {
+            alert("Starting preset saved successfully to preset_ownership.json!");
+        } else {
+            alert("Failed to save starting preset.");
+        }
+    })
+    .catch(e => {
+        console.error(e);
+        alert("Error saving starting preset. Make sure custom server.py is running: " + e.message);
+    });
+}
+
+function exportWorldJSON() {
+    const data = getWorldPresetData();
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data, null, 2));
+    const downloadAnchor = document.createElement('a');
+    downloadAnchor.setAttribute("href", dataStr);
+    downloadAnchor.setAttribute("download", "preset_ownership.json");
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+}
+
 function updateLutForProvince(idx, colorRgb) {
     const offset = idx * 4;
     lutData[offset] = colorRgb[0];
     lutData[offset+1] = colorRgb[1];
     lutData[offset+2] = colorRgb[2];
-    lutData[offset+3] = 255;
     lutNeedsUpdate = true;
+}
+
+function updateAllLutAlphas() {
+    if (!lutData) return;
+    
+    for (let i = 0; i < lutWidth * lutHeight; i++) {
+        lutData[i * 4 + 3] = 0;
+    }
+    
+    if (selectedColor && interests[selectedColor]) {
+        for (const provIdStr in interests[selectedColor]) {
+            const provId = parseInt(provIdStr);
+            const level = interests[selectedColor][provId];
+            const p = provinceCenters[provId];
+            if (p) {
+                lutData[p.index * 4 + 3] = level;
+            }
+        }
+    }
+    lutNeedsUpdate = true;
+}
+
+function setMapmode(mode) {
+    activeMapmode = mode;
+    updateAllLutAlphas();
+    requestDraw();
+}
+
+function paintInterest() {
+    if (!selectedColor) {
+        alert("Please select a country first.");
+        return;
+    }
+    if (selectedProvinces.size === 0) {
+        alert("Please select one or more provinces to paint interest.");
+        return;
+    }
+    const val = parseInt(document.getElementById("interestSlider").value);
+    if (!interests[selectedColor]) {
+        interests[selectedColor] = {};
+    }
+    for (const pid of selectedProvinces) {
+        interests[selectedColor][pid] = val;
+    }
+    updateAllLutAlphas();
+    requestDraw();
+}
+
+function clearInterest() {
+    if (!selectedColor) return;
+    if (selectedProvinces.size === 0) return;
+    if (interests[selectedColor]) {
+        for (const pid of selectedProvinces) {
+            delete interests[selectedColor][pid];
+        }
+    }
+    updateAllLutAlphas();
+    requestDraw();
+}
+
+let colorPickerMode = false;
+
+function activateColorPickerTool() {
+    if (!selectedColor) {
+        alert("Please select a country to recolour first.");
+        return;
+    }
+    colorPickerMode = !colorPickerMode;
+    const btn = document.getElementById("btnColorPickerTool");
+    if (colorPickerMode) {
+        btn.style.background = "#ff9500";
+        btn.style.color = "black";
+        btn.style.border = "1px solid #ff9500";
+        canvas.style.cursor = "crosshair";
+    } else {
+        btn.style.background = "#333";
+        btn.style.color = "white";
+        btn.style.border = "1px solid #555";
+        canvas.style.cursor = "default";
+    }
+}
+
+function handleRenameFromInput(val) {
+    if (!selectedColor || !val.trim()) return;
+    renameCountry(selectedColor, val.trim());
+    updateCountryList();
+}
+
+function handleRecolourFromPicker(hex) {
+    if (!selectedColor) return;
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    recolourCountry(selectedColor, [r, g, b]);
+}
+
+function recolourCountry(tag, newRgb) {
+    if (!countries[tag]) return;
+    countries[tag].color = newRgb;
+    COLORS[tag] = newRgb;
+    
+    const provinces = countries[tag].provinces;
+    for (const provId of provinces) {
+        const center = provinceCenters[provId];
+        if (center) {
+            const offset = center.index * 4;
+            lutData[offset] = newRgb[0];
+            lutData[offset+1] = newRgb[1];
+            lutData[offset+2] = newRgb[2];
+        }
+    }
+    lutNeedsUpdate = true;
+    updateCountryList();
+    requestDraw();
 }
 
 const provinceIdCache = {};
@@ -1363,7 +1673,36 @@ window.addEventListener("mouseup", e => {
 			// Single click
 			if (selectionBox.startX >= 0 && selectionBox.startY >= 0 && selectionBox.startX < img.width && selectionBox.startY < img.height) {
 				const key = getProvinceIdAt(selectionBox.startX, selectionBox.startY);
-				if (key && key !== 0 && provinceCenters[key] && !provinceCenters[key].isWater) {
+				if (key && key !== 0 && provinceCenters[key]) {
+					if (colorPickerMode) {
+						const clickedCountry = ownership[key];
+						if (clickedCountry && clickedCountry !== selectedColor) {
+							const targetColor = countries[clickedCountry].color;
+							recolourCountry(selectedColor, targetColor);
+						}
+						colorPickerMode = false;
+						const btn = document.getElementById("btnColorPickerTool");
+						if (btn) {
+							btn.style.background = "#333";
+							btn.style.color = "white";
+							btn.style.border = "1px solid #555";
+						}
+						canvas.style.cursor = "default";
+						selectionBox = null;
+						return;
+					}
+					if (e.shiftKey) {
+						const clickedCountry = ownership[key];
+						if (clickedCountry && countries[clickedCountry]) {
+							const name = prompt("Rename country:", countries[clickedCountry].name);
+							if (name) {
+								renameCountry(clickedCountry, name);
+								updateCountryList();
+							}
+						}
+						selectionBox = null;
+						return;
+					}
 					newSelection.add(key);
 					
 					// Show details in panel
@@ -1384,7 +1723,7 @@ window.addEventListener("mouseup", e => {
 			for (const keyStr in provinceCenters) {
 				const p = provinceCenters[keyStr];
 				const key = parseInt(keyStr);
-				if (p && !p.isWater && p.x >= minX && p.x <= maxX && p.y >= minY && p.y <= maxY) {
+				if (p && p.x >= minX && p.x <= maxX && p.y >= minY && p.y <= maxY) {
 					newSelection.add(key);
 				}
 			}
@@ -1395,7 +1734,7 @@ window.addEventListener("mouseup", e => {
 		for (const keyStr in provinceCenters) {
 			const p = provinceCenters[keyStr];
 			const key = parseInt(keyStr);
-			if (p && !p.isWater && isPointInPolygon(p, lassoPoints)) {
+			if (p && isPointInPolygon(p, lassoPoints)) {
 				newSelection.add(key);
 			}
 		}
@@ -1439,19 +1778,23 @@ canvas.addEventListener("wheel", e => {
 
 let drawRequested = false;
 function requestDraw() {
-    if (!drawRequested) {
-        drawRequested = true;
-        requestAnimationFrame(() => {
-            draw();
-            drawRequested = false;
-        });
-    }
+    draw();
 }
 
 let lastFrameTime = performance.now();
 let fpsArray = [];
 
 function draw() {
+    if (!drawRequested) {
+        drawRequested = true;
+        requestAnimationFrame(() => {
+            performDraw();
+            drawRequested = false;
+        });
+    }
+}
+
+function performDraw() {
     if (!gl) return;
     
     gl.viewport(0, 0, canvas.width, canvas.height);
@@ -1487,6 +1830,7 @@ function draw() {
     gl.uniform1f(gl.getUniformLocation(program, "u_lutHeight"), lutHeight);
     gl.uniform1f(gl.getUniformLocation(program, "u_showHeightmap"), showHeightmap);
     gl.uniform1f(gl.getUniformLocation(program, "u_showBorders"), showBorders);
+    gl.uniform1f(gl.getUniformLocation(program, "u_activeMapmode"), activeMapmode === "interest" ? 1.0 : 0.0);
 
     gl.drawArrays(gl.TRIANGLES, 0, 6);
 
@@ -1624,6 +1968,55 @@ function drawLabels(){
 
     const w=baseCanvas.width, h=baseCanvas.height;
     const data=basePixels;
+
+	// Simple and fast Priority Queue implementation for Dijkstra
+	class MinHeap {
+		constructor() {
+			this.heap = [];
+		}
+		push(item) {
+			this.heap.push(item);
+			let n = this.heap.length - 1;
+			while (n > 0) {
+				let parentN = Math.floor((n + 1) / 2) - 1;
+				if (this.heap[n][1] >= this.heap[parentN][1]) break;
+				let temp = this.heap[parentN];
+				this.heap[parentN] = this.heap[n];
+				this.heap[n] = temp;
+				n = parentN;
+			}
+		}
+		pop() {
+			if (this.heap.length === 0) return null;
+			const min = this.heap[0];
+			const end = this.heap.pop();
+			if (this.heap.length > 0) {
+				this.heap[0] = end;
+				let n = 0;
+				const len = this.heap.length;
+				while (true) {
+					let child2N = (n + 1) * 2;
+					let child1N = child2N - 1;
+					let swap = null;
+					if (child1N < len && this.heap[child1N][1] < this.heap[n][1]) {
+						swap = child1N;
+					}
+					if (child2N < len && this.heap[child2N][1] < (swap === null ? this.heap[n][1] : this.heap[child1N][1])) {
+						swap = child2N;
+					}
+					if (swap === null) break;
+					let temp = this.heap[n];
+					this.heap[n] = this.heap[swap];
+					this.heap[swap] = temp;
+					n = swap;
+				}
+			}
+			return min;
+		}
+		isEmpty() {
+			return this.heap.length === 0;
+		}
+	}
 	
 	function computeSpineForComponent(component, countryColor){
 		if (component.length < 2) {
@@ -1660,8 +2053,9 @@ function drawLabels(){
 			depthQueue.push(component[0]);
 		}
 
-		while (depthQueue.length > 0) {
-			const curr = depthQueue.shift();
+		let depthQueueHead = 0;
+		while (depthQueueHead < depthQueue.length) {
+			const curr = depthQueue[depthQueueHead++];
 			const currDepth = depth[curr];
 
 			for (const n of provinceNeighbors[curr] || []) {
@@ -1682,14 +2076,12 @@ function drawLabels(){
 			const dist = {};
 			for (const id of component) dist[id] = Infinity;
 			dist[startId] = 0;
-			const pq = [[startId, 0]];
+			
+			const pq = new MinHeap();
+			pq.push([startId, 0]);
 
-			while (pq.length > 0) {
-				let minIdx = 0;
-				for (let i = 1; i < pq.length; i++) {
-					if (pq[i][1] < pq[minIdx][1]) minIdx = i;
-				}
-				const [curr, currCost] = pq.splice(minIdx, 1)[0];
+			while (!pq.isEmpty()) {
+				const [curr, currCost] = pq.pop();
 
 				if (currCost > dist[curr]) continue;
 
@@ -1739,7 +2131,7 @@ function drawLabels(){
 
 		function isInside(x, y) {
 			const key = getProvinceIdAt(x, y);
-			return ownership[key] === countryColor;
+			return compSet.has(key);
 		}
 
 		// Subsample candidate list when there are many provinces to avoid O(N^2) complexity
@@ -1763,6 +2155,8 @@ function drawLabels(){
 				if (!pA || !pB) continue;
 
 				const dist = Math.hypot(pB.x - pA.x, pB.y - pA.y);
+				// Critical Optimization: Skip candidate check if distance is less than current best score
+				if (dist <= bestStraightScore) continue;
 
 				// Sample 20 points along the straight line to accurately detect water crossings
 				let outsideCount = 0;
@@ -1809,10 +2203,6 @@ function drawLabels(){
 		const asymmetry = totalArea > 0 ? Math.abs(leftArea - rightArea) / totalArea : 0;
 
 		// Dynamically compute tension using asymmetry:
-		// Symmetric shapes (asymmetry < 0.10, like Ireland) remain straight.
-		// Disjoint shapes that span across water (bestOutsideCount > 0) also remain straight to avoid bending into water.
-		// Mostly vertical shapes (dy > dx, like Great Britain) remain straight to prevent curving laterally into the sea.
-		// Asymmetric shapes (like England Alone or England + Wales) curve gently with a cap of 0.22.
 		let tension = 0.0;
 		const dy_line = Math.abs(pB.y - pA.y);
 		const dx_line = Math.abs(pB.x - pA.x);
@@ -1844,20 +2234,16 @@ function drawLabels(){
 		function dijkstra(start, end) {
 			const dist = {};
 			const prev = {};
-			const pq = [];
-
 			for (const id of component) {
 				dist[id] = Infinity;
 			}
 			dist[start] = 0;
+			
+			const pq = new MinHeap();
 			pq.push([start, 0]);
 
-			while (pq.length > 0) {
-				let minIdx = 0;
-				for (let i = 1; i < pq.length; i++) {
-					if (pq[i][1] < pq[minIdx][1]) minIdx = i;
-				}
-				const [curr, currCost] = pq.splice(minIdx, 1)[0];
+			while (!pq.isEmpty()) {
+				const [curr, currCost] = pq.pop();
 
 				if (curr === end) break;
 				if (currCost > dist[curr]) continue;
@@ -1941,7 +2327,6 @@ function drawLabels(){
 			(P0[1] + P3[1]) / 2
 		];
 
-
 		const M = [
 			(1 - tension) * M_straight[0] + tension * M_dijkstra[0],
 			(1 - tension) * M_straight[1] + tension * M_dijkstra[1]
@@ -1960,7 +2345,7 @@ function drawLabels(){
 			}
 			const M_centroid = [sumX / (totalPCount || 1), sumY / (totalPCount || 1)];
 
-			// Find bend direction (direction from straight line midpoint to centroid)
+			// Find bend direction
 			const vx = M_centroid[0] - M_straight[0];
 			const vy = M_centroid[1] - M_straight[1];
 			const v_len = Math.hypot(vx, vy);
@@ -1997,7 +2382,7 @@ function drawLabels(){
 				}
 				const thickness = Math.max(16, Math.min(100, Math.sqrt(compArea) * 0.45));
 
-				// Shift the entire curve in the direction of the bend (eastwards for England)
+				// Shift the entire curve in the direction of the bend
 				const shiftDist = thickness * 0.10;
 				const shx = ux * shiftDist;
 				const shy = uy * shiftDist;
@@ -2030,16 +2415,21 @@ function drawLabels(){
 
 		return { spine, path, controlPoints: [P1], tension };
 	}
-	
+
 	for(const o in countries){
-
 		const country = countries[o];
-		if (!country) continue;
+		if (!country || country.provinces.size === 0) continue;
 
-		let text = country.name.toUpperCase();
+		let text = country.name;
+		if (text.toLowerCase().includes("placeholder")) {
+			text = country.tag;
+		}
+		text = text.toUpperCase();
+		
 		let cached = labelCache[o];
 
 		if (!cached || dirtyCountries.has(o)) {
+			// Find contiguous components using BFS
 			const provincesSet = country.provinces;
 			const visited = new Set();
 			const components = [];
@@ -2049,10 +2439,11 @@ function drawLabels(){
 
 				const component = [];
 				const queue = [provId];
+				let queueHead = 0;
 				visited.add(provId);
 
-				while (queue.length > 0) {
-					const curr = queue.shift();
+				while (queueHead < queue.length) {
+					const curr = queue[queueHead++];
 					component.push(curr);
 
 					for (const n of provinceNeighbors[curr] || []) {
@@ -2066,37 +2457,150 @@ function drawLabels(){
 			}
 
 			const labels = [];
-
 			for (const comp of components) {
 				if (comp.length < 4) continue; // Skip very small components
 
 				const result = computeSpineForComponent(comp, o);
 				if (result.spine.length < 2) continue;
 
-				// Calculate thickness based on this component's area
 				let compArea = 0;
 				for (const id of comp) {
 					const center = provinceCenters[id];
 					if (center) compArea += center.count;
 				}
 				const thickness = Math.max(16, Math.min(100, Math.sqrt(compArea) * 0.45));
+				const spine = result.spine;
+				const path = result.path;
+				const controlPoints = result.controlPoints;
+
+				const P0 = spine[0];
+				const P3 = spine[spine.length - 1];
+
+				const P1 = (controlPoints && controlPoints.length > 0) ? controlPoints[0] : [
+					(P0[0] + P3[0]) / 2,
+					(P0[1] + P3[1]) / 2
+				];
+
+				let fontSize = Math.min(70, thickness * 0.75);
+
+				// Precompute letter layouts to avoid slow operations at draw time
+				ctx.save();
+				ctx.font = `bold ${fontSize}px Georgia`;
+				ctx.textAlign = "center";
+				ctx.textBaseline = "middle";
+
+				const cumulative = [0];
+				for (let i = 1; i < spine.length; i++) {
+					const dx = spine[i][0] - spine[i - 1][0];
+					const dy = spine[i][1] - spine[i - 1][1];
+					cumulative[i] = cumulative[i - 1] + Math.hypot(dx, dy);
+				}
+				const totalLen = cumulative[cumulative.length - 1];
+
+				function getPointAndTangentAt(dist) {
+					let t = 1;
+					for (let i = 1; i < cumulative.length; i++) {
+						if (cumulative[i] >= dist) {
+							const t0 = (i - 1) / (spine.length - 1);
+							const t1 = i / (spine.length - 1);
+							const fraction = (dist - cumulative[i - 1]) / (cumulative[i] - cumulative[i - 1] || 1);
+							t = t0 * (1 - fraction) + t1 * fraction;
+							break;
+						}
+					}
+					const mt = 1 - t;
+					const x = mt*mt * P0[0] + 2*mt*t * P1[0] + t*t * P3[0];
+					const y = mt*mt * P0[1] + 2*mt*t * P1[1] + t*t * P3[1];
+					const dx = 2 * mt * (P1[0] - P0[0]) + 2 * t * (P3[0] - P1[0]);
+					const dy = 2 * mt * (P1[1] - P0[1]) + 2 * t * (P3[1] - P1[1]);
+					return [x, y, dx, dy];
+				}
+
+				const margin = Math.min(thickness * 0.15, totalLen * 0.04);
+				const startDist = margin;
+				const endDist = totalLen - margin;
+				const len = endDist - startDist;
+
+				if (len < 20) {
+					ctx.restore();
+					continue;
+				}
+
+				const letters = text.split('');
+				const baseWidths = letters.map(ch => ctx.measureText(ch).width);
+				const baseTotal = baseWidths.reduce((a, b) => a + b, 0);
+
+				const usableLen = len;
+				let scale = usableLen / (baseTotal * 1.35); 
+				scale = Math.min(scale, 1);
+				scale = Math.max(scale, 0.12);
+
+				const effectiveFont = fontSize * scale * 0.85;
+				ctx.font = `bold ${effectiveFont}px Georgia`;
+
+				const w = letters.map(ch => ctx.measureText(ch).width);
+				const totalW = w.reduce((a, b) => a + b, 0);
+				
+				let gap = letters.length > 1 ? (len - totalW) / (letters.length - 1) : 0;
+				const maxGap = effectiveFont * 1.2;
+				if (letters.length > 1 && gap > maxGap) {
+					gap = maxGap;
+				}
+				
+				const wordLen = totalW + (letters.length > 1 ? (letters.length - 1) * gap : 0);
+				const startDistAdjusted = startDist + (len - wordLen) / 2;
+				const angle_straight = Math.atan2(P3[1] - P0[1], P3[0] - P0[0]);
+
+				const computedLetters = [];
+				let currentOffset = 0;
+				for (let i = 0; i < letters.length; i++) {
+					const charW = w[i];
+					const dist = startDistAdjusted + currentOffset + charW / 2;
+					currentOffset += charW + gap;
+
+					const [x, y, dx, dy] = getPointAndTangentAt(dist);
+					const lenDir = Math.hypot(dx, dy) || 1;
+					const nx = -dy / lenDir;
+					const ny = dx / lenDir;
+
+					const inward = Math.min(thickness * 0.12, effectiveFont * 0.4);
+					const px = x + nx * inward;
+					const py = y + ny * inward;
+
+					const angle_local = Math.atan2(dy, dx);
+					let diff = angle_local - angle_straight;
+					diff = Math.atan2(Math.sin(diff), Math.cos(diff));
+					
+					const rotationDamping = 0.95;
+					const angle = angle_straight + diff * rotationDamping;
+
+					computedLetters.push({
+						char: letters[i],
+						x: px,
+						y: py,
+						angle: angle
+					});
+				}
+				ctx.restore();
 
 				labels.push({
-					spine: result.spine,
-					path: result.path,
-					controlPoints: result.controlPoints,
+					spine,
+					path,
+					controlPoints,
 					thickness,
 					provCount: comp.length,
-					tension: result.tension
+					tension: result.tension,
+					fontSize,
+					effectiveFont,
+					letters: computedLetters
 				});
 			}
 
-			cached = {
-				labels
-			};
+			cached = { labels };
 			labelCache[o] = cached;
 		}
 
+		// Draw curved/rotated labels along spine using cached layout
 		for (const label of cached.labels) {
 			const thickness = label.thickness;
 			const spine = label.spine;
@@ -2121,16 +2625,9 @@ function drawLabels(){
 				continue;
 			}
 
-			const P1 = (controlPoints && controlPoints.length > 0) ? controlPoints[0] : [
-				(P0[0] + P3[0]) / 2,
-				(P0[1] + P3[1]) / 2
-			];
-
-			
 			if(DEBUG.axis){
 				ctx.save();
-
-				ctx.strokeStyle = "rgba(255, 100, 0, 0.6)"; // Semi-transparent orange for raw Dijkstra axis
+				ctx.strokeStyle = "rgba(255, 100, 0, 0.6)"; // Dijkstra axis
 				ctx.lineWidth = 1.5;
 				ctx.beginPath();
 				for(let i=0;i<path.length;i++){
@@ -2139,14 +2636,12 @@ function drawLabels(){
 					else ctx.lineTo(x, y);
 				}
 				ctx.stroke();
-
 				ctx.restore();
 			}
 
 			if(DEBUG.bezier){
 				ctx.save();
-
-				ctx.strokeStyle = "cyan"; // Cyan for the Bezier curve spine
+				ctx.strokeStyle = "cyan"; // Bezier curve
 				ctx.lineWidth = 2.5;
 				ctx.beginPath();
 				for(let i=0;i<spine.length;i++){
@@ -2155,13 +2650,12 @@ function drawLabels(){
 					else ctx.lineTo(x, y);
 				}
 				ctx.stroke();
-
 				ctx.restore();
 			}
 
 			if(DEBUG.points && controlPoints && controlPoints.length > 0){
 				ctx.save();
-				ctx.fillStyle = "red"; // Red circles for control points
+				ctx.fillStyle = "red";
 				for(const pt of controlPoints){
 					ctx.beginPath();
 					ctx.arc(pt[0], pt[1], 4, 0, Math.PI * 2);
@@ -2170,162 +2664,66 @@ function drawLabels(){
 				ctx.restore();
 			}
 
-			let fontSize = Math.min(70, thickness * 0.75);
-			if (fontSize * zoom < 2.5) {
+			if (label.fontSize * zoom < 7.5) {
 				continue;
 			}
 
-			ctx.font=`bold ${fontSize}px Georgia`;
-			ctx.fillStyle="white";
-			ctx.strokeStyle="black";
+			ctx.font = `bold ${label.effectiveFont}px Georgia`;
+			ctx.fillStyle = "white";
+			ctx.strokeStyle = "black";
 			ctx.lineJoin = "round";
 			ctx.miterLimit = 2;
+			ctx.lineWidth = Math.max(0.1, label.effectiveFont * 0.05);
 
 			ctx.textAlign = "center";
 			ctx.textBaseline = "middle";
-			// ================= CLEAN LABEL PLACEMENT =================
 
-			// build cumulative length
-			const cumulative = [0];
-
-			for (let i = 1; i < spine.length; i++) {
-				const dx = spine[i][0] - spine[i - 1][0];
-				const dy = spine[i][1] - spine[i - 1][1];
-				cumulative[i] = cumulative[i - 1] + Math.hypot(dx, dy);
-			}
-
-			const totalLen = cumulative[cumulative.length - 1];
-
-			// helper: point at distance with exact mathematical tangent
-			function getPointAndTangentAt(dist) {
-				let t = 1;
-				for (let i = 1; i < cumulative.length; i++) {
-					if (cumulative[i] >= dist) {
-						const t0 = (i - 1) / (spine.length - 1);
-						const t1 = i / (spine.length - 1);
-						const fraction = (dist - cumulative[i - 1]) / (cumulative[i] - cumulative[i - 1] || 1);
-						t = t0 * (1 - fraction) + t1 * fraction;
-						break;
-					}
-				}
-
-				const mt = 1 - t;
-				const x = mt*mt * P0[0] + 2*mt*t * P1[0] + t*t * P3[0];
-				const y = mt*mt * P0[1] + 2*mt*t * P1[1] + t*t * P3[1];
-
-				const dx = 2 * mt * (P1[0] - P0[0]) + 2 * t * (P3[0] - P1[0]);
-				const dy = 2 * mt * (P1[1] - P0[1]) + 2 * t * (P3[1] - P1[1]);
-
-				return [x, y, dx, dy];
-			}
-
-			// small margin instead of hard trimming
-			const margin = Math.min(thickness * 0.15, totalLen * 0.04);
-
-			const startDist = margin;
-			const endDist = totalLen - margin;
-			const len = endDist - startDist;
-
-			if (len < 20) continue;
-
-			// --- measure using BASE font ---
-			ctx.font = `bold ${fontSize}px Georgia`;
-
-			const letters = text.split('');
-			const baseWidths = letters.map(ch => ctx.measureText(ch).width);
-			const baseTotal = baseWidths.reduce((a, b) => a + b, 0);
-
-			// --- compute scale (SAFE) ---
-			const usableLen = len;
-
-			// --- Stage 1: shrink font MORE aggressively ---
-			let scale = usableLen / (baseTotal * 1.35); 
-			// 1.15 = safety factor (prevents curve overflow)
-
-			// clamp
-			scale = Math.min(scale, 1);
-			scale = Math.max(scale, 0.12);
-
-			// apply font
-			const effectiveFont = fontSize * scale * 0.85;
-			ctx.font = `bold ${effectiveFont}px Georgia`;
-
-			// dynamic stroke thickness
-			ctx.lineWidth = Math.max(0.1, effectiveFont * 0.05);
-
-			// --- compute proportional spacing ---
-			const w = letters.map(ch => ctx.measureText(ch).width);
-			const totalW = w.reduce((a, b) => a + b, 0);
-			
-			let gap = letters.length > 1 ? (len - totalW) / (letters.length - 1) : 0;
-			
-			// Limit the maximum gap to a generous threshold, allowing short names to stretch and span across the country
-			const maxGap = effectiveFont * 1.2;
-			if (letters.length > 1 && gap > maxGap) {
-				gap = maxGap;
-			}
-			
-			const wordLen = totalW + (letters.length > 1 ? (letters.length - 1) * gap : 0);
-			const startDistAdjusted = startDist + (len - wordLen) / 2;
-
-			const angle_straight = Math.atan2(P3[1] - P0[1], P3[0] - P0[0]);
-
-			let currentOffset = 0;
-			for (let i = 0; i < letters.length; i++) {
-				const charW = w[i];
-				const dist = startDistAdjusted + currentOffset + charW / 2;
-				currentOffset += charW + gap;
-
-				const [x, y, dx, dy] = getPointAndTangentAt(dist);
-
-				const lenDir = Math.hypot(dx, dy) || 1;
-				const nx = -dy / lenDir;
-				const ny = dx / lenDir;
-
-				const inward = Math.min(thickness * 0.12, effectiveFont * 0.4);
-
-				const px = x + nx * inward;
-				const py = y + ny * inward;
-
-				const angle_local = Math.atan2(dy, dx);
-				
-				// Damped rotation: blend local angle with overall straight-line angle
-				let diff = angle_local - angle_straight;
-				diff = Math.atan2(Math.sin(diff), Math.cos(diff)); // normalize to [-PI, PI]
-				
-				const rotationDamping = 0.95; // 0.95 = follow curve almost exactly to prevent misalignment on deep bends
-				const angle = angle_straight + diff * rotationDamping;
-
+			for (let i = 0; i < label.letters.length; i++) {
+				const letObj = label.letters[i];
 				ctx.save();
-
-				ctx.translate(px, py);
-				ctx.rotate(angle);
-
-				// Draw centered at (0,0) since ctx.textAlign is "center"
-				ctx.fillText(letters[i], 0, 0);
-				ctx.strokeText(letters[i], 0, 0);
-
+				ctx.translate(letObj.x, letObj.y);
+				ctx.rotate(letObj.angle);
+				ctx.fillText(letObj.char, 0, 0);
+				ctx.strokeText(letObj.char, 0, 0);
 				ctx.restore();
-			}
-			if(DEBUG.panel){
-				debugPanel.innerHTML += `
-					<b>${text}</b><br>
-					pts: ${label.provCount}<br>
-					tension: ${label.tension !== undefined ? label.tension.toFixed(2) : "N/A"}<br>
-					thickness: ${thickness.toFixed(2)}<br>
-					fontSize: ${fontSize.toFixed(2)}<br>
-					widthLine: ${ctx.lineWidth}<br>
-					scale: ${scale.toFixed(3)}<br>
-					effectiveFont: ${(fontSize * scale).toFixed(2)}<br>
-					len: ${len.toFixed(2)}<br>
-					usableLen: ${usableLen.toFixed(2)}<br>
-					textWidth: ${baseTotal.toFixed(2)}<br>
-					<br>
-				`;
 			}
 		}
 	}
 }
+// Convenient hotkey listeners
+window.addEventListener("keydown", (e) => {
+    // Skip if typing in inputs/selects
+    if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT" || e.target.tagName === "TEXTAREA") {
+        return;
+    }
+    
+    const key = e.key.toLowerCase();
+    if (key === "b") {
+        setTool("box");
+    } else if (key === "l") {
+        setTool("lasso");
+    } else if (key === "h") {
+        setTool("pan");
+    } else if (key === "p") {
+        activateColorPickerTool();
+    } else if (key === "e") {
+        setEraser();
+    } else if (key === "c") {
+        clearSelection();
+    } else if (key === "f" || e.key === "Enter") {
+        paintSelection();
+    } else if (key === "s") {
+        selectAllProvincesOfSelectedCountry();
+    } else if (key === "i") {
+        paintInterest();
+    } else if (["1", "2", "3", "4", "5"].includes(key)) {
+        const select = document.getElementById("selLogicMode");
+        if (select) {
+            const modes = ["replace", "add", "subtract", "intersect", "xor"];
+            select.value = modes[parseInt(key) - 1];
+        }
+    }
+});
 </script>
 </body>
 </html>

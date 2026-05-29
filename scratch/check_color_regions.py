@@ -1,53 +1,40 @@
+import json
+import numpy as np
 from PIL import Image
 
-def check_regions():
-    img = Image.open('provinces.png')
-    img_rgba = img.convert('RGBA')
-    width, height = img.size
-    pixels = img_rgba.load()
+idx = Image.open('provinces_index.png').convert('RGB')
+un = Image.open(r'C:\Users\Faaz\Downloads\hoi4_map_ENG_1936_01_01_12_1.png').convert('RGB')
+idx_arr = np.array(idx, dtype=np.uint32)
+un_arr = np.array(un, dtype=np.uint8)
+prov_ids = idx_arr[:,:,0] + idx_arr[:,:,1]*256 + idx_arr[:,:,2]*65536
 
-    target_key = 1661922559
-    target_color = (99, 14, 236, 255)
+meta = json.load(open('provinces_meta.json'))
 
-    # Find all pixels of target_key
-    target_pixels = set()
-    for y in range(height):
-        for x in range(width):
-            r, g, b, a = pixels[x, y]
-            key = ((r << 24) | (g << 16) | (b << 8) | a) & 0xffffffff
-            if key == target_key:
-                target_pixels.add((x, y))
+target_colors = {
+    (204, 95, 27): "CHI/IND",
+    (206, 17, 38): "Red (SHX/PRC/MLW?)",
+    (120, 219, 240): "Teal/Blue (GXC/XSM?)",
+    (74, 114, 185): "Dark Blue (QAT?)",
+    (61, 83, 114): "Greyish Blue (PAK/CHI?)",
+    (165, 120, 36): "Brownish Yellow (SAU/YUN?)",
+    (230, 100, 0): "Orange (VIN/YUN?)",
+    (82, 123, 180): "Blue (LAO/XSM?)",
+    (0, 98, 51): "Dark Green (SIK/IRQ?)"
+}
 
-    print(f"Total pixels of color {target_color}: {len(target_pixels)}")
-
-    # Run BFS to find connected components
-    visited = set()
-    components = []
-
-    for px, py in target_pixels:
-        if (px, py) in visited:
-            continue
-        # New component
-        comp = []
-        queue = [(px, py)]
-        visited.add((px, py))
-        while queue:
-            cx, cy = queue.pop(0)
-            comp.append((cx, cy))
-            for dx, dy in [(-1,0), (1,0), (0,-1), (0,1)]:
-                nx, ny = cx + dx, cy + dy
-                if (nx, ny) in target_pixels and (nx, ny) not in visited:
-                    visited.add((nx, ny))
-                    queue.append((nx, ny))
-        components.append(comp)
-
-    print(f"Found {len(components)} connected components of this color:")
-    for i, comp in enumerate(components):
-        min_x = min(p[0] for p in comp)
-        max_x = max(p[0] for p in comp)
-        min_y = min(p[1] for p in comp)
-        max_y = max(p[1] for p in comp)
-        print(f"  Component {i}: size={len(comp)}, bounding box X:[{min_x}, {max_x}], Y:[{min_y}, {max_y}]")
-
-if __name__ == '__main__':
-    check_regions()
+for color, label in target_colors.items():
+    pids = []
+    coords = []
+    for pid_str, c in meta['centers'].items():
+        pid = int(pid_str)
+        if not c.get('is_water') and 3000 < c['x'] < 4500 and 700 < c['y'] < 1400:
+            mask = (prov_ids == pid)
+            if mask.any():
+                avg_col = un_arr[mask][0]
+                if np.linalg.norm(avg_col - color) < 15:
+                    pids.append(pid)
+                    coords.append((c['x'], c['y']))
+    if coords:
+        xs = [c[0] for c in coords]
+        ys = [c[1] for c in coords]
+        print(f"Color {color} ({label}): {len(pids)} provinces, centroid: ({np.mean(xs):.1f}, {np.mean(ys):.1f})")

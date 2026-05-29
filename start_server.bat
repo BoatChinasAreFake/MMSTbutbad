@@ -8,7 +8,7 @@ for /f "tokens=5" %%a in ('netstat -aon ^| findstr ":8000" ^| findstr "LISTENING
 )
 
 :: Start python server invisibly using PowerShell
-start "" powershell -WindowStyle Hidden -Command "python -m http.server 8000"
+start "" powershell -WindowStyle Hidden -Command "python server.py"
 
 :: Wait 1 second to make sure the server is up before the browser opens
 ping 127.0.0.1 -n 2 >nul
