@@ -223,12 +223,97 @@
         </div>
 
         <div style="display: flex; align-items: center; gap: 8px;">
+            <label style="flex-shrink: 0; width: 60px; font-size: 11px;">V-Shift:</label>
+            <input type="range" id="labelOffsetSlider" min="-100" max="100" value="0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleLabelOffsetChange(this.value)">
+            <span id="labelOffsetDisp" style="font-family: monospace; font-size: 11px; background: rgba(0, 123, 255, 0.2); padding: 2px 4px; border-radius: 4px; width: 24px; text-align: center;">0</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <label style="flex-shrink: 0; width: 60px; font-size: 11px;">H-Shift:</label>
+            <input type="range" id="labelXOffsetSlider" min="-150" max="150" value="0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleLabelXOffsetChange(this.value)">
+            <span id="labelXOffsetDisp" style="font-family: monospace; font-size: 11px; background: rgba(0, 123, 255, 0.2); padding: 2px 4px; border-radius: 4px; width: 24px; text-align: center;">0</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <label style="flex-shrink: 0; width: 60px; font-size: 11px;">Arc-Shift:</label>
+            <input type="range" id="labelArcShiftSlider" min="-150" max="150" value="0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleLabelArcShiftChange(this.value)">
+            <span id="labelArcShiftDisp" style="font-family: monospace; font-size: 11px; background: rgba(0, 123, 255, 0.2); padding: 2px 4px; border-radius: 4px; width: 24px; text-align: center;">0</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <label style="flex-shrink: 0; width: 60px; font-size: 11px;">Curvature:</label>
+            <input type="range" id="curvatureScaleSlider" min="-2.0" max="2.0" step="0.1" value="1.0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleCurvatureScaleChange(this.value)">
+            <span id="curvatureScaleDisp" style="font-family: monospace; font-size: 11px; background: rgba(0, 123, 255, 0.2); padding: 2px 4px; border-radius: 4px; width: 24px; text-align: center;">1.0</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <label style="flex-shrink: 0; width: 60px; font-size: 11px;">Rotation:</label>
+            <input type="range" id="labelRotationSlider" min="-180" max="180" step="1" value="0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleLabelRotationChange(this.value)">
+            <span id="labelRotationDisp" style="font-family: monospace; font-size: 11px; background: rgba(0, 123, 255, 0.2); padding: 2px 4px; border-radius: 4px; width: 24px; text-align: center;">0</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <label style="flex-shrink: 0; width: 60px; font-size: 11px;">Font Size:</label>
+            <input type="range" id="fontSizeScaleSlider" min="0.2" max="2.5" step="0.05" value="1.0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleFontSizeScaleChange(this.value)">
+            <span id="fontSizeScaleDisp" style="font-family: monospace; font-size: 11px; background: rgba(0, 123, 255, 0.2); padding: 2px 4px; border-radius: 4px; width: 24px; text-align: center;">1.0</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <label style="flex-shrink: 0; width: 60px; font-size: 11px;">Stretching:</label>
+            <input type="range" id="labelStretchSlider" min="0.2" max="3.0" step="0.1" value="1.0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleLabelStretchChange(this.value)">
+            <span id="labelStretchDisp" style="font-family: monospace; font-size: 11px; background: rgba(0, 123, 255, 0.2); padding: 2px 4px; border-radius: 4px; width: 24px; text-align: center;">1.0</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
             <label style="flex-shrink: 0; width: 60px;">Recolour:</label>
             <input type="color" id="editCountryColor" style="width: 40px; height: 22px; border: none; padding: 0; background: none; cursor: pointer;" oninput="handleRecolourFromPicker(this.value)">
             <button onclick="activateColorPickerTool()" id="btnColorPickerTool" style="flex: 1; padding: 4px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; cursor: pointer; font-size: 11px; transition: all 0.2s ease;">
                 Pick from Map (P)
             </button>
         </div>
+
+        <div style="display: flex; gap: 4px; margin-top: 4px;">
+            <button onclick="saveWorldPreset()" style="flex: 1; padding: 5px; background: #007bff; color: white; border: none; font-weight: bold; border-radius: 4px; cursor: pointer; font-size: 11px; transition: all 0.2s ease;">
+                Save Presets (Ctrl+S)
+            </button>
+        </div>
+    </div>
+
+    <!-- Adjacency Panel -->
+    <div id="adjacencyPanel" style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #333; display: flex; flex-direction: column; gap: 6px; font-family: sans-serif; font-size: 12px; color: white;">
+        <div style="font-weight: bold; color: #00bfff; display: flex; align-items: center; justify-content: space-between;">
+            <span>Straits & Adjacencies</span>
+            <span id="selectedStraitsCount" style="font-family: monospace; font-size: 11px; background: rgba(0, 191, 255, 0.2); padding: 2px 6px; border-radius: 4px;">0 total</span>
+        </div>
+        
+        <div style="display: flex; gap: 4px; margin-top: 2px;">
+            <button id="btnToggleStraits" onclick="toggleStraits()" style="flex: 1; background: rgba(255,255,255,0.05); color: #ccc; border: 1px solid rgba(255,255,255,0.1); padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
+                Hide Straits
+            </button>
+            <button onclick="saveStraits(true)" style="flex: 1; background: #00bfff; color: black; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
+                Save Straits
+            </button>
+        </div>
+        
+        <div id="straitCreateControls" style="display: none; flex-direction: column; gap: 4px; background: rgba(255,255,255,0.03); padding: 6px; border-radius: 4px; border: 1px dashed rgba(255,255,255,0.1);">
+            <div style="font-weight: bold; font-size: 11px; color: #aaa; margin-bottom: 2px;">Create Strait (2 selected)</div>
+            <div style="display: flex; gap: 4px;">
+                <select id="straitType" style="flex: 1; background: #222; border: 1px solid #444; color: white; padding: 3px; border-radius: 3px; font-size: 11px;">
+                    <option value="sea">Strait (Sea)</option>
+                    <option value="canal">Canal</option>
+                    <option value="land">Land Link</option>
+                </select>
+                <button onclick="addStrait()" style="background: #00bfff; color: black; font-weight: bold; border: none; padding: 4px 8px; border-radius: 3px; cursor: pointer; font-size: 11px;">Add</button>
+            </div>
+        </div>
+
+        <div id="straitList" style="display: flex; flex-direction: column; gap: 4px;">
+            <div style="font-style: italic; color: #666;">Select 1 province to view, or 2 to create.</div>
+        </div>
+
+        <button onclick="exportAdjacenciesCSV()" style="background: rgba(255,255,255,0.05); color: #ccc; border: 1px solid rgba(255,255,255,0.1); padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
+            Export CSV
+        </button>
     </div>
 
     <div id="debugControls" style="
@@ -390,8 +475,12 @@ let startOffsetY = 0;
 let ownership = {};
 let interests = {}; // countryTag -> { provinceId: level (1-10) }
 let activeMapmode = "political"; // "political" or "interest"
+let straits = [];
+let straitAdj = {};
+let showStraits = true;
 let provinceKeys = [];
 const labelCache = {};
+const labelGenerationQueue = new Set();
 const provinceCenters = {};
 const provinceNeighbors = {};
 const dirtyCountries = new Set();
@@ -404,6 +493,18 @@ let COLORS = {
     red: [255,0,0],
     blue: [0,120,255],
     green: [0,200,0]
+};
+
+const BASE_COUNTRY_PRESETS = {
+    "018": {
+        "labelOffset": 4,
+        "labelXOffset": 0,
+        "labelArcShift": 0,
+        "curvatureScale": 1,
+        "fontSizeScale": 1,
+        "labelRotation": 0,
+        "labelStretch": 1
+    }
 };
 
 let countries = {
@@ -465,6 +566,55 @@ function selectCountry(tag) {
     const editNameInput = document.getElementById("editCountryName");
     if (editNameInput) {
         editNameInput.value = countries[tag] ? countries[tag].name : "";
+    }
+    const editOffsetSlider = document.getElementById("labelOffsetSlider");
+    const editOffsetDisp = document.getElementById("labelOffsetDisp");
+    if (editOffsetSlider && editOffsetDisp) {
+        const offset = (countries[tag] && countries[tag].labelOffset) || 0;
+        editOffsetSlider.value = offset;
+        editOffsetDisp.textContent = offset;
+    }
+    const editXOffsetSlider = document.getElementById("labelXOffsetSlider");
+    const editXOffsetDisp = document.getElementById("labelXOffsetDisp");
+    if (editXOffsetSlider && editXOffsetDisp) {
+        const offset = (countries[tag] && countries[tag].labelXOffset) || 0;
+        editXOffsetSlider.value = offset;
+        editXOffsetDisp.textContent = offset;
+    }
+    const editArcShiftSlider = document.getElementById("labelArcShiftSlider");
+    const editArcShiftDisp = document.getElementById("labelArcShiftDisp");
+    if (editArcShiftSlider && editArcShiftDisp) {
+        const offset = (countries[tag] && countries[tag].labelArcShift) || 0;
+        editArcShiftSlider.value = offset;
+        editArcShiftDisp.textContent = offset;
+    }
+    const editCurveSlider = document.getElementById("curvatureScaleSlider");
+    const editCurveDisp = document.getElementById("curvatureScaleDisp");
+    if (editCurveSlider && editCurveDisp) {
+        const val = (countries[tag] && countries[tag].curvatureScale !== undefined) ? countries[tag].curvatureScale : 1.0;
+        editCurveSlider.value = val;
+        editCurveDisp.textContent = val.toFixed(1);
+    }
+    const editRotSlider = document.getElementById("labelRotationSlider");
+    const editRotDisp = document.getElementById("labelRotationDisp");
+    if (editRotSlider && editRotDisp) {
+        const val = (countries[tag] && countries[tag].labelRotation !== undefined) ? countries[tag].labelRotation : 0;
+        editRotSlider.value = val;
+        editRotDisp.textContent = val;
+    }
+    const editSizeSlider = document.getElementById("fontSizeScaleSlider");
+    const editSizeDisp = document.getElementById("fontSizeScaleDisp");
+    if (editSizeSlider && editSizeDisp) {
+        const val = (countries[tag] && countries[tag].fontSizeScale !== undefined) ? countries[tag].fontSizeScale : 1.0;
+        editSizeSlider.value = val;
+        editSizeDisp.textContent = val.toFixed(2);
+    }
+    const editStretchSlider = document.getElementById("labelStretchSlider");
+    const editStretchDisp = document.getElementById("labelStretchDisp");
+    if (editStretchSlider && editStretchDisp) {
+        const val = (countries[tag] && countries[tag].labelStretch !== undefined) ? countries[tag].labelStretch : 1.0;
+        editStretchSlider.value = val;
+        editStretchDisp.textContent = val.toFixed(1);
     }
     const editColorInput = document.getElementById("editCountryColor");
     if (editColorInput && countries[tag]) {
@@ -573,6 +723,12 @@ function setEraser() {
 		item.style.background = "#222";
 	});
 }
+function clearLabelCache() {
+	for (const k in labelCache) {
+		delete labelCache[k];
+	}
+	labelGenerationQueue.clear();
+}
 function resetMap(){
 
     ownership = {};
@@ -585,9 +741,7 @@ function resetMap(){
 
     dirtyCountries.clear();
 
-    for(const k in labelCache){
-        delete labelCache[k];
-    }
+	clearLabelCache();
 
     if (lutData) {
         for (let i = 0; i < lutWidth * lutHeight; i++) {
@@ -648,9 +802,7 @@ function renameCountry(color, newName) {
     if (!countries[color]) return;
     countries[color].name = newName;
     dirtyCountries.add(color);
-    for (const k in labelCache) {
-        delete labelCache[k];
-    }
+    clearLabelCache();
     requestDraw();
 }
 function setCountryTag(color, tag) {
@@ -912,7 +1064,18 @@ function initWebGL() {
 }
 
 
+function buildStraitAdjacency() {
+	straitAdj = {};
+	for (const s of straits) {
+		if (!straitAdj[s.from]) straitAdj[s.from] = new Set();
+		if (!straitAdj[s.to]) straitAdj[s.to] = new Set();
+		straitAdj[s.from].add(s.to);
+		straitAdj[s.to].add(s.from);
+	}
+}
+
 function initApp() {
+    buildStraitAdjacency();
     definitions = meta.definitions || {};
     for (const idStr in definitions) {
         const d = definitions[idStr];
@@ -969,12 +1132,20 @@ function initApp() {
         for (const k in countries) delete countries[k];
         for (const k in COLORS) delete COLORS[k];
         
-        for (const tag in presetData.countries) {
+                                                        for (const tag in presetData.countries) {
             const c = presetData.countries[tag];
+            const base = BASE_COUNTRY_PRESETS[tag] || {};
             countries[tag] = {
                 tag: tag,
                 name: c.name,
                 color: c.color,
+                labelOffset: c.labelOffset !== undefined ? c.labelOffset : (base.labelOffset || 0),
+                labelXOffset: c.labelXOffset !== undefined ? c.labelXOffset : (base.labelXOffset || 0),
+                labelArcShift: c.labelArcShift !== undefined ? c.labelArcShift : (base.labelArcShift || 0),
+                curvatureScale: c.curvatureScale !== undefined ? c.curvatureScale : (base.curvatureScale !== undefined ? base.curvatureScale : 1.0),
+                fontSizeScale: c.fontSizeScale !== undefined ? c.fontSizeScale : (base.fontSizeScale !== undefined ? base.fontSizeScale : 1.0),
+                labelRotation: c.labelRotation !== undefined ? c.labelRotation : (base.labelRotation !== undefined ? base.labelRotation : 0),
+                labelStretch: c.labelStretch !== undefined ? c.labelStretch : (base.labelStretch !== undefined ? base.labelStretch : 1.0),
                 provinces: new Set()
             };
             COLORS[tag] = c.color;
@@ -1051,6 +1222,14 @@ Promise.all([
         })
         .catch(() => {
             presetData = null;
+        }),
+    fetch("straits.json?v=" + Date.now())
+        .then(r => r.ok ? r.json() : [])
+        .then(data => {
+            straits = data;
+        })
+        .catch(() => {
+            straits = [];
         })
     ]).then(() => {
     initApp();
@@ -1095,6 +1274,171 @@ function clearSelection() {
 
 function updateSelectionStatus() {
     document.getElementById("selectionStatus").textContent = `Selected: ${selectedProvinces.size} provinces`;
+    updateAdjacencyPanel();
+}
+
+function updateAdjacencyPanel() {
+    const countEl = document.getElementById("selectedStraitsCount");
+    if (countEl) countEl.innerText = `${straits.length} total`;
+    
+    const createCtrl = document.getElementById("straitCreateControls");
+    const listEl = document.getElementById("straitList");
+    if (!createCtrl || !listEl) return;
+    
+    if (selectedProvinces.size === 2) {
+        createCtrl.style.display = "flex";
+    } else {
+        createCtrl.style.display = "none";
+    }
+    
+    listEl.innerHTML = "";
+    if (selectedProvinces.size === 1) {
+        const selectedId = Array.from(selectedProvinces)[0];
+        const matches = straits.map((s, idx) => ({ ...s, idx })).filter(s => s.from === selectedId || s.to === selectedId);
+        
+        if (matches.length > 0) {
+            for (const m of matches) {
+                const other = m.from === selectedId ? m.to : m.from;
+                const item = document.createElement("div");
+                item.style.display = "flex";
+                item.style.alignItems = "center";
+                item.style.justifyContent = "space-between";
+                item.style.background = "rgba(255,255,255,0.05)";
+                item.style.padding = "4px 6px";
+                item.style.borderRadius = "3px";
+                item.innerHTML = `
+                    <span>To ${other} (${m.type})</span>
+                    <button onclick="deleteStrait(${m.idx})" style="background:#dc3545; color:white; border:none; padding:2px 6px; border-radius:3px; cursor:pointer; font-size:10px;">Del</button>
+                `;
+                listEl.appendChild(item);
+            }
+        } else {
+            listEl.innerHTML = `<div style="font-style:italic; color:#aaa;">No adjacencies for this province.</div>`;
+        }
+    } else if (selectedProvinces.size !== 2) {
+        listEl.innerHTML = `<div style="font-style:italic; color:#666;">Select 1 province to view, or 2 to create.</div>`;
+    }
+}
+
+function saveStraits(showNotification = false) {
+    fetch("/saveStraits", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(straits)
+    })
+    .then(r => r.json())
+    .then(d => {
+        if (d.status === "success") {
+            console.log("Straits saved successfully.");
+            if (showNotification) {
+                alert("Straits saved successfully to straits.json!");
+            }
+        } else {
+            alert("Error saving straits: " + d.error);
+        }
+    })
+    .catch(e => console.error("Error saving straits:", e));
+}
+
+function toggleStraits() {
+    showStraits = !showStraits;
+    const btn = document.getElementById("btnToggleStraits");
+    if (btn) {
+        btn.innerText = showStraits ? "Hide Straits" : "Show Straits";
+        btn.style.background = showStraits ? "rgba(255,255,255,0.05)" : "#007bff";
+        btn.style.color = showStraits ? "#ccc" : "white";
+    }
+    draw();
+}
+
+function addStrait() {
+    if (selectedProvinces.size !== 2) return;
+    const arr = Array.from(selectedProvinces);
+    const from = arr[0];
+    const to = arr[1];
+    const type = document.getElementById("straitType").value;
+    
+    const exists = straits.some(s => (s.from === from && s.to === to) || (s.from === to && s.to === from));
+    if (exists) {
+        alert("An adjacency already exists between these provinces.");
+        return;
+    }
+    
+    straits.push({ from, to, type, through: 0, name: "" });
+    buildStraitAdjacency();
+    saveStraits();
+    updateAdjacencyPanel();
+    draw();
+}
+
+function deleteStrait(idx) {
+    straits.splice(idx, 1);
+    buildStraitAdjacency();
+    saveStraits();
+    updateAdjacencyPanel();
+    draw();
+}
+
+function exportAdjacenciesCSV() {
+    let csv = "From;To;Type;Through;start_x;start_y;stop_x;stop_y;Comment\n";
+    for (const s of straits) {
+        const p1 = provinceCenters[s.from];
+        const p2 = provinceCenters[s.to];
+        const x1 = p1 ? Math.round(p1.x) : -1;
+        const y1 = p1 ? Math.round(p1.y) : -1;
+        const x2 = p2 ? Math.round(p2.x) : -1;
+        const y2 = p2 ? Math.round(p2.y) : -1;
+        csv += `${s.from};${s.to};${s.type};${s.through};${x1};${y1};${x2};${y2};${s.name || ""}\n`;
+    }
+    const blob = new Blob([csv], { type: "text/csv" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "adjacencies.csv";
+    link.click();
+}
+
+function drawStraits() {
+    if (!showStraits) return;
+    if (!straits || straits.length === 0) return;
+    overlayCtx.save();
+    const viewW = canvas.width / zoom;
+    const viewH = canvas.height / zoom;
+    
+    for (const strait of straits) {
+        const p1 = provinceCenters[strait.from];
+        const p2 = provinceCenters[strait.to];
+        if (!p1 || !p2) continue;
+        
+        const p1Visible = p1.x >= offsetX && p1.x <= offsetX + viewW && p1.y >= offsetY && p1.y <= offsetY + viewH;
+        const p2Visible = p2.x >= offsetX && p2.x <= offsetX + viewW && p2.y >= offsetY && p2.y <= offsetY + viewH;
+        if (!p1Visible && !p2Visible) continue;
+        
+        if (strait.type === "sea") {
+            overlayCtx.strokeStyle = "rgba(0, 191, 255, 0.85)";
+            overlayCtx.lineWidth = 2.0 / zoom;
+            overlayCtx.setLineDash([4 / zoom, 3 / zoom]);
+        } else if (strait.type === "canal") {
+            overlayCtx.strokeStyle = "rgba(255, 215, 0, 0.85)";
+            overlayCtx.lineWidth = 2.5 / zoom;
+            overlayCtx.setLineDash([6 / zoom, 2 / zoom]);
+        } else {
+            overlayCtx.strokeStyle = "rgba(255, 99, 71, 0.85)";
+            overlayCtx.lineWidth = 2.0 / zoom;
+            overlayCtx.setLineDash([]);
+        }
+        
+        overlayCtx.beginPath();
+        overlayCtx.moveTo(p1.x, p1.y);
+        overlayCtx.lineTo(p2.x, p2.y);
+        overlayCtx.stroke();
+        
+        overlayCtx.fillStyle = overlayCtx.strokeStyle;
+        overlayCtx.beginPath();
+        overlayCtx.arc(p1.x, p1.y, 3 / zoom, 0, 2 * Math.PI);
+        overlayCtx.arc(p2.x, p2.y, 3 / zoom, 0, 2 * Math.PI);
+        overlayCtx.fill();
+    }
+    overlayCtx.restore();
 }
 
 function applySelectionLogic(newSelection) {
@@ -1187,9 +1531,7 @@ function toggleSelectedWater() {
     }
     
     // Clear cache to recalculate labels
-    for (const k in labelCache) {
-        delete labelCache[k];
-    }
+    clearLabelCache();
     
     requestDraw();
 }
@@ -1224,9 +1566,7 @@ function paintSelection() {
     selectedProvinces.clear();
     updateSelectionStatus();
     updateAllLutAlphas();
-    for (const k in labelCache) {
-        delete labelCache[k];
-    }
+    clearLabelCache();
     draw();
 }
 
@@ -1336,9 +1676,7 @@ function saveProvinceDetails() {
     }
     
     // Clear cache to recalculate labels (as straight/curvy might change if type changes water status)
-    for (const k in labelCache) {
-        delete labelCache[k];
-    }
+    clearLabelCache();
     
     draw();
 }
@@ -1362,7 +1700,14 @@ function getWorldPresetData() {
     for (const tag in countries) {
         data.countries[tag] = {
             name: countries[tag].name,
-            color: countries[tag].color
+            color: countries[tag].color,
+            labelOffset: countries[tag].labelOffset || 0,
+            labelXOffset: countries[tag].labelXOffset || 0,
+            labelArcShift: countries[tag].labelArcShift || 0,
+            curvatureScale: countries[tag].curvatureScale !== undefined ? countries[tag].curvatureScale : 1.0,
+            fontSizeScale: countries[tag].fontSizeScale !== undefined ? countries[tag].fontSizeScale : 1.0,
+            labelRotation: countries[tag].labelRotation !== undefined ? countries[tag].labelRotation : 0,
+            labelStretch: countries[tag].labelStretch !== undefined ? countries[tag].labelStretch : 1.0
         };
     }
     for (const provId in ownership) {
@@ -1504,6 +1849,76 @@ function handleRenameFromInput(val) {
     if (!selectedColor || !val.trim()) return;
     renameCountry(selectedColor, val.trim());
     updateCountryList();
+}
+
+function handleLabelOffsetChange(val) {
+    if (!selectedColor || !countries[selectedColor]) return;
+    const offset = parseFloat(val);
+    countries[selectedColor].labelOffset = offset;
+    const disp = document.getElementById("labelOffsetDisp");
+    if (disp) disp.textContent = val;
+    dirtyCountries.add(selectedColor);
+    requestDraw();
+}
+
+function handleLabelXOffsetChange(val) {
+    if (!selectedColor || !countries[selectedColor]) return;
+    const offset = parseFloat(val);
+    countries[selectedColor].labelXOffset = offset;
+    const disp = document.getElementById("labelXOffsetDisp");
+    if (disp) disp.textContent = val;
+    dirtyCountries.add(selectedColor);
+    requestDraw();
+}
+
+function handleLabelArcShiftChange(val) {
+    if (!selectedColor || !countries[selectedColor]) return;
+    const offset = parseFloat(val);
+    countries[selectedColor].labelArcShift = offset;
+    const disp = document.getElementById("labelArcShiftDisp");
+    if (disp) disp.textContent = val;
+    dirtyCountries.add(selectedColor);
+    requestDraw();
+}
+
+function handleCurvatureScaleChange(val) {
+    if (!selectedColor || !countries[selectedColor]) return;
+    const scale = parseFloat(val);
+    countries[selectedColor].curvatureScale = scale;
+    const disp = document.getElementById("curvatureScaleDisp");
+    if (disp) disp.textContent = scale.toFixed(1);
+    dirtyCountries.add(selectedColor);
+    requestDraw();
+}
+
+function handleFontSizeScaleChange(val) {
+    if (!selectedColor || !countries[selectedColor]) return;
+    const scale = parseFloat(val);
+    countries[selectedColor].fontSizeScale = scale;
+    const disp = document.getElementById("fontSizeScaleDisp");
+    if (disp) disp.textContent = scale.toFixed(2);
+    dirtyCountries.add(selectedColor);
+    requestDraw();
+}
+
+function handleLabelRotationChange(val) {
+    if (!selectedColor || !countries[selectedColor]) return;
+    const rot = parseFloat(val);
+    countries[selectedColor].labelRotation = rot;
+    const disp = document.getElementById("labelRotationDisp");
+    if (disp) disp.textContent = val;
+    dirtyCountries.add(selectedColor);
+    requestDraw();
+}
+
+function handleLabelStretchChange(val) {
+    if (!selectedColor || !countries[selectedColor]) return;
+    const stretch = parseFloat(val);
+    countries[selectedColor].labelStretch = stretch;
+    const disp = document.getElementById("labelStretchDisp");
+    if (disp) disp.textContent = stretch.toFixed(1);
+    dirtyCountries.add(selectedColor);
+    requestDraw();
 }
 
 function handleRecolourFromPicker(hex) {
@@ -1896,6 +2311,7 @@ function performDraw() {
         overlayCtx.restore();
     }
 
+    drawStraits();
     drawLabels();
     dirtyCountries.clear();
 
@@ -2018,380 +2434,410 @@ function drawLabels(){
 		}
 	}
 	
-	function computeSpineForComponent(component, countryColor){
+	function computeSpineForComponent(component, countryColor, countryName, curvatureScale = 1.0){
 		if (component.length < 2) {
-			return { spine: [], path: [], controlPoints: [] };
+			return { spine: [], path: [], controlPoints: [], tension: 0 };
 		}
 
-		const compSet = new Set(component);
-
-		// Calculate depth (distance to boundary) for each province in the component
-		const depth = {};
-		const depthQueue = [];
-
-		for (const id of component) {
-			let isBoundary = false;
-			const neighbors = provinceNeighbors[id] || [];
-			if (neighbors.size < 4) {
-				isBoundary = true;
-			}
-			for (const n of neighbors) {
-				if (!compSet.has(n)) {
-					isBoundary = true;
-					break;
-				}
-			}
-			if (isBoundary) {
-				depth[id] = 1;
-				depthQueue.push(id);
-			}
-		}
-
-		// Fallback
-		if (depthQueue.length === 0 && component.length > 0) {
-			depth[component[0]] = 1;
-			depthQueue.push(component[0]);
-		}
-
-		let depthQueueHead = 0;
-		while (depthQueueHead < depthQueue.length) {
-			const curr = depthQueue[depthQueueHead++];
-			const currDepth = depth[curr];
-
-			for (const n of provinceNeighbors[curr] || []) {
-				if (compSet.has(n) && depth[n] === undefined) {
-					depth[n] = currDepth + 1;
-					depthQueue.push(n);
-				}
-			}
-		}
-
-		// Find max depth
-		let maxD = 1;
-		for (const id of component) {
-			if (depth[id] > maxD) maxD = depth[id];
-		}
-
-		function getFurthestNode(startId) {
-			const dist = {};
-			for (const id of component) dist[id] = Infinity;
-			dist[startId] = 0;
-			
-			const pq = new MinHeap();
-			pq.push([startId, 0]);
-
-			while (!pq.isEmpty()) {
-				const [curr, currCost] = pq.pop();
-
-				if (currCost > dist[curr]) continue;
-
-				const currCenter = provinceCenters[curr];
-				if (!currCenter) continue;
-
-				for (const n of provinceNeighbors[curr] || []) {
-					if (!compSet.has(n)) continue;
-
-					const nCenter = provinceCenters[n];
-					if (!nCenter) continue;
-
-					const stepDist = Math.hypot(currCenter.x - nCenter.x, currCenter.y - nCenter.y);
-					const nextCost = currCost + stepDist;
-
-					if (nextCost < dist[n]) {
-						dist[n] = nextCost;
-						pq.push([n, nextCost]);
-					}
-				}
-			}
-
-			let furthestId = startId;
-			let maxDist = -1;
-			for (const id of component) {
-				if (dist[id] !== Infinity && dist[id] > maxDist) {
-					maxDist = dist[id];
-					furthestId = id;
-				}
-			}
-			return { id: furthestId, dist: maxDist };
-		}
-
-		// 1. Geodesic extremities using 2-pass Dijkstra
-		const res1 = getFurthestNode(component[0]);
-		const res2 = getFurthestNode(res1.id);
-		const A_geo = res1.id;
-		const B_geo = res2.id;
-		const S_geo = res2.dist;
-
-		// 2. Optimal straight line search
-		let A_straight = component[0];
-		let B_straight = component[0];
-		let bestStraightScore = -Infinity;
-		let L_straight = 0;
-		let bestOutsideCount = 0;
-
-		function isInside(x, y) {
-			const key = getProvinceIdAt(x, y);
-			return compSet.has(key);
-		}
-
-		// Subsample candidate list when there are many provinces to avoid O(N^2) complexity
-		const candidates = [];
-		const maxCandidates = 60;
-		if (component.length <= maxCandidates) {
-			for (let i = 0; i < component.length; i++) candidates.push(component[i]);
-		} else {
-			const step = Math.ceil(component.length / maxCandidates);
-			for (let i = 0; i < component.length; i += step) {
-				candidates.push(component[i]);
-			}
-		}
-
-		for (let i = 0; i < candidates.length; i++) {
-			for (let j = i + 1; j < candidates.length; j++) {
-				const idA = candidates[i];
-				const idB = candidates[j];
-				const pA = provinceCenters[idA];
-				const pB = provinceCenters[idB];
-				if (!pA || !pB) continue;
-
-				const dist = Math.hypot(pB.x - pA.x, pB.y - pA.y);
-				// Critical Optimization: Skip candidate check if distance is less than current best score
-				if (dist <= bestStraightScore) continue;
-
-				// Sample 20 points along the straight line to accurately detect water crossings
-				let outsideCount = 0;
-				for (let k = 1; k <= 20; k++) {
-					const t = k / 21;
-					const sx = pA.x * (1 - t) + pB.x * t;
-					const sy = pA.y * (1 - t) + pB.y * t;
-					if (!isInside(sx, sy)) {
-						outsideCount++;
-					}
-				}
-
-				const score = dist - 100 * outsideCount;
-				if (score > bestStraightScore) {
-					bestStraightScore = score;
-					A_straight = idA;
-					B_straight = idB;
-					L_straight = dist;
-					bestOutsideCount = outsideCount;
-				}
-			}
-		}
-
-		// 3. Classification using Asymmetry relative to the Optimal Straight Line
-		const pA = provinceCenters[A_straight];
-		const pB = provinceCenters[B_straight];
-		const A_line = pB.y - pA.y;
-		const B_line = -(pB.x - pA.x);
-		const C_line = pB.x * pA.y - pB.y * pA.x;
-
-		let leftArea = 0;
-		let rightArea = 0;
+		let sumX = 0, sumY = 0, totalArea = 0;
 		for (const id of component) {
 			const p = provinceCenters[id];
-			if (!p) continue;
-			const val = A_line * p.x + B_line * p.y + C_line;
-			if (val > 0) {
-				leftArea += p.count;
-			} else {
-				rightArea += p.count;
+			if (p) {
+				sumX += p.x * p.count;
+				sumY += p.y * p.count;
+				totalArea += p.count;
 			}
 		}
-		const totalArea = leftArea + rightArea;
-		const asymmetry = totalArea > 0 ? Math.abs(leftArea - rightArea) / totalArea : 0;
+		const meanX = sumX / (totalArea || 1);
+		const meanY = sumY / (totalArea || 1);
+		const labelHeightOffset = Math.max(30, Math.min(120, Math.sqrt(totalArea) * 0.55)) * 0.18;
 
-		// Dynamically compute tension using asymmetry:
-		let tension = 0.0;
-		const dy_line = Math.abs(pB.y - pA.y);
-		const dx_line = Math.abs(pB.x - pA.x);
-		if (bestOutsideCount === 0 && asymmetry >= 0.10 && dy_line <= dx_line) {
-			tension = Math.min(0.22, (asymmetry - 0.10) * 2.0);
+		// Helper to compute distance from a point to a line segment
+		function distToSegment(px, py, ax, ay, bx, by) {
+			const dx = bx - ax;
+			const dy = by - ay;
+			const l2 = dx * dx + dy * dy;
+			if (l2 === 0) return Math.hypot(px - ax, py - ay);
+			let t = ((px - ax) * dx + (py - ay) * dy) / l2;
+			t = Math.max(0, Math.min(1, t));
+			return Math.hypot(px - (ax + t * dx), py - (ay + t * dy));
 		}
 
-		let A = A_straight;
-		let B = B_straight;
-
-		// Re-order A and B to ensure natural reading: South-to-North / Left-to-Right
-		const centerA = provinceCenters[A];
-		const centerB = provinceCenters[B];
-		if (centerA && centerB) {
-			const dx = Math.abs(centerA.x - centerB.x);
-			const dy = Math.abs(centerA.y - centerB.y);
-			if (dx > dy) {
-				if (centerA.x > centerB.x) {
-					const temp = A; A = B; B = temp;
-				}
-			} else {
-				if (centerA.y < centerB.y) {
-					const temp = A; A = B; B = temp;
-				}
-			}
-		}
-
-		// Dijkstra's algorithm to find the depth-weighted path from A to B
-		function dijkstra(start, end) {
-			const dist = {};
-			const prev = {};
-			for (const id of component) {
-				dist[id] = Infinity;
-			}
-			dist[start] = 0;
+		// Helper to classify inland seas (safe water) vs outer seas (open ocean)
+		const waterCache = {};
+		function isWaterSurroundedByOwnLand(waterId) {
+			if (waterCache[waterId] !== undefined) return waterCache[waterId];
 			
-			const pq = new MinHeap();
-			pq.push([start, 0]);
-
-			while (!pq.isEmpty()) {
-				const [curr, currCost] = pq.pop();
-
-				if (curr === end) break;
-				if (currCost > dist[curr]) continue;
-
-				for (const n of provinceNeighbors[curr] || []) {
-					if (!compSet.has(n)) continue;
-
-					// Mild depth cost: 1 + (maxD - depth) * 0.25
-					const moveCost = 1 + (maxD - (depth[n] || 1)) * 0.25;
-					const nextCost = currCost + moveCost;
-
-					if (nextCost < dist[n]) {
-						dist[n] = nextCost;
-						prev[n] = curr;
-						pq.push([n, nextCost]);
+			const visitedWater = new Set([waterId]);
+			const queue = [[waterId, 0]];
+			let queueHead = 0;
+			let foundOwnLand = false;
+			let foundForeignLand = false;
+			
+			while (queueHead < queue.length) {
+				const [curr, dist] = queue[queueHead++];
+				
+				const neighbors = provinceNeighbors[curr] || [];
+				for (const n of neighbors) {
+					const np = provinceCenters[n];
+					if (!np) continue;
+					if (np.isWater) {
+						if (dist < 4 && !visitedWater.has(n)) {
+							visitedWater.add(n);
+							queue.push([n, dist + 1]);
+						}
+					} else {
+						const owner = ownership[n];
+						if (owner === countryColor) {
+							foundOwnLand = true;
+						} else {
+							foundForeignLand = true;
+						}
 					}
 				}
 			}
-
-			const path = [];
-			let cur = end;
-			while (cur !== undefined) {
-				path.push(cur);
-				cur = prev[cur];
-			}
-			path.reverse();
-			return path;
+			
+			const result = foundOwnLand && !foundForeignLand;
+			waterCache[waterId] = result;
+			return result;
 		}
 
-		const pathIds = dijkstra(A, B);
-		const path = [];
-		for (const id of pathIds) {
-			const p = provinceCenters[id];
-			if (p) path.push([p.x, p.y]);
-		}
+		// Helper to evaluate the penalty along a generated Bezier curve from P0 to P3
+		function evaluateBezierPenalty(P0, P3, vx, vy, bend) {
+			const M = [
+				(P0[0] + P3[0]) / 2,
+				(P0[1] + P3[1]) / 2
+			];
+			const ux = -vy;
+			const uy = vx;
+			const pull = 0.30;
+			M[0] += bend * pull * ux;
+			M[1] += bend * pull * uy;
 
-		if (path.length < 2) {
-			return { spine: path, path: path, controlPoints: [], tension };
-		}
+			const P1 = [
+				2 * M[0] - (P0[0] + P3[0]) / 2,
+				2 * M[1] - (P0[1] + P3[1]) / 2
+			];
 
-		const P0 = [...path[0]];
-		const P3 = [...path[path.length - 1]];
+			let penalty = 0;
+			for (let k = 1; k <= 20; k++) {
+				const t = k / 21;
+				const mt = 1 - t;
+				const sx = mt*mt * P0[0] + 2*mt*t * P1[0] + t*t * P3[0];
+				const sy = mt*mt * P0[1] + 2*mt*t * P1[1] + t*t * P3[1];
 
-		if (path.length < 4) {
-			// Linear interpolation (straight line spine)
-			const spine = [];
-			for (let i = 0; i < 80; i++) {
-				const t = i / 79;
-				const x = P0[0] * (1 - t) + P3[0] * t;
-				const y = P0[1] * (1 - t) + P3[1] * t;
-				spine.push([x, y]);
-			}
-			return { spine, path, controlPoints: [], tension };
-		}
+				// Compute local tangent to find perpendicular vector
+				const next_t = (k + 0.1) / 21;
+				const next_mt = 1 - next_t;
+				const nsx = next_mt*next_mt * P0[0] + 2*next_mt*next_t * P1[0] + next_t*next_t * P3[0];
+				const nsy = next_mt*next_mt * P0[1] + 2*next_mt*next_t * P1[1] + next_t*next_t * P3[1];
+				const dx = nsx - sx;
+				const dy = nsy - sy;
+				const lenDir = Math.hypot(dx, dy) || 1;
+				const nx = -dy / lenDir;
+				const ny = dx / lenDir;
 
-		// Calculate cumulative length along the Dijkstra path to find geometric 1/3 and 2/3 points
-		const pathLengths = [0];
-		for (let i = 1; i < path.length; i++) {
-			pathLengths[i] = pathLengths[i - 1] + Math.hypot(path[i][0] - path[i - 1][0], path[i][1] - path[i - 1][1]);
-		}
-		const pathTotalLen = pathLengths[pathLengths.length - 1];
+				// Check center spine, top edge, and bottom edge of text bounding height
+				const samples = [
+					[sx, sy, true],
+					[sx + nx * labelHeightOffset, sy + ny * labelHeightOffset, false],
+					[sx - nx * labelHeightOffset, sy - ny * labelHeightOffset, false]
+				];
 
-		function getPathPointAt(dist) {
-			for (let i = 1; i < pathLengths.length; i++) {
-				if (pathLengths[i] >= dist) {
-					const a = path[i - 1];
-					const b = path[i];
-					const t = (dist - pathLengths[i - 1]) / (pathLengths[i] - pathLengths[i - 1] || 1);
-					return [
-						a[0] * (1 - t) + b[0] * t,
-						a[1] * (1 - t) + b[1] * t
-					];
+				for (const [x, y, isSpine] of samples) {
+					const key = getProvinceIdAt(x, y);
+					if (ownership[key] === countryColor) {
+						continue;
+					}
+
+					const p = provinceCenters[key];
+					if (p) {
+						if (p.isWater) {
+							if (isWaterSurroundedByOwnLand(key)) {
+								penalty += 8; // inland sea / safe water
+							} else {
+								penalty += 30; // outer sea / open ocean
+							}
+						} else {
+							penalty += isSpine ? 80 : 15; // spine penalty is 80, offset penalty is 15
+						}
+					} else {
+						penalty += isSpine ? 80 : 15;
+					}
 				}
 			}
-			return [...path[path.length - 1]];
+			return penalty;
 		}
 
-		const M_dijkstra = getPathPointAt(pathTotalLen * 0.5);
-		const M_straight = [
-			(P0[0] + P3[0]) / 2,
-			(P0[1] + P3[1]) / 2
-		];
+		// Candidate selection for pair search: pick the furthest provinces in 16 directions from the centroid
+		// to guarantee that we test paths running through the true visual tips of the country.
+		const candidatesSet = new Set();
+		let minX_p = component[0], maxX_p = component[0], minY_p = component[0], maxY_p = component[0];
+		let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+		
+		for (const id of component) {
+			const p = provinceCenters[id];
+			if (p) {
+				if (p.x < minX) { minX = p.x; minX_p = id; }
+				if (p.x > maxX) { maxX = p.x; maxX_p = id; }
+				if (p.y < minY) { minY = p.y; minY_p = id; }
+				if (p.y > maxY) { maxY = p.y; maxY_p = id; }
+			}
+		}
+		candidatesSet.add(minX_p);
+		candidatesSet.add(maxX_p);
+		candidatesSet.add(minY_p);
+		candidatesSet.add(maxY_p);
 
-		const M = [
-			(1 - tension) * M_straight[0] + tension * M_dijkstra[0],
-			(1 - tension) * M_straight[1] + tension * M_dijkstra[1]
-		];
-
-		if (tension > 0.0) {
-			// Compute area-weighted centroid of the component to determine the correct bend direction
-			let sumX = 0, sumY = 0, totalPCount = 0;
+		for (let angleIdx = 0; angleIdx < 16; angleIdx++) {
+			const angle = (angleIdx / 16) * Math.PI * 2;
+			const dx = Math.cos(angle);
+			const dy = Math.sin(angle);
+			
+			let bestId = component[0];
+			let maxProj = -Infinity;
+			
 			for (const id of component) {
 				const p = provinceCenters[id];
 				if (p) {
-					sumX += p.x * p.count;
-					sumY += p.y * p.count;
-					totalPCount += p.count;
-				}
-			}
-			const M_centroid = [sumX / (totalPCount || 1), sumY / (totalPCount || 1)];
-
-			// Find bend direction
-			const vx = M_centroid[0] - M_straight[0];
-			const vy = M_centroid[1] - M_straight[1];
-			const v_len = Math.hypot(vx, vy);
-
-			if (v_len > 0.1) {
-				const ux = vx / v_len;
-				const uy = vy / v_len;
-
-				let maxProj = -Infinity;
-				let bestId = component[0];
-
-				for (const id of component) {
-					const p = provinceCenters[id];
-					if (!p) continue;
-					const proj = (p.x - M_straight[0]) * ux + (p.y - M_straight[1]) * uy;
+					const proj = (p.x - meanX) * dx + (p.y - meanY) * dy;
 					if (proj > maxProj) {
 						maxProj = proj;
 						bestId = id;
 					}
 				}
+			}
+			candidatesSet.add(bestId);
+		}
+		
+		const candidates = Array.from(candidatesSet);
 
-				const pC = provinceCenters[bestId];
-				if (pC) {
-					const pull = Math.min(0.5, tension * 1.5);
-					M[0] = (1 - pull) * M_straight[0] + pull * pC.x;
-					M[1] = (1 - pull) * M_straight[1] + pull * pC.y;
-				}
-
-				// Calculate component area and thickness
-				let compArea = 0;
-				for (const id of component) {
-					const center = provinceCenters[id];
-					if (center) compArea += center.count;
-				}
-				const thickness = Math.max(16, Math.min(100, Math.sqrt(compArea) * 0.45));
-
-				// Shift the entire curve in the direction of the bend
-				const shiftDist = thickness * 0.10;
-				const shx = ux * shiftDist;
-				const shy = uy * shiftDist;
-
-				P0[0] += shx; P0[1] += shy;
-				P3[0] += shx; P3[1] += shy;
-				M[0] += shx; M[1] += shy;
+		// Subsample component provinces for fast score searches (O(N log N) -> O(M log M))
+		const maxSampled = 120;
+		const sampleStep = Math.max(1, Math.floor(component.length / maxSampled));
+		const sampledProvinces = [];
+		let sampleTotalArea = 0;
+		for (let i = 0; i < component.length; i += sampleStep) {
+			const p = provinceCenters[component[i]];
+			if (p) {
+				sampledProvinces.push(p);
+				sampleTotalArea += p.count;
 			}
 		}
+
+		// Helper to calculate the Bezier curve and sample it for penalties
+		function getBezierPenaltyAndScore(idA, idB) {
+			const pA = provinceCenters[idA];
+			const pB = provinceCenters[idB];
+			if (!pA || !pB) return -Infinity;
+
+			const len = Math.hypot(pB.x - pA.x, pB.y - pA.y) || 1;
+			const vx = (pB.x - pA.x) / len;
+			const vy = (pB.y - pA.y) / len;
+
+			// Project sampled component provinces onto this candidate direction
+			const sorted = [];
+			for (const p of sampledProvinces) {
+				const proj = (p.x - meanX) * vx + (p.y - meanY) * vy;
+				const perp = -(p.x - meanX) * vy + (p.y - meanY) * vx;
+				sorted.push({ proj, perp, count: p.count });
+			}
+			sorted.sort((a, b) => a.proj - b.proj);
+
+			// Find percentiles to get P0 and P3
+			let accum = 0;
+			let projStart = sorted[0].proj;
+			let projEnd = sorted[sorted.length - 1].proj;
+			const startThreshold = sampleTotalArea * 0.12;
+			const endThreshold = sampleTotalArea * 0.88;
+			for (const item of sorted) {
+				accum += item.count;
+				if (accum >= startThreshold && projStart === sorted[0].proj) {
+					projStart = item.proj;
+				}
+				if (accum >= endThreshold) {
+					projEnd = item.proj;
+					break;
+				}
+			}
+
+			const P0 = [meanX + projStart * vx, meanY + projStart * vy];
+			const P3 = [meanX + projEnd * vx, meanY + projEnd * vy];
+
+			const dist = Math.hypot(P3[0] - P0[0], P3[1] - P0[1]);
+			const dCentroid = distToSegment(meanX, meanY, P0[0], P0[1], P3[0], P3[1]);
+			const roughScore = 3.5 * dist - 2.5 * dCentroid;
+
+			// Branch-and-bound pruning: if the rough straight score cannot beat the current bestScore, skip penalty calculation!
+			if (roughScore <= bestScore) {
+				return -Infinity;
+			}
+
+			// Find max perpendicular deviations within range
+			let maxPositivePerp = 0;
+			let maxNegativePerp = 0;
+
+			for (const item of sorted) {
+				if (item.proj >= projStart && item.proj <= projEnd) {
+					if (item.perp > 0) {
+						if (item.perp > maxPositivePerp) {
+							maxPositivePerp = item.perp;
+						}
+					} else {
+						if (item.perp < maxNegativePerp) {
+							maxNegativePerp = item.perp;
+						}
+					}
+				}
+			}
+
+			// Try both bends on the actual P0 to P3 curve and choose the minimum penalty
+			const penaltyPos = evaluateBezierPenalty(P0, P3, vx, vy, maxPositivePerp);
+			const penaltyNeg = evaluateBezierPenalty(P0, P3, vx, vy, maxNegativePerp);
+			const bestPenalty = Math.min(penaltyPos, penaltyNeg);
+
+			return roughScore - bestPenalty;
+		}
+
+		// Find the longest possible line that passes close to the center of mass
+		let bestA = component[0];
+		let bestB = component[0];
+		let bestScore = -Infinity;
+
+		for (let i = 0; i < candidates.length; i++) {
+			for (let j = i + 1; j < candidates.length; j++) {
+				const idA = candidates[i];
+				const idB = candidates[j];
+				const score = getBezierPenaltyAndScore(idA, idB);
+				if (score > bestScore) {
+					bestScore = score;
+					bestA = idA;
+					bestB = idB;
+				}
+			}
+		}
+
+		const pA = provinceCenters[bestA];
+		const pB = provinceCenters[bestB];
+		let vx = 1, vy = 0;
+		if (pA && pB) {
+			const len = Math.hypot(pB.x - pA.x, pB.y - pA.y);
+			if (len > 0) {
+				vx = (pB.x - pA.x) / len;
+				vy = (pB.y - pA.y) / len;
+			}
+		}
+
+		// Project all provinces onto this optimal direction
+		const sorted = [];
+		for (const id of component) {
+			const p = provinceCenters[id];
+			if (p) {
+				const proj = (p.x - meanX) * vx + (p.y - meanY) * vy;
+				const perp = -(p.x - meanX) * vy + (p.y - meanY) * vx;
+				sorted.push({ id, x: p.x, y: p.y, count: p.count, proj, perp });
+			}
+		}
+		sorted.sort((a, b) => a.proj - b.proj);
+
+		// Exclude outlying territories by taking the middle 80% of the land area (10% to 90%)
+		let accum = 0;
+		let projStart = sorted[0].proj;
+		let projEnd = sorted[sorted.length - 1].proj;
+		const startThreshold = totalArea * 0.12;
+		const endThreshold = totalArea * 0.88;
+		for (const item of sorted) {
+			accum += item.count;
+			if (accum >= startThreshold && projStart === sorted[0].proj) {
+				projStart = item.proj;
+			}
+			if (accum >= endThreshold) {
+				projEnd = item.proj;
+				break;
+			}
+		}
+
+		let P0 = [meanX + projStart * vx, meanY + projStart * vy];
+		let P3 = [meanX + projEnd * vx, meanY + projEnd * vy];
+
+		// Enforce left-to-right reading direction (angle in [-pi/2, pi/2]) to prevent upside-down labels
+		let swapped = false;
+		if (P3[0] < P0[0]) {
+			swapped = true;
+		} else if (P3[0] === P0[0] && P3[1] > P0[1]) {
+			swapped = true;
+		}
+		if (swapped) {
+			const temp = P0; P0 = P3; P3 = temp;
+			vx = -vx;
+			vy = -vy;
+			const tempProj = projStart;
+			projStart = -projEnd;
+			projEnd = -tempProj;
+		}
+
+		// Find maximum perpendicular deviations and area on each side
+		let areaPositive = 0;
+		let areaNegative = 0;
+		let maxPositivePerp = 0;
+		let maxNegativePerp = 0;
+
+		for (const item of sorted) {
+			let currentProj = item.proj;
+			let currentPerp = item.perp;
+			if (swapped) {
+				currentProj = -item.proj;
+				currentPerp = -item.perp;
+			}
+			if (currentProj >= projStart && currentProj <= projEnd) {
+				if (currentPerp > 0) {
+					areaPositive += item.count;
+					if (currentPerp > maxPositivePerp) {
+						maxPositivePerp = currentPerp;
+					}
+				} else {
+					areaNegative += item.count;
+					if (currentPerp < maxNegativePerp) {
+						maxNegativePerp = currentPerp;
+					}
+				}
+			}
+		}
+
+		// Choose the bend amount: try both and select the one with the lower penalty
+		const finalPenaltyPos = evaluateBezierPenalty(P0, P3, vx, vy, maxPositivePerp);
+		const finalPenaltyNeg = evaluateBezierPenalty(P0, P3, vx, vy, maxNegativePerp);
+
+		let bendAmount = 0;
+		if (finalPenaltyPos < finalPenaltyNeg) {
+			bendAmount = maxPositivePerp;
+		} else if (finalPenaltyNeg < finalPenaltyPos) {
+			bendAmount = maxNegativePerp;
+		} else {
+			// Tie break: bend towards the side with more land area
+			bendAmount = (areaPositive > areaNegative) ? maxPositivePerp : maxNegativePerp;
+		}
+
+		// Clamp bendAmount to prevent abnormal high-curvature loops
+		const spine_len = Math.hypot(P3[0] - P0[0], P3[1] - P0[1]) || 1;
+		const maxAllowedBend = spine_len * 0.35;
+		bendAmount = Math.max(-maxAllowedBend, Math.min(maxAllowedBend, bendAmount));
+
+		bendAmount *= curvatureScale;
+
+		// Calculate midpoint M on the axis
+		const M = [
+			(P0[0] + P3[0]) / 2,
+			(P0[1] + P3[1]) / 2
+		];
+
+
+		// Pull midpoint towards the bulk side of the country to create smooth bend
+		const ux = -vy;
+		const uy = vx;
+		const pull = 0.30;
+		M[0] += bendAmount * pull * ux;
+		M[1] += bendAmount * pull * uy;
 
 		const P1 = [
 			2 * M[0] - (P0[0] + P3[0]) / 2,
@@ -2408,171 +2854,543 @@ function drawLabels(){
 			spine.push([x, y]);
 		}
 
-		if (spine.length >= 2 && spine[spine.length - 1][0] < spine[0][0]) {
-			spine.reverse();
-			path.reverse();
+		// Pull spine points away from foreign land
+		for (let i = 0; i < spine.length; i++) {
+			const p = spine[i];
+			const key = getProvinceIdAt(p[0], p[1]);
+			
+			if (key !== 0 && ownership[key] !== countryColor) {
+				const pc = provinceCenters[key];
+				if (pc && !pc.isWater) {
+					// Inside foreign land! Pull it back to the closest owned province center
+					let closestCenter = null;
+					let minDist = Infinity;
+					for (const id of component) {
+						const c = provinceCenters[id];
+						if (c) {
+							const d2 = (p[0] - c.x) * (p[0] - c.x) + (p[1] - c.y) * (p[1] - c.y);
+							if (d2 < minDist) {
+								minDist = d2;
+								closestCenter = c;
+							}
+						}
+					}
+					if (closestCenter) {
+						p[0] = p[0] * 0.15 + closestCenter.x * 0.85;
+						p[1] = p[1] * 0.15 + closestCenter.y * 0.85;
+					}
+				}
+			}
 		}
 
-		return { spine, path, controlPoints: [P1], tension };
+		// Smooth the spine to remove any jaggedness from pulling
+		const smoothedSpine = [];
+		const windowSize = 5; // number of points to average on each side
+		for (let i = 0; i < spine.length; i++) {
+			let sumX = 0;
+			let sumY = 0;
+			let count = 0;
+			for (let w = -windowSize; w <= windowSize; w++) {
+				const idx = i + w;
+				if (idx >= 0 && idx < spine.length) {
+					sumX += spine[idx][0];
+					sumY += spine[idx][1];
+					count++;
+				}
+			}
+			smoothedSpine.push([sumX / count, sumY / count]);
+		}
+		// Replace spine with smoothed version
+		for (let i = 0; i < spine.length; i++) {
+			spine[i][0] = smoothedSpine[i][0];
+			spine[i][1] = smoothedSpine[i][1];
+		}
+
+		return { spine, path: [P0, P3], controlPoints: [P1], tension: 0.5, bendAmount, vx, vy, meanX, meanY, projStart, projEnd };
 	}
 
-	for(const o in countries){
-		const country = countries[o];
-		if (!country || country.provinces.size === 0) continue;
+	function splitIntoTwoLines(text) {
+		const words = text.trim().split(/\s+/);
+		if (words.length < 2) return [text, ""];
 
-		let text = country.name;
-		if (text.toLowerCase().includes("placeholder")) {
-			text = country.tag;
+		let bestSplit = 1;
+		let minDiff = Infinity;
+		for (let i = 1; i < words.length; i++) {
+			const part1 = words.slice(0, i).join(" ");
+			const part2 = words.slice(i).join(" ");
+			const diff = Math.abs(part1.length - part2.length);
+			if (diff < minDiff) {
+				minDiff = diff;
+				bestSplit = i;
+			}
 		}
-		text = text.toUpperCase();
-		
-		let cached = labelCache[o];
+		return [
+			words.slice(0, bestSplit).join(" "),
+			words.slice(bestSplit).join(" ")
+		];
+	}
 
-		if (!cached || dirtyCountries.has(o)) {
-			// Find contiguous components using BFS
-			const provincesSet = country.provinces;
-			const visited = new Set();
-			const components = [];
+const MAP_LABEL_NAME_OVERRIDES = {
+	"UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND": "UNITED KINGDOM",
+	"FEDERAL REPUBLIC OF GERMANY": "GERMANY",
+	"FRENCH REPUBLIC": "FRANCE",
+	"PEOPLE'S REPUBLIC OF CHINA": "CHINA",
+	"RUSSIAN FEDERATION": "RUSSIA",
+	"UNITED STATES OF AMERICA": "UNITED STATES",
+	"COMMONWEALTH OF AUSTRALIA": "AUSTRALIA",
+	"FEDERATIVE REPUBLIC OF BRAZIL": "BRAZIL",
+	"REPUBLIC OF INDIA": "INDIA",
+	"ARGENTINE REPUBLIC": "ARGENTINA",
+	"REPUBLIC OF POLAND": "POLAND",
+	"REPUBLIC OF TÜRKIYE": "TÜRKIYE",
+	"REPUBLIC OF TURKEY": "TURKEY",
+	"REPUBLIC OF ITALY": "ITALY",
+	"ITALIAN REPUBLIC": "ITALY",
+	"KINGDOM OF SPAIN": "SPAIN",
+	"REPUBLIC OF FINLAND": "FINLAND",
+	"KINGDOM OF SWEDEN": "SWEDEN",
+	"KINGDOM OF NORWAY": "NORWAY",
+	"REPUBLIC OF PERU": "PERU",
+	"REPUBLIC OF CHILE": "CHILE",
+	"REPUBLIC OF INDONESIA": "INDONESIA",
+	"REPUBLIC OF KOREA": "KOREA",
+	"REPUBLIC OF THE PHILIPPINES": "PHILIPPINES",
+	"REPUBLIC OF KAZAKHSTAN": "KAZAKHSTAN",
+	"REPUBLIC OF UZBEKISTAN": "UZBEKISTAN",
+	"REPUBLIC OF TAJIKISTAN": "TAJIKISTAN",
+	"REPUBLIC OF THE SUDAN": "SUDAN",
+	"DEMOCRATIC REPUBLIC OF THE CONGO": "CONGO",
+	"UNITED REPUBLIC OF TANZANIA": "TANZANIA",
+	"PEOPLE'S DEMOCRATIC REPUBLIC OF ALGERIA": "ALGERIA",
+	"STATE OF LIBYA": "LIBYA",
+	"REPUBLIC OF SOUTH AFRICA": "SOUTH AFRICA",
+	"REPUBLIC OF COLOMBIA": "COLOMBIA",
+	"BOLIVARIAN REPUBLIC OF VENEZUELA": "VENEZUELA",
+	"REPUBLIC OF ECUADOR": "ECUADOR",
+	"REPUBLIC OF ANGOLA": "ANGOLA",
+	"REPUBLIC OF ZIMBABWE": "ZIMBABWE",
+	"REPUBLIC OF KENYA": "KENYA",
+	"REPUBLIC OF MOZAMBIQUE": "MOZAMBIQUE",
+	"REPUBLIC OF MADAGASCAR": "MADAGASCAR",
+	"REPUBLIC OF ZAMBIA": "ZAMBIA"
+};
 
-			for (const provId of provincesSet) {
-				if (visited.has(provId)) continue;
+	function generateLabelsForCountry(o) {
+		const country = countries[o];
+		if (!country || country.provinces.size === 0) return;
 
-				const component = [];
-				const queue = [provId];
-				let queueHead = 0;
-				visited.add(provId);
+		if (!country.displayName || country._lastCleanName !== country.name) {
+			let text = country.name;
+			const upperName = text.toUpperCase().trim();
+			if (MAP_LABEL_NAME_OVERRIDES[upperName]) {
+				text = MAP_LABEL_NAME_OVERRIDES[upperName];
+			} else if (text.toLowerCase().includes("placeholder")) {
+				text = country.tag;
+			}
+			country.displayName = text.toUpperCase();
+			country._lastCleanName = country.name;
+		}
+		const text = country.displayName;
+		const labelOffset = country.labelOffset || 0;
+		const labelXOffset = country.labelXOffset || 0;
+		const labelArcShift = country.labelArcShift || 0;
+		const curvatureScale = country.curvatureScale !== undefined ? country.curvatureScale : 1.0;
+		const fontSizeScale = country.fontSizeScale !== undefined ? country.fontSizeScale : 1.0;
+		const labelRotation = country.labelRotation !== undefined ? country.labelRotation : 0;
+		const labelStretch = country.labelStretch !== undefined ? country.labelStretch : 1.0;
 
-				while (queueHead < queue.length) {
-					const curr = queue[queueHead++];
-					component.push(curr);
+		// Find contiguous components using BFS
+		const provincesSet = country.provinces;
+		const visited = new Set();
+		const components = [];
 
-					for (const n of provinceNeighbors[curr] || []) {
-						if (provincesSet.has(n) && !visited.has(n)) {
-							visited.add(n);
-							queue.push(n);
-						}
+		for (const provId of provincesSet) {
+			if (visited.has(provId)) continue;
+
+			const component = [];
+			const queue = [provId];
+			let queueHead = 0;
+			visited.add(provId);
+
+			while (queueHead < queue.length) {
+				const curr = queue[queueHead++];
+				component.push(curr);
+
+				for (const n of provinceNeighbors[curr] || []) {
+					if (provincesSet.has(n) && !visited.has(n)) {
+						visited.add(n);
+						queue.push(n);
 					}
 				}
-				components.push(component);
+				for (const n of straitAdj[curr] || []) {
+					if (provincesSet.has(n) && !visited.has(n)) {
+						visited.add(n);
+						queue.push(n);
+					}
+				}
+			}
+			components.push(component);
+		}
+
+		const labels = [];
+		for (const comp of components) {
+			if (comp.length < 4) continue; // Skip very small components
+
+			const result = computeSpineForComponent(comp, o, text, curvatureScale);
+			if (result.spine.length < 2) continue;
+
+			let compArea = 0;
+			for (const id of comp) {
+				const center = provinceCenters[id];
+				if (center) compArea += center.count;
+			}
+			const thickness = Math.max(30, Math.min(120, Math.sqrt(compArea) * 0.55));
+			const spine = result.spine;
+			const path = result.path;
+			const controlPoints = result.controlPoints;
+
+			const P0 = spine[0];
+			const P3 = spine[spine.length - 1];
+
+			const P1 = (controlPoints && controlPoints.length > 0) ? controlPoints[0] : [
+				(P0[0] + P3[0]) / 2,
+				(P0[1] + P3[1]) / 2
+			];
+
+			let fontSize = Math.min(180, thickness * 0.75);
+
+			// Precompute letter layouts to avoid slow operations at draw time
+			ctx.save();
+			ctx.font = `bold ${fontSize}px Georgia`;
+			ctx.textAlign = "center";
+			ctx.textBaseline = "middle";
+
+			const cumulative = [0];
+			for (let i = 1; i < spine.length; i++) {
+				const dx = spine[i][0] - spine[i - 1][0];
+				const dy = spine[i][1] - spine[i - 1][1];
+				cumulative[i] = cumulative[i - 1] + Math.hypot(dx, dy);
+			}
+			const totalLen = cumulative[cumulative.length - 1];
+
+			function getPointAndTangentAt(dist) {
+				if (dist <= 0) {
+					const dx = spine[1][0] - spine[0][0];
+					const dy = spine[1][1] - spine[0][1];
+					const len = Math.hypot(dx, dy) || 1;
+					return [
+						spine[0][0] + (dx / len) * dist,
+						spine[0][1] + (dy / len) * dist,
+						dx,
+						dy
+					];
+				}
+				if (dist >= totalLen) {
+					const lastIdx = spine.length - 1;
+					const dx = spine[lastIdx][0] - spine[lastIdx - 1][0];
+					const dy = spine[lastIdx][1] - spine[lastIdx - 1][1];
+					const len = Math.hypot(dx, dy) || 1;
+					return [
+						spine[lastIdx][0] + (dx / len) * (dist - totalLen),
+						spine[lastIdx][1] + (dy / len) * (dist - totalLen),
+						dx,
+						dy
+					];
+				}
+				let x = spine[0][0];
+				let y = spine[0][1];
+				let dx = spine[1][0] - spine[0][0];
+				let dy = spine[1][1] - spine[0][1];
+				for (let i = 1; i < cumulative.length; i++) {
+					if (cumulative[i] >= dist) {
+						const fraction = (dist - cumulative[i - 1]) / (cumulative[i] - cumulative[i - 1] || 1);
+						const curr = spine[i];
+						const prev = spine[i - 1];
+						x = prev[0] * (1 - fraction) + curr[0] * fraction;
+						y = prev[1] * (1 - fraction) + curr[1] * fraction;
+						dx = curr[0] - prev[0];
+						dy = curr[1] - prev[1];
+						break;
+					}
+				}
+				return [x, y, dx, dy];
 			}
 
-			const labels = [];
-			for (const comp of components) {
-				if (comp.length < 4) continue; // Skip very small components
 
-				const result = computeSpineForComponent(comp, o);
-				if (result.spine.length < 2) continue;
+			const margin = Math.min(thickness * 0.15, totalLen * 0.04);
+			const startDist = margin;
+			const endDist = totalLen - margin;
+			const len = endDist - startDist;
 
-				let compArea = 0;
-				for (const id of comp) {
-					const center = provinceCenters[id];
-					if (center) compArea += center.count;
-				}
-				const thickness = Math.max(16, Math.min(100, Math.sqrt(compArea) * 0.45));
-				const spine = result.spine;
-				const path = result.path;
-				const controlPoints = result.controlPoints;
+			if (len < 20) {
+				ctx.restore();
+				continue;
+			}
 
-				const P0 = spine[0];
-				const P3 = spine[spine.length - 1];
+			const angle_straight = Math.atan2(P3[1] - P0[1], P3[0] - P0[0]);
 
-				const P1 = (controlPoints && controlPoints.length > 0) ? controlPoints[0] : [
-					(P0[0] + P3[0]) / 2,
-					(P0[1] + P3[1]) / 2
-				];
-
-				let fontSize = Math.min(70, thickness * 0.75);
-
-				// Precompute letter layouts to avoid slow operations at draw time
-				ctx.save();
-				ctx.font = `bold ${fontSize}px Georgia`;
-				ctx.textAlign = "center";
-				ctx.textBaseline = "middle";
-
-				const cumulative = [0];
-				for (let i = 1; i < spine.length; i++) {
-					const dx = spine[i][0] - spine[i - 1][0];
-					const dy = spine[i][1] - spine[i - 1][1];
-					cumulative[i] = cumulative[i - 1] + Math.hypot(dx, dy);
-				}
-				const totalLen = cumulative[cumulative.length - 1];
-
-				function getPointAndTangentAt(dist) {
-					let t = 1;
-					for (let i = 1; i < cumulative.length; i++) {
-						if (cumulative[i] >= dist) {
-							const t0 = (i - 1) / (spine.length - 1);
-							const t1 = i / (spine.length - 1);
-							const fraction = (dist - cumulative[i - 1]) / (cumulative[i] - cumulative[i - 1] || 1);
-							t = t0 * (1 - fraction) + t1 * fraction;
-							break;
-						}
+			// Determine if we should split the text into two lines (multi-line labels)
+			const aspect = totalLen / thickness;
+			let lines = [text];
+			if (text.includes(" ") && text.length > 12) {
+				const baseWidth = ctx.measureText(text).width;
+				const scale_single = len / (baseWidth * 1.20);
+				// Split only if single line scales down heavily, and country has enough vertical/horizontal space (and isn't narrow)
+				if (scale_single < 1.15 && totalLen >= 100 && thickness >= 20 && aspect < 3.8) {
+					const parts = splitIntoTwoLines(text);
+					if (parts[1] !== "") {
+						lines = parts;
 					}
-					const mt = 1 - t;
-					const x = mt*mt * P0[0] + 2*mt*t * P1[0] + t*t * P3[0];
-					const y = mt*mt * P0[1] + 2*mt*t * P1[1] + t*t * P3[1];
-					const dx = 2 * mt * (P1[0] - P0[0]) + 2 * t * (P3[0] - P1[0]);
-					const dy = 2 * mt * (P1[1] - P0[1]) + 2 * t * (P3[1] - P1[1]);
-					return [x, y, dx, dy];
 				}
+			}
 
-				const margin = Math.min(thickness * 0.15, totalLen * 0.04);
-				const startDist = margin;
-				const endDist = totalLen - margin;
-				const len = endDist - startDist;
-
-				if (len < 20) {
-					ctx.restore();
-					continue;
-				}
-
-				const letters = text.split('');
+			// Calculate unified scale and effective font size based on the longest line
+			let maxBaseTotal = 0;
+			for (const line of lines) {
+				const letters = line.split('');
 				const baseWidths = letters.map(ch => ctx.measureText(ch).width);
 				const baseTotal = baseWidths.reduce((a, b) => a + b, 0);
+				if (baseTotal > maxBaseTotal) {
+					maxBaseTotal = baseTotal;
+				}
+			}
 
-				const usableLen = len;
-				let scale = usableLen / (baseTotal * 1.35); 
-				scale = Math.min(scale, 1);
-				scale = Math.max(scale, 0.12);
+			let scale = len / (maxBaseTotal * 1.20); 
+			scale = Math.min(scale, 1.10);
+			scale = Math.max(scale, 0.05);
 
-				const effectiveFont = fontSize * scale * 0.85;
+			let effectiveFont = fontSize * scale * 0.94 * fontSizeScale;
+			if (effectiveFont < 4) {
+				effectiveFont = 4;
+			}
+
+			// Determine automatic stretching based on aspect ratio
+			const autoStretch = Math.min(3.0, Math.max(1.0, 1.0 + (aspect - 1.5) * 0.8));
+
+			// Precompute character widths and line layout parameters for clamping and search
+			const lineLayouts = [];
+			let maxWordLen = 0;
+			for (let lIdx = 0; lIdx < lines.length; lIdx++) {
+				const lineText = lines[lIdx];
+				const letters = lineText.split('');
+				ctx.save();
 				ctx.font = `bold ${effectiveFont}px Georgia`;
+				const letterWidths = letters.map(ch => ctx.measureText(ch).width);
+				ctx.restore();
+				const lineTotalW = letterWidths.reduce((a, b) => a + b, 0);
+				
+				let lineGap = 0;
+				if (lines.length === 2) {
+					lineGap = effectiveFont * 0.06;
+				} else {
+					lineGap = letters.length > 1 ? (len - lineTotalW) / (letters.length - 1) : 0;
+					lineGap = Math.max(0, lineGap);
+					const maxGap = effectiveFont * (0.12 + Math.min(0.28, (aspect - 1.5) * 0.1));
+					if (lineGap > maxGap) lineGap = maxGap;
+				}
+				lineGap *= labelStretch * autoStretch;
+				const maxFinalGap = effectiveFont * 0.45;
+				if (lineGap > maxFinalGap) lineGap = maxFinalGap;
+				
+				const wordLen = lineTotalW + (letters.length > 1 ? (letters.length - 1) * lineGap : 0);
+				if (wordLen > maxWordLen) {
+					maxWordLen = wordLen;
+				}
+				const lineStartDistAdjusted = startDist + (len - wordLen) / 2;
+				
+				lineLayouts.push({
+					letters,
+					widths: letterWidths,
+					gap: lineGap,
+					startDistAdjusted: lineStartDistAdjusted
+				});
+			}
 
+			const maxShift = Math.max(0, (len - maxWordLen) / 2);
+
+			// Calculate weighted median projection of the provinces to center the text label
+			let totalWeight = 0;
+			const projWeights = [];
+			for (const id of comp) {
+				const center = provinceCenters[id];
+				if (center) {
+					const proj = (center.x - result.meanX) * result.vx + (center.y - result.meanY) * result.vy;
+					projWeights.push({ proj, count: center.count });
+					totalWeight += center.count;
+				}
+			}
+			projWeights.sort((a, b) => a.proj - b.proj);
+			let accumWeights = 0;
+			let medianProj = 0;
+			for (const item of projWeights) {
+				accumWeights += item.count;
+				if (accumWeights >= totalWeight * 0.5) {
+					medianProj = item.proj;
+					break;
+				}
+			}
+			const medianDistFromStart = medianProj - result.projStart;
+			const targetCenterDist = Math.max(startDist, Math.min(endDist, medianDistFromStart));
+			const defaultCenterDist = startDist + len / 2;
+			const targetHShift = Math.max(-maxShift, Math.min(maxShift, targetCenterDist - defaultCenterDist));
+
+			// Compute a unified midpoint normal of the spine to align stacked lines parallelly and prevent shearing
+			const midDist = startDist + len / 2;
+			const [mx, my, mdx, mdy] = getPointAndTangentAt(midDist);
+			const mLen = Math.hypot(mdx, mdy) || 1;
+			const mnx = -mdy / mLen;
+			const mny = mdx / mLen;
+
+			// Calculate the perpendicular offset from the spine midpoint to the country's centroid
+			const centroidDx = result.meanX - mx;
+			const centroidDy = result.meanY - my;
+			const baseAutoOffset = centroidDx * mnx + centroidDy * mny;
+
+			// Perform penalty-avoiding 2D shift search (H-Shift and V-Shift)
+			let bestAutoXOffset = targetHShift;
+			let bestAutoOffset = baseAutoOffset;
+			let minCollisions = Infinity;
+			let bestScore = -Infinity;
+
+			const hRange = len * 0.25;
+			const hCandidates = [];
+			for (let step = -3; step <= 3; step++) {
+				const candidate = targetHShift + (step / 3) * hRange;
+				hCandidates.push(Math.max(-maxShift, Math.min(maxShift, candidate)));
+			}
+
+			// Search V-shifts around baseAutoOffset (up to +/- 1.5 * thickness, with 7 steps to cover narrow countries)
+			const vStep = thickness * 0.5;
+			const vCandidates = [
+				baseAutoOffset - 3 * vStep,
+				baseAutoOffset - 2 * vStep,
+				baseAutoOffset - vStep,
+				baseAutoOffset,
+				baseAutoOffset + vStep,
+				baseAutoOffset + 2 * vStep,
+				baseAutoOffset + 3 * vStep
+			];
+
+			for (const hShift of hCandidates) {
+				for (const vShift of vCandidates) {
+					let collisions = 0;
+					for (let lIdx = 0; lIdx < lines.length; lIdx++) {
+						const layout = lineLayouts[lIdx];
+						let currentOffset = 0;
+						for (let i = 0; i < layout.letters.length; i++) {
+							const charW = layout.widths[i];
+							const dist = layout.startDistAdjusted + currentOffset + charW / 2 + hShift + labelArcShift;
+							currentOffset += charW + layout.gap;
+							
+							const [x, y, dx, dy] = getPointAndTangentAt(dist);
+							const mLen = Math.hypot(dx, dy) || 1;
+							const lnx = -dy / mLen;
+							const lny = dx / mLen;
+							
+							let lineOffset = 0;
+							if (lines.length === 2) {
+								lineOffset = (lIdx === 0) ? -effectiveFont * 0.55 : effectiveFont * 0.55;
+							}
+							
+							let px = x + lnx * (lineOffset + vShift + labelOffset);
+							let py = y + lny * (lineOffset + vShift + labelOffset);
+							px += labelXOffset;
+							
+							const key = getProvinceIdAt(px, py);
+							const pCenter = provinceCenters[key];
+							const isWater = pCenter && pCenter.isWater;
+							if (ownership[key] !== o && !isWater) {
+								collisions += 1;
+							}
+						}
+					}
+					
+					const distFromHTarget = Math.abs(hShift - targetHShift);
+					const distFromVTarget = Math.abs(vShift - baseAutoOffset);
+					// Give high priority to avoiding collisions, then matching centroid H, then centroid V
+					const score = -1000 * collisions - distFromHTarget - 2 * distFromVTarget;
+					
+					if (score > bestScore) {
+						bestScore = score;
+						bestAutoXOffset = hShift;
+						bestAutoOffset = vShift;
+						minCollisions = collisions;
+					}
+				}
+			}
+
+			const autoXOffset = Math.max(-maxShift, Math.min(maxShift, bestAutoXOffset));
+			const autoOffset = bestAutoOffset;
+			const computedLetters = [];
+
+			for (let lIdx = 0; lIdx < lines.length; lIdx++) {
+				const lineText = lines[lIdx];
+				const letters = lineText.split('');
+
+				ctx.save();
+				ctx.font = `bold ${effectiveFont}px Georgia`;
 				const w = letters.map(ch => ctx.measureText(ch).width);
 				const totalW = w.reduce((a, b) => a + b, 0);
-				
-				let gap = letters.length > 1 ? (len - totalW) / (letters.length - 1) : 0;
-				const maxGap = effectiveFont * 1.2;
-				if (letters.length > 1 && gap > maxGap) {
-					gap = maxGap;
-				}
-				
-				const wordLen = totalW + (letters.length > 1 ? (letters.length - 1) * gap : 0);
-				const startDistAdjusted = startDist + (len - wordLen) / 2;
-				const angle_straight = Math.atan2(P3[1] - P0[1], P3[0] - P0[0]);
 
-				const computedLetters = [];
+				let gap = 0;
+				if (lines.length === 2) {
+					// For stacked/multi-line text, keep letters tight and cohesive
+					gap = effectiveFont * 0.06;
+				} else {
+					// For single-line text, allow slight spreading but clamp tightly to avoid sparse lettering
+					gap = letters.length > 1 ? (len - totalW) / (letters.length - 1) : 0;
+					gap = Math.max(0, gap);
+					const maxGap = effectiveFont * (0.12 + Math.min(0.28, (aspect - 1.5) * 0.1));
+					if (gap > maxGap) gap = maxGap;
+				}
+				gap *= labelStretch * autoStretch;
+				const maxFinalGap = effectiveFont * 0.45;
+				if (gap > maxFinalGap) gap = maxFinalGap;
+
+				const wordLen = totalW + (letters.length > 1 ? (letters.length - 1) * gap : 0);
+				let startDistAdjusted = startDist + (len - wordLen) / 2;
+
+				const finalHShift = autoXOffset;
 				let currentOffset = 0;
 				for (let i = 0; i < letters.length; i++) {
 					const charW = w[i];
-					const dist = startDistAdjusted + currentOffset + charW / 2;
+					const dist = startDistAdjusted + currentOffset + charW / 2 + finalHShift + labelArcShift;
 					currentOffset += charW + gap;
 
 					const [x, y, dx, dy] = getPointAndTangentAt(dist);
-					const lenDir = Math.hypot(dx, dy) || 1;
-					const nx = -dy / lenDir;
-					const ny = dx / lenDir;
 
-					const inward = Math.min(thickness * 0.12, effectiveFont * 0.4);
-					const px = x + nx * inward;
-					const py = y + ny * inward;
+					let lineOffset = 0;
+					if (lines.length === 2) {
+						// Shift line 1 up and line 2 down perpendicular to the path direction (1.1x line height)
+						if (lIdx === 0) {
+							lineOffset = -effectiveFont * 0.55;
+						} else {
+							lineOffset = effectiveFont * 0.55;
+						}
+					}
+
+					let px = x + mnx * (lineOffset + autoOffset + labelOffset);
+					let py = y + mny * (lineOffset + autoOffset + labelOffset);
+					px += labelXOffset;
 
 					const angle_local = Math.atan2(dy, dx);
 					let diff = angle_local - angle_straight;
 					diff = Math.atan2(Math.sin(diff), Math.cos(diff));
-					
+
 					const rotationDamping = 0.95;
-					const angle = angle_straight + diff * rotationDamping;
+					let angle = angle_straight + diff * rotationDamping;
+
+					// Rotate the entire label as a single rigid body around the midpoint of the spine
+					if (labelRotation !== 0) {
+						const rad = (labelRotation * Math.PI) / 180;
+						const cosRot = Math.cos(rad);
+						const sinRot = Math.sin(rad);
+						const rx = px - mx;
+						const ry = py - my;
+						px = mx + rx * cosRot - ry * sinRot;
+						py = my + ry * cosRot + rx * sinRot;
+						angle += rad;
+					}
 
 					computedLetters.push({
 						char: letters[i],
@@ -2582,22 +3400,42 @@ function drawLabels(){
 					});
 				}
 				ctx.restore();
-
-				labels.push({
-					spine,
-					path,
-					controlPoints,
-					thickness,
-					provCount: comp.length,
-					tension: result.tension,
-					fontSize,
-					effectiveFont,
-					letters: computedLetters
-				});
 			}
+			ctx.restore();
 
-			cached = { labels };
-			labelCache[o] = cached;
+			labels.push({
+				spine,
+				path,
+				controlPoints,
+				thickness,
+				provCount: comp.length,
+				tension: result.tension,
+				fontSize: fontSize * fontSizeScale,
+				effectiveFont,
+				letters: computedLetters
+			});
+		}
+
+		labelCache[o] = { labels };
+	}
+
+	for(const o in countries){
+		const country = countries[o];
+		if (!country || country.provinces.size === 0) continue;
+
+		let cached = labelCache[o];
+
+		if (!cached || dirtyCountries.has(o)) {
+			// Synchronous update for the active country or manual/dirty triggers (e.g. painting)
+			if (o === selectedColor || dirtyCountries.has(o)) {
+				generateLabelsForCountry(o);
+				cached = labelCache[o];
+				labelGenerationQueue.delete(o);
+			} else {
+				// Queue for asynchronous generation on subsequent frames
+				labelGenerationQueue.add(o);
+				continue;
+			}
 		}
 
 		// Draw curved/rotated labels along spine using cached layout
@@ -2620,10 +3458,11 @@ function drawLabels(){
 			const vpRight = offsetX + canvas.width / zoom;
 			const vpTop = offsetY;
 			const vpBottom = offsetY + canvas.height / zoom;
-			
 			if (maxX < vpLeft || minX > vpRight || maxY < vpTop || minY > vpBottom) {
 				continue;
 			}
+
+			ctx.setTransform(zoom, 0, 0, zoom, -offsetX * zoom, -offsetY * zoom);
 
 			if(DEBUG.axis){
 				ctx.save();
@@ -2664,7 +3503,7 @@ function drawLabels(){
 				ctx.restore();
 			}
 
-			if (label.fontSize * zoom < 7.5) {
+			if (label.effectiveFont * zoom < 3.5) {
 				continue;
 			}
 
@@ -2673,20 +3512,48 @@ function drawLabels(){
 			ctx.strokeStyle = "black";
 			ctx.lineJoin = "round";
 			ctx.miterLimit = 2;
-			ctx.lineWidth = Math.max(0.1, label.effectiveFont * 0.05);
+			ctx.lineWidth = Math.max(2, label.effectiveFont * 0.22);
 
 			ctx.textAlign = "center";
 			ctx.textBaseline = "middle";
 
 			for (let i = 0; i < label.letters.length; i++) {
 				const letObj = label.letters[i];
-				ctx.save();
-				ctx.translate(letObj.x, letObj.y);
-				ctx.rotate(letObj.angle);
-				ctx.fillText(letObj.char, 0, 0);
+				const cos = Math.cos(letObj.angle);
+				const sin = Math.sin(letObj.angle);
+				ctx.setTransform(
+					cos * zoom,
+					sin * zoom,
+					-sin * zoom,
+					cos * zoom,
+					(letObj.x - offsetX) * zoom,
+					(letObj.y - offsetY) * zoom
+				);
 				ctx.strokeText(letObj.char, 0, 0);
-				ctx.restore();
+				ctx.fillText(letObj.char, 0, 0);
 			}
+		}
+	}
+	// Reset transform to default world transform
+	ctx.setTransform(zoom, 0, 0, zoom, -offsetX * zoom, -offsetY * zoom);
+
+	// Process queue asynchronously (up to 8ms per frame) to avoid freezing startup
+	if (labelGenerationQueue.size > 0) {
+		const maxBatchTime = 8; // ms
+		const startTime = performance.now();
+		let generatedAny = false;
+
+		for (const o of labelGenerationQueue) {
+			labelGenerationQueue.delete(o);
+			generateLabelsForCountry(o);
+			generatedAny = true;
+			if (performance.now() - startTime > maxBatchTime) {
+				break;
+			}
+		}
+
+		if (generatedAny) {
+			requestAnimationFrame(draw);
 		}
 	}
 }
@@ -2698,6 +3565,16 @@ window.addEventListener("keydown", (e) => {
     }
     
     const key = e.key.toLowerCase();
+    if ((e.ctrlKey || e.metaKey) && key === "v") {
+        e.preventDefault();
+        addStrait();
+        return;
+    }
+    if ((e.ctrlKey || e.metaKey) && key === "s") {
+        e.preventDefault();
+        saveWorldPreset();
+        return;
+    }
     if (key === "b") {
         setTool("box");
     } else if (key === "l") {

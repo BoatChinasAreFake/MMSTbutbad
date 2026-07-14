@@ -1,0 +1,67 @@
+"	function computeSpineForComponent(component, countryColor){
+		if (component.length < 2) {
+			return { spine: [], path: [], controlPoints: [] };
+		}
+
+		const compSet = new Set(component);
+
+		function getFurthestNode(startId) {
+			const dist = {};
+			for (const id of component) dist[id] = Infinity;
+			dist[startId] = 0;
+			
+			const pq = new MinHeap();
+			pq.push([startId, 0]);
+
+			while (!pq.isEmpty()) {
+				const [curr, currCost] = pq.pop();
+
+				if (currCost > dist[curr]) continue;
+
+				const currCenter = provinceCenters[curr];
+				if (!currCenter) continue;
+
+				const allNeighbors = [];
+				for (const n of provinceNeighbors[curr] || []) allNeighbors.push(n);
+				for (const n of straitAdj[curr] || []) {
+					if (compSet.has(n)) allNeighbors.push(n);
+				}
+				for (const n of allNeighbors) {
+					if (!compSet.has(n)) continue;
+
+					const nCenter = provinceCenters[n];
+					if (!nCenter) continue;
+
+					const stepDist = Math.hypot(currCenter.x - nCenter.x, currCenter.y - nCenter.y);
+					const nextCost = currCost + stepDist;
+
+					if (nextCost < dist[n]) {
+						dist[n] = nextCost;
+						pq.push([n, nextCost]);
+					}
+				}
+			}
+
+			let furthestId = startId;
+			let maxDist = -1;
+			for (const id of component) {
+				if (dist[id] !== Infinity && dist[id] > maxDist) {
+					maxDist = dist[id];
+					furthestId = id;
+				}
+			}
+			return { id: furthestId, dist: maxDist };
+		}
+
+		// 1. Geodesic extremities using 2-pass Dijkstra
+		const res1 = getFurthestNode(component[0]);
+		const res2 = getFurthestNode(res1.id);
+		let A = res1.id;
+		let B = res2.id;
+
+		// Re-order A and B to ensure natural reading: South-to-North / Left-to-Right
+		const centerA = provinceCenters[A];
+		const centerB = provinceCenters[B];
+		if (centerA && centerB) {
+			const dx = Math.abs(centerA.x - centerB.
+<truncated 3009 bytes>

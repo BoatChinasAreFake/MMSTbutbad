@@ -1,7 +1,7 @@
 {
   "countries": {
     "100": {
-      "name": "Zambia",
+      "name": "Placeholder 100 (Color (39, 10, 110))",
       "color": [
         39,
         10,
@@ -9,14 +9,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "101": {
-      "name": "Montenegro",
+      "name": "Placeholder 101 (Color (77, 89, 105))",
       "color": [
         77,
         89,
@@ -24,14 +23,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "102": {
-      "name": "Madagascar",
+      "name": "Placeholder 102 (Color (44, 140, 4))",
       "color": [
         44,
         140,
@@ -39,14 +37,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "103": {
-      "name": "Netherlands",
+      "name": "Placeholder 103 (Color (173, 115, 64))",
       "color": [
         173,
         115,
@@ -54,14 +51,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "104": {
-      "name": "Albania",
+      "name": "Placeholder 104 (Color (194, 59, 133))",
       "color": [
         194,
         59,
@@ -69,14 +65,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "105": {
-      "name": "Armenia",
+      "name": "Placeholder 105 (Color (120, 67, 148))",
       "color": [
         120,
         67,
@@ -84,14 +79,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "106": {
-      "name": "Ireland",
+      "name": "Placeholder 106 (Color (78, 135, 77))",
       "color": [
         78,
         135,
@@ -99,14 +93,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "107": {
-      "name": "Paraguay",
+      "name": "Placeholder 107 (Color (59, 84, 137))",
       "color": [
         59,
         84,
@@ -114,14 +107,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "108": {
-      "name": "Moldova",
+      "name": "Placeholder 108 (Color (255, 158, 73))",
       "color": [
         255,
         158,
@@ -129,14 +121,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "109": {
-      "name": "Palestine",
+      "name": "Placeholder 109 (Color (74, 128, 73))",
       "color": [
         74,
         128,
@@ -144,14 +135,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "110": {
-      "name": "Uganda",
+      "name": "Placeholder 110 (Color (30, 80, 10))",
       "color": [
         30,
         80,
@@ -159,14 +149,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "111": {
-      "name": "United Arab Emirates",
+      "name": "Placeholder 111 (Color (102, 102, 0))",
       "color": [
         102,
         102,
@@ -174,14 +163,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "112": {
-      "name": "Lebanon",
+      "name": "Placeholder 112 (Color (130, 150, 60))",
       "color": [
         130,
         150,
@@ -189,14 +177,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "113": {
-      "name": "South Sudan",
+      "name": "Placeholder 113 (Color (252, 221, 8))",
       "color": [
         252,
         221,
@@ -204,14 +191,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "114": {
-      "name": "Tunisia",
+      "name": "Placeholder 114 (Color (210, 39, 39))",
       "color": [
         210,
         39,
@@ -219,14 +205,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "115": {
-      "name": "Slovenia",
+      "name": "Placeholder 115 (Color (9, 102, 175))",
       "color": [
         9,
         102,
@@ -234,14 +219,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "116": {
-      "name": "Botswana",
+      "name": "Placeholder 116 (Color (190, 190, 70))",
       "color": [
         190,
         190,
@@ -249,14 +233,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "117": {
-      "name": "Eritrea",
+      "name": "Placeholder 117 (Color (79, 180, 19))",
       "color": [
         79,
         180,
@@ -264,14 +247,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "118": {
-      "name": "Western Sahara",
+      "name": "Placeholder 118 (Color (1, 77, 153))",
       "color": [
         1,
         77,
@@ -279,14 +261,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "119": {
-      "name": "North Macedonia",
+      "name": "Placeholder 119 (Color (210, 69, 9))",
       "color": [
         210,
         69,
@@ -294,14 +275,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "120": {
-      "name": "Burkina Faso",
+      "name": "Placeholder 120 (Color (200, 14, 99))",
       "color": [
         200,
         14,
@@ -309,14 +289,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "121": {
-      "name": "Ivory Coast",
+      "name": "Placeholder 121 (Color (0, 150, 100))",
       "color": [
         0,
         150,
@@ -324,14 +303,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "122": {
-      "name": "Zimbabwe",
+      "name": "Placeholder 122 (Color (119, 159, 180))",
       "color": [
         119,
         159,
@@ -339,14 +317,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "123": {
-      "name": "Guatemala",
+      "name": "Placeholder 123 (Color (88, 86, 140))",
       "color": [
         88,
         86,
@@ -354,14 +331,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "124": {
-      "name": "Kosovo",
+      "name": "Placeholder 124 (Color (57, 39, 117))",
       "color": [
         57,
         39,
@@ -369,14 +345,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "125": {
-      "name": "Cuba",
+      "name": "Placeholder 125 (Color (139, 65, 166))",
       "color": [
         139,
         65,
@@ -384,14 +359,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "126": {
-      "name": "Costa Rica",
+      "name": "Placeholder 126 (Color (152, 128, 43))",
       "color": [
         152,
         128,
@@ -399,14 +373,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "127": {
-      "name": "Cyprus",
+      "name": "Placeholder 127 (Color (255, 204, 0))",
       "color": [
         255,
         204,
@@ -414,14 +387,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "128": {
-      "name": "Taiwan",
+      "name": "Placeholder 128 (Color (19, 60, 96))",
       "color": [
         19,
         60,
@@ -429,14 +401,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "129": {
-      "name": "Senegal",
+      "name": "Placeholder 129 (Color (160, 255, 0))",
       "color": [
         160,
         255,
@@ -444,14 +415,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "130": {
-      "name": "Panama",
+      "name": "Placeholder 130 (Color (64, 167, 250))",
       "color": [
         64,
         167,
@@ -459,14 +429,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "131": {
-      "name": "Guyana",
+      "name": "Placeholder 131 (Color (193, 155, 10))",
       "color": [
         193,
         155,
@@ -474,14 +443,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "132": {
-      "name": "Guinea",
+      "name": "Placeholder 132 (Color (158, 148, 101))",
       "color": [
         158,
         148,
@@ -489,14 +457,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "133": {
-      "name": "Ghan",
+      "name": "Placeholder 133 (Color (11, 85, 218))",
       "color": [
         11,
         85,
@@ -504,14 +471,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "134": {
-      "name": "Uruguay",
+      "name": "Placeholder 134 (Color (222, 247, 198))",
       "color": [
         222,
         247,
@@ -519,7 +485,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -534,14 +499,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "136": {
-      "name": "Honduras",
+      "name": "Placeholder 136 (Color (96, 124, 77))",
       "color": [
         96,
         124,
@@ -549,14 +513,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "137": {
-      "name": "Gabon",
+      "name": "Placeholder 137 (Color (17, 207, 116))",
       "color": [
         17,
         207,
@@ -564,14 +527,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "138": {
-      "name": "Sierra Leone",
+      "name": "Placeholder 138 (Color (130, 250, 229))",
       "color": [
         130,
         250,
@@ -579,14 +541,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "139": {
-      "name": "Djibouti",
+      "name": "Placeholder 139 (Color (220, 0, 220))",
       "color": [
         220,
         0,
@@ -594,14 +555,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "140": {
-      "name": "Togo",
+      "name": "Placeholder 140 (Color (130, 150, 9))",
       "color": [
         130,
         150,
@@ -609,14 +569,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "141": {
-      "name": "Ecuador",
+      "name": "Placeholder 141 (Color (145, 134, 173))",
       "color": [
         145,
         134,
@@ -624,14 +583,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "142": {
-      "name": "Malawi",
+      "name": "Placeholder 142 (Color (120, 120, 0))",
       "color": [
         120,
         120,
@@ -639,29 +597,27 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "143": {
-      "name": "Bhutan",
+      "name": "Placeholder 143 (Color (172, 122, 88))",
       "color": [
         172,
         122,
         88
       ],
-      "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
+      "labelOffset": -3,
+      "labelXOffset": -4,
       "curvatureScale": 1,
       "fontSizeScale": 1,
-      "labelRotation": 0,
+      "labelRotation": -13,
       "labelStretch": 1
     },
     "144": {
-      "name": "Haiti",
+      "name": "Placeholder 144 (Color (174, 113, 113))",
       "color": [
         174,
         113,
@@ -669,14 +625,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "145": {
-      "name": "Liberia",
+      "name": "Placeholder 145 (Color (67, 129, 153))",
       "color": [
         67,
         129,
@@ -684,14 +639,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "146": {
-      "name": "Equitorial Guinea",
+      "name": "Placeholder 146 (Color (158, 3, 117))",
       "color": [
         158,
         3,
@@ -699,14 +653,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "147": {
-      "name": "Swaziland",
+      "name": "Placeholder 147 (Color (123, 234, 11))",
       "color": [
         123,
         234,
@@ -714,14 +667,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "148": {
-      "name": "Iceland",
+      "name": "Placeholder 148 (Color (132, 124, 175))",
       "color": [
         132,
         124,
@@ -729,7 +681,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -744,14 +695,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "150": {
-      "name": "Belize",
+      "name": "Placeholder 150 (Color (80, 114, 165))",
       "color": [
         80,
         114,
@@ -759,14 +709,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "151": {
-      "name": "Benin",
+      "name": "Placeholder 151 (Color (0, 106, 78))",
       "color": [
         0,
         106,
@@ -774,14 +723,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "152": {
-      "name": "Suriname",
+      "name": "Placeholder 152 (Color (205, 98, 38))",
       "color": [
         205,
         98,
@@ -789,7 +737,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -804,14 +751,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "154": {
-      "name": "El Salvador",
+      "name": "Placeholder 154 (Color (94, 159, 198))",
       "color": [
         94,
         159,
@@ -819,14 +765,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "155": {
-      "name": "Bahamas",
+      "name": "Placeholder 155 (Color (204, 255, 204))",
       "color": [
         204,
         255,
@@ -834,14 +779,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "156": {
-      "name": "Dominican Republic",
+      "name": "Placeholder 156 (Color (114, 95, 135))",
       "color": [
         114,
         95,
@@ -849,14 +793,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "157": {
-      "name": "Guinea-Bissau",
+      "name": "Placeholder 157 (Color (97, 227, 67))",
       "color": [
         97,
         227,
@@ -864,14 +807,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "158": {
-      "name": "Rwanda",
+      "name": "Placeholder 158 (Color (200, 9, 24))",
       "color": [
         200,
         9,
@@ -879,14 +821,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "159": {
-      "name": "Burundi",
+      "name": "Placeholder 159 (Color (23, 33, 212))",
       "color": [
         23,
         33,
@@ -894,7 +835,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -909,14 +849,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "161": {
-      "name": "Lesotho",
+      "name": "Placeholder 161 (Color (0, 190, 240))",
       "color": [
         0,
         190,
@@ -924,14 +863,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "162": {
-      "name": "Luxembourg",
+      "name": "Placeholder 162 (Color (85, 228, 233))",
       "color": [
         85,
         228,
@@ -939,7 +877,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -954,7 +891,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -969,7 +905,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -984,14 +919,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "166": {
-      "name": "Gambia",
+      "name": "Placeholder 166 (Color (39, 49, 100))",
       "color": [
         39,
         49,
@@ -999,7 +933,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1014,7 +947,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1029,7 +961,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1044,14 +975,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "170": {
-      "name": "Solomon Islands",
+      "name": "Placeholder 170 (Color (19, 19, 90))",
       "color": [
         19,
         19,
@@ -1059,7 +989,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1074,7 +1003,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1089,14 +1017,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "173": {
-      "name": "Brunei",
+      "name": "Placeholder 173 (Color (252, 242, 119))",
       "color": [
         252,
         242,
@@ -1104,7 +1031,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1119,7 +1045,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1134,7 +1059,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1149,14 +1073,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "177": {
-      "name": "Liechtenstein",
+      "name": "Placeholder 177 (Color (47, 50, 132))",
       "color": [
         47,
         50,
@@ -1164,14 +1087,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "178": {
-      "name": "San Marino",
+      "name": "Placeholder 178 (Color (93, 182, 228))",
       "color": [
         93,
         182,
@@ -1179,14 +1101,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "179": {
-      "name": "Monaco",
+      "name": "Placeholder 179 (Color (243, 107, 122))",
       "color": [
         243,
         107,
@@ -1194,14 +1115,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "180": {
-      "name": "Andorra",
+      "name": "Placeholder 180 (Color (246, 168, 116))",
       "color": [
         246,
         168,
@@ -1209,14 +1129,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "181": {
-      "name": "Vatican City",
+      "name": "Placeholder 181 (Color (216, 208, 93))",
       "color": [
         216,
         208,
@@ -1224,7 +1143,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1239,7 +1157,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1254,14 +1171,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "184": {
-      "name": "Jamaica",
+      "name": "Placeholder 184 (Color (12, 157, 54))",
       "color": [
         12,
         157,
@@ -1269,7 +1185,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1284,7 +1199,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1299,7 +1213,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1314,7 +1227,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1329,7 +1241,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1344,7 +1255,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1359,7 +1269,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1374,14 +1283,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "192": {
-      "name": "Singapore",
+      "name": "Placeholder 192 (Color (128, 64, 0))",
       "color": [
         128,
         64,
@@ -1389,7 +1297,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1404,7 +1311,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1419,7 +1325,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1434,14 +1339,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "196": {
-      "name": "Afghanistan",
+      "name": "Placeholder 196 (Color 183D40)",
       "color": [
         24,
         61,
@@ -1449,7 +1353,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1462,13 +1365,12 @@
         127,
         13
       ],
-      "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "labelOffset": 46,
+      "labelXOffset": -114,
+      "curvatureScale": 0.9,
+      "fontSizeScale": 1.25,
+      "labelRotation": 3,
+      "labelStretch": 3
     },
     "001": {
       "name": "United States of America",
@@ -1477,13 +1379,12 @@
         104,
         165
       ],
-      "labelOffset": 0,
+      "labelOffset": -14,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 0.4,
+      "fontSizeScale": 1.05,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 3
     },
     "002": {
       "name": "People's Republic of China",
@@ -1492,13 +1393,12 @@
         34,
         59
       ],
-      "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
+      "labelOffset": -43,
+      "labelXOffset": -6,
       "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "fontSizeScale": 1.75,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 3
     },
     "003": {
       "name": "Republic of India",
@@ -1507,13 +1407,12 @@
         95,
         27
       ],
-      "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "labelOffset": 24,
+      "labelXOffset": -24,
+      "curvatureScale": -0.3,
+      "fontSizeScale": 1.1,
+      "labelRotation": -18,
+      "labelStretch": 3
     },
     "004": {
       "name": "Commonwealth of Australia",
@@ -1522,13 +1421,12 @@
         186,
         126
       ],
-      "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
+      "labelOffset": 19,
+      "labelXOffset": -58,
       "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "fontSizeScale": 1.45,
+      "labelRotation": -9,
+      "labelStretch": 3
     },
     "005": {
       "name": "Canada",
@@ -1539,11 +1437,10 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "fontSizeScale": 1.2,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 3
     },
     "006": {
       "name": "Federal Republic of Germany",
@@ -1552,13 +1449,12 @@
         99,
         109
       ],
-      "labelOffset": 0,
+      "labelOffset": 7,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "curvatureScale": 0.5,
+      "fontSizeScale": 2.1,
+      "labelRotation": 21,
+      "labelStretch": 1.6
     },
     "007": {
       "name": "French Republic",
@@ -1567,16 +1463,15 @@
         72,
         155
       ],
-      "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "labelOffset": -11,
+      "labelXOffset": 6,
+      "curvatureScale": 0.6,
+      "fontSizeScale": 1.45,
+      "labelRotation": 36,
+      "labelStretch": 3
     },
     "008": {
-      "name": "Myanmar",
+      "name": "Republic of the Union of Myanmar",
       "color": [
         127,
         63,
@@ -1584,14 +1479,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "fontSizeScale": 1.2,
+      "labelRotation": 3,
+      "labelStretch": 2.1
     },
     "009": {
-      "name": "Turkey",
+      "name": "Republic of T\u00fcrkiye",
       "color": [
         168,
         37,
@@ -1599,11 +1493,10 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
+      "curvatureScale": 0.1,
       "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "labelRotation": 8,
+      "labelStretch": 3
     },
     "010": {
       "name": "Republic of Poland",
@@ -1614,11 +1507,10 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "fontSizeScale": 1.7,
+      "labelRotation": 23,
+      "labelStretch": 3
     },
     "011": {
       "name": "Republic of Indonesia",
@@ -1627,28 +1519,26 @@
         83,
         83
       ],
-      "labelOffset": 0,
+      "labelOffset": 44,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "fontSizeScale": 0.8,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 3
     },
     "012": {
-      "name": "Kazakhstan",
+      "name": "Republic of Kazakhstan",
       "color": [
         75,
         186,
         204
       ],
-      "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
+      "labelOffset": 10,
+      "labelXOffset": 15,
+      "curvatureScale": 0.2,
       "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "labelRotation": -3,
+      "labelStretch": 3
     },
     "013": {
       "name": "Republic of the Sudan",
@@ -1659,11 +1549,10 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 0.1,
+      "fontSizeScale": 1.55,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 3
     },
     "014": {
       "name": "Ukraine",
@@ -1674,11 +1563,10 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "curvatureScale": 0.2,
+      "fontSizeScale": 1.05,
+      "labelRotation": -6,
+      "labelStretch": 3
     },
     "015": {
       "name": "State of Libya",
@@ -1687,28 +1575,26 @@
         180,
         90
       ],
-      "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "labelOffset": 17,
+      "labelXOffset": -6,
+      "curvatureScale": 0.6,
+      "fontSizeScale": 1.15,
+      "labelRotation": -15,
+      "labelStretch": 3
     },
     "016": {
-      "name": "Belarus",
+      "name": "Republic of Belarus",
       "color": [
         91,
         137,
         67
       ],
       "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "labelXOffset": -6,
+      "curvatureScale": -0.1,
+      "fontSizeScale": 1.7,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 2.8
     },
     "017": {
       "name": "Japan",
@@ -1717,28 +1603,26 @@
         69,
         117
       ],
-      "labelOffset": 0,
+      "labelOffset": -6,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
+      "curvatureScale": 2,
       "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "labelRotation": -5,
+      "labelStretch": 3
     },
     "018": {
-      "name": "Iraq",
+      "name": "Republic of Iraq",
       "color": [
         178,
         113,
         99
       ],
-      "labelOffset": 0,
+      "labelOffset": -10,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 0.8,
+      "fontSizeScale": 1.7,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.7
     },
     "019": {
       "name": "Kingdom of Sweden",
@@ -1749,11 +1633,10 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
+      "curvatureScale": 0.6,
       "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "labelRotation": 21,
+      "labelStretch": 3
     },
     "020": {
       "name": "Federative Republic of Brazil",
@@ -1763,12 +1646,11 @@
         30
       ],
       "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "labelXOffset": 19,
+      "curvatureScale": 0.3,
+      "fontSizeScale": 1.75,
+      "labelRotation": 18,
+      "labelStretch": 3
     },
     "021": {
       "name": "Kingdom of Spain",
@@ -1777,13 +1659,12 @@
         198,
         94
       ],
-      "labelOffset": 0,
+      "labelOffset": 9,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 0.8,
+      "fontSizeScale": 1.6,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 3
     },
     "022": {
       "name": "Italian Republic",
@@ -1794,14 +1675,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 0.2,
+      "fontSizeScale": 0.7,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 3
     },
     "023": {
-      "name": "Iran",
+      "name": "Islamic Republic of Iran",
       "color": [
         0,
         166,
@@ -1809,29 +1689,27 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "curvatureScale": 0.3,
+      "fontSizeScale": 1.25,
+      "labelRotation": 8,
+      "labelStretch": 3
     },
     "024": {
-      "name": "Ethiopia",
+      "name": "Federal Republic of Ethiopia",
       "color": [
         115,
         100,
         90
       ],
-      "labelOffset": 0,
+      "labelOffset": -14,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 0.8,
+      "fontSizeScale": 1.45,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 3
     },
     "025": {
-      "name": "Egypt",
+      "name": "Arab Republic of Egypt",
       "color": [
         230,
         230,
@@ -1839,29 +1717,27 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": -1,
+      "fontSizeScale": 1.25,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 3
     },
     "026": {
-      "name": "Saudi Arabia",
+      "name": "Kingdom of Saudi Arabia",
       "color": [
         46,
         109,
         62
       ],
-      "labelOffset": 0,
+      "labelOffset": -21,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 3
     },
     "027": {
-      "name": "South Africa",
+      "name": "Placeholder 027 (Color (185, 105, 79))",
       "color": [
         185,
         105,
@@ -1869,7 +1745,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1882,16 +1757,15 @@
         247,
         133
       ],
-      "labelOffset": 0,
+      "labelOffset": -4,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
+      "curvatureScale": -0.6,
       "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "labelRotation": -2,
+      "labelStretch": 3
     },
     "029": {
-      "name": "Yemen",
+      "name": "Placeholder 029 (Color (233, 155, 81))",
       "color": [
         233,
         155,
@@ -1899,29 +1773,27 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "030": {
-      "name": "Mexico",
+      "name": "United Mexican States",
       "color": [
         72,
         130,
         84
       ],
-      "labelOffset": 0,
+      "labelOffset": -10,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
+      "curvatureScale": 0.6,
       "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 3
     },
     "031": {
-      "name": "Syria",
+      "name": "Placeholder 031 (Color (100, 100, 150))",
       "color": [
         100,
         100,
@@ -1929,7 +1801,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -1942,16 +1813,15 @@
         83,
         123
       ],
-      "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "labelOffset": -3,
+      "labelXOffset": 2,
+      "curvatureScale": -0.2,
+      "fontSizeScale": 1.2,
+      "labelRotation": 95,
+      "labelStretch": 3
     },
     "033": {
-      "name": "Pakistan",
+      "name": "Islamic Republic of Pakistan",
       "color": [
         0,
         102,
@@ -1959,11 +1829,10 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
+      "curvatureScale": 0.7,
       "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 3
     },
     "034": {
       "name": "Argentine Republic",
@@ -1972,28 +1841,26 @@
         204,
         255
       ],
-      "labelOffset": 0,
+      "labelOffset": 16,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
+      "curvatureScale": 0.3,
       "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "labelRotation": -1,
+      "labelStretch": 3
     },
     "035": {
-      "name": "Congo-Kinshasa",
+      "name": "Democratic Republic of the Congo",
       "color": [
         20,
         107,
         193
       ],
-      "labelOffset": 0,
+      "labelOffset": -21,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": -0.7,
+      "fontSizeScale": 1.45,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 3
     },
     "036": {
       "name": "Republic of the Philippines",
@@ -2002,27 +1869,25 @@
         82,
         175
       ],
-      "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
+      "labelOffset": -13,
+      "labelXOffset": -9,
+      "curvatureScale": -1.3,
       "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "labelRotation": 10,
+      "labelStretch": 3
     },
     "037": {
-      "name": "United Kingdom",
+      "name": "United Kingdom of Great Britian and Northern Ireland",
       "color": [
         150,
         26,
         9
       ],
-      "labelOffset": 0,
+      "labelOffset": 11,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
+      "fontSizeScale": 1.35,
+      "labelRotation": 18,
       "labelStretch": 1
     },
     "038": {
@@ -2034,11 +1899,10 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
+      "curvatureScale": 0.3,
       "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 3
     },
     "039": {
       "name": "Kingdom of Norway",
@@ -2047,16 +1911,15 @@
         156,
         183
       ],
-      "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
+      "labelOffset": -9,
+      "labelXOffset": -30,
       "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
+      "fontSizeScale": 0.35,
+      "labelRotation": 8,
       "labelStretch": 1
     },
     "040": {
-      "name": "Cambodia",
+      "name": "Placeholder 040 (Color (61, 83, 114))",
       "color": [
         61,
         83,
@@ -2064,7 +1927,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -2077,31 +1939,29 @@
         98,
         51
       ],
-      "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
+      "labelOffset": -20,
+      "labelXOffset": -69,
       "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "fontSizeScale": 1.5,
+      "labelRotation": -67,
+      "labelStretch": 2.6
     },
     "042": {
-      "name": "Vietnam",
+      "name": "Socialist Republic of Vietnam",
       "color": [
         147,
         0,
         0
       ],
-      "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
+      "labelOffset": 4,
+      "labelXOffset": 19,
+      "curvatureScale": 1.8,
       "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 3
     },
     "043": {
-      "name": "Thailand",
+      "name": "Kingdom of Thailand",
       "color": [
         114,
         153,
@@ -2109,29 +1969,27 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "labelRotation": -49,
+      "labelStretch": 2.7
     },
     "044": {
-      "name": "Somalia",
+      "name": "Federal Republic of Somalia",
       "color": [
         120,
         219,
         240
       ],
-      "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
+      "labelOffset": 11,
+      "labelXOffset": 6,
       "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "fontSizeScale": 1.1,
+      "labelRotation": -8,
+      "labelStretch": 3
     },
     "045": {
-      "name": "Mali",
+      "name": "Placeholder 045 (Color (154, 119, 179))",
       "color": [
         154,
         119,
@@ -2139,29 +1997,27 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "046": {
-      "name": "Nigeria",
+      "name": "Federal Republic of Nigeria",
       "color": [
         225,
         85,
         4
       ],
-      "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "labelOffset": 11,
+      "labelXOffset": 19,
+      "curvatureScale": -1.3,
+      "fontSizeScale": 1.1,
+      "labelRotation": 41,
+      "labelStretch": 2.8
     },
     "047": {
-      "name": "Centrafrica",
+      "name": "Placeholder 047 (Color (0, 19, 90))",
       "color": [
         0,
         19,
@@ -2169,14 +2025,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "048": {
-      "name": "Romania",
+      "name": "Placeholder 048 (Color (255, 255, 119))",
       "color": [
         255,
         255,
@@ -2184,14 +2039,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "049": {
-      "name": "Greece",
+      "name": "Hellenic Republic",
       "color": [
         113,
         166,
@@ -2199,14 +2053,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "050": {
-      "name": "Turkmenistan",
+      "name": "Placeholder 050 (Color (31, 168, 70))",
       "color": [
         31,
         168,
@@ -2214,14 +2067,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "051": {
-      "name": "Bangladesh",
+      "name": "Placeholder 051 (Color (204, 204, 0))",
       "color": [
         204,
         204,
@@ -2229,14 +2081,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "052": {
-      "name": "Chad",
+      "name": "Placeholder 052 (Color (179, 230, 19))",
       "color": [
         179,
         230,
@@ -2244,14 +2095,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "053": {
-      "name": "Latvia",
+      "name": "Placeholder 053 (Color (123, 125, 184))",
       "color": [
         123,
         125,
@@ -2259,41 +2109,38 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "054": {
-      "name": "Tanzania",
+      "name": "United Republic of Tanzania",
       "color": [
         248,
         48,
         177
       ],
-      "labelOffset": 0,
+      "labelOffset": -4,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "curvatureScale": 0.7,
+      "fontSizeScale": 1.15,
+      "labelRotation": -31,
+      "labelStretch": 3
     },
     "055": {
-      "name": "Austria",
+      "name": "Republic of Austria",
       "color": [
         200,
         200,
         200
       ],
       "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "labelXOffset": 13,
+      "curvatureScale": 0.1,
+      "fontSizeScale": 1.05,
+      "labelRotation": 75,
+      "labelStretch": 0.9
     },
     "056": {
       "name": "Republic of Chile",
@@ -2302,31 +2149,29 @@
         131,
         139
       ],
-      "labelOffset": 0,
+      "labelOffset": -14,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "fontSizeScale": 0.65,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 3
     },
     "057": {
-      "name": "Lithuania",
+      "name": "Placeholder 057 (Color (154, 69, 115))",
       "color": [
         154,
         69,
         115
       ],
-      "labelOffset": 0,
+      "labelOffset": 10,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
+      "curvatureScale": -1.6,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "058": {
-      "name": "Azerbaijan",
+      "name": "Placeholder 058 (Color (194, 172, 93))",
       "color": [
         194,
         172,
@@ -2334,26 +2179,24 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "059": {
-      "name": "Jordan",
+      "name": "Placeholder 059 (Color (111, 55, 77))",
       "color": [
         111,
         55,
         77
       ],
       "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
+      "labelXOffset": 2,
+      "curvatureScale": 0.6,
       "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "labelRotation": -136,
+      "labelStretch": 1.6
     },
     "060": {
       "name": "Malaysia",
@@ -2364,29 +2207,27 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
-      "labelRotation": 0,
+      "labelRotation": 5,
       "labelStretch": 1
     },
     "061": {
-      "name": "Mauritania",
+      "name": "Placeholder 061 (Color (255, 196, 0))",
       "color": [
         255,
         196,
         0
       ],
-      "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
+      "labelOffset": -24,
+      "labelXOffset": -10,
+      "curvatureScale": 1.1,
+      "fontSizeScale": 1.1,
+      "labelRotation": 24,
       "labelStretch": 1
     },
     "062": {
-      "name": "Serbia",
+      "name": "Placeholder 062 (Color (48, 82, 130))",
       "color": [
         48,
         82,
@@ -2394,14 +2235,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "063": {
-      "name": "North Korea",
+      "name": "Democratic People's Republic of Korea",
       "color": [
         255,
         196,
@@ -2409,14 +2249,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "064": {
-      "name": "Greenland",
+      "name": "Placeholder 064 (Color (142, 68, 62))",
       "color": [
         142,
         68,
@@ -2424,14 +2263,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "065": {
-      "name": "Czechia",
+      "name": "Placeholder 065 (Color (78, 136, 186))",
       "color": [
         78,
         136,
@@ -2439,14 +2277,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "066": {
-      "name": "Tajikistan",
+      "name": "Placeholder 066 (Color (168, 138, 106))",
       "color": [
         168,
         138,
@@ -2454,14 +2291,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "067": {
-      "name": "Angola",
+      "name": "Placeholder 067 (Color (112, 250, 49))",
       "color": [
         112,
         250,
@@ -2469,14 +2305,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "068": {
-      "name": "Niger",
+      "name": "Placeholder 068 (Color (0, 140, 79))",
       "color": [
         0,
         140,
@@ -2484,14 +2319,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
+      "curvatureScale": 0.5,
       "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.8
     },
     "069": {
-      "name": "Laos",
+      "name": "Lao People's Democratic Republic",
       "color": [
         180,
         105,
@@ -2499,14 +2333,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "curvatureScale": 0.1,
+      "fontSizeScale": 1.05,
+      "labelRotation": 64,
+      "labelStretch": 1.1
     },
     "070": {
-      "name": "Cameroon",
+      "name": "Placeholder 070 (Color (80, 130, 30))",
       "color": [
         80,
         130,
@@ -2514,14 +2347,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "071": {
-      "name": "Venezuela",
+      "name": "Placeholder 071 (Color (216, 153, 110))",
       "color": [
         216,
         153,
@@ -2529,14 +2361,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "072": {
-      "name": "Peru",
+      "name": "Republic of Peru",
       "color": [
         160,
         56,
@@ -2544,14 +2375,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "labelRotation": -21,
+      "labelStretch": 2.5
     },
     "073": {
-      "name": "Bosnia and Herzegovina",
+      "name": "Placeholder 073 (Color (25, 25, 158))",
       "color": [
         25,
         25,
@@ -2559,14 +2389,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "074": {
-      "name": "Belgium",
+      "name": "Placeholder 074 (Color (196, 141, 30))",
       "color": [
         196,
         141,
@@ -2574,14 +2403,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "075": {
-      "name": "Croatia",
+      "name": "Placeholder 075 (Color (0, 119, 200))",
       "color": [
         0,
         119,
@@ -2589,14 +2417,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "076": {
-      "name": "New Guinea",
+      "name": "Placeholder 076 (Color (153, 0, 76))",
       "color": [
         153,
         0,
@@ -2604,14 +2431,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "077": {
-      "name": "Morocco",
+      "name": "Placeholder 077 (Color (255, 0, 150))",
       "color": [
         255,
         0,
@@ -2619,14 +2445,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "078": {
-      "name": "Georgia",
+      "name": "Placeholder 078 (Color (161, 58, 72))",
       "color": [
         161,
         58,
@@ -2634,14 +2459,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "079": {
-      "name": "Antarctica",
+      "name": "Placeholder 079 (Color (255, 255, 255))",
       "color": [
         255,
         255,
@@ -2649,14 +2473,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "080": {
-      "name": "Switzerland",
+      "name": "Placeholder 080 (Color (193, 81, 81))",
       "color": [
         193,
         81,
@@ -2664,14 +2487,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "081": {
-      "name": "South Korea",
+      "name": "Republic of Korea",
       "color": [
         195,
         217,
@@ -2679,14 +2501,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "082": {
-      "name": "Mozambique",
+      "name": "Placeholder 082 (Color (0, 113, 103))",
       "color": [
         0,
         113,
@@ -2694,29 +2515,27 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "083": {
-      "name": "Cambodia",
+      "name": "Kingdom of Cambodia",
       "color": [
         109,
         211,
         147
       ],
-      "labelOffset": 0,
+      "labelOffset": -6,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
+      "fontSizeScale": 1.45,
+      "labelRotation": 13,
       "labelStretch": 1
     },
     "084": {
-      "name": "Kyrgyzstan",
+      "name": "Placeholder 084 (Color (204, 10, 19))",
       "color": [
         204,
         10,
@@ -2724,7 +2543,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -2737,16 +2555,15 @@
         76,
         76
       ],
-      "labelOffset": 0,
+      "labelOffset": -4,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "labelRotation": 21,
+      "labelStretch": 2.4
     },
     "086": {
-      "name": "Bulgaria",
+      "name": "Placeholder 086 (Color (72, 122, 81))",
       "color": [
         72,
         122,
@@ -2754,14 +2571,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "087": {
-      "name": "Slovakia",
+      "name": "Placeholder 087 (Color (158, 161, 188))",
       "color": [
         158,
         161,
@@ -2769,14 +2585,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "088": {
-      "name": "Colombia",
+      "name": "Placeholder 088 (Color (214, 177, 74))",
       "color": [
         214,
         177,
@@ -2784,14 +2599,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "089": {
-      "name": "Israel",
+      "name": "Placeholder 089 (Color (78, 135, 163))",
       "color": [
         78,
         135,
@@ -2799,14 +2613,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "090": {
-      "name": "Portugal",
+      "name": "Placeholder 090 (Color (51, 151, 91))",
       "color": [
         51,
         151,
@@ -2814,29 +2627,27 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "091": {
-      "name": "Kenya",
+      "name": "Republic of Kenya",
       "color": [
         210,
         150,
         0
       ],
-      "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
+      "labelOffset": 9,
+      "labelXOffset": 2,
       "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "fontSizeScale": 1.15,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.1
     },
     "092": {
-      "name": "Sri Lanka",
+      "name": "Placeholder 092 (Color (177, 255, 101))",
       "color": [
         177,
         255,
@@ -2844,14 +2655,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "093": {
-      "name": "Namibia",
+      "name": "Placeholder 093 (Color (183, 138, 250))",
       "color": [
         183,
         138,
@@ -2859,14 +2669,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "094": {
-      "name": "New Zealand",
+      "name": "Placeholder 094 (Color (170, 165, 180))",
       "color": [
         170,
         165,
@@ -2874,14 +2683,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "095": {
-      "name": "Estonia",
+      "name": "Placeholder 095 (Color (99, 204, 254))",
       "color": [
         99,
         204,
@@ -2889,14 +2697,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "096": {
-      "name": "Nepal",
+      "name": "Federal Democratic Republic of Nepal",
       "color": [
         125,
         99,
@@ -2904,29 +2711,27 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
-      "labelRotation": 0,
-      "labelStretch": 1
+      "labelRotation": 5,
+      "labelStretch": 1.8
     },
     "097": {
-      "name": "Bolivia",
+      "name": "Plurinational Republic of Bolivia",
       "color": [
         255,
         234,
         177
       ],
-      "labelOffset": 0,
+      "labelOffset": 14,
       "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
-      "labelRotation": 0,
+      "curvatureScale": -0.6,
+      "fontSizeScale": 1.35,
+      "labelRotation": -3,
       "labelStretch": 1
     },
     "098": {
-      "name": "Congo-Brazzaville",
+      "name": "Placeholder 098 (Color (30, 120, 150))",
       "color": [
         30,
         120,
@@ -2934,14 +2739,13 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
       "labelStretch": 1
     },
     "099": {
-      "name": "Nicaragua",
+      "name": "Placeholder 099 (Color (140, 78, 78))",
       "color": [
         140,
         78,
@@ -2949,7 +2753,6 @@
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
-      "labelArcShift": 0,
       "curvatureScale": 1,
       "fontSizeScale": 1,
       "labelRotation": 0,
@@ -3087,6 +2890,7 @@
     "135": "000",
     "136": "000",
     "137": "038",
+    "138": "040",
     "139": "000",
     "140": "005",
     "141": "005",
@@ -3102,6 +2906,7 @@
     "151": "000",
     "152": "039",
     "153": "000",
+    "154": "040",
     "155": "038",
     "156": "000",
     "157": "000",
@@ -3203,10 +3008,12 @@
     "255": "039",
     "256": "000",
     "257": "000",
+    "258": "040",
     "259": "038",
     "260": "000",
     "261": "000",
     "262": "000",
+    "263": "040",
     "264": "019",
     "265": "019",
     "266": "019",
@@ -3225,9 +3032,11 @@
     "279": "000",
     "280": "000",
     "281": "019",
+    "282": "040",
     "284": "000",
     "285": "000",
     "286": "000",
+    "287": "040",
     "288": "148",
     "289": "019",
     "290": "038",
@@ -3246,6 +3055,7 @@
     "304": "000",
     "305": "000",
     "306": "000",
+    "307": "040",
     "308": "039",
     "309": "019",
     "310": "019",
@@ -3302,6 +3112,7 @@
     "361": "001",
     "362": "000",
     "363": "000",
+    "364": "040",
     "365": "019",
     "366": "019",
     "367": "019",
@@ -3347,6 +3158,7 @@
     "408": "005",
     "409": "005",
     "410": "005",
+    "411": "040",
     "412": "000",
     "413": "000",
     "414": "000",
@@ -3426,6 +3238,7 @@
     "488": "019",
     "489": "019",
     "490": "038",
+    "491": "040",
     "492": "000",
     "493": "005",
     "494": "019",
@@ -3625,6 +3438,7 @@
     "690": "039",
     "691": "039",
     "692": "039",
+    "693": "040",
     "694": "000",
     "695": "001",
     "696": "039",
@@ -3705,6 +3519,7 @@
     "773": "005",
     "774": "005",
     "775": "005",
+    "776": "040",
     "777": "038",
     "778": "038",
     "779": "000",
@@ -3743,6 +3558,7 @@
     "812": "000",
     "813": "000",
     "814": "000",
+    "815": "040",
     "816": "038",
     "817": "000",
     "818": "000",
@@ -3757,8 +3573,10 @@
     "827": "000",
     "828": "000",
     "829": "000",
+    "830": "040",
     "831": "037",
     "832": "039",
+    "833": "040",
     "834": "019",
     "835": "000",
     "836": "000",
@@ -3792,7 +3610,7 @@
     "864": "039",
     "865": "039",
     "866": "019",
-    "867": "038",
+    "867": "064",
     "868": "000",
     "869": "000",
     "870": "000",
@@ -3859,6 +3677,7 @@
     "932": "019",
     "933": "019",
     "934": "038",
+    "935": "040",
     "936": "000",
     "937": "000",
     "938": "000",
@@ -4001,6 +3820,7 @@
     "1076": "000",
     "1077": "000",
     "1078": "000",
+    "1079": "040",
     "1080": "019",
     "1081": "019",
     "1082": "019",
@@ -4010,6 +3830,7 @@
     "1086": "000",
     "1087": "000",
     "1088": "000",
+    "1089": "040",
     "1090": "039",
     "1091": "019",
     "1092": "095",
@@ -4079,6 +3900,7 @@
     "1156": "095",
     "1157": "000",
     "1158": "000",
+    "1159": "040",
     "1160": "000",
     "1161": "000",
     "1162": "000",
@@ -4105,6 +3927,7 @@
     "1183": "000",
     "1184": "019",
     "1185": "095",
+    "1186": "040",
     "1187": "000",
     "1188": "000",
     "1189": "000",
@@ -4127,6 +3950,7 @@
     "1206": "000",
     "1207": "000",
     "1208": "005",
+    "1209": "040",
     "1210": "005",
     "1211": "005",
     "1212": "019",
@@ -4137,10 +3961,12 @@
     "1217": "000",
     "1218": "001",
     "1219": "001",
+    "1220": "040",
     "1221": "005",
     "1222": "039",
     "1223": "095",
     "1224": "000",
+    "1225": "040",
     "1226": "000",
     "1227": "000",
     "1228": "000",
@@ -4155,6 +3981,7 @@
     "1237": "095",
     "1238": "095",
     "1239": "000",
+    "1240": "040",
     "1241": "000",
     "1242": "000",
     "1243": "000",
@@ -4212,6 +4039,8 @@
     "1295": "039",
     "1296": "019",
     "1297": "031",
+    "1298": "040",
+    "1299": "040",
     "1300": "000",
     "1301": "001",
     "1302": "019",
@@ -4229,6 +4058,7 @@
     "1314": "000",
     "1315": "000",
     "1316": "000",
+    "1317": "040",
     "1318": "019",
     "1319": "019",
     "1320": "019",
@@ -4286,6 +4116,7 @@
     "1372": "000",
     "1373": "000",
     "1374": "000",
+    "1375": "040",
     "1376": "005",
     "1377": "037",
     "1378": "037",
@@ -4304,6 +4135,7 @@
     "1391": "000",
     "1392": "001",
     "1393": "005",
+    "1394": "040",
     "1395": "005",
     "1396": "037",
     "1397": "037",
@@ -4427,6 +4259,7 @@
     "1515": "000",
     "1516": "000",
     "1517": "000",
+    "1518": "040",
     "1519": "019",
     "1520": "053",
     "1521": "053",
@@ -4464,6 +4297,7 @@
     "1553": "005",
     "1554": "005",
     "1555": "005",
+    "1556": "040",
     "1557": "053",
     "1558": "053",
     "1559": "000",
@@ -4614,6 +4448,7 @@
     "1704": "000",
     "1705": "000",
     "1706": "000",
+    "1707": "040",
     "1708": "037",
     "1709": "064",
     "1710": "057",
@@ -4710,6 +4545,7 @@
     "1802": "000",
     "1803": "000",
     "1804": "000",
+    "1805": "040",
     "1806": "000",
     "1807": "000",
     "1808": "005",
@@ -4806,6 +4642,7 @@
     "1899": "000",
     "1900": "000",
     "1901": "005",
+    "1902": "040",
     "1903": "106",
     "1904": "037",
     "1905": "037",
@@ -4918,6 +4755,7 @@
     "2015": "000",
     "2016": "000",
     "2017": "005",
+    "2018": "040",
     "2019": "005",
     "2020": "006",
     "2021": "010",
@@ -4938,6 +4776,7 @@
     "2036": "000",
     "2037": "005",
     "2038": "005",
+    "2039": "040",
     "2040": "010",
     "2041": "010",
     "2042": "000",
@@ -4973,6 +4812,7 @@
     "2072": "005",
     "2073": "005",
     "2074": "005",
+    "2075": "040",
     "2076": "037",
     "2077": "037",
     "2078": "006",
@@ -5128,6 +4968,7 @@
     "2229": "000",
     "2230": "000",
     "2231": "000",
+    "2232": "040",
     "2233": "006",
     "2234": "006",
     "2235": "010",
@@ -5719,6 +5560,7 @@
     "2828": "000",
     "2829": "005",
     "2830": "037",
+    "2831": "040",
     "2833": "103",
     "2834": "103",
     "2835": "006",
@@ -6144,6 +5986,7 @@
     "3256": "012",
     "3257": "000",
     "3258": "005",
+    "3259": "040",
     "3260": "037",
     "3261": "037",
     "3262": "103",
@@ -6199,6 +6042,7 @@
     "3312": "002",
     "3313": "005",
     "3314": "005",
+    "3315": "040",
     "3316": "005",
     "3317": "005",
     "3318": "037",
@@ -6247,6 +6091,7 @@
     "3361": "000",
     "3362": "000",
     "3363": "000",
+    "3364": "040",
     "3365": "037",
     "3366": "037",
     "3367": "037",
@@ -6294,6 +6139,7 @@
     "3410": "000",
     "3411": "005",
     "3412": "005",
+    "3413": "040",
     "3414": "037",
     "3416": "103",
     "3417": "006",
@@ -6370,6 +6216,7 @@
     "3488": "012",
     "3489": "012",
     "3490": "005",
+    "3491": "040",
     "3492": "005",
     "3493": "037",
     "3494": "037",
@@ -6653,6 +6500,7 @@
     "3772": "012",
     "3773": "000",
     "3774": "000",
+    "3775": "040",
     "3776": "000",
     "3777": "028",
     "3778": "000",
@@ -7104,6 +6952,7 @@
     "4225": "028",
     "4226": "000",
     "4227": "005",
+    "4228": "040",
     "4229": "005",
     "4230": "005",
     "4231": "007",
@@ -7241,6 +7090,7 @@
     "4363": "014",
     "4364": "012",
     "4365": "012",
+    "4366": "040",
     "4367": "028",
     "4368": "000",
     "4369": "000",
@@ -7399,6 +7249,7 @@
     "4523": "005",
     "4524": "005",
     "4525": "005",
+    "4526": "040",
     "4527": "005",
     "4528": "005",
     "4529": "005",
@@ -7432,6 +7283,7 @@
     "4557": "028",
     "4558": "001",
     "4559": "001",
+    "4560": "040",
     "4561": "005",
     "4562": "005",
     "4563": "005",
@@ -7733,6 +7585,7 @@
     "4861": "014",
     "4862": "014",
     "4863": "000",
+    "4864": "040",
     "4865": "028",
     "4866": "002",
     "4867": "001",
@@ -7830,6 +7683,7 @@
     "4959": "000",
     "4960": "005",
     "4961": "005",
+    "4962": "040",
     "4963": "005",
     "4964": "005",
     "4965": "007",
@@ -7908,6 +7762,7 @@
     "5038": "007",
     "5039": "007",
     "5040": "080",
+    "5041": "040",
     "5042": "055",
     "5043": "085",
     "5044": "085",
@@ -8031,6 +7886,7 @@
     "5163": "005",
     "5164": "005",
     "5165": "001",
+    "5166": "040",
     "5167": "007",
     "5168": "007",
     "5169": "007",
@@ -8207,6 +8063,7 @@
     "5342": "007",
     "5343": "007",
     "5344": "007",
+    "5345": "040",
     "5346": "080",
     "5347": "080",
     "5348": "080",
@@ -8215,6 +8072,7 @@
     "5351": "055",
     "5352": "055",
     "5353": "055",
+    "5354": "040",
     "5355": "085",
     "5356": "085",
     "5357": "048",
@@ -8318,7 +8176,9 @@
     "5456": "000",
     "5457": "000",
     "5458": "012",
+    "5459": "040",
     "5460": "012",
+    "5461": "040",
     "5462": "002",
     "5463": "000",
     "5464": "001",
@@ -8418,6 +8278,7 @@
     "5558": "001",
     "5559": "005",
     "5560": "007",
+    "5561": "040",
     "5562": "080",
     "5563": "022",
     "5564": "022",
@@ -8447,6 +8308,7 @@
     "5588": "001",
     "5589": "001",
     "5590": "001",
+    "5591": "040",
     "5592": "005",
     "5593": "007",
     "5594": "007",
@@ -8494,6 +8356,7 @@
     "5636": "000",
     "5637": "000",
     "5638": "000",
+    "5639": "040",
     "5640": "002",
     "5641": "002",
     "5642": "028",
@@ -8652,6 +8515,7 @@
     "5795": "002",
     "5796": "002",
     "5797": "001",
+    "5798": "040",
     "5799": "005",
     "5800": "005",
     "5801": "005",
@@ -8930,6 +8794,7 @@
     "6075": "000",
     "6076": "000",
     "6077": "032",
+    "6078": "040",
     "6079": "002",
     "6080": "028",
     "6081": "002",
@@ -9040,6 +8905,7 @@
     "6186": "002",
     "6187": "002",
     "6188": "000",
+    "6189": "040",
     "6190": "005",
     "6191": "001",
     "6192": "005",
@@ -9388,6 +9254,7 @@
     "6536": "017",
     "6537": "001",
     "6538": "001",
+    "6539": "040",
     "6540": "005",
     "6542": "007",
     "6543": "007",
@@ -10044,6 +9911,7 @@
     "7196": "001",
     "7197": "001",
     "7198": "001",
+    "7199": "040",
     "7200": "001",
     "7201": "001",
     "7202": "001",
@@ -10144,12 +10012,14 @@
     "7298": "050",
     "7299": "032",
     "7300": "084",
+    "7301": "040",
     "7302": "002",
     "7303": "002",
     "7304": "002",
     "7305": "002",
     "7306": "002",
     "7307": "002",
+    "7308": "040",
     "7309": "001",
     "7310": "001",
     "7311": "021",
@@ -10336,9 +10206,11 @@
     "7492": "101",
     "7493": "101",
     "7494": "101",
+    "7495": "040",
     "7496": "119",
     "7497": "086",
     "7498": "000",
+    "7499": "040",
     "7500": "050",
     "7501": "012",
     "7502": "012",
@@ -10411,6 +10283,7 @@
     "7570": "078",
     "7571": "000",
     "7572": "000",
+    "7573": "040",
     "7574": "032",
     "7575": "012",
     "7576": "002",
@@ -10636,6 +10509,7 @@
     "7797": "002",
     "7798": "063",
     "7799": "002",
+    "7800": "040",
     "7801": "001",
     "7802": "001",
     "7803": "001",
@@ -10937,6 +10811,7 @@
     "8099": "022",
     "8100": "022",
     "8101": "104",
+    "8102": "040",
     "8103": "049",
     "8104": "009",
     "8105": "009",
@@ -11007,6 +10882,7 @@
     "8170": "022",
     "8171": "104",
     "8172": "104",
+    "8173": "040",
     "8174": "009",
     "8175": "009",
     "8176": "009",
@@ -11211,6 +11087,7 @@
     "8380": "009",
     "8381": "009",
     "8382": "105",
+    "8383": "040",
     "8384": "105",
     "8385": "058",
     "8386": "058",
@@ -11814,6 +11691,7 @@
     "8985": "001",
     "8986": "049",
     "8987": "009",
+    "8988": "040",
     "8989": "009",
     "8990": "058",
     "8991": "050",
@@ -11827,6 +11705,7 @@
     "8999": "002",
     "9000": "063",
     "9001": "017",
+    "9002": "040",
     "9003": "001",
     "9004": "001",
     "9005": "001",
@@ -11915,6 +11794,7 @@
     "9088": "021",
     "9089": "049",
     "9090": "009",
+    "9091": "040",
     "9092": "009",
     "9093": "009",
     "9094": "009",
@@ -11960,6 +11840,7 @@
     "9134": "009",
     "9135": "009",
     "9136": "009",
+    "9137": "040",
     "9138": "105",
     "9139": "058",
     "9140": "050",
@@ -12194,6 +12075,7 @@
     "9371": "009",
     "9372": "009",
     "9373": "009",
+    "9374": "040",
     "9375": "009",
     "9376": "009",
     "9377": "009",
@@ -12230,6 +12112,7 @@
     "9408": "009",
     "9409": "009",
     "9410": "009",
+    "9411": "040",
     "9412": "023",
     "9413": "050",
     "9414": "050",
@@ -12335,9 +12218,11 @@
     "9514": "090",
     "9515": "022",
     "9516": "049",
+    "9517": "040",
     "9518": "009",
     "9519": "009",
     "9520": "009",
+    "9521": "040",
     "9522": "009",
     "9523": "050",
     "9524": "050",
@@ -12480,6 +12365,7 @@
     "9661": "050",
     "9662": "066",
     "9663": "002",
+    "9664": "040",
     "9665": "002",
     "9666": "002",
     "9667": "002",
@@ -13574,6 +13460,7 @@
     "10763": "018",
     "10764": "018",
     "10765": "023",
+    "10766": "040",
     "10767": "002",
     "10768": "002",
     "10769": "002",
@@ -13721,6 +13608,7 @@
     "10911": "112",
     "10912": "018",
     "10913": "018",
+    "10914": "040",
     "10915": "018",
     "10916": "023",
     "10917": "196",
@@ -13751,6 +13639,7 @@
     "10942": "001",
     "10943": "001",
     "10944": "041",
+    "10945": "040",
     "10946": "112",
     "10947": "112",
     "10948": "018",
@@ -13839,6 +13728,7 @@
     "11031": "112",
     "11032": "031",
     "11033": "018",
+    "11034": "040",
     "11035": "018",
     "11036": "018",
     "11037": "023",
@@ -13902,6 +13792,7 @@
     "11095": "003",
     "11096": "003",
     "11097": "002",
+    "11098": "040",
     "11099": "017",
     "11100": "017",
     "11101": "017",
@@ -13986,6 +13877,7 @@
     "11181": "112",
     "11182": "112",
     "11183": "031",
+    "11184": "040",
     "11185": "018",
     "11186": "018",
     "11187": "018",
@@ -14002,6 +13894,7 @@
     "11199": "031",
     "11200": "018",
     "11201": "018",
+    "11202": "040",
     "11203": "018",
     "11204": "018",
     "11205": "018",
@@ -14072,6 +13965,7 @@
     "11271": "031",
     "11272": "059",
     "11273": "018",
+    "11274": "040",
     "11275": "018",
     "11276": "018",
     "11277": "023",
@@ -14136,6 +14030,7 @@
     "11336": "001",
     "11337": "015",
     "11338": "015",
+    "11339": "040",
     "11340": "018",
     "11341": "196",
     "11342": "196",
@@ -14174,6 +14069,7 @@
     "11376": "089",
     "11377": "089",
     "11378": "031",
+    "11379": "040",
     "11380": "018",
     "11381": "018",
     "11382": "023",
@@ -14198,6 +14094,7 @@
     "11401": "059",
     "11402": "059",
     "11403": "059",
+    "11404": "040",
     "11405": "018",
     "11406": "002",
     "11407": "002",
@@ -14916,6 +14813,7 @@
     "12124": "059",
     "12125": "018",
     "12126": "018",
+    "12127": "040",
     "12128": "023",
     "12129": "023",
     "12130": "033",
@@ -14937,6 +14835,7 @@
     "12146": "018",
     "12147": "018",
     "12148": "018",
+    "12149": "040",
     "12150": "003",
     "12151": "003",
     "12152": "003",
@@ -14959,6 +14858,7 @@
     "12169": "059",
     "12170": "059",
     "12171": "018",
+    "12172": "040",
     "12173": "018",
     "12174": "023",
     "12175": "023",
@@ -15249,6 +15149,7 @@
     "12465": "033",
     "12466": "002",
     "12467": "002",
+    "12468": "040",
     "12469": "001",
     "12470": "001",
     "12471": "015",
@@ -15269,6 +15170,7 @@
     "12486": "096",
     "12487": "002",
     "12488": "002",
+    "12489": "040",
     "12490": "015",
     "12491": "015",
     "12492": "015",
@@ -15818,6 +15720,7 @@
     "13040": "015",
     "13041": "025",
     "13042": "025",
+    "13043": "040",
     "13044": "023",
     "13045": "033",
     "13046": "003",
@@ -16949,6 +16852,7 @@
     "14182": "003",
     "14183": "051",
     "14184": "003",
+    "14185": "040",
     "14186": "002",
     "14189": "061",
     "14190": "025",
@@ -18857,6 +18761,7 @@
     "16160": "029",
     "16161": "069",
     "16162": "083",
+    "16163": "040",
     "16164": "045",
     "16165": "052",
     "16166": "052",
@@ -18992,6 +18897,7 @@
     "16297": "029",
     "16298": "003",
     "16299": "003",
+    "16300": "040",
     "16301": "036",
     "16302": "154",
     "16303": "099",
@@ -19066,7 +18972,7 @@
     "16373": "036",
     "16374": "068",
     "16375": "046",
-    "16376": "046",
+    "16376": "187",
     "16377": "052",
     "16378": "024",
     "16379": "024",
@@ -19175,6 +19081,7 @@
     "16486": "003",
     "16487": "003",
     "16488": "003",
+    "16489": "040",
     "16490": "052",
     "16491": "013",
     "16492": "024",
@@ -19197,6 +19104,7 @@
     "16511": "068",
     "16512": "046",
     "16513": "046",
+    "16514": "040",
     "16515": "013",
     "16516": "024",
     "16517": "029",
@@ -19217,6 +19125,7 @@
     "16533": "083",
     "16534": "036",
     "16536": "120",
+    "16537": "040",
     "16538": "029",
     "16539": "029",
     "16540": "029",
@@ -19226,6 +19135,7 @@
     "16544": "036",
     "16545": "099",
     "16546": "068",
+    "16547": "040",
     "16548": "052",
     "16549": "029",
     "16550": "003",
@@ -19235,7 +19145,7 @@
     "16555": "046",
     "16556": "068",
     "16557": "046",
-    "16558": "046",
+    "16558": "070",
     "16559": "070",
     "16560": "052",
     "16561": "052",
@@ -19289,6 +19199,7 @@
     "16611": "083",
     "16612": "083",
     "16613": "036",
+    "16614": "040",
     "16615": "129",
     "16616": "132",
     "16617": "013",
@@ -19344,6 +19255,7 @@
     "16671": "013",
     "16672": "013",
     "16673": "013",
+    "16674": "040",
     "16675": "139",
     "16676": "003",
     "16677": "083",
@@ -19362,6 +19274,7 @@
     "16690": "029",
     "16691": "003",
     "16692": "083",
+    "16693": "040",
     "16694": "099",
     "16695": "099",
     "16696": "099",
@@ -19790,7 +19703,7 @@
     "17137": "113",
     "17138": "024",
     "17139": "024",
-    "17140": "000",
+    "17140": "044",
     "17141": "003",
     "17142": "043",
     "17143": "126",
@@ -19895,6 +19808,7 @@
     "17247": "024",
     "17248": "126",
     "17249": "130",
+    "17250": "040",
     "17251": "138",
     "17252": "047",
     "17253": "047",
@@ -20077,6 +19991,7 @@
     "17450": "044",
     "17451": "044",
     "17452": "036",
+    "17453": "040",
     "17454": "036",
     "17455": "036",
     "17456": "088",
@@ -20120,6 +20035,7 @@
     "17495": "092",
     "17496": "036",
     "17497": "130",
+    "17498": "040",
     "17499": "138",
     "17500": "121",
     "17501": "036",
@@ -20299,6 +20215,7 @@
     "17689": "092",
     "17691": "131",
     "17692": "121",
+    "17693": "040",
     "17694": "046",
     "17695": "070",
     "17696": "070",
@@ -20374,6 +20291,7 @@
     "17771": "070",
     "17772": "047",
     "17774": "070",
+    "17775": "040",
     "17776": "113",
     "17777": "024",
     "17778": "024",
@@ -20530,6 +20448,7 @@
     "17939": "047",
     "17940": "047",
     "17941": "091",
+    "17942": "040",
     "17943": "011",
     "17944": "060",
     "17946": "091",
@@ -20679,6 +20598,7 @@
     "18097": "110",
     "18098": "091",
     "18099": "044",
+    "18100": "040",
     "18101": "060",
     "18102": "020",
     "18103": "011",
@@ -20765,6 +20685,7 @@
     "18185": "070",
     "18186": "098",
     "18187": "035",
+    "18188": "040",
     "18189": "110",
     "18190": "044",
     "18191": "044",
@@ -20954,6 +20875,7 @@
     "18382": "091",
     "18383": "011",
     "18384": "141",
+    "18385": "040",
     "18386": "011",
     "18387": "011",
     "18388": "011",
@@ -20995,6 +20917,7 @@
     "18427": "137",
     "18428": "098",
     "18429": "098",
+    "18430": "040",
     "18431": "011",
     "18432": "011",
     "18434": "035",
@@ -21125,6 +21048,7 @@
     "18570": "035",
     "18571": "020",
     "18572": "098",
+    "18573": "040",
     "18574": "091",
     "18575": "091",
     "18576": "011",
@@ -21290,6 +21214,7 @@
     "18741": "072",
     "18742": "098",
     "18743": "035",
+    "18744": "040",
     "18745": "011",
     "18746": "011",
     "18748": "072",
@@ -21391,7 +21316,6 @@
     "18852": "011",
     "18853": "011",
     "18854": "011",
-    "18855": "076",
     "18856": "020",
     "18857": "067",
     "18858": "011",
@@ -21441,7 +21365,6 @@
     "18902": "011",
     "18903": "011",
     "18904": "076",
-    "18905": "170",
     "18906": "035",
     "18907": "054",
     "18908": "054",
@@ -21507,11 +21430,9 @@
     "18971": "054",
     "18972": "054",
     "18973": "011",
-    "18974": "170",
     "18975": "020",
     "18976": "076",
     "18977": "076",
-    "18978": "170",
     "18979": "020",
     "18980": "067",
     "18981": "035",
@@ -21534,7 +21455,6 @@
     "19000": "054",
     "19001": "076",
     "19002": "076",
-    "19003": "170",
     "19004": "067",
     "19005": "011",
     "19006": "076",
@@ -21555,6 +21475,7 @@
     "19023": "067",
     "19024": "067",
     "19025": "020",
+    "19026": "040",
     "19027": "011",
     "19028": "011",
     "19030": "035",
@@ -21564,7 +21485,6 @@
     "19034": "054",
     "19035": "011",
     "19036": "076",
-    "19037": "170",
     "19038": "054",
     "19039": "020",
     "19040": "011",
@@ -21623,7 +21543,6 @@
     "19094": "054",
     "19095": "011",
     "19096": "011",
-    "19097": "170",
     "19098": "072",
     "19099": "100",
     "19100": "054",
@@ -21635,6 +21554,7 @@
     "19107": "020",
     "19108": "160",
     "19110": "035",
+    "19111": "040",
     "19112": "100",
     "19113": "020",
     "19114": "054",
@@ -21652,7 +21572,6 @@
     "19126": "020",
     "19127": "054",
     "19128": "170",
-    "19129": "170",
     "19131": "100",
     "19132": "100",
     "19133": "054",
@@ -21684,11 +21603,13 @@
     "19164": "004",
     "19165": "020",
     "19166": "142",
+    "19167": "040",
     "19168": "076",
     "19169": "072",
     "19170": "054",
     "19171": "076",
     "19172": "020",
+    "19173": "040",
     "19174": "100",
     "19175": "100",
     "19176": "054",
@@ -21696,10 +21617,12 @@
     "19178": "020",
     "19179": "035",
     "19180": "054",
+    "19181": "040",
     "19182": "100",
     "19183": "054",
     "19185": "076",
     "19186": "035",
+    "19188": "040",
     "19189": "067",
     "19191": "035",
     "19192": "011",
@@ -21960,6 +21883,7 @@
     "19471": "067",
     "19472": "102",
     "19473": "004",
+    "19474": "040",
     "19475": "004",
     "19477": "020",
     "19478": "100",
@@ -21969,6 +21893,7 @@
     "19482": "004",
     "19483": "004",
     "19484": "004",
+    "19486": "040",
     "19487": "097",
     "19488": "020",
     "19489": "020",
@@ -22135,6 +22060,7 @@
     "19681": "004",
     "19682": "004",
     "19683": "004",
+    "19684": "040",
     "19685": "116",
     "19686": "116",
     "19687": "004",
@@ -22332,6 +22258,7 @@
     "19900": "004",
     "19901": "034",
     "19903": "004",
+    "19904": "040",
     "19905": "004",
     "19906": "034",
     "19907": "034",
@@ -22833,6 +22760,7 @@
     "20426": "027",
     "20427": "004",
     "20428": "004",
+    "20429": "040",
     "20430": "027",
     "20431": "027",
     "20432": "004",
@@ -22909,6 +22837,7 @@
     "20504": "027",
     "20505": "004",
     "20506": "004",
+    "20507": "040",
     "20508": "004",
     "20509": "004",
     "20510": "027",
@@ -22958,6 +22887,7 @@
     "20557": "027",
     "20558": "027",
     "20559": "004",
+    "20560": "040",
     "20561": "004",
     "20562": "034",
     "20563": "004",
@@ -23095,6 +23025,7 @@
     "20697": "094",
     "20698": "034",
     "20699": "004",
+    "20700": "040",
     "20701": "034",
     "20702": "004",
     "20703": "034",
@@ -23199,6 +23130,7 @@
     "20808": "094",
     "20809": "094",
     "20810": "004",
+    "20811": "040",
     "20812": "034",
     "20813": "056",
     "20814": "056",
@@ -23332,8 +23264,7 @@
     "21096": "079",
     "21097": "079",
     "21099": "079",
-    "21100": "079",
-    "21101": "025"
+    "21100": "079"
   },
   "interests": {}
 }

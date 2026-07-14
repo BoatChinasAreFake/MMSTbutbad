@@ -156,28 +156,29 @@ def precompute():
                 straits = json.load(f)
                 count_straits = 0
                 for strait in straits:
-                    if len(strait) == 2:
-                        # Migrate strait 32-bit keys to stable IDs if necessary,
-                        # but if straits.json is already converted or if we support both.
-                        # Wait, let's support resolving 32-bit keys to stable IDs for backward compatibility!
+                    if isinstance(strait, dict) and "from" in strait and "to" in strait:
+                        key_a_raw, key_b_raw = strait["from"], strait["to"]
+                    elif isinstance(strait, (list, tuple)) and len(strait) == 2:
                         key_a_raw, key_b_raw = strait[0], strait[1]
-                        
-                        # Helper to map 32-bit key to stable ID
-                        def get_stable_id_for_key_32(k32):
-                            r = (k32 >> 24) & 0xFF
-                            g = (k32 >> 16) & 0xFF
-                            b = (k32 >> 8) & 0xFF
-                            return color_to_id.get((r, g, b))
+                    else:
+                        continue
+                    
+                    # Helper to map 32-bit key to stable ID
+                    def get_stable_id_for_key_32(k32):
+                        r = (k32 >> 24) & 0xFF
+                        g = (k32 >> 16) & 0xFF
+                        b = (k32 >> 8) & 0xFF
+                        return color_to_id.get((r, g, b))
 
-                        id_a = get_stable_id_for_key_32(key_a_raw) or key_a_raw
-                        id_b = get_stable_id_for_key_32(key_b_raw) or key_b_raw
-                        
-                        key_a, key_b = str(id_a), str(id_b)
-                        if key_a in final_neighbors and key_b in final_neighbors:
-                            if key_b not in final_neighbors[key_a]:
-                                final_neighbors[key_a].append(key_b)
-                                final_neighbors[key_b].append(key_a)
-                                count_straits += 1
+                    id_a = get_stable_id_for_key_32(key_a_raw) or key_a_raw
+                    id_b = get_stable_id_for_key_32(key_b_raw) or key_b_raw
+                    
+                    key_a, key_b = str(id_a), str(id_b)
+                    if key_a in final_neighbors and key_b in final_neighbors:
+                        if key_b not in final_neighbors[key_a]:
+                            final_neighbors[key_a].append(key_b)
+                            final_neighbors[key_b].append(key_a)
+                            count_straits += 1
                 print(f"Successfully integrated {count_straits} custom straits.")
         except Exception as e:
             print(f"Warning: Failed to load straits.json: {e}")

@@ -1,0 +1,466 @@
+Total non-default country presets: 58
+
+ID 000 (Russian Federation):
+  V-Shift (labelOffset): 46
+  H-Shift (labelXOffset): -114
+  Curvature Scale: 0.9
+  Font Size Scale: 1.25
+  Rotation: 3
+  Stretching: 3
+
+ID 001 (United States of America):
+  V-Shift (labelOffset): -14
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 0.4
+  Font Size Scale: 1.05
+  Rotation: 0
+  Stretching: 3
+
+ID 002 (People's Republic of China):
+  V-Shift (labelOffset): -43
+  H-Shift (labelXOffset): -6
+  Curvature Scale: 1
+  Font Size Scale: 1.75
+  Rotation: 0
+  Stretching: 3
+
+ID 003 (Republic of India):
+  V-Shift (labelOffset): 24
+  H-Shift (labelXOffset): -24
+  Curvature Scale: -0.3
+  Font Size Scale: 1.1
+  Rotation: -18
+  Stretching: 3
+
+ID 004 (Commonwealth of Australia):
+  V-Shift (labelOffset): 19
+  H-Shift (labelXOffset): -58
+  Curvature Scale: 1
+  Font Size Scale: 1.45
+  Rotation: -9
+  Stretching: 3
+
+ID 005 (Canada):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 1
+  Font Size Scale: 1.2
+  Rotation: 0
+  Stretching: 3
+
+ID 006 (Federal Republic of Germany):
+  V-Shift (labelOffset): 7
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 0.5
+  Font Size Scale: 2.1
+  Rotation: 21
+  Stretching: 1.6
+
+ID 007 (French Republic):
+  V-Shift (labelOffset): -11
+  H-Shift (labelXOffset): 6
+  Curvature Scale: 0.6
+  Font Size Scale: 1.45
+  Rotation: 36
+  Stretching: 3
+
+ID 008 (Republic of the Union of Myanmar):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 1
+  Font Size Scale: 1.2
+  Rotation: 3
+  Stretching: 2.1
+
+ID 009 (Republic of Türkiye):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 0.1
+  Font Size Scale: 1
+  Rotation: 8
+  Stretching: 3
+
+ID 010 (Republic of Poland):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 1
+  Font Size Scale: 1.7
+  Rotation: 23
+  Stretching: 3
+
+ID 011 (Republic of Indonesia):
+  V-Shift (labelOffset): 44
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 1
+  Font Size Scale: 0.8
+  Rotation: 0
+  Stretching: 3
+
+ID 012 (Republic of Kazakhstan):
+  V-Shift (labelOffset): 10
+  H-Shift (labelXOffset): 15
+  Curvature Scale: 0.2
+  Font Size Scale: 1
+  Rotation: -3
+  Stretching: 3
+
+ID 013 (Republic of the Sudan):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 0.1
+  Font Size Scale: 1.55
+  Rotation: 0
+  Stretching: 3
+
+ID 014 (Ukraine):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 0.2
+  Font Size Scale: 1.05
+  Rotation: -6
+  Stretching: 3
+
+ID 015 (State of Libya):
+  V-Shift (labelOffset): 17
+  H-Shift (labelXOffset): -6
+  Curvature Scale: 0.6
+  Font Size Scale: 1.15
+  Rotation: -15
+  Stretching: 3
+
+ID 016 (Republic of Belarus):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): -6
+  Curvature Scale: -0.1
+  Font Size Scale: 1.7
+  Rotation: 0
+  Stretching: 2.8
+
+ID 017 (Japan):
+  V-Shift (labelOffset): -6
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 2
+  Font Size Scale: 1
+  Rotation: -5
+  Stretching: 3
+
+ID 018 (Republic of Iraq):
+  V-Shift (labelOffset): -10
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 0.8
+  Font Size Scale: 1.7
+  Rotation: 0
+  Stretching: 1.7
+
+ID 019 (Kingdom of Sweden):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 0.6
+  Font Size Scale: 1
+  Rotation: 21
+  Stretching: 3
+
+ID 020 (Federative Republic of Brazil):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 19
+  Curvature Scale: 0.3
+  Font Size Scale: 1.75
+  Rotation: 18
+  Stretching: 3
+
+ID 021 (Kingdom of Spain):
+  V-Shift (labelOffset): 9
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 0.8
+  Font Size Scale: 1.6
+  Rotation: 0
+  Stretching: 3
+
+ID 022 (Italian Republic):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 0.2
+  Font Size Scale: 0.7
+  Rotation: 0
+  Stretching: 3
+
+ID 023 (Islamic Republic of Iran):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 0.3
+  Font Size Scale: 1.25
+  Rotation: 8
+  Stretching: 3
+
+ID 024 (Federal Republic of Ethiopia):
+  V-Shift (labelOffset): -14
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 0.8
+  Font Size Scale: 1.45
+  Rotation: 0
+  Stretching: 3
+
+ID 025 (Arab Republic of Egypt):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 0
+  Curvature Scale: -1
+  Font Size Scale: 1.25
+  Rotation: 0
+  Stretching: 3
+
+ID 026 (Kingdom of Saudi Arabia):
+  V-Shift (labelOffset): -21
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 1
+  Font Size Scale: 1
+  Rotation: 0
+  Stretching: 3
+
+ID 028 (Mongolia):
+  V-Shift (labelOffset): -4
+  H-Shift (labelXOffset): 0
+  Curvature Scale: -0.6
+  Font Size Scale: 1
+  Rotation: -2
+  Stretching: 3
+
+ID 030 (United Mexican States):
+  V-Shift (labelOffset): -10
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 0.6
+  Font Size Scale: 1
+  Rotation: 0
+  Stretching: 3
+
+ID 032 (Republic of Uzbekistan):
+  V-Shift (labelOffset): -3
+  H-Shift (labelXOffset): 2
+  Curvature Scale: -0.2
+  Font Size Scale: 1.2
+  Rotation: 95
+  Stretching: 3
+
+ID 033 (Islamic Republic of Pakistan):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 0.7
+  Font Size Scale: 1
+  Rotation: 0
+  Stretching: 3
+
+ID 034 (Argentine Republic):
+  V-Shift (labelOffset): 16
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 0.3
+  Font Size Scale: 1
+  Rotation: -1
+  Stretching: 3
+
+ID 035 (Democratic Republic of the Congo):
+  V-Shift (labelOffset): -21
+  H-Shift (labelXOffset): 0
+  Curvature Scale: -0.7
+  Font Size Scale: 1.45
+  Rotation: 0
+  Stretching: 3
+
+ID 036 (Republic of the Philippines):
+  V-Shift (labelOffset): -13
+  H-Shift (labelXOffset): -9
+  Curvature Scale: -1.3
+  Font Size Scale: 1
+  Rotation: 10
+  Stretching: 3
+
+ID 037 (United Kingdom of Great Britian and Northern Ireland):
+  V-Shift (labelOffset): 11
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 1
+  Font Size Scale: 1.35
+  Rotation: 18
+  Stretching: 1
+
+ID 038 (Republic of Finland):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 0.3
+  Font Size Scale: 1
+  Rotation: 0
+  Stretching: 3
+
+ID 039 (Kingdom of Norway):
+  V-Shift (labelOffset): -9
+  H-Shift (labelXOffset): -30
+  Curvature Scale: 1
+  Font Size Scale: 0.35
+  Rotation: 8
+  Stretching: 1
+
+ID 041 (People's Democratic Republic of Algeria):
+  V-Shift (labelOffset): -20
+  H-Shift (labelXOffset): -69
+  Curvature Scale: 1
+  Font Size Scale: 1.5
+  Rotation: -67
+  Stretching: 2.6
+
+ID 042 (Socialist Republic of Vietnam):
+  V-Shift (labelOffset): 4
+  H-Shift (labelXOffset): 19
+  Curvature Scale: 1.8
+  Font Size Scale: 1
+  Rotation: 0
+  Stretching: 3
+
+ID 043 (Kingdom of Thailand):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 1
+  Font Size Scale: 1
+  Rotation: -49
+  Stretching: 2.7
+
+ID 044 (Federal Republic of Somalia):
+  V-Shift (labelOffset): 11
+  H-Shift (labelXOffset): 6
+  Curvature Scale: 1
+  Font Size Scale: 1.1
+  Rotation: -8
+  Stretching: 3
+
+ID 046 (Federal Republic of Nigeria):
+  V-Shift (labelOffset): 11
+  H-Shift (labelXOffset): 19
+  Curvature Scale: -1.3
+  Font Size Scale: 1.1
+  Rotation: 41
+  Stretching: 2.8
+
+ID 054 (United Republic of Tanzania):
+  V-Shift (labelOffset): -4
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 0.7
+  Font Size Scale: 1.15
+  Rotation: -31
+  Stretching: 3
+
+ID 055 (Republic of Austria):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 13
+  Curvature Scale: 0.1
+  Font Size Scale: 1.05
+  Rotation: 75
+  Stretching: 0.9
+
+ID 056 (Republic of Chile):
+  V-Shift (labelOffset): -14
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 1
+  Font Size Scale: 0.65
+  Rotation: 0
+  Stretching: 3
+
+ID 057 (Placeholder 057 (Color (154, 69, 115))):
+  V-Shift (labelOffset): 10
+  H-Shift (labelXOffset): 0
+  Curvature Scale: -1.6
+  Font Size Scale: 1
+  Rotation: 0
+  Stretching: 1
+
+ID 059 (Placeholder 059 (Color (111, 55, 77))):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 2
+  Curvature Scale: 0.6
+  Font Size Scale: 1
+  Rotation: -136
+  Stretching: 1.6
+
+ID 060 (Malaysia):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 1
+  Font Size Scale: 1
+  Rotation: 5
+  Stretching: 1
+
+ID 061 (Placeholder 061 (Color (255, 196, 0))):
+  V-Shift (labelOffset): -24
+  H-Shift (labelXOffset): -10
+  Curvature Scale: 1.1
+  Font Size Scale: 1.1
+  Rotation: 24
+  Stretching: 1
+
+ID 068 (Placeholder 068 (Color (0, 140, 79))):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 0.5
+  Font Size Scale: 1
+  Rotation: 0
+  Stretching: 1.8
+
+ID 069 (Lao People's Democratic Republic):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 0.1
+  Font Size Scale: 1.05
+  Rotation: 64
+  Stretching: 1.1
+
+ID 072 (Republic of Peru):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 1
+  Font Size Scale: 1
+  Rotation: -21
+  Stretching: 2.5
+
+ID 083 (Kingdom of Cambodia):
+  V-Shift (labelOffset): -6
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 1
+  Font Size Scale: 1.45
+  Rotation: 13
+  Stretching: 1
+
+ID 085 (Hungary):
+  V-Shift (labelOffset): -4
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 1
+  Font Size Scale: 1
+  Rotation: 21
+  Stretching: 2.4
+
+ID 091 (Republic of Kenya):
+  V-Shift (labelOffset): 9
+  H-Shift (labelXOffset): 2
+  Curvature Scale: 1
+  Font Size Scale: 1.15
+  Rotation: 0
+  Stretching: 1.1
+
+ID 096 (Federal Democratic Republic of Nepal):
+  V-Shift (labelOffset): 0
+  H-Shift (labelXOffset): 0
+  Curvature Scale: 1
+  Font Size Scale: 1
+  Rotation: 5
+  Stretching: 1.8
+
+ID 097 (Plurinational Republic of Bolivia):
+  V-Shift (labelOffset): 14
+  H-Shift (labelXOffset): 0
+  Curvature Scale: -0.6
+  Font Size Scale: 1.35
+  Rotation: -3
+  Stretching: 1
+
+ID 143 (Placeholder 143 (Color (172, 122, 88))):
+  V-Shift (labelOffset): -3
+  H-Shift (labelXOffset): -4
+  Curvature Scale: 1
+  Font Size Scale: 1
+  Rotation: -13
+  Stretching: 1
+

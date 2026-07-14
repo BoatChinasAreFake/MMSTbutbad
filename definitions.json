@@ -232098,5 +232098,15 @@
     "type": "land",
     "terrain": "marsh",
     "detailed_terrain": "permafrost_floodplains"
+  },
+  "21101": {
+    "color": [
+      23,
+      34,
+      76
+    ],
+    "name": "Province 21101",
+    "type": "land",
+    "terrain": "plains"
   }
 }
