@@ -6,114 +6,126 @@
     <meta http-equiv="Expires" content="0">
     <title>Map Sandbox</title>
     <style>
-        body { margin: 0; overflow: hidden; background: #222; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-        .ui {
-            position: fixed;
-            top: 10px; left: 10px;
-            z-index: 10;
-            background: #111;
-            padding: 10px;
-            border-radius: 8px;
+        body { 
+            margin: 0; 
+            overflow: hidden; 
+            background: #121212; 
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
         }
 
-        button { margin: 2px; }
+        /* Glassmorphism styling */
+        .glass-panel {
+            background: rgba(18, 18, 18, 0.8) !important;
+            backdrop-filter: blur(14px) saturate(180%) !important;
+            -webkit-backdrop-filter: blur(14px) saturate(180%) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4) !important;
+            color: #f5f5f5 !important;
+            border-radius: 12px !important;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
 
-        #debugPanel{
-            position:fixed;
-            top:10px;
-            right:10px;
-            background:#000;
-            color:#0f0;
-            font-family:monospace;
-            font-size:12px;
-            padding:10px;
-            border-radius:8px;
-            z-index:20;
-            max-width:240px;
+        .glass-button {
+            background: rgba(255, 255, 255, 0.06) !important;
+            color: rgba(255, 255, 255, 0.9) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            outline: none;
+        }
+
+        .glass-button:hover {
+            background: rgba(255, 255, 255, 0.12) !important;
+            border-color: rgba(255, 255, 255, 0.2) !important;
+            transform: translateY(-1px);
+        }
+
+        .glass-button:active {
+            transform: translateY(1px);
+        }
+
+        .glass-input {
+            background: rgba(0, 0, 0, 0.3) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            color: white !important;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            transition: all 0.2s ease;
+            outline: none;
+        }
+
+        .glass-input:focus {
+            border-color: rgba(0, 123, 255, 0.5) !important;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2) !important;
+        }
+
+        #debugPanel {
+            position: fixed;
+            top: 75px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.75) !important;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 0, 0.15);
+            color: #0f0;
+            font-family: monospace;
+            font-size: 11px;
+            padding: 12px;
+            border-radius: 8px;
+            z-index: 20;
+            max-width: 240px;
+        }
+
+        /* Custom scrollbar for list containers */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.1);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.2);
         }
     </style>
 </head>
 <body>
 
-<div id="selectionToolbar" style="
+<div id="selectionToolbar" class="glass-panel" style="
     position: fixed;
     top: 15px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
-    background: rgba(20, 20, 20, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 12px;
-    padding: 6px 12px;
+    padding: 8px 16px;
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-family: 'Inter', system-ui, sans-serif;
-    color: white;
+    gap: 10px;
 ">
     <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.6); margin-right: 4px; user-select: none;">Tools:</div>
-    <button onclick="setTool('box')" id="btnToolBox" style="
-        background: #007bff;
-        color: white;
-        border: none;
-        padding: 6px 12px;
-        border-radius: 6px;
-        font-size: 12px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s ease;
-    ">Box Select (B)</button>
-    <button onclick="setTool('lasso')" id="btnToolLasso" style="
-        background: rgba(255,255,255,0.05);
-        color: rgba(255,255,255,0.8);
-        border: 1px solid rgba(255,255,255,0.1);
-        padding: 6px 12px;
-        border-radius: 6px;
-        font-size: 12px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s ease;
-    ">Lasso Select (L)</button>
-    <button onclick="setTool('pan')" id="btnToolPan" style="
-        background: rgba(255,255,255,0.05);
-        color: rgba(255,255,255,0.8);
-        border: 1px solid rgba(255,255,255,0.1);
-        padding: 6px 12px;
-        border-radius: 6px;
-        font-size: 12px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s ease;
-    ">Pan / Move (H)</button>
+    <button onclick="setTool('box')" id="btnToolBox" class="glass-button active">Box Select (B)</button>
+    <button onclick="setTool('lasso')" id="btnToolLasso" class="glass-button">Lasso Select (L)</button>
+    <button onclick="setTool('pan')" id="btnToolPan" class="glass-button">Pan / Move (H)</button>
     
     <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.15); margin: 0 4px;"></div>
     
-    <button onclick="selectAllProvincesOfSelectedCountry()" style="
-        background: rgba(255,255,255,0.05);
-        color: rgba(255,255,255,0.8);
-        border: 1px solid rgba(255,255,255,0.1);
-        padding: 6px 12px;
-        border-radius: 6px;
-        font-size: 12px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s ease;
-    ">Select Country (S)</button>
+    <button onclick="selectAllProvincesOfSelectedCountry()" class="glass-button">Select Country (S)</button>
     
-    <select id="selLogicMode" style="
-        background: rgba(255,255,255,0.05);
-        color: rgba(255,255,255,0.8);
-        border: 1px solid rgba(255,255,255,0.1);
-        padding: 5px;
-        border-radius: 6px;
-        font-size: 12px;
-        cursor: pointer;
-        outline: none;
-    ">
+    <select id="selSelectionLevel" onchange="setSelectionLevel(this.value)" class="glass-input">
+        <option value="province" style="background: #222; color: white;">Province Level</option>
+        <option value="state" style="background: #222; color: white;">HOI4 State Level</option>
+    </select>
+    
+    <select id="selLogicMode" class="glass-input">
         <option value="replace" style="background: #222; color: white;">Replace Mode (1)</option>
         <option value="add" style="background: #222; color: white;">Add Mode (2)</option>
         <option value="subtract" style="background: #222; color: white;">Subtract Mode (3)</option>
@@ -121,69 +133,55 @@
         <option value="xor" style="background: #222; color: white;">XOR Toggle Mode (5)</option>
     </select>
     
-    <select id="selMapmode" onchange="setMapmode(this.value)" style="
-        background: rgba(255,255,255,0.05);
-        color: rgba(255,255,255,0.8);
-        border: 1px solid rgba(255,255,255,0.1);
-        padding: 5px;
-        border-radius: 6px;
-        font-size: 12px;
-        cursor: pointer;
-        outline: none;
-    ">
+    <select id="selMapmode" onchange="setMapmode(this.value)" class="glass-input">
         <option value="political" style="background: #222; color: white;">Political Mapmode</option>
         <option value="interest" style="background: #222; color: white;">National Interest</option>
     </select>
     
-    <button onclick="clearSelection()" style="
-        background: rgba(255, 69, 58, 0.15);
-        color: rgb(255, 69, 58);
-        border: 1px solid rgba(255, 69, 58, 0.2);
-        padding: 6px 12px;
-        border-radius: 6px;
-        font-size: 12px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s ease;
-    ">Clear (C)</button>
+    <button onclick="clearSelection()" class="glass-button" style="background: rgba(255, 69, 58, 0.15) !important; color: rgb(255, 69, 58) !important; border-color: rgba(255, 69, 58, 0.2) !important;">Clear (C)</button>
  
-    <button onclick="toggleSelectedWater()" style="
-        background: rgba(255, 255, 255, 0.05);
-        color: rgba(255, 255, 255, 0.8);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 6px 12px;
-        border-radius: 6px;
-        font-size: 12px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s ease;
-    ">Toggle Land/Water</button>
+    <button onclick="toggleSelectedWater()" class="glass-button">Toggle Land/Water</button>
  
     <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.15); margin: 0 4px;"></div>
  
-    <button onclick="paintSelection()" style="
-        background: #28a745;
-        color: white;
-        border: none;
-        padding: 6px 14px;
-        border-radius: 6px;
-        font-size: 12px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        box-shadow: 0 2px 8px rgba(40, 167, 69, 0.4);
-    ">Paint Selected (Enter)</button>
+    <button onclick="paintSelection()" class="glass-button" style="background: #28a745 !important; color: white !important; font-weight: bold !important; border-color: #28a745 !important; box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3) !important;">Paint Selected (Enter)</button>
 </div>
  
-<div class="ui" style="max-height: 90vh; overflow-y: auto; width: 280px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); backdrop-filter: blur(10px); background: rgba(17,17,17,0.9); border: 1px solid #333; border-radius: 8px; padding: 12px; box-sizing: border-box;">
-    <div style="font-weight: bold; color: white; margin-bottom: 8px; font-family: sans-serif;">Map Editor</div>
+<button onclick="toggleSidebar()" id="btnSidebarToggle" class="glass-panel" style="
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 101;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: 600;
+    display: none;
+    border: none;
+    outline: none;
+">☰ Show Sidebar</button>
+
+<div id="sidebarPanel" class="glass-panel" style="
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    max-height: calc(100vh - 30px);
+    overflow-y: auto;
+    width: 300px;
+    padding: 16px;
+    box-sizing: border-box;
+    z-index: 10;
+">
+    <div style="font-weight: bold; color: white; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+        <span>Map Editor</span>
+        <button onclick="toggleSidebar()" style="background: none; border: none; color: #aaa; cursor: pointer; font-size: 16px; font-weight: bold; outline: none;">&times;</button>
+    </div>
     <div style="display: flex; gap: 4px; margin-bottom: 8px;">
-        <button id="btnEraser" onclick="setEraser()" style="flex: 1; padding: 4px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; cursor: pointer; font-size: 12px;">Eraser (E)</button>
-        <button onclick="resetMap()" style="flex: 1; padding: 4px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; cursor: pointer; font-size: 12px;">Reset</button>
+        <button id="btnEraser" onclick="setEraser()" class="glass-button" style="flex: 1;">Eraser (E)</button>
+        <button onclick="resetMap()" class="glass-button" style="flex: 1;">Reset</button>
     </div>
     
     <div style="margin-bottom: 8px;">
-        <input type="text" id="countrySearch" placeholder="Search countries..." style="width: 100%; box-sizing: border-box; background: #222; border: 1px solid #444; color: white; padding: 5px; border-radius: 4px; font-size: 12px;" oninput="filterCountries()">
+        <input type="text" id="countrySearch" placeholder="Search countries..." class="glass-input" style="width: 100%; box-sizing: border-box;" oninput="filterCountries()">
     </div>
     
     <div id="countryList" style="display: flex; flex-direction: column; gap: 3px; max-height: 250px; overflow-y: auto; border: 1px solid #333; padding: 4px; border-radius: 4px; background: #111; margin-bottom: 8px;">
@@ -205,8 +203,8 @@
             <input type="range" id="interestSlider" min="1" max="10" value="5" oninput="document.getElementById('interestValueDisp').innerText = this.value" style="flex: 1; accent-color: #ff9500; cursor: pointer;">
         </div>
         <div style="display: flex; gap: 4px;">
-            <button onclick="paintInterest()" style="flex: 1.2; padding: 5px; background: #ff9500; color: black; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; font-size: 11px; transition: all 0.2s ease;">Paint Interest (I)</button>
-            <button onclick="clearInterest()" style="flex: 0.8; padding: 5px; background: #444; color: white; border: 1px solid #555; border-radius: 4px; cursor: pointer; font-size: 11px; transition: all 0.2s ease;">Clear</button>
+            <button onclick="paintInterest()" class="glass-button" style="flex: 1.2; background: #ff9500 !important; color: black !important; font-weight: bold !important; border-color: #ff9500 !important;">Paint Interest (I)</button>
+            <button onclick="clearInterest()" class="glass-button" style="flex: 0.8;">Clear</button>
         </div>
     </div>
 
@@ -219,7 +217,7 @@
         
         <div style="display: flex; align-items: center; gap: 8px;">
             <label style="flex-shrink: 0; width: 60px;">Rename:</label>
-            <input type="text" id="editCountryName" style="flex: 1; background: #222; border: 1px solid #444; color: white; padding: 4px; border-radius: 4px; font-size: 11px;" onchange="handleRenameFromInput(this.value)">
+            <input type="text" id="editCountryName" class="glass-input" style="flex: 1;" onchange="handleRenameFromInput(this.value)">
         </div>
 
         <div style="display: flex; align-items: center; gap: 8px;">
@@ -287,8 +285,8 @@
         </div>
         
         <div style="display: flex; gap: 4px; margin-top: 2px;">
-            <button id="btnToggleStraits" onclick="toggleStraits()" style="flex: 1; background: rgba(255,255,255,0.05); color: #ccc; border: 1px solid rgba(255,255,255,0.1); padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
-                Hide Straits
+            <button id="btnToggleStraits" onclick="toggleStraits()" style="flex: 1; background: #007bff; color: white; border: 1px solid rgba(255,255,255,0.1); padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
+                Show Straits
             </button>
             <button onclick="saveStraits(true)" style="flex: 1; background: #00bfff; color: black; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
                 Save Straits
@@ -325,31 +323,57 @@
         flex-direction:column;
         gap:2px;
     ">
-        <label><input type="checkbox" id="dbgAxis" checked> Axis</label>
-        <label><input type="checkbox" id="dbgBezier" checked> Bezier</label>
-        <label><input type="checkbox" id="dbgPoints" checked> Control Points</label>
+        <label><input type="checkbox" id="dbgAxis"> Axis</label>
+        <label><input type="checkbox" id="dbgBezier"> Bezier</label>
+        <label><input type="checkbox" id="dbgPoints"> Control Points</label>
         <label><input type="checkbox" id="dbgPanelToggle" checked> Debug Panel</label>
         <label><input type="checkbox" id="dbgHeightmap" checked> Heightmap</label>
     </div>
 </div>
 
 <div id="debugPanel"></div>
-<div id="provincePanel" style="
+<div id="hoi4Panel" class="glass-panel" style="
     position: fixed;
-    bottom: 10px;
-    right: 10px;
-    background: rgba(17, 17, 17, 0.95);
-    border: 1px solid #333;
-    color: white;
-    font-family: sans-serif;
-    font-size: 13px;
+    bottom: 15px;
+    left: 15px;
+    font-size: 12px;
     padding: 15px;
-    border-radius: 8px;
     z-index: 25;
-    width: 250px;
+    width: 260px;
     display: none;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    backdrop-filter: blur(10px);
+">
+    <div style="font-weight: bold; font-size: 15px; margin-bottom: 10px; border-bottom: 1px solid #444; padding-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
+        <span>HOI4 State Tools</span>
+        <button onclick="document.getElementById('hoi4Panel').style.display='none'" style="background: none; border: none; color: #aaa; cursor: pointer; font-size: 16px;">&times;</button>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div>
+            <label style="display: block; margin-bottom: 2px;">Country Tag (e.g. GER):</label>
+            <input type="text" id="hoi4TagInput" class="glass-input" style="width: 100%; box-sizing: border-box; text-transform: uppercase;">
+        </div>
+        <div style="display: flex; gap: 4px;">
+            <button onclick="selectHoi4States('start_states')" class="glass-button" style="flex: 1;">Owned</button>
+            <button onclick="selectHoi4States('cores')" class="glass-button" style="flex: 1;">Cores</button>
+            <button onclick="selectHoi4States('claims')" class="glass-button" style="flex: 1;">Claims</button>
+        </div>
+        <div style="display: flex; gap: 4px;">
+            <button onclick="paintHoi4States()" class="glass-button" style="width: 100%; background: #007bff !important; color: white !important; font-weight: bold !important; border-color: #007bff !important;">Paint Selected to Active</button>
+        </div>
+        <div style="border-top: 1px solid #444; margin-top: 5px; padding-top: 5px;">
+            <div id="hoi4Status" style="color: #aaa; font-style: italic; font-size: 11px;">Enter a country tag to query.</div>
+        </div>
+    </div>
+</div>
+
+<div id="provincePanel" class="glass-panel" style="
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    font-size: 12px;
+    padding: 15px;
+    z-index: 25;
+    width: 260px;
+    display: none;
 ">
     <div style="font-weight: bold; font-size: 15px; margin-bottom: 10px; border-bottom: 1px solid #444; padding-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
         <span>Province Editor</span>
@@ -360,18 +384,18 @@
         <div>Color: <span id="pnlColor" style="font-family: monospace;"></span></div>
         <div>
             <label style="display: block; margin-bottom: 2px;">Name:</label>
-            <input type="text" id="pnlName" style="width: 100%; box-sizing: border-box; background: #222; border: 1px solid #444; color: white; padding: 4px; border-radius: 4px;">
+            <input type="text" id="pnlName" class="glass-input" style="width: 100%; box-sizing: border-box;">
         </div>
         <div>
             <label style="display: block; margin-bottom: 2px;">Type:</label>
-            <select id="pnlType" style="width: 100%; box-sizing: border-box; background: #222; border: 1px solid #444; color: white; padding: 4px; border-radius: 4px;">
+            <select id="pnlType" class="glass-input" style="width: 100%; box-sizing: border-box;">
                 <option value="land">Land</option>
                 <option value="water">Water</option>
             </select>
         </div>
         <div>
             <label style="display: block; margin-bottom: 2px;">Terrain:</label>
-            <select id="pnlTerrain" style="width: 100%; box-sizing: border-box; background: #222; border: 1px solid #444; color: white; padding: 4px; border-radius: 4px;">
+            <select id="pnlTerrain" class="glass-input" style="width: 100%; box-sizing: border-box;">
                 <option value="plains">Plains</option>
                 <option value="forest">Forest</option>
                 <option value="mountain">Mountain</option>
@@ -385,8 +409,8 @@
             <div id="pnlDetailedTerrain" style="font-family: monospace; font-size: 11px; color: #bbb; background: #222; border: 1px solid #333; padding: 5px; border-radius: 4px; word-break: break-all; min-height: 15px;"></div>
         </div>
         <div style="margin-top: 10px; display: flex; gap: 5px;">
-            <button onclick="saveProvinceDetails()" style="flex: 1; padding: 6px; background: #007bff; border: none; color: white; border-radius: 4px; cursor: pointer;">Save Prov</button>
-            <button onclick="exportDefinitions()" style="flex: 1; padding: 6px; background: #28a745; border: none; color: white; border-radius: 4px; cursor: pointer;">Export Defs</button>
+            <button onclick="saveProvinceDetails()" class="glass-button" style="flex: 1; background: #007bff !important; color: white !important; border-color: #007bff !important;">Save Prov</button>
+            <button onclick="exportDefinitions()" class="glass-button" style="flex: 1; background: #28a745 !important; color: white !important; border-color: #28a745 !important;">Export Defs</button>
         </div>
     </div>
 </div>
@@ -449,9 +473,9 @@ const baseCanvas = document.createElement("canvas");
 const baseCtx = baseCanvas.getContext("2d");
 
 const DEBUG = {
-    axis: true,
-    bezier: true,
-    points: true,
+    axis: false,
+    bezier: false,
+    points: false,
     panel: true
 };
 
@@ -477,16 +501,25 @@ let interests = {}; // countryTag -> { provinceId: level (1-10) }
 let activeMapmode = "political"; // "political" or "interest"
 let straits = [];
 let straitAdj = {};
-let showStraits = true;
+let showStraits = false;
 let provinceKeys = [];
 const labelCache = {};
 const labelGenerationQueue = new Set();
 const provinceCenters = {};
 const provinceNeighbors = {};
 const dirtyCountries = new Set();
+
+let selectionLevel = "province";
+let hoi4Data = null;
+const provinceToState = {};
 let eraserMode = false;
 let definitions = {};
 const colorToId = {};
+let basePixels = null;
+let profileData = { frameCount: 0, webglSum: 0, overlaySum: 0, labelSum: 0, totalSum: 0, lastTime: performance.now() };
+let lastSpikeData = null;
+let deferredWorkerResponses = [];
+let currentMouseX = 0, currentMouseY = 0;
 
 let COLORS = {
     yellow: [255,255,0],
@@ -495,17 +528,7 @@ let COLORS = {
     green: [0,200,0]
 };
 
-const BASE_COUNTRY_PRESETS = {
-    "018": {
-        "labelOffset": 4,
-        "labelXOffset": 0,
-        "labelArcShift": 0,
-        "curvatureScale": 1,
-        "fontSizeScale": 1,
-        "labelRotation": 0,
-        "labelStretch": 1
-    }
-};
+const BASE_COUNTRY_PRESETS = {};
 
 let countries = {
     yellow: {
@@ -924,62 +947,54 @@ const fsSource = `
                 overlayAlpha = clamp(overlayAlpha, 0.0, 0.7);
                 color.rgb = mix(color.rgb, interestColor, overlayAlpha);
             } else {
-                // Desaturate non-interest provinces to make the interests stand out
                 color.rgb = mix(color.rgb, vec3(dot(color.rgb, vec3(0.299, 0.587, 0.114))), 0.4);
             }
         }
         
         if (u_showBorders > 0.5) {
-            // Step size is exactly one screen pixel in texture coordinates!
-            vec2 step = 1.0 / (u_mapSize * u_zoom);
+            #define DECODE_IDX(col) (floor(col.r * 255.0 + 0.5) + floor(col.g * 255.0 + 0.5) * 256.0 + floor(col.b * 255.0 + 0.5) * 65536.0)
+            #define GET_COUNTRY(nIdx) texture2D(u_lutTexture, vec2((mod(nIdx, u_lutWidth) + 0.5) / u_lutWidth, (floor(nIdx / u_lutWidth) + 0.5) / u_lutHeight)).rgb
+
+            // Screen-space step size to ensure consistent, perfectly anti-aliased 1-pixel borders at any zoom level
+            vec2 sStep = 1.0 / (u_mapSize * u_zoom);
             
-            // Check country borders first in all 4 directions with a radius of 2px
-            bool isCountryBorder = false;
+            vec4 nL = texture2D(u_indexTexture, v_texCoord + vec2(-sStep.x, 0.0));
+            vec4 nR = texture2D(u_indexTexture, v_texCoord + vec2(sStep.x, 0.0));
+            vec4 nD = texture2D(u_indexTexture, v_texCoord + vec2(0.0, -sStep.y));
+            vec4 nU = texture2D(u_indexTexture, v_texCoord + vec2(0.0, sStep.y));
             
-            vec2 offsets[8];
-            offsets[0] = vec2(step.x, 0.0);
-            offsets[1] = vec2(-step.x, 0.0);
-            offsets[2] = vec2(0.0, step.y);
-            offsets[3] = vec2(0.0, -step.y);
-            offsets[4] = vec2(step.x * 2.0, 0.0);
-            offsets[5] = vec2(-step.x * 2.0, 0.0);
-            offsets[6] = vec2(0.0, step.y * 2.0);
-            offsets[7] = vec2(0.0, -step.y * 2.0);
+            float idxL = DECODE_IDX(nL);
+            float idxR = DECODE_IDX(nR);
+            float idxD = DECODE_IDX(nD);
+            float idxU = DECODE_IDX(nU);
             
-            for (int i = 0; i < 8; i++) {
-                vec4 nIdxCol = texture2D(u_indexTexture, v_texCoord + offsets[i]);
-                float nr = floor(nIdxCol.r * 255.0 + 0.5);
-                float ng = floor(nIdxCol.g * 255.0 + 0.5);
-                float nb = floor(nIdxCol.b * 255.0 + 0.5);
-                float nIdx = nr + ng * 256.0 + nb * 65536.0;
-                
-                float nu = (mod(nIdx, u_lutWidth) + 0.5) / u_lutWidth;
-                float nv = (floor(nIdx / u_lutWidth) + 0.5) / u_lutHeight;
-                vec4 nCountryColor = texture2D(u_lutTexture, vec2(nu, nv));
-                
-                if (distance(baseCountryColor, nCountryColor.rgb) > 0.002) {
-                    isCountryBorder = true;
-                    break;
-                }
-            }
+            vec3 countryL = GET_COUNTRY(idxL);
+            vec3 countryR = GET_COUNTRY(idxR);
+            vec3 countryD = GET_COUNTRY(idxD);
+            vec3 countryU = GET_COUNTRY(idxU);
             
-            if (isCountryBorder) {
-                // Country border: thick solid black line
-                color = vec4(0.0, 0.0, 0.0, 1.0);
-            } else {
-                // Provincial border check (only at 1px distance)
-                vec4 indexColorR = texture2D(u_indexTexture, v_texCoord + vec2(step.x, 0.0));
-                vec4 indexColorD = texture2D(u_indexTexture, v_texCoord + vec2(0.0, step.y));
-                
-                float idxR = floor(indexColorR.r * 255.0 + 0.5) + floor(indexColorR.g * 255.0 + 0.5)*256.0 + floor(indexColorR.b * 255.0 + 0.5)*65536.0;
-                float idxD = floor(indexColorD.r * 255.0 + 0.5) + floor(indexColorD.g * 255.0 + 0.5)*256.0 + floor(indexColorD.b * 255.0 + 0.5)*65536.0;
-                
-                bool isProvBorder = (idx != idxR) || (idx != idxD);
-                if (isProvBorder) {
-                    // Provincial border opacity scales with zoom to prevent clutter when zoomed out
-                    float provOpacity = clamp((u_zoom - 0.3) * 0.35, 0.0, 0.22);
-                    color = vec4(mix(color.rgb, vec3(0.0), provOpacity), color.a);
-                }
+            float diffL = step(0.002, distance(baseCountryColor, countryL));
+            float diffR = step(0.002, distance(baseCountryColor, countryR));
+            float diffD = step(0.002, distance(baseCountryColor, countryD));
+            float diffU = step(0.002, distance(baseCountryColor, countryU));
+            
+            // Average neighbor difference to achieve smooth anti-aliased border edges
+            float countryBorder = (diffL + diffR + diffD + diffU) * 0.45;
+            countryBorder = clamp(countryBorder, 0.0, 1.0);
+            
+            float pDiffL = step(0.5, abs(idx - idxL));
+            float pDiffR = step(0.5, abs(idx - idxR));
+            float pDiffD = step(0.5, abs(idx - idxD));
+            float pDiffU = step(0.5, abs(idx - idxU));
+            
+            float provBorder = (pDiffL + pDiffR + pDiffD + pDiffU) * 0.25;
+            float provOpacity = clamp((u_zoom - 3.0) * 0.35, 0.0, 0.25);
+            provBorder = clamp(provBorder * provOpacity, 0.0, 1.0);
+            
+            if (countryBorder > 0.0) {
+                color.rgb = mix(color.rgb, vec3(0.0), countryBorder * 0.9);
+            } else if (provBorder > 0.0) {
+                color.rgb = mix(color.rgb, vec3(0.0), provBorder);
             }
         }
         
@@ -993,6 +1008,7 @@ function initWebGL() {
         alert("WebGL not supported!");
         return;
     }
+    gl.getExtension('OES_standard_derivatives');
 
     const vs = compileShader(gl, vsSource, gl.VERTEX_SHADER);
     const fs = compileShader(gl, fsSource, gl.FRAGMENT_SHADER);
@@ -1064,6 +1080,156 @@ function initWebGL() {
 }
 
 
+
+let labelWorker = null;
+
+function processWorkerResponse(data) {
+	const { tag, results } = data;
+	const country = countries[tag];
+	if (!country) return;
+	country.labelGenerating = false;
+	country.spines = results;
+	generateLabelsForCountry(tag, true);
+	draw();
+}
+
+function initLabelWorker() {
+	const workerCode = `
+		let provinceCenters = {};
+		let provinceNeighbors = {};
+		let straitAdj = {};
+		let ownership = {};
+		let img = { width: 0, height: 0 };
+		let provinceIdMap = null;
+		let colorToId = {};
+		let provincesSet = new Set();
+
+		function getProvinceIdAt(x, y) {
+			const pxX = Math.floor(x);
+			const pxY = Math.floor(y);
+			if (pxX < 0 || pxX >= img.width || pxY < 0 || pxY >= img.height) return 0;
+			return provinceIdMap[pxY * img.width + pxX];
+		}
+
+		// Inject global Dijkstra classes/functions
+		${MinHeap.toString()}
+		${resamplePath.toString()}
+		${computeSpineForComponent.toString()}
+
+		self.onmessage = function(e) {
+			if (e.data.action === "init") {
+				provinceCenters = e.data.provinceCenters;
+				img = e.data.img;
+				colorToId = e.data.colorToId;
+				
+				const tempPixels = new Uint8ClampedArray(e.data.basePixelsBuffer);
+				provinceIdMap = new Uint16Array(img.width * img.height);
+				for (let i = 0; i < provinceIdMap.length; i++) {
+					const idx = i * 4;
+					const r = tempPixels[idx];
+					const g = tempPixels[idx + 1];
+					const b = tempPixels[idx + 2];
+					const key = (((r << 24) >>> 0) | (g << 16) | (b << 8) | 255) >>> 0;
+					provinceIdMap[i] = colorToId[key] || 0;
+				}
+				
+				// Reconstruct Set objects
+				for (const k in e.data.provinceNeighbors) {
+					provinceNeighbors[k] = new Set(e.data.provinceNeighbors[k]);
+				}
+				for (const k in e.data.straitAdj) {
+					straitAdj[k] = new Set(e.data.straitAdj[k]);
+				}
+				return;
+			}
+			if (e.data.action === "updateOwnership") {
+				ownership = e.data.ownership;
+				return;
+			}
+			if (e.data.action === "compute") {
+				const { tag, provinces, text, curvatureScale, ownership: currentOwnership } = e.data;
+				ownership = currentOwnership;
+				provincesSet = new Set(provinces);
+				
+				// BFS to find components (same logic as main thread)
+				const visited = new Set();
+				const components = [];
+				for (const provId of provinces) {
+					if (visited.has(provId)) continue;
+					const component = [];
+					const queue = [provId];
+					let queueHead = 0;
+					visited.add(provId);
+					while (queueHead < queue.length) {
+						const curr = queue[queueHead++];
+						component.push(curr);
+						for (const n of provinceNeighbors[curr] || []) {
+							if (provincesSet.has(n) && !visited.has(n)) {
+								visited.add(n);
+								queue.push(n);
+							}
+						}
+						for (const n of straitAdj[curr] || []) {
+							if (provincesSet.has(n) && !visited.has(n)) {
+								visited.add(n);
+								queue.push(n);
+							}
+						}
+					}
+					components.push(component);
+				}
+
+				const results = [];
+				for (const comp of components) {
+					if (comp.length < 4) {
+						results.push({ spine: [], path: [], controlPoints: [], tension: 0 });
+						continue;
+					}
+					const res = computeSpineForComponent(comp, tag, text, curvatureScale);
+					results.push(res);
+				}
+
+				self.postMessage({
+					tag: tag,
+					results: results
+				});
+			}
+		};
+	`;
+
+	const blob = new Blob([workerCode], { type: "application/javascript" });
+	labelWorker = new Worker(URL.createObjectURL(blob));
+
+	labelWorker.onmessage = function(e) {
+		if (isPanning || isDragging) {
+			deferredWorkerResponses.push(e.data);
+			return;
+		}
+		processWorkerResponse(e.data);
+	};
+
+	// Re-serialize Set structures to Arrays for clone-safety
+	const provinceNeighborsCopy = {};
+	for (const k in provinceNeighbors) {
+		provinceNeighborsCopy[k] = Array.from(provinceNeighbors[k]);
+	}
+	const straitAdjCopy = {};
+	for (const k in straitAdj) {
+		straitAdjCopy[k] = Array.from(straitAdj[k]);
+	}
+
+	const basePixelsCopy = new Uint8ClampedArray(basePixels);
+	labelWorker.postMessage({
+		action: "init",
+		provinceCenters,
+		provinceNeighbors: provinceNeighborsCopy,
+		straitAdj: straitAdjCopy,
+		colorToId,
+		img: { width: baseCanvas.width, height: baseCanvas.height },
+		basePixelsBuffer: basePixelsCopy.buffer
+	}, [basePixelsCopy.buffer]);
+}
+
 function buildStraitAdjacency() {
 	straitAdj = {};
 	for (const s of straits) {
@@ -1101,7 +1267,7 @@ function initApp() {
     baseCanvas.height = img.height;
     baseCtx.drawImage(img, 0, 0);
 	
-	window.basePixels =
+	basePixels =
 		baseCtx.getImageData(
 			0,
 			0,
@@ -1132,7 +1298,7 @@ function initApp() {
         for (const k in countries) delete countries[k];
         for (const k in COLORS) delete COLORS[k];
         
-                                                        for (const tag in presetData.countries) {
+                                                                                                                                                                                                                                                                                                                for (const tag in presetData.countries) {
             const c = presetData.countries[tag];
             const base = BASE_COUNTRY_PRESETS[tag] || {};
             countries[tag] = {
@@ -1146,7 +1312,8 @@ function initApp() {
                 fontSizeScale: c.fontSizeScale !== undefined ? c.fontSizeScale : (base.fontSizeScale !== undefined ? base.fontSizeScale : 1.0),
                 labelRotation: c.labelRotation !== undefined ? c.labelRotation : (base.labelRotation !== undefined ? base.labelRotation : 0),
                 labelStretch: c.labelStretch !== undefined ? c.labelStretch : (base.labelStretch !== undefined ? base.labelStretch : 1.0),
-                provinces: new Set()
+                provinces: new Set(),
+                spines: c.spines || []
             };
             COLORS[tag] = c.color;
         }
@@ -1187,6 +1354,26 @@ function initApp() {
 		draw();
 	});
 
+    // Fetch HOI4 state mappings database
+	fetch("hoi4_data.json?v=" + Date.now())
+		.then(r => r.ok ? r.json() : null)
+		.then(data => {
+			if (data) {
+				hoi4Data = data;
+				// Build reverse lookup index for pixel-based state selections
+				for (const stateId in data.states) {
+					const state = data.states[stateId];
+					for (const provId of state.provinces) {
+						provinceToState[provId] = parseInt(stateId);
+					}
+				}
+				console.log("HOI4 state mappings loaded successfully.");
+				document.getElementById("hoi4Panel").style.display = "block";
+			}
+		})
+		.catch(err => console.log("HOI4 state data not available or not parsed."));
+
+	initLabelWorker();
     fitToScreen();
     draw();
 }
@@ -2004,6 +2191,8 @@ canvas.addEventListener("mousedown", e => {
 	if (e.button === 2 || e.button === 1 || activeTool === "pan") { // Right/Middle click or Pan tool to pan
 		isDragging = false;
 		isPanning = true;
+		currentMouseX = e.clientX;
+		currentMouseY = e.clientY;
 		startPanX = e.clientX;
 		startPanY = e.clientY;
 		startOffsetX = offsetX;
@@ -2013,6 +2202,8 @@ canvas.addEventListener("mousedown", e => {
 	}
 
 	if (e.button === 0) { // Left click to select
+		currentMouseX = e.clientX;
+		currentMouseY = e.clientY;
 		const [mapX, mapY] = screenToMap(e.clientX, e.clientY);
 		isDragging = true;
 		if (activeTool === "box") {
@@ -2024,31 +2215,26 @@ canvas.addEventListener("mousedown", e => {
 });
 
 canvas.addEventListener("mousemove", e => {
-	if (isPanning) {
-		const dx = e.clientX - startPanX;
-		const dy = e.clientY - startPanY;
-		offsetX = startOffsetX - dx / zoom;
-		offsetY = startOffsetY - dy / zoom;
-		requestDraw();
-		return;
-	}
+	currentMouseX = e.clientX;
+	currentMouseY = e.clientY;
 
-	if (isDragging) {
-		const [mapX, mapY] = screenToMap(e.clientX, e.clientY);
-		if (activeTool === "box" && selectionBox) {
-			selectionBox.endX = mapX;
-			selectionBox.endY = mapY;
-			requestDraw();
-		} else if (activeTool === "lasso" && lassoPoints) {
-			lassoPoints.push({x: mapX, y: mapY});
-			requestDraw();
-		}
+	if (isPanning || isDragging) {
+		requestDraw();
 	}
 });
 
 window.addEventListener("mouseup", e => {
 	if (isPanning) {
 		isPanning = false;
+		
+		// Process deferred worker responses since panning stopped
+		if (deferredWorkerResponses.length > 0) {
+			for (const data of deferredWorkerResponses) {
+				processWorkerResponse(data);
+			}
+			deferredWorkerResponses = [];
+		}
+
 		if (e.button === 2) {
 			const dx = e.clientX - startPanX;
 			const dy = e.clientY - startPanY;
@@ -2156,9 +2342,36 @@ window.addEventListener("mouseup", e => {
 		lassoPoints = [];
 	}
 
+	// If state mode is enabled, expand selection to state/subdivision level
+	if (selectionLevel === "state" && typeof provinceToState !== 'undefined' && hoi4Data) {
+		const expanded = new Set();
+		for (const key of newSelection) {
+			const stateId = provinceToState[key];
+			if (stateId !== undefined && hoi4Data.states[stateId]) {
+				for (const provId of hoi4Data.states[stateId].provinces) {
+					expanded.add(provId);
+				}
+			} else {
+				expanded.add(key); // Fallback to province if not part of a state
+			}
+		}
+		newSelection.clear();
+		for (const key of expanded) {
+			newSelection.add(key);
+		}
+	}
+
 	const logicMode = document.getElementById("selLogicMode").value;
 	if (newSelection.size > 0 || logicMode === "replace") {
 		applySelectionLogic(newSelection);
+	}
+
+	// Process deferred worker responses since dragging stopped
+	if (deferredWorkerResponses.length > 0) {
+		for (const data of deferredWorkerResponses) {
+			processWorkerResponse(data);
+		}
+		deferredWorkerResponses = [];
 	}
 
 	updateSelectionStatus();
@@ -2211,6 +2424,28 @@ function draw() {
 
 function performDraw() {
     if (!gl) return;
+    const start = performance.now();
+    
+    // Update offsets and selection bounds dynamically during drawing (decoupled from mousemove high-frequency callbacks)
+    if (isPanning) {
+        const dx = currentMouseX - startPanX;
+        const dy = currentMouseY - startPanY;
+        offsetX = startOffsetX - dx / zoom;
+        offsetY = startOffsetY - dy / zoom;
+    }
+    if (isDragging) {
+        const [mapX, mapY] = screenToMap(currentMouseX, currentMouseY);
+        if (activeTool === "box" && selectionBox) {
+            selectionBox.endX = mapX;
+            selectionBox.endY = mapY;
+        } else if (activeTool === "lasso" && lassoPoints) {
+            // Only add point if it moved at least 2 pixels to avoid array flooding
+            const lastPt = lassoPoints[lassoPoints.length - 1];
+            if (!lastPt || Math.hypot(mapX - lastPt.x, mapY - lastPt.y) > 2) {
+                lassoPoints.push({x: mapX, y: mapY});
+            }
+        }
+    }
     
     gl.viewport(0, 0, canvas.width, canvas.height);
     gl.clearColor(0.13, 0.13, 0.13, 1.0);
@@ -2248,6 +2483,7 @@ function performDraw() {
     gl.uniform1f(gl.getUniformLocation(program, "u_activeMapmode"), activeMapmode === "interest" ? 1.0 : 0.0);
 
     gl.drawArrays(gl.TRIANGLES, 0, 6);
+    const afterWebGL = performance.now();
 
     overlayCtx.setTransform(1, 0, 0, 1, 0, 0);
     overlayCtx.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
@@ -2312,17 +2548,55 @@ function performDraw() {
     }
 
     drawStraits();
+    const afterOverlay = performance.now();
+    
     drawLabels();
+    const end = performance.now();
+    
     dirtyCountries.clear();
 
     const now = performance.now();
     const frameTime = now - lastFrameTime;
     lastFrameTime = now;
-    fpsArray.push(1000 / (frameTime || 1));
-    if (fpsArray.length > 30) fpsArray.shift();
+    // Skip idle gaps (> 80ms) when calculating rendering frame rate
+    if (frameTime <= 80.0) {
+        fpsArray.push(1000 / frameTime);
+        if (fpsArray.length > 30) fpsArray.shift();
+    }
     const avgFps = fpsArray.reduce((a, b) => a + b, 0) / fpsArray.length;
 
+    // Calculate this frame's profile times
+    const totalTimeVal = end - start;
+    const webglTime = (afterWebGL - start).toFixed(2);
+    const overlayTime = (afterOverlay - afterWebGL).toFixed(2);
+    const labelTime = (end - afterOverlay).toFixed(2);
+    const totalTime = totalTimeVal.toFixed(2);
+
+    // Lag Spike Analyzer: Capture frames taking longer than 32ms (representing < 30 FPS drops)
+    if (totalTimeVal > 32.0) {
+        lastSpikeData = {
+            total: totalTime,
+            webgl: webglTime,
+            overlay: overlayTime,
+            label: labelTime,
+            queue: (typeof labelGenerationQueue !== 'undefined') ? labelGenerationQueue.size : 0,
+            timestamp: new Date().toLocaleTimeString()
+        };
+        console.warn(`[Profiler Spike] Total: ${totalTime}ms | WebGL: ${webglTime}ms | Overlays: ${overlayTime}ms | Labels: ${labelTime}ms`);
+    }
+
     if (DEBUG.panel && debugPanel) {
+        let spikeHTML = "";
+        if (lastSpikeData) {
+            spikeHTML = `
+                <div style="border-top: 1px solid rgba(255, 69, 58, 0.3); margin-top: 8px; padding-top: 6px; font-size: 10px; color: #ff6b6b; line-height: 1.4;">
+                    <b>Last Spike (${lastSpikeData.timestamp}):</b><br>
+                    • Total: <span style="font-family: monospace;">${lastSpikeData.total}ms</span> (Labels: ${lastSpikeData.label}ms)<br>
+                    • Background Queue: <span style="font-family: monospace;">${lastSpikeData.queue}</span>
+                </div>
+            `;
+        }
+
         window.debugPanelHeader = `
             <div style="border-bottom: 1px solid #0f0; margin-bottom: 8px; padding-bottom: 4px;">
                 <b>WebGL Engine: ON</b><br>
@@ -2331,7 +2605,17 @@ function performDraw() {
                 Zoom: ${zoom.toFixed(2)}x<br>
                 Offset: (${offsetX.toFixed(0)}, ${offsetY.toFixed(0)})
             </div>
+            <div style="font-size: 11px; line-height: 1.5; color: #ccc;">
+                <b>Render Timings:</b><br>
+                • WebGL Map: <span style="font-family: monospace; color: #0f0;">${webglTime}ms</span><br>
+                • Overlays: <span style="font-family: monospace; color: #0f0;">${overlayTime}ms</span><br>
+                • Label Layout: <span style="font-family: monospace; color: #0f0;">${labelTime}ms</span><br>
+                • CPU Total: <span style="font-family: monospace; color: #0f0;">${totalTime}ms</span>
+            </div>
+            ${spikeHTML}
         `;
+        // Sync visual panel innerHTML immediately
+        debugPanel.innerHTML = window.debugPanelHeader;
     }
 }
 
@@ -2366,6 +2650,269 @@ function resamplePath(path, count){
 
     return result;
 }
+// Simple and fast Priority Queue implementation for Dijkstra
+class MinHeap {
+	constructor() {
+		this.heap = [];
+	}
+	push(item) {
+		this.heap.push(item);
+		let n = this.heap.length - 1;
+		while (n > 0) {
+			let parentN = Math.floor((n + 1) / 2) - 1;
+			if (this.heap[n][1] >= this.heap[parentN][1]) break;
+			let temp = this.heap[parentN];
+			this.heap[parentN] = this.heap[n];
+			this.heap[n] = temp;
+			n = parentN;
+		}
+	}
+	pop() {
+		if (this.heap.length === 0) return null;
+		const min = this.heap[0];
+		const end = this.heap.pop();
+		if (this.heap.length > 0) {
+			this.heap[0] = end;
+			let n = 0;
+			const len = this.heap.length;
+			while (true) {
+				let child2N = (n + 1) * 2;
+				let child1N = child2N - 1;
+				let swap = null;
+				if (child1N < len && this.heap[child1N][1] < this.heap[n][1]) {
+					swap = child1N;
+				}
+				if (child2N < len && this.heap[child2N][1] < (swap === null ? this.heap[n][1] : this.heap[child1N][1])) {
+					swap = child2N;
+				}
+				if (swap === null) break;
+				let temp = this.heap[n];
+				this.heap[n] = this.heap[swap];
+				this.heap[swap] = temp;
+				n = swap;
+			}
+		}
+		return min;
+	}
+	isEmpty() {
+		return this.heap.length === 0;
+	}
+}
+
+function computeSpineForComponent(component, countryColor, countryName, curvatureScale = 1.0){
+	if (component.length < 2) {
+		const p = provinceCenters[component[0]];
+		if (!p) return { spine: [], path: [], controlPoints: [], tension: 0 };
+		const spine = [[p.x - 30, p.y], [p.x, p.y], [p.x + 30, p.y]];
+		return { spine, path: spine, controlPoints: [[p.x, p.y]], tension: 0 };
+	}
+
+	let sumX = 0, sumY = 0, totalCount = 0;
+	for (const id of component) {
+		const p = provinceCenters[id];
+		if (p) {
+			sumX += p.x * p.count;
+			sumY += p.y * p.count;
+			totalCount += p.count;
+		}
+	}
+	if (totalCount === 0) return { spine: [], path: [], controlPoints: [], tension: 0 };
+
+	const meanX_raw = sumX / totalCount;
+	const meanY_raw = sumY / totalCount;
+
+	// Calculate standard deviation of distances from the raw center to identify appendages
+	let sumDistSq = 0;
+	for (const id of component) {
+		const p = provinceCenters[id];
+		if (p) {
+			const dx = p.x - meanX_raw;
+			const dy = p.y - meanY_raw;
+			sumDistSq += (dx * dx + dy * dy) * p.count;
+		}
+	}
+	const stdDev = Math.sqrt(sumDistSq / totalCount);
+
+	// Filter out far-off outlier appendages (e.g. islands, remote corridor wings) beyond 1.6 * stdDev
+	const filtered = [];
+	let filteredCount = 0;
+	for (const id of component) {
+		const p = provinceCenters[id];
+		if (p) {
+			const dx = p.x - meanX_raw;
+			const dy = p.y - meanY_raw;
+			const dist = Math.hypot(dx, dy);
+			if (dist <= 1.6 * stdDev) {
+				filtered.push(id);
+				filteredCount += p.count;
+			}
+		}
+	}
+
+	// Use filtered subset (main body) if valid, otherwise fallback to the full component
+	const activeComp = (filtered.length >= 2 && filtered.length >= component.length * 0.4) ? filtered : component;
+	const activeCount = (filtered.length >= 2 && filtered.length >= component.length * 0.4) ? filteredCount : totalCount;
+
+	// Recompute mean for the active main-body component
+	let activeSumX = 0, activeSumY = 0;
+	for (const id of activeComp) {
+		const p = provinceCenters[id];
+		if (p) {
+			activeSumX += p.x * p.count;
+			activeSumY += p.y * p.count;
+		}
+	}
+	const meanX = activeSumX / activeCount;
+	const meanY = activeSumY / activeCount;
+
+	// Calculate covariance matrix of active component coordinates (scaling down to prevent float64 overflow)
+	let varX = 0, varY = 0, covXY = 0;
+	for (const id of activeComp) {
+		const p = provinceCenters[id];
+		if (p) {
+			const dx = (p.x - meanX) / 1000.0;
+			const dy = (p.y - meanY) / 1000.0;
+			varX += dx * dx * p.count;
+			varY += dy * dy * p.count;
+			covXY += dx * dy * p.count;
+		}
+	}
+
+	// Calculate eigenvalues
+	const trace = varX + varY;
+	const det = varX * varY - covXY * covXY;
+	const diff = Math.sqrt(Math.max(0.0, trace * trace - 4.0 * det)) / 2;
+	const L1 = trace / 2 + diff; // Primary eigenvalue
+
+	// Solve for primary eigenvector (vx, vy)
+	let vx = 1, vy = 0;
+	if (Math.abs(covXY) > 1e-4) {
+		vx = L1 - varY;
+		vy = covXY;
+		const len = Math.hypot(vx, vy);
+		if (len > 0) {
+			vx /= len;
+			vy /= len;
+		}
+	} else {
+		if (varX > varY) {
+			vx = 1; vy = 0;
+		} else {
+			vx = 0; vy = 1;
+		}
+	}
+
+	// Find the projections of the active main body provinces along primary axis
+	let minProj = Infinity, maxProj = -Infinity;
+	for (const id of activeComp) {
+		const p = provinceCenters[id];
+		if (p) {
+			const dx = p.x - meanX;
+			const dy = p.y - meanY;
+			const proj = dx * vx + dy * vy;
+			if (proj < minProj) minProj = proj;
+			if (proj > maxProj) maxProj = proj;
+		}
+	}
+
+	// Divide the active main body into 3 segments along its axis to capture curvature
+	let sumPerpL = 0, countL = 0;
+	let sumPerpM = 0, countM = 0;
+	let sumPerpR = 0, countR = 0;
+
+	const segmentLimit = (maxProj - minProj) / 3;
+	const threshold1 = minProj + segmentLimit;
+	const threshold2 = minProj + 2 * segmentLimit;
+
+	for (const id of activeComp) {
+		const p = provinceCenters[id];
+		if (p) {
+			const dx = p.x - meanX;
+			const dy = p.y - meanY;
+			const proj = dx * vx + dy * vy;
+			const perp = -dx * vy + dy * vx;
+
+			if (proj < threshold1) {
+				sumPerpL += perp * p.count;
+				countL += p.count;
+			} else if (proj < threshold2) {
+				sumPerpM += perp * p.count;
+				countM += p.count;
+			} else {
+				sumPerpR += perp * p.count;
+				countR += p.count;
+			}
+		}
+	}
+
+	const perpL = (sumPerpL / (countL || 1)) * curvatureScale;
+	const perpM = (sumPerpM / (countM || 1)) * curvatureScale;
+	const perpR = (sumPerpR / (countR || 1)) * curvatureScale;
+
+	const pad = 0.75;
+	const midProj = (minProj + maxProj) / 2;
+
+	const P0 = [
+		meanX + minProj * pad * vx - perpL * vy,
+		meanY + minProj * pad * vy + perpL * vx
+	];
+	const P3 = [
+		meanX + maxProj * pad * vx - perpR * vy,
+		meanY + maxProj * pad * vy + perpR * vx
+	];
+	const M = [
+		meanX + midProj * pad * vx - perpM * vy,
+		meanY + midProj * pad * vy + perpM * vx
+	];
+
+	const P1 = [
+		2 * M[0] - (P0[0] + P3[0]) / 2,
+		2 * M[1] - (P0[1] + P3[1]) / 2
+	];
+
+	const spine = [];
+	for (let i = 0; i <= 15; i++) {
+		const t = i / 15;
+		const mt = 1 - t;
+		const x = mt*mt * P0[0] + 2*mt*t * P1[0] + t*t * P3[0];
+		const y = mt*mt * P0[1] + 2*mt*t * P1[1] + t*t * P3[1];
+		spine.push([x, y]);
+	}
+
+	return {
+		spine: spine,
+		path: spine,
+		controlPoints: [P0, M, P3],
+		tension: 0.5,
+		vx: vx,
+		vy: vy,
+		meanX: meanX,
+		meanY: meanY,
+		projStart: minProj * pad,
+		projEnd: maxProj * pad
+	};
+}
+
+function splitIntoTwoLines(text) {
+	const words = text.trim().split(/\s+/);
+	if (words.length < 2) return [text, ""];
+
+	let bestSplit = 1;
+	let minDiff = Infinity;
+	for (let i = 1; i < words.length; i++) {
+		const part1 = words.slice(0, i).join(" ");
+		const part2 = words.slice(i).join(" ");
+		const diff = Math.abs(part1.length - part2.length);
+		if (diff < minDiff) {
+			minDiff = diff;
+			bestSplit = i;
+		}
+	}
+	return [
+		words.slice(0, bestSplit).join(" "),
+		words.slice(bestSplit).join(" ")
+	];
+}
 function drawLabels(){
 	if (zoom >= 1.5) {
 		if (DEBUG.panel) {
@@ -2385,550 +2932,13 @@ function drawLabels(){
     const w=baseCanvas.width, h=baseCanvas.height;
     const data=basePixels;
 
-	// Simple and fast Priority Queue implementation for Dijkstra
-	class MinHeap {
-		constructor() {
-			this.heap = [];
-		}
-		push(item) {
-			this.heap.push(item);
-			let n = this.heap.length - 1;
-			while (n > 0) {
-				let parentN = Math.floor((n + 1) / 2) - 1;
-				if (this.heap[n][1] >= this.heap[parentN][1]) break;
-				let temp = this.heap[parentN];
-				this.heap[parentN] = this.heap[n];
-				this.heap[n] = temp;
-				n = parentN;
-			}
-		}
-		pop() {
-			if (this.heap.length === 0) return null;
-			const min = this.heap[0];
-			const end = this.heap.pop();
-			if (this.heap.length > 0) {
-				this.heap[0] = end;
-				let n = 0;
-				const len = this.heap.length;
-				while (true) {
-					let child2N = (n + 1) * 2;
-					let child1N = child2N - 1;
-					let swap = null;
-					if (child1N < len && this.heap[child1N][1] < this.heap[n][1]) {
-						swap = child1N;
-					}
-					if (child2N < len && this.heap[child2N][1] < (swap === null ? this.heap[n][1] : this.heap[child1N][1])) {
-						swap = child2N;
-					}
-					if (swap === null) break;
-					let temp = this.heap[n];
-					this.heap[n] = this.heap[swap];
-					this.heap[swap] = temp;
-					n = swap;
-				}
-			}
-			return min;
-		}
-		isEmpty() {
-			return this.heap.length === 0;
-		}
-	}
-	
-	function computeSpineForComponent(component, countryColor, countryName, curvatureScale = 1.0){
-		if (component.length < 2) {
-			return { spine: [], path: [], controlPoints: [], tension: 0 };
-		}
-
-		let sumX = 0, sumY = 0, totalArea = 0;
-		for (const id of component) {
-			const p = provinceCenters[id];
-			if (p) {
-				sumX += p.x * p.count;
-				sumY += p.y * p.count;
-				totalArea += p.count;
-			}
-		}
-		const meanX = sumX / (totalArea || 1);
-		const meanY = sumY / (totalArea || 1);
-		const labelHeightOffset = Math.max(30, Math.min(120, Math.sqrt(totalArea) * 0.55)) * 0.18;
-
-		// Helper to compute distance from a point to a line segment
-		function distToSegment(px, py, ax, ay, bx, by) {
-			const dx = bx - ax;
-			const dy = by - ay;
-			const l2 = dx * dx + dy * dy;
-			if (l2 === 0) return Math.hypot(px - ax, py - ay);
-			let t = ((px - ax) * dx + (py - ay) * dy) / l2;
-			t = Math.max(0, Math.min(1, t));
-			return Math.hypot(px - (ax + t * dx), py - (ay + t * dy));
-		}
-
-		// Helper to classify inland seas (safe water) vs outer seas (open ocean)
-		const waterCache = {};
-		function isWaterSurroundedByOwnLand(waterId) {
-			if (waterCache[waterId] !== undefined) return waterCache[waterId];
-			
-			const visitedWater = new Set([waterId]);
-			const queue = [[waterId, 0]];
-			let queueHead = 0;
-			let foundOwnLand = false;
-			let foundForeignLand = false;
-			
-			while (queueHead < queue.length) {
-				const [curr, dist] = queue[queueHead++];
-				
-				const neighbors = provinceNeighbors[curr] || [];
-				for (const n of neighbors) {
-					const np = provinceCenters[n];
-					if (!np) continue;
-					if (np.isWater) {
-						if (dist < 4 && !visitedWater.has(n)) {
-							visitedWater.add(n);
-							queue.push([n, dist + 1]);
-						}
-					} else {
-						const owner = ownership[n];
-						if (owner === countryColor) {
-							foundOwnLand = true;
-						} else {
-							foundForeignLand = true;
-						}
-					}
-				}
-			}
-			
-			const result = foundOwnLand && !foundForeignLand;
-			waterCache[waterId] = result;
-			return result;
-		}
-
-		// Helper to evaluate the penalty along a generated Bezier curve from P0 to P3
-		function evaluateBezierPenalty(P0, P3, vx, vy, bend) {
-			const M = [
-				(P0[0] + P3[0]) / 2,
-				(P0[1] + P3[1]) / 2
-			];
-			const ux = -vy;
-			const uy = vx;
-			const pull = 0.30;
-			M[0] += bend * pull * ux;
-			M[1] += bend * pull * uy;
-
-			const P1 = [
-				2 * M[0] - (P0[0] + P3[0]) / 2,
-				2 * M[1] - (P0[1] + P3[1]) / 2
-			];
-
-			let penalty = 0;
-			for (let k = 1; k <= 20; k++) {
-				const t = k / 21;
-				const mt = 1 - t;
-				const sx = mt*mt * P0[0] + 2*mt*t * P1[0] + t*t * P3[0];
-				const sy = mt*mt * P0[1] + 2*mt*t * P1[1] + t*t * P3[1];
-
-				// Compute local tangent to find perpendicular vector
-				const next_t = (k + 0.1) / 21;
-				const next_mt = 1 - next_t;
-				const nsx = next_mt*next_mt * P0[0] + 2*next_mt*next_t * P1[0] + next_t*next_t * P3[0];
-				const nsy = next_mt*next_mt * P0[1] + 2*next_mt*next_t * P1[1] + next_t*next_t * P3[1];
-				const dx = nsx - sx;
-				const dy = nsy - sy;
-				const lenDir = Math.hypot(dx, dy) || 1;
-				const nx = -dy / lenDir;
-				const ny = dx / lenDir;
-
-				// Check center spine, top edge, and bottom edge of text bounding height
-				const samples = [
-					[sx, sy, true],
-					[sx + nx * labelHeightOffset, sy + ny * labelHeightOffset, false],
-					[sx - nx * labelHeightOffset, sy - ny * labelHeightOffset, false]
-				];
-
-				for (const [x, y, isSpine] of samples) {
-					const key = getProvinceIdAt(x, y);
-					if (ownership[key] === countryColor) {
-						continue;
-					}
-
-					const p = provinceCenters[key];
-					if (p) {
-						if (p.isWater) {
-							if (isWaterSurroundedByOwnLand(key)) {
-								penalty += 8; // inland sea / safe water
-							} else {
-								penalty += 30; // outer sea / open ocean
-							}
-						} else {
-							penalty += isSpine ? 80 : 15; // spine penalty is 80, offset penalty is 15
-						}
-					} else {
-						penalty += isSpine ? 80 : 15;
-					}
-				}
-			}
-			return penalty;
-		}
-
-		// Candidate selection for pair search: pick the furthest provinces in 16 directions from the centroid
-		// to guarantee that we test paths running through the true visual tips of the country.
-		const candidatesSet = new Set();
-		let minX_p = component[0], maxX_p = component[0], minY_p = component[0], maxY_p = component[0];
-		let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
-		
-		for (const id of component) {
-			const p = provinceCenters[id];
-			if (p) {
-				if (p.x < minX) { minX = p.x; minX_p = id; }
-				if (p.x > maxX) { maxX = p.x; maxX_p = id; }
-				if (p.y < minY) { minY = p.y; minY_p = id; }
-				if (p.y > maxY) { maxY = p.y; maxY_p = id; }
-			}
-		}
-		candidatesSet.add(minX_p);
-		candidatesSet.add(maxX_p);
-		candidatesSet.add(minY_p);
-		candidatesSet.add(maxY_p);
-
-		for (let angleIdx = 0; angleIdx < 16; angleIdx++) {
-			const angle = (angleIdx / 16) * Math.PI * 2;
-			const dx = Math.cos(angle);
-			const dy = Math.sin(angle);
-			
-			let bestId = component[0];
-			let maxProj = -Infinity;
-			
-			for (const id of component) {
-				const p = provinceCenters[id];
-				if (p) {
-					const proj = (p.x - meanX) * dx + (p.y - meanY) * dy;
-					if (proj > maxProj) {
-						maxProj = proj;
-						bestId = id;
-					}
-				}
-			}
-			candidatesSet.add(bestId);
-		}
-		
-		const candidates = Array.from(candidatesSet);
-
-		// Subsample component provinces for fast score searches (O(N log N) -> O(M log M))
-		const maxSampled = 120;
-		const sampleStep = Math.max(1, Math.floor(component.length / maxSampled));
-		const sampledProvinces = [];
-		let sampleTotalArea = 0;
-		for (let i = 0; i < component.length; i += sampleStep) {
-			const p = provinceCenters[component[i]];
-			if (p) {
-				sampledProvinces.push(p);
-				sampleTotalArea += p.count;
-			}
-		}
-
-		// Helper to calculate the Bezier curve and sample it for penalties
-		function getBezierPenaltyAndScore(idA, idB) {
-			const pA = provinceCenters[idA];
-			const pB = provinceCenters[idB];
-			if (!pA || !pB) return -Infinity;
-
-			const len = Math.hypot(pB.x - pA.x, pB.y - pA.y) || 1;
-			const vx = (pB.x - pA.x) / len;
-			const vy = (pB.y - pA.y) / len;
-
-			// Project sampled component provinces onto this candidate direction
-			const sorted = [];
-			for (const p of sampledProvinces) {
-				const proj = (p.x - meanX) * vx + (p.y - meanY) * vy;
-				const perp = -(p.x - meanX) * vy + (p.y - meanY) * vx;
-				sorted.push({ proj, perp, count: p.count });
-			}
-			sorted.sort((a, b) => a.proj - b.proj);
-
-			// Find percentiles to get P0 and P3
-			let accum = 0;
-			let projStart = sorted[0].proj;
-			let projEnd = sorted[sorted.length - 1].proj;
-			const startThreshold = sampleTotalArea * 0.12;
-			const endThreshold = sampleTotalArea * 0.88;
-			for (const item of sorted) {
-				accum += item.count;
-				if (accum >= startThreshold && projStart === sorted[0].proj) {
-					projStart = item.proj;
-				}
-				if (accum >= endThreshold) {
-					projEnd = item.proj;
-					break;
-				}
-			}
-
-			const P0 = [meanX + projStart * vx, meanY + projStart * vy];
-			const P3 = [meanX + projEnd * vx, meanY + projEnd * vy];
-
-			const dist = Math.hypot(P3[0] - P0[0], P3[1] - P0[1]);
-			const dCentroid = distToSegment(meanX, meanY, P0[0], P0[1], P3[0], P3[1]);
-			const roughScore = 3.5 * dist - 2.5 * dCentroid;
-
-			// Branch-and-bound pruning: if the rough straight score cannot beat the current bestScore, skip penalty calculation!
-			if (roughScore <= bestScore) {
-				return -Infinity;
-			}
-
-			// Find max perpendicular deviations within range
-			let maxPositivePerp = 0;
-			let maxNegativePerp = 0;
-
-			for (const item of sorted) {
-				if (item.proj >= projStart && item.proj <= projEnd) {
-					if (item.perp > 0) {
-						if (item.perp > maxPositivePerp) {
-							maxPositivePerp = item.perp;
-						}
-					} else {
-						if (item.perp < maxNegativePerp) {
-							maxNegativePerp = item.perp;
-						}
-					}
-				}
-			}
-
-			// Try both bends on the actual P0 to P3 curve and choose the minimum penalty
-			const penaltyPos = evaluateBezierPenalty(P0, P3, vx, vy, maxPositivePerp);
-			const penaltyNeg = evaluateBezierPenalty(P0, P3, vx, vy, maxNegativePerp);
-			const bestPenalty = Math.min(penaltyPos, penaltyNeg);
-
-			return roughScore - bestPenalty;
-		}
-
-		// Find the longest possible line that passes close to the center of mass
-		let bestA = component[0];
-		let bestB = component[0];
-		let bestScore = -Infinity;
-
-		for (let i = 0; i < candidates.length; i++) {
-			for (let j = i + 1; j < candidates.length; j++) {
-				const idA = candidates[i];
-				const idB = candidates[j];
-				const score = getBezierPenaltyAndScore(idA, idB);
-				if (score > bestScore) {
-					bestScore = score;
-					bestA = idA;
-					bestB = idB;
-				}
-			}
-		}
-
-		const pA = provinceCenters[bestA];
-		const pB = provinceCenters[bestB];
-		let vx = 1, vy = 0;
-		if (pA && pB) {
-			const len = Math.hypot(pB.x - pA.x, pB.y - pA.y);
-			if (len > 0) {
-				vx = (pB.x - pA.x) / len;
-				vy = (pB.y - pA.y) / len;
-			}
-		}
-
-		// Project all provinces onto this optimal direction
-		const sorted = [];
-		for (const id of component) {
-			const p = provinceCenters[id];
-			if (p) {
-				const proj = (p.x - meanX) * vx + (p.y - meanY) * vy;
-				const perp = -(p.x - meanX) * vy + (p.y - meanY) * vx;
-				sorted.push({ id, x: p.x, y: p.y, count: p.count, proj, perp });
-			}
-		}
-		sorted.sort((a, b) => a.proj - b.proj);
-
-		// Exclude outlying territories by taking the middle 80% of the land area (10% to 90%)
-		let accum = 0;
-		let projStart = sorted[0].proj;
-		let projEnd = sorted[sorted.length - 1].proj;
-		const startThreshold = totalArea * 0.12;
-		const endThreshold = totalArea * 0.88;
-		for (const item of sorted) {
-			accum += item.count;
-			if (accum >= startThreshold && projStart === sorted[0].proj) {
-				projStart = item.proj;
-			}
-			if (accum >= endThreshold) {
-				projEnd = item.proj;
-				break;
-			}
-		}
-
-		let P0 = [meanX + projStart * vx, meanY + projStart * vy];
-		let P3 = [meanX + projEnd * vx, meanY + projEnd * vy];
-
-		// Enforce left-to-right reading direction (angle in [-pi/2, pi/2]) to prevent upside-down labels
-		let swapped = false;
-		if (P3[0] < P0[0]) {
-			swapped = true;
-		} else if (P3[0] === P0[0] && P3[1] > P0[1]) {
-			swapped = true;
-		}
-		if (swapped) {
-			const temp = P0; P0 = P3; P3 = temp;
-			vx = -vx;
-			vy = -vy;
-			const tempProj = projStart;
-			projStart = -projEnd;
-			projEnd = -tempProj;
-		}
-
-		// Find maximum perpendicular deviations and area on each side
-		let areaPositive = 0;
-		let areaNegative = 0;
-		let maxPositivePerp = 0;
-		let maxNegativePerp = 0;
-
-		for (const item of sorted) {
-			let currentProj = item.proj;
-			let currentPerp = item.perp;
-			if (swapped) {
-				currentProj = -item.proj;
-				currentPerp = -item.perp;
-			}
-			if (currentProj >= projStart && currentProj <= projEnd) {
-				if (currentPerp > 0) {
-					areaPositive += item.count;
-					if (currentPerp > maxPositivePerp) {
-						maxPositivePerp = currentPerp;
-					}
-				} else {
-					areaNegative += item.count;
-					if (currentPerp < maxNegativePerp) {
-						maxNegativePerp = currentPerp;
-					}
-				}
-			}
-		}
-
-		// Choose the bend amount: try both and select the one with the lower penalty
-		const finalPenaltyPos = evaluateBezierPenalty(P0, P3, vx, vy, maxPositivePerp);
-		const finalPenaltyNeg = evaluateBezierPenalty(P0, P3, vx, vy, maxNegativePerp);
-
-		let bendAmount = 0;
-		if (finalPenaltyPos < finalPenaltyNeg) {
-			bendAmount = maxPositivePerp;
-		} else if (finalPenaltyNeg < finalPenaltyPos) {
-			bendAmount = maxNegativePerp;
-		} else {
-			// Tie break: bend towards the side with more land area
-			bendAmount = (areaPositive > areaNegative) ? maxPositivePerp : maxNegativePerp;
-		}
-
-		// Clamp bendAmount to prevent abnormal high-curvature loops
-		const spine_len = Math.hypot(P3[0] - P0[0], P3[1] - P0[1]) || 1;
-		const maxAllowedBend = spine_len * 0.35;
-		bendAmount = Math.max(-maxAllowedBend, Math.min(maxAllowedBend, bendAmount));
-
-		bendAmount *= curvatureScale;
-
-		// Calculate midpoint M on the axis
-		const M = [
-			(P0[0] + P3[0]) / 2,
-			(P0[1] + P3[1]) / 2
-		];
-
-
-		// Pull midpoint towards the bulk side of the country to create smooth bend
-		const ux = -vy;
-		const uy = vx;
-		const pull = 0.30;
-		M[0] += bendAmount * pull * ux;
-		M[1] += bendAmount * pull * uy;
-
-		const P1 = [
-			2 * M[0] - (P0[0] + P3[0]) / 2,
-			2 * M[1] - (P0[1] + P3[1]) / 2
-		];
-
-		// Evaluate Bezier curve at 80 points
-		const spine = [];
-		for (let i = 0; i < 80; i++) {
-			const t = i / 79;
-			const mt = 1 - t;
-			const x = mt*mt * P0[0] + 2*mt*t * P1[0] + t*t * P3[0];
-			const y = mt*mt * P0[1] + 2*mt*t * P1[1] + t*t * P3[1];
-			spine.push([x, y]);
-		}
-
-		// Pull spine points away from foreign land
-		for (let i = 0; i < spine.length; i++) {
-			const p = spine[i];
-			const key = getProvinceIdAt(p[0], p[1]);
-			
-			if (key !== 0 && ownership[key] !== countryColor) {
-				const pc = provinceCenters[key];
-				if (pc && !pc.isWater) {
-					// Inside foreign land! Pull it back to the closest owned province center
-					let closestCenter = null;
-					let minDist = Infinity;
-					for (const id of component) {
-						const c = provinceCenters[id];
-						if (c) {
-							const d2 = (p[0] - c.x) * (p[0] - c.x) + (p[1] - c.y) * (p[1] - c.y);
-							if (d2 < minDist) {
-								minDist = d2;
-								closestCenter = c;
-							}
-						}
-					}
-					if (closestCenter) {
-						p[0] = p[0] * 0.15 + closestCenter.x * 0.85;
-						p[1] = p[1] * 0.15 + closestCenter.y * 0.85;
-					}
-				}
-			}
-		}
-
-		// Smooth the spine to remove any jaggedness from pulling
-		const smoothedSpine = [];
-		const windowSize = 5; // number of points to average on each side
-		for (let i = 0; i < spine.length; i++) {
-			let sumX = 0;
-			let sumY = 0;
-			let count = 0;
-			for (let w = -windowSize; w <= windowSize; w++) {
-				const idx = i + w;
-				if (idx >= 0 && idx < spine.length) {
-					sumX += spine[idx][0];
-					sumY += spine[idx][1];
-					count++;
-				}
-			}
-			smoothedSpine.push([sumX / count, sumY / count]);
-		}
-		// Replace spine with smoothed version
-		for (let i = 0; i < spine.length; i++) {
-			spine[i][0] = smoothedSpine[i][0];
-			spine[i][1] = smoothedSpine[i][1];
-		}
-
-		return { spine, path: [P0, P3], controlPoints: [P1], tension: 0.5, bendAmount, vx, vy, meanX, meanY, projStart, projEnd };
+	if (typeof labelWorker !== 'undefined' && labelWorker && dirtyCountries.size > 0) {
+		labelWorker.postMessage({
+			action: "updateOwnership",
+			ownership: ownership
+		});
 	}
 
-	function splitIntoTwoLines(text) {
-		const words = text.trim().split(/\s+/);
-		if (words.length < 2) return [text, ""];
-
-		let bestSplit = 1;
-		let minDiff = Infinity;
-		for (let i = 1; i < words.length; i++) {
-			const part1 = words.slice(0, i).join(" ");
-			const part2 = words.slice(i).join(" ");
-			const diff = Math.abs(part1.length - part2.length);
-			if (diff < minDiff) {
-				minDiff = diff;
-				bestSplit = i;
-			}
-		}
-		return [
-			words.slice(0, bestSplit).join(" "),
-			words.slice(bestSplit).join(" ")
-		];
-	}
 
 const MAP_LABEL_NAME_OVERRIDES = {
 	"UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND": "UNITED KINGDOM",
@@ -2975,7 +2985,8 @@ const MAP_LABEL_NAME_OVERRIDES = {
 	"REPUBLIC OF ZAMBIA": "ZAMBIA"
 };
 
-	function generateLabelsForCountry(o) {
+	function generateLabelsForCountry(o, fromWorker = false) {
+		try {
 		const country = countries[o];
 		if (!country || country.provinces.size === 0) return;
 
@@ -2991,10 +3002,26 @@ const MAP_LABEL_NAME_OVERRIDES = {
 			country._lastCleanName = country.name;
 		}
 		const text = country.displayName;
+		const curvatureScale = country.curvatureScale !== undefined ? country.curvatureScale : 1.0;
+
+		// If spines are dirty/empty, offload calculation to Web Worker if available
+		if (!country.spines && typeof labelWorker !== 'undefined' && labelWorker && !fromWorker) {
+			if (!country.labelGenerating) {
+				country.labelGenerating = true;
+				labelWorker.postMessage({
+					action: "compute",
+					tag: o,
+					provinces: Array.from(country.provinces),
+					text: text,
+					curvatureScale: curvatureScale,
+					ownership: ownership
+				});
+			}
+			return; // Defer execution; wait for worker callback!
+		}
 		const labelOffset = country.labelOffset || 0;
 		const labelXOffset = country.labelXOffset || 0;
 		const labelArcShift = country.labelArcShift || 0;
-		const curvatureScale = country.curvatureScale !== undefined ? country.curvatureScale : 1.0;
 		const fontSizeScale = country.fontSizeScale !== undefined ? country.fontSizeScale : 1.0;
 		const labelRotation = country.labelRotation !== undefined ? country.labelRotation : 0;
 		const labelStretch = country.labelStretch !== undefined ? country.labelStretch : 1.0;
@@ -3246,81 +3273,9 @@ const MAP_LABEL_NAME_OVERRIDES = {
 			const centroidDy = result.meanY - my;
 			const baseAutoOffset = centroidDx * mnx + centroidDy * mny;
 
-			// Perform penalty-avoiding 2D shift search (H-Shift and V-Shift)
-			let bestAutoXOffset = targetHShift;
-			let bestAutoOffset = baseAutoOffset;
-			let minCollisions = Infinity;
-			let bestScore = -Infinity;
-
-			const hRange = len * 0.25;
-			const hCandidates = [];
-			for (let step = -3; step <= 3; step++) {
-				const candidate = targetHShift + (step / 3) * hRange;
-				hCandidates.push(Math.max(-maxShift, Math.min(maxShift, candidate)));
-			}
-
-			// Search V-shifts around baseAutoOffset (up to +/- 1.5 * thickness, with 7 steps to cover narrow countries)
-			const vStep = thickness * 0.5;
-			const vCandidates = [
-				baseAutoOffset - 3 * vStep,
-				baseAutoOffset - 2 * vStep,
-				baseAutoOffset - vStep,
-				baseAutoOffset,
-				baseAutoOffset + vStep,
-				baseAutoOffset + 2 * vStep,
-				baseAutoOffset + 3 * vStep
-			];
-
-			for (const hShift of hCandidates) {
-				for (const vShift of vCandidates) {
-					let collisions = 0;
-					for (let lIdx = 0; lIdx < lines.length; lIdx++) {
-						const layout = lineLayouts[lIdx];
-						let currentOffset = 0;
-						for (let i = 0; i < layout.letters.length; i++) {
-							const charW = layout.widths[i];
-							const dist = layout.startDistAdjusted + currentOffset + charW / 2 + hShift + labelArcShift;
-							currentOffset += charW + layout.gap;
-							
-							const [x, y, dx, dy] = getPointAndTangentAt(dist);
-							const mLen = Math.hypot(dx, dy) || 1;
-							const lnx = -dy / mLen;
-							const lny = dx / mLen;
-							
-							let lineOffset = 0;
-							if (lines.length === 2) {
-								lineOffset = (lIdx === 0) ? -effectiveFont * 0.55 : effectiveFont * 0.55;
-							}
-							
-							let px = x + lnx * (lineOffset + vShift + labelOffset);
-							let py = y + lny * (lineOffset + vShift + labelOffset);
-							px += labelXOffset;
-							
-							const key = getProvinceIdAt(px, py);
-							const pCenter = provinceCenters[key];
-							const isWater = pCenter && pCenter.isWater;
-							if (ownership[key] !== o && !isWater) {
-								collisions += 1;
-							}
-						}
-					}
-					
-					const distFromHTarget = Math.abs(hShift - targetHShift);
-					const distFromVTarget = Math.abs(vShift - baseAutoOffset);
-					// Give high priority to avoiding collisions, then matching centroid H, then centroid V
-					const score = -1000 * collisions - distFromHTarget - 2 * distFromVTarget;
-					
-					if (score > bestScore) {
-						bestScore = score;
-						bestAutoXOffset = hShift;
-						bestAutoOffset = vShift;
-						minCollisions = collisions;
-					}
-				}
-			}
-
-			const autoXOffset = Math.max(-maxShift, Math.min(maxShift, bestAutoXOffset));
-			const autoOffset = bestAutoOffset;
+			// Snap directly to the computed mathematical PCA spine (no shifting or pixel checks needed)
+			const autoXOffset = 0;
+			const autoOffset = 0;
 			const computedLetters = [];
 
 			for (let lIdx = 0; lIdx < lines.length; lIdx++) {
@@ -3412,11 +3367,16 @@ const MAP_LABEL_NAME_OVERRIDES = {
 				tension: result.tension,
 				fontSize: fontSize * fontSizeScale,
 				effectiveFont,
-				letters: computedLetters
+				letters: computedLetters,
+				text: text
 			});
 		}
 
 		labelCache[o] = { labels };
+		} catch (err) {
+			console.error("Error generating labels for country " + o + ":", err);
+			labelCache[o] = { labels: [] }; // Safe fallback
+		}
 	}
 
 	for(const o in countries){
@@ -3426,14 +3386,17 @@ const MAP_LABEL_NAME_OVERRIDES = {
 		let cached = labelCache[o];
 
 		if (!cached || dirtyCountries.has(o)) {
-			// Synchronous update for the active country or manual/dirty triggers (e.g. painting)
-			if (o === selectedColor || dirtyCountries.has(o)) {
+			// Synchronous update for manual/dirty triggers (e.g. painting)
+			if (dirtyCountries.has(o)) {
 				generateLabelsForCountry(o);
 				cached = labelCache[o];
 				labelGenerationQueue.delete(o);
 			} else {
-				// Queue for asynchronous generation on subsequent frames
-				labelGenerationQueue.add(o);
+				// Queue for asynchronous generation on subsequent frames if not already generating or queued
+				if (!country.labelGenerating && !labelGenerationQueue.has(o)) {
+					labelGenerationQueue.add(o);
+					labelCache[o] = { labels: [] }; // Set placeholder cache to avoid re-queueing next frame
+				}
 				continue;
 			}
 		}
@@ -3459,6 +3422,11 @@ const MAP_LABEL_NAME_OVERRIDES = {
 			const vpTop = offsetY;
 			const vpBottom = offsetY + canvas.height / zoom;
 			if (maxX < vpLeft || minX > vpRight || maxY < vpTop || minY > vpBottom) {
+				continue;
+			}
+
+			// Size culling BEFORE drawing any debug paths or characters to prevent massive CPU overhead
+			if (label.effectiveFont * zoom < 8.0) {
 				continue;
 			}
 
@@ -3503,7 +3471,34 @@ const MAP_LABEL_NAME_OVERRIDES = {
 				ctx.restore();
 			}
 
-			if (label.effectiveFont * zoom < 3.5) {
+			// Zoom-out LOD optimization: Draw as a single rotated straight text string when zoomed out
+			if (zoom < 1.2) {
+				ctx.font = `bold ${label.effectiveFont}px Georgia`;
+				ctx.fillStyle = "white";
+				ctx.strokeStyle = "black";
+				ctx.lineJoin = "round";
+				ctx.miterLimit = 2;
+				ctx.lineWidth = Math.max(2, label.effectiveFont * 0.22);
+
+				ctx.textAlign = "center";
+				ctx.textBaseline = "middle";
+
+				const dx = P3[0] - P0[0];
+				const dy = P3[1] - P0[1];
+				const angle = Math.atan2(dy, dx);
+				const centerX = (P0[0] + P3[0]) / 2;
+				const centerY = (P0[1] + P3[1]) / 2;
+
+				ctx.setTransform(
+					Math.cos(angle) * zoom,
+					Math.sin(angle) * zoom,
+					-Math.sin(angle) * zoom,
+					Math.cos(angle) * zoom,
+					(centerX - offsetX) * zoom,
+					(centerY - offsetY) * zoom
+				);
+				ctx.strokeText(label.text, 0, 0);
+				ctx.fillText(label.text, 0, 0);
 				continue;
 			}
 
@@ -3538,7 +3533,7 @@ const MAP_LABEL_NAME_OVERRIDES = {
 	ctx.setTransform(zoom, 0, 0, zoom, -offsetX * zoom, -offsetY * zoom);
 
 	// Process queue asynchronously (up to 8ms per frame) to avoid freezing startup
-	if (labelGenerationQueue.size > 0) {
+	if (labelGenerationQueue.size > 0 && !isPanning && !isDragging) {
 		const maxBatchTime = 8; // ms
 		const startTime = performance.now();
 		let generatedAny = false;
@@ -3558,6 +3553,55 @@ const MAP_LABEL_NAME_OVERRIDES = {
 	}
 }
 // Convenient hotkey listeners
+function toggleSidebar() {
+	const panel = document.getElementById("sidebarPanel");
+	const toggleBtn = document.getElementById("btnSidebarToggle");
+	if (panel.style.display === "none") {
+		panel.style.display = "block";
+		toggleBtn.style.display = "none";
+	} else {
+		panel.style.display = "none";
+		toggleBtn.style.display = "block";
+	}
+}
+
+function setSelectionLevel(level) {
+	selectionLevel = level;
+}
+
+function selectHoi4States(type) {
+	const tag = document.getElementById("hoi4TagInput").value.toUpperCase().trim();
+	if (!tag || !hoi4Data || !hoi4Data.countries[tag]) {
+		document.getElementById("hoi4Status").textContent = "Country tag not found.";
+		return;
+	}
+	
+	const states = hoi4Data.countries[tag][type] || [];
+	const provinces = new Set();
+	for (const stateId of states) {
+		const state = hoi4Data.states[stateId];
+		if (state) {
+			for (const p of state.provinces) {
+				provinces.add(p);
+			}
+		}
+	}
+	
+	applySelectionLogic(provinces);
+	updateSelectionStatus();
+	draw();
+	
+	document.getElementById("hoi4Status").textContent = `Selected ${provinces.size} provinces across ${states.length} states (${type}).`;
+}
+
+function paintHoi4States() {
+	if (selectedProvinces.size === 0) {
+		alert("No provinces selected to paint!");
+		return;
+	}
+	paintSelection();
+}
+
 window.addEventListener("keydown", (e) => {
     // Skip if typing in inputs/selects
     if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT" || e.target.tagName === "TEXTAREA") {

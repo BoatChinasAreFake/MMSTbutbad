@@ -98,7 +98,8 @@ def main():
                 fontSizeScale: c.fontSizeScale !== undefined ? c.fontSizeScale : (base.fontSizeScale !== undefined ? base.fontSizeScale : 1.0),
                 labelRotation: c.labelRotation !== undefined ? c.labelRotation : (base.labelRotation !== undefined ? base.labelRotation : 0),
                 labelStretch: c.labelStretch !== undefined ? c.labelStretch : (base.labelStretch !== undefined ? base.labelStretch : 1.0),
-                provinces: new Set()
+                provinces: new Set(),
+                spines: c.spines || []
             };
             COLORS[tag] = c.color;
         }"""
