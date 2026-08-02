@@ -713,7 +713,10 @@ function updateCountryList() {
         list.appendChild(item);
     });
     
-    if (sortedTags.length > 0) {
+    // Preserve the active selection if it still exists, otherwise default to the first tag
+    if (selectedColor && sortedTags.includes(selectedColor)) {
+        selectCountry(selectedColor);
+    } else if (sortedTags.length > 0) {
         selectCountry(sortedTags[0]);
     }
 }
@@ -1298,7 +1301,7 @@ function initApp() {
         for (const k in countries) delete countries[k];
         for (const k in COLORS) delete COLORS[k];
         
-                                                                                                                                                                                                                                                                                                                for (const tag in presetData.countries) {
+                                                                                                                                                                                                                                                                                                                                for (const tag in presetData.countries) {
             const c = presetData.countries[tag];
             const base = BASE_COUNTRY_PRESETS[tag] || {};
             countries[tag] = {
@@ -1628,8 +1631,8 @@ function drawStraits() {
     overlayCtx.restore();
 }
 
-function applySelectionLogic(newSelection) {
-    const mode = document.getElementById("selLogicMode").value;
+function applySelectionLogic(newSelection, overrideMode) {
+    const mode = overrideMode || document.getElementById("selLogicMode").value;
     if (mode === "replace") {
         selectedProvinces = new Set(newSelection);
     } else if (mode === "add") {
@@ -2361,9 +2364,9 @@ window.addEventListener("mouseup", e => {
 		}
 	}
 
-	const logicMode = document.getElementById("selLogicMode").value;
+	const logicMode = e.ctrlKey ? "xor" : document.getElementById("selLogicMode").value;
 	if (newSelection.size > 0 || logicMode === "replace") {
-		applySelectionLogic(newSelection);
+		applySelectionLogic(newSelection, logicMode);
 	}
 
 	// Process deferred worker responses since dragging stopped
