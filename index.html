@@ -118,7 +118,7 @@
     
     <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.15); margin: 0 4px;"></div>
     
-    <button onclick="selectAllProvincesOfSelectedCountry()" class="glass-button">Select Country (S)</button>
+    <button onclick="selectAllProvincesOfSelectedCountry()" class="glass-button">Select Country (C)</button>
     
     <select id="selSelectionLevel" onchange="setSelectionLevel(this.value)" class="glass-input">
         <option value="province" style="background: #222; color: white;">Province Level</option>
@@ -136,9 +136,10 @@
     <select id="selMapmode" onchange="setMapmode(this.value)" class="glass-input">
         <option value="political" style="background: #222; color: white;">Political Mapmode</option>
         <option value="interest" style="background: #222; color: white;">National Interest</option>
+        <option value="state" style="background: #222; color: white;">State Mapmode</option>
     </select>
     
-    <button onclick="clearSelection()" class="glass-button" style="background: rgba(255, 69, 58, 0.15) !important; color: rgb(255, 69, 58) !important; border-color: rgba(255, 69, 58, 0.2) !important;">Clear (C)</button>
+    <button onclick="clearSelection()" class="glass-button" style="background: rgba(255, 69, 58, 0.15) !important; color: rgb(255, 69, 58) !important; border-color: rgba(255, 69, 58, 0.2) !important;">Clear (X)</button>
  
     <button onclick="toggleSelectedWater()" class="glass-button">Toggle Land/Water</button>
  
@@ -275,6 +276,11 @@
                 Save Presets (Ctrl+S)
             </button>
         </div>
+        <div style="display: flex; gap: 4px; margin-top: 4px;">
+            <button onclick="document.getElementById('hoi4Panel').style.display = 'block'" style="flex: 1; padding: 5px; background: #28a745; color: white; border: none; font-weight: bold; border-radius: 4px; cursor: pointer; font-size: 11px; transition: all 0.2s ease;">
+                Open HOI4 State Tools
+            </button>
+        </div>
     </div>
 
     <!-- Adjacency Panel -->
@@ -314,6 +320,47 @@
         </button>
     </div>
 
+    <!-- State Tools Panel -->
+    <div id="statePanel" style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #333; display: flex; flex-direction: column; gap: 6px; font-family: sans-serif; font-size: 12px; color: white;">
+        <div style="font-weight: bold; color: #32cd32; display: flex; align-items: center; justify-content: space-between;">
+            <span>State Creator</span>
+            <span id="selectedProvincesCount" style="font-family: monospace; font-size: 11px; background: rgba(50, 205, 50, 0.2); padding: 2px 6px; border-radius: 4px;">0 selected</span>
+        </div>
+        
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+            <div>
+                <label style="display: block; margin-bottom: 2px; font-size: 11px; color: #aaa;">State ID (numeric):</label>
+                <input type="number" id="stateIdInput" style="width: 100%; background: #222; border: 1px solid #444; color: white; padding: 4px; border-radius: 4px; box-sizing: border-box; font-size: 11px;">
+            </div>
+            <div>
+                <label style="display: block; margin-bottom: 2px; font-size: 11px; color: #aaa;">State Name:</label>
+                <input type="text" id="stateNameInput" style="width: 100%; background: #222; border: 1px solid #444; color: white; padding: 4px; border-radius: 4px; box-sizing: border-box; font-size: 11px;">
+            </div>
+        </div>
+        
+        <div style="display: flex; gap: 4px; margin-top: 2px;">
+            <button onclick="createStateFromSelection()" style="flex: 1; background: #28a745; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
+                Create State
+            </button>
+            <button onclick="clearStateFromSelection()" style="flex: 1; background: #dc3545; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
+                Clear State
+            </button>
+        </div>
+        
+        <div style="display: flex; gap: 4px;">
+            <button onclick="selectStateProvinces()" style="flex: 1; background: #007bff; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
+                Select State
+            </button>
+            <button onclick="document.getElementById('stateImportInput').click()" style="flex: 1; background: #17a2b8; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
+                Import States
+            </button>
+            <button onclick="exportStatesJSON()" style="flex: 1; background: #ffc107; color: black; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
+                Export States
+            </button>
+        </div>
+        <input type="file" id="stateImportInput" onchange="importStatesJSONFile(this)" style="display: none;" accept=".json">
+    </div>
+
     <div id="debugControls" style="
         margin-top:8px;
         color:white;
@@ -335,7 +382,7 @@
 <div id="hoi4Panel" class="glass-panel" style="
     position: fixed;
     bottom: 15px;
-    left: 15px;
+    left: 350px;
     font-size: 12px;
     padding: 15px;
     z-index: 25;
@@ -486,6 +533,7 @@ let meta = null;
 let hasHeightmap = false;
 let showHeightmap = 1.0;
 let presetData = null;
+let statesData = null;
 
 let zoom = 1;
 let offsetX = 0.0;
@@ -511,7 +559,8 @@ const dirtyCountries = new Set();
 
 let selectionLevel = "province";
 let hoi4Data = null;
-const provinceToState = {};
+let states = {};
+let provinceToState = {};
 let eraserMode = false;
 let definitions = {};
 const colorToId = {};
@@ -769,59 +818,31 @@ function resetMap(){
 
 	clearLabelCache();
 
-    if (lutData) {
-        for (let i = 0; i < lutWidth * lutHeight; i++) {
-            const o = i * 4;
-            lutData[o] = 180;
-            lutData[o+1] = 180;
-            lutData[o+2] = 180;
-            lutData[o+3] = 255;
-        }
-        for (const keyStr in meta.centers) {
-            const centerData = meta.centers[keyStr];
-            if (centerData.is_water) {
-                const o = centerData.index * 4;
-                lutData[o] = 150;
-                lutData[o+1] = 180;
-                lutData[o+2] = 210;
+    // Reload preset ownership and interests if available
+    if (presetData) {
+        for (const provIdStr in presetData.ownership) {
+            const provId = parseInt(provIdStr);
+            const tag = presetData.ownership[provIdStr];
+            if (countries[tag] && provinceCenters[provId]) {
+                ownership[provId] = tag;
+                countries[tag].provinces.add(provId);
             }
         }
-        
-        // Reload preset ownership and interests if available
-        if (presetData) {
-            for (const provIdStr in presetData.ownership) {
-                const provId = parseInt(provIdStr);
-                const tag = presetData.ownership[provIdStr];
-                if (countries[tag] && provinceCenters[provId]) {
-                    ownership[provId] = tag;
-                    countries[tag].provinces.add(provId);
-                    
-                    const idx = provinceCenters[provId].index;
-                    const colorRgb = COLORS[tag];
-                    const o = idx * 4;
-                    lutData[o] = colorRgb[0];
-                    lutData[o+1] = colorRgb[1];
-                    lutData[o+2] = colorRgb[2];
-                }
-            }
-            if (presetData.interests) {
-                for (const tag in presetData.interests) {
-                    if (!interests[tag]) interests[tag] = {};
-                    for (const provIdStr in presetData.interests[tag]) {
-                        interests[tag][parseInt(provIdStr)] = parseInt(presetData.interests[tag][provIdStr]);
-                    }
+        if (presetData.interests) {
+            for (const tag in presetData.interests) {
+                if (!interests[tag]) interests[tag] = {};
+                for (const provIdStr in presetData.interests[tag]) {
+                    interests[tag][parseInt(provIdStr)] = parseInt(presetData.interests[tag][provIdStr]);
                 }
             }
         }
-        
-        lutNeedsUpdate = true;
     }
 
     for (const tag in countries) {
         dirtyCountries.add(tag);
     }
 
-    updateAllLutAlphas();
+    updateLutData();
     draw();
 }
 function renameCountry(color, newName) {
@@ -834,6 +855,196 @@ function renameCountry(color, newName) {
 function setCountryTag(color, tag) {
     if (!countries[color]) return;
     countries[color].tag = tag;
+}
+
+function createStateFromSelection() {
+    if (selectedProvinces.size === 0) {
+        alert("Please select one or more provinces to form a state!");
+        return;
+    }
+    
+    let stateIdVal = document.getElementById("stateIdInput").value.trim();
+    if (!stateIdVal) {
+        let maxId = 0;
+        for (const idStr in states) {
+            const id = parseInt(idStr);
+            if (id > maxId) maxId = id;
+        }
+        stateIdVal = (maxId + 1).toString();
+    }
+    const stateId = parseInt(stateIdVal);
+    if (isNaN(stateId) || stateId <= 0) {
+        alert("State ID must be a positive integer!");
+        return;
+    }
+    
+    let stateName = document.getElementById("stateNameInput").value.trim();
+    if (!stateName) {
+        stateName = "State " + stateId;
+    }
+    
+    // Dissolve old state associations for these provinces
+    for (const provId of selectedProvinces) {
+        const oldStateId = provinceToState[provId];
+        if (oldStateId !== undefined && states[oldStateId]) {
+            states[oldStateId].provinces.delete(provId);
+            if (states[oldStateId].provinces.size === 0) {
+                delete states[oldStateId];
+            }
+        }
+    }
+    
+    // Create new state or update name
+    if (!states[stateId]) {
+        const r = Math.floor(Math.random() * 200) + 40;
+        const g = Math.floor(Math.random() * 200) + 40;
+        const b = Math.floor(Math.random() * 200) + 40;
+        states[stateId] = {
+            id: stateId,
+            name: stateName,
+            color: [r, g, b],
+            provinces: new Set()
+        };
+    } else {
+        states[stateId].name = stateName;
+    }
+    
+    // Assign provinces to the new state
+    for (const provId of selectedProvinces) {
+        states[stateId].provinces.add(provId);
+        provinceToState[provId] = stateId;
+    }
+    
+    // Auto-increment state ID for convenience
+    let maxId = 0;
+    for (const idStr in states) {
+        const id = parseInt(idStr);
+        if (id > maxId) maxId = id;
+    }
+    document.getElementById("stateIdInput").value = maxId + 1;
+    document.getElementById("stateNameInput").value = "";
+    
+    selectedProvinces.clear();
+    updateSelectionStatus();
+    updateLutData();
+    draw();
+}
+
+function clearStateFromSelection() {
+    if (selectedProvinces.size === 0) return;
+    
+    for (const provId of selectedProvinces) {
+        const oldStateId = provinceToState[provId];
+        if (oldStateId !== undefined && states[oldStateId]) {
+            states[oldStateId].provinces.delete(provId);
+            if (states[oldStateId].provinces.size === 0) {
+                delete states[oldStateId];
+            }
+        }
+        delete provinceToState[provId];
+    }
+    
+    selectedProvinces.clear();
+    updateSelectionStatus();
+    updateLutData();
+    draw();
+}
+
+function selectStateProvinces() {
+    if (selectedProvinces.size === 0) return;
+    
+    const provs = Array.from(selectedProvinces);
+    const firstProv = provs[0];
+    const stateId = provinceToState[firstProv];
+    
+    if (stateId === undefined) {
+        alert("The selected province does not belong to any state!");
+        return;
+    }
+    
+    // Automatically promote/import preloaded state into editable custom states database
+    if (!states[stateId] && hoi4Data && hoi4Data.states[stateId]) {
+        const hState = hoi4Data.states[stateId];
+        const r = (stateId * 57) % 200 + 40;
+        const g = (stateId * 113) % 200 + 40;
+        const b = (stateId * 179) % 200 + 40;
+        states[stateId] = {
+            id: parseInt(stateId),
+            name: hState.name || ("State " + stateId),
+            color: [r, g, b],
+            provinces: new Set(hState.provinces)
+        };
+    }
+    
+    if (!states[stateId]) {
+        alert("The selected province does not belong to any state!");
+        return;
+    }
+    
+    selectedProvinces.clear();
+    for (const p of states[stateId].provinces) {
+        selectedProvinces.add(p);
+    }
+    
+    document.getElementById("stateIdInput").value = stateId;
+    document.getElementById("stateNameInput").value = states[stateId].name;
+    
+    updateSelectionStatus();
+    draw();
+}
+
+function exportStatesJSON() {
+    const serializableStates = {};
+    for (const stateId in states) {
+        const s = states[stateId];
+        serializableStates[stateId] = {
+            id: s.id,
+            name: s.name,
+            color: s.color,
+            provinces: Array.from(s.provinces)
+        };
+    }
+    
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(serializableStates, null, 2));
+    const downloadAnchor = document.createElement("a");
+    downloadAnchor.setAttribute("href", dataStr);
+    downloadAnchor.setAttribute("download", "states_config.json");
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+}
+
+function importStatesJSONFile(input) {
+    const file = input.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        try {
+            const data = JSON.parse(e.target.result);
+            states = {};
+            provinceToState = {};
+            for (const stateIdStr in data) {
+                const s = data[stateIdStr];
+                const stateId = parseInt(stateIdStr);
+                states[stateId] = {
+                    id: stateId,
+                    name: s.name,
+                    color: s.color || [Math.floor(Math.random()*200)+40, Math.floor(Math.random()*200)+40, Math.floor(Math.random()*200)+40],
+                    provinces: new Set(s.provinces)
+                };
+                for (const provId of s.provinces) {
+                    provinceToState[provId] = stateId;
+                }
+            }
+            updateLutData();
+            draw();
+            alert(`Successfully imported ${Object.keys(states).length} states!`);
+        } catch (err) {
+            alert("Error parsing states JSON: " + err.message);
+        }
+    };
+    reader.readAsText(file);
+    input.value = "";
 }
 
 function compileShader(gl, source, type) {
@@ -994,8 +1205,30 @@ const fsSource = `
             float provOpacity = clamp((u_zoom - 3.0) * 0.35, 0.0, 0.25);
             provBorder = clamp(provBorder * provOpacity, 0.0, 1.0);
             
+            float stateHash = floor(lutColor.a * 255.0 + 0.5);
+            #define GET_STATE_HASH(nIdx) floor(texture2D(u_lutTexture, vec2((mod(nIdx, u_lutWidth) + 0.5) / u_lutWidth, (floor(nIdx / u_lutWidth) + 0.5) / u_lutHeight)).a * 255.0 + 0.5)
+            
+            float sHashL = GET_STATE_HASH(idxL);
+            float sHashR = GET_STATE_HASH(idxR);
+            float sHashD = GET_STATE_HASH(idxD);
+            float sHashU = GET_STATE_HASH(idxU);
+            
+            float sDiffL = step(0.5, abs(stateHash - sHashL));
+            float sDiffR = step(0.5, abs(stateHash - sHashR));
+            float sDiffD = step(0.5, abs(stateHash - sHashD));
+            float sDiffU = step(0.5, abs(stateHash - sHashU));
+            
+            float stateBorder = (sDiffL + sDiffR + sDiffD + sDiffU) * 0.30;
+            stateBorder = clamp(stateBorder, 0.0, 1.0);
+            
+            // Fade state borders out when zoomed out on the political map to avoid clutter (starts at 1.2x zoom)
+            float stateOpacity = clamp((u_zoom - 1.2) * 0.8, 0.0, 1.0);
+
             if (countryBorder > 0.0) {
                 color.rgb = mix(color.rgb, vec3(0.0), countryBorder * 0.9);
+            } else if (stateBorder > 0.0 && u_activeMapmode < 0.5) {
+                // Apply zoom-based opacity to state borders
+                color.rgb = mix(color.rgb, vec3(0.0), stateBorder * 0.6 * stateOpacity);
             } else if (provBorder > 0.0) {
                 color.rgb = mix(color.rgb, vec3(0.0), provBorder);
             }
@@ -1301,7 +1534,7 @@ function initApp() {
         for (const k in countries) delete countries[k];
         for (const k in COLORS) delete COLORS[k];
         
-                                                                                                                                                                                                                                                                                                                                for (const tag in presetData.countries) {
+                                                                                                                                                                                                                                                                                                                                                                                                                        for (const tag in presetData.countries) {
             const c = presetData.countries[tag];
             const base = BASE_COUNTRY_PRESETS[tag] || {};
             countries[tag] = {
@@ -1323,6 +1556,27 @@ function initApp() {
         
         resetMap();
         updateCountryList();
+        
+        // Load state configurations from either states_config.json or presetData
+        states = {};
+        provinceToState = {};
+        const sourceStates = statesData || (presetData && presetData.states);
+        if (sourceStates) {
+            for (const stateIdStr in sourceStates) {
+                const s = sourceStates[stateIdStr];
+                const stateId = parseInt(stateIdStr);
+                states[stateId] = {
+                    id: stateId,
+                    name: s.name,
+                    color: s.color,
+                    provinces: new Set(s.provinces)
+                };
+                for (const provId of s.provinces) {
+                    provinceToState[provId] = stateId;
+                }
+            }
+            updateLutData();
+        }
     } else {
         updateCountryList();
     }
@@ -1363,13 +1617,7 @@ function initApp() {
 		.then(data => {
 			if (data) {
 				hoi4Data = data;
-				// Build reverse lookup index for pixel-based state selections
-				for (const stateId in data.states) {
-					const state = data.states[stateId];
-					for (const provId of state.provinces) {
-						provinceToState[provId] = parseInt(stateId);
-					}
-				}
+
 				console.log("HOI4 state mappings loaded successfully.");
 				document.getElementById("hoi4Panel").style.display = "block";
 			}
@@ -1412,6 +1660,14 @@ Promise.all([
         })
         .catch(() => {
             presetData = null;
+        }),
+    fetch("states_config.json?v=" + Date.now())
+        .then(r => r.ok ? r.json() : fetch("states.json?v=" + Date.now()).then(r => r.ok ? r.json() : null))
+        .then(data => {
+            statesData = data;
+        })
+        .catch(() => {
+            statesData = null;
         }),
     fetch("straits.json?v=" + Date.now())
         .then(r => r.ok ? r.json() : [])
@@ -1465,6 +1721,8 @@ function clearSelection() {
 function updateSelectionStatus() {
     document.getElementById("selectionStatus").textContent = `Selected: ${selectedProvinces.size} provinces`;
     updateAdjacencyPanel();
+    const stateCountEl = document.getElementById("selectedProvincesCount");
+    if (stateCountEl) stateCountEl.innerText = `${selectedProvinces.size} selected`;
 }
 
 function updateAdjacencyPanel() {
@@ -1742,20 +2000,14 @@ function paintSelection() {
             ownership[key] = targetTag;
             countries[targetTag].provinces.add(key);
             dirtyCountries.add(targetTag);
-            if (provinceCenters[key]) {
-                updateLutForProvince(provinceCenters[key].index, COLORS[targetTag]);
-            }
         } else {
             delete ownership[key];
-            if (provinceCenters[key]) {
-                updateLutForProvince(provinceCenters[key].index, [180, 180, 180]);
-            }
         }
     }
     
     selectedProvinces.clear();
     updateSelectionStatus();
-    updateAllLutAlphas();
+    updateLutData();
     clearLabelCache();
     draw();
 }
@@ -1911,6 +2163,18 @@ function getWorldPresetData() {
             }
         }
     }
+    // Save state configuration along with presets
+    const serializableStates = {};
+    for (const stateId in states) {
+        const s = states[stateId];
+        serializableStates[stateId] = {
+            id: s.id,
+            name: s.name,
+            color: s.color,
+            provinces: Array.from(s.provinces)
+        };
+    }
+    data.states = serializableStates;
     return data;
 }
 
@@ -1955,6 +2219,101 @@ function updateLutForProvince(idx, colorRgb) {
     lutNeedsUpdate = true;
 }
 
+function updateLutData() {
+    if (!lutData) return;
+    
+    // Clear all to default unowned background (color 180, 180, 180)
+    for (let i = 0; i < lutWidth * lutHeight; i++) {
+        const offset = i * 4;
+        lutData[offset] = 180;
+        lutData[offset+1] = 180;
+        lutData[offset+2] = 180;
+    }
+    
+    if (activeMapmode === "state") {
+        // Color by state
+        // Draw water first so oceans/lakes are still blue in state mapmode
+        for (const keyStr in meta.centers) {
+            const centerData = meta.centers[keyStr];
+            if (centerData.is_water) {
+                const offset = centerData.index * 4;
+                lutData[offset] = 150;
+                lutData[offset+1] = 180;
+                lutData[offset+2] = 210;
+            }
+        }
+        for (const keyStr in provinceCenters) {
+            const provId = parseInt(keyStr);
+            const center = provinceCenters[keyStr];
+            if (center && !center.isWater) {
+                const stateId = provinceToState[provId];
+                if (stateId !== undefined) {
+                    let rgb;
+                    if (states[stateId]) {
+                        rgb = states[stateId].color;
+                    } else {
+                        // Generate deterministic distinct color for preloaded states
+                        const r = (stateId * 57) % 200 + 40;
+                        const g = (stateId * 113) % 200 + 40;
+                        const b = (stateId * 179) % 200 + 40;
+                        rgb = [r, g, b];
+                    }
+                    const offset = center.index * 4;
+                    lutData[offset] = rgb[0];
+                    lutData[offset+1] = rgb[1];
+                    lutData[offset+2] = rgb[2];
+                }
+            }
+        }
+    } else {
+        // Color by country (political / interest)
+        // Draw water first
+        for (const keyStr in meta.centers) {
+            const centerData = meta.centers[keyStr];
+            if (centerData.is_water) {
+                const offset = centerData.index * 4;
+                lutData[offset] = 150;
+                lutData[offset+1] = 180;
+                lutData[offset+2] = 210;
+            }
+        }
+        // Draw country ownership
+        for (const provIdStr in ownership) {
+            const provId = parseInt(provIdStr);
+            const tag = ownership[provIdStr];
+            if (countries[tag] && provinceCenters[provId]) {
+                const idx = provinceCenters[provId].index;
+                const colorRgb = COLORS[tag];
+                if (colorRgb) {
+                    const offset = idx * 4;
+                    lutData[offset] = colorRgb[0];
+                    lutData[offset+1] = colorRgb[1];
+                    lutData[offset+2] = colorRgb[2];
+                }
+            }
+        }
+    }
+    
+    // Populate state hashes in the alpha channel for border detection (if not in interest mapmode)
+    if (activeMapmode !== "interest") {
+        for (let i = 0; i < lutWidth * lutHeight; i++) {
+            lutData[i * 4 + 3] = 0;
+        }
+        for (const provIdStr in provinceToState) {
+            const provId = parseInt(provIdStr);
+            const stateId = provinceToState[provId];
+            if (stateId !== undefined && provinceCenters[provId]) {
+                const idx = provinceCenters[provId].index;
+                const hash = (stateId % 254) + 1;
+                lutData[idx * 4 + 3] = hash;
+            }
+        }
+    } else {
+        updateAllLutAlphas();
+    }
+    lutNeedsUpdate = true;
+}
+
 function updateAllLutAlphas() {
     if (!lutData) return;
     
@@ -1977,7 +2336,7 @@ function updateAllLutAlphas() {
 
 function setMapmode(mode) {
     activeMapmode = mode;
-    updateAllLutAlphas();
+    updateLutData();
     requestDraw();
 }
 
@@ -2124,17 +2483,7 @@ function recolourCountry(tag, newRgb) {
     countries[tag].color = newRgb;
     COLORS[tag] = newRgb;
     
-    const provinces = countries[tag].provinces;
-    for (const provId of provinces) {
-        const center = provinceCenters[provId];
-        if (center) {
-            const offset = center.index * 4;
-            lutData[offset] = newRgb[0];
-            lutData[offset+1] = newRgb[1];
-            lutData[offset+2] = newRgb[2];
-        }
-    }
-    lutNeedsUpdate = true;
+    updateLutData();
     updateCountryList();
     requestDraw();
 }
@@ -2248,6 +2597,22 @@ window.addEventListener("mouseup", e => {
 					const tag = ownership[provId];
 					if (tag) {
 						selectCountry(tag);
+					}
+				}
+			}
+		}
+		if (e.button === 1) { // Middle click to select the state of the clicked province
+			const dx = e.clientX - startPanX;
+			const dy = e.clientY - startPanY;
+			if (Math.hypot(dx, dy) < 5) {
+				const [mapX, mapY] = screenToMap(startPanX, startPanY);
+				const provId = getProvinceIdAt(mapX, mapY);
+				if (provId && provId !== 0) {
+					const stateId = provinceToState[provId];
+					if (stateId !== undefined) {
+						selectedProvinces.clear();
+						selectedProvinces.add(provId);
+						selectStateProvinces();
 					}
 				}
 			}
@@ -3474,36 +3839,7 @@ const MAP_LABEL_NAME_OVERRIDES = {
 				ctx.restore();
 			}
 
-			// Zoom-out LOD optimization: Draw as a single rotated straight text string when zoomed out
-			if (zoom < 1.2) {
-				ctx.font = `bold ${label.effectiveFont}px Georgia`;
-				ctx.fillStyle = "white";
-				ctx.strokeStyle = "black";
-				ctx.lineJoin = "round";
-				ctx.miterLimit = 2;
-				ctx.lineWidth = Math.max(2, label.effectiveFont * 0.22);
 
-				ctx.textAlign = "center";
-				ctx.textBaseline = "middle";
-
-				const dx = P3[0] - P0[0];
-				const dy = P3[1] - P0[1];
-				const angle = Math.atan2(dy, dx);
-				const centerX = (P0[0] + P3[0]) / 2;
-				const centerY = (P0[1] + P3[1]) / 2;
-
-				ctx.setTransform(
-					Math.cos(angle) * zoom,
-					Math.sin(angle) * zoom,
-					-Math.sin(angle) * zoom,
-					Math.cos(angle) * zoom,
-					(centerX - offsetX) * zoom,
-					(centerY - offsetY) * zoom
-				);
-				ctx.strokeText(label.text, 0, 0);
-				ctx.fillText(label.text, 0, 0);
-				continue;
-			}
 
 			ctx.font = `bold ${label.effectiveFont}px Georgia`;
 			ctx.fillStyle = "white";
@@ -3622,23 +3958,38 @@ window.addEventListener("keydown", (e) => {
         saveWorldPreset();
         return;
     }
+    
+    // Ignore all other single-key shortcuts if Ctrl, Meta, or Alt keys are held down (avoids browser clashes like Ctrl+F/Ctrl+H)
+    if (e.ctrlKey || e.metaKey || e.altKey) {
+        return;
+    }
+    
     if (key === "b") {
+        e.preventDefault();
         setTool("box");
     } else if (key === "l") {
+        e.preventDefault();
         setTool("lasso");
     } else if (key === "h") {
+        e.preventDefault();
         setTool("pan");
     } else if (key === "p") {
+        e.preventDefault();
         activateColorPickerTool();
     } else if (key === "e") {
+        e.preventDefault();
         setEraser();
-    } else if (key === "c") {
+    } else if (key === "x") {
+        e.preventDefault();
         clearSelection();
     } else if (key === "f" || e.key === "Enter") {
+        e.preventDefault();
         paintSelection();
-    } else if (key === "s") {
+    } else if (key === "c") {
+        e.preventDefault();
         selectAllProvincesOfSelectedCountry();
     } else if (key === "i") {
+        e.preventDefault();
         paintInterest();
     } else if (["1", "2", "3", "4", "5"].includes(key)) {
         const select = document.getElementById("selLogicMode");

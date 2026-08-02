@@ -10,10 +10,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "101": {
       "name": "Montenegro",
@@ -25,10 +25,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "102": {
       "name": "Madagascar",
@@ -40,10 +40,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "103": {
       "name": "Netherlands",
@@ -55,10 +55,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "104": {
       "name": "Albania",
@@ -70,10 +70,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "105": {
       "name": "Armenia",
@@ -85,10 +85,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "106": {
       "name": "Ireland",
@@ -100,10 +100,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "107": {
       "name": "Paraguay",
@@ -115,10 +115,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "108": {
       "name": "Moldova",
@@ -130,10 +130,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "109": {
       "name": "Palestine",
@@ -145,10 +145,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "110": {
       "name": "Uganda",
@@ -160,10 +160,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "111": {
       "name": "United Arab Emirates",
@@ -175,10 +175,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "112": {
       "name": "Lebanon",
@@ -190,10 +190,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "113": {
       "name": "South Sudan",
@@ -205,10 +205,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "114": {
       "name": "Tunisia",
@@ -220,10 +220,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "115": {
       "name": "Slovenia",
@@ -235,10 +235,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "116": {
       "name": "Botswana",
@@ -250,10 +250,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "117": {
       "name": "Eritrea",
@@ -265,10 +265,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "118": {
       "name": "Western Sahara",
@@ -280,10 +280,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "119": {
       "name": "North Macedonia",
@@ -295,10 +295,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "120": {
       "name": "Burkina Faso",
@@ -310,10 +310,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "121": {
       "name": "Ivory Coast",
@@ -325,10 +325,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "122": {
       "name": "Zimbabwe",
@@ -340,10 +340,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "123": {
       "name": "Guatemala",
@@ -355,10 +355,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "124": {
       "name": "Kosovo",
@@ -370,10 +370,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "125": {
       "name": "Cuba",
@@ -385,10 +385,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "126": {
       "name": "Costa Rica",
@@ -400,10 +400,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "127": {
       "name": "Cyprus",
@@ -415,10 +415,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "128": {
       "name": "Taiwan",
@@ -430,10 +430,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "129": {
       "name": "Senegal",
@@ -445,10 +445,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "130": {
       "name": "Panama",
@@ -460,10 +460,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "131": {
       "name": "Guyana",
@@ -475,10 +475,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "132": {
       "name": "Guinea",
@@ -490,10 +490,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "133": {
       "name": "Ghan",
@@ -505,10 +505,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "134": {
       "name": "Uruguay",
@@ -520,10 +520,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "135": {
       "name": "Placeholder 135 (Color (153, 75, 0))",
@@ -535,10 +535,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "136": {
       "name": "Honduras",
@@ -550,10 +550,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "137": {
       "name": "Gabon",
@@ -565,10 +565,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "138": {
       "name": "Sierra Leone",
@@ -580,10 +580,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "139": {
       "name": "Djibouti",
@@ -595,10 +595,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "140": {
       "name": "Togo",
@@ -610,10 +610,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "141": {
       "name": "Ecuador",
@@ -625,10 +625,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "142": {
       "name": "Malawi",
@@ -640,10 +640,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "143": {
       "name": "Bhutan",
@@ -655,10 +655,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "144": {
       "name": "Haiti",
@@ -670,10 +670,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "145": {
       "name": "Liberia",
@@ -685,10 +685,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "146": {
       "name": "Equitorial Guinea",
@@ -700,10 +700,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "147": {
       "name": "Swaziland",
@@ -715,10 +715,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "148": {
       "name": "Iceland",
@@ -730,10 +730,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "149": {
       "name": "Placeholder 149 (Color (63, 60, 96))",
@@ -745,10 +745,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "150": {
       "name": "Belize",
@@ -760,10 +760,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "151": {
       "name": "Benin",
@@ -775,10 +775,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "152": {
       "name": "Suriname",
@@ -790,10 +790,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "153": {
       "name": "Placeholder 153 (Color (210, 207, 26))",
@@ -805,10 +805,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "154": {
       "name": "El Salvador",
@@ -820,10 +820,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "155": {
       "name": "Bahamas",
@@ -835,10 +835,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "156": {
       "name": "Dominican Republic",
@@ -850,10 +850,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "157": {
       "name": "Guinea-Bissau",
@@ -865,10 +865,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "158": {
       "name": "Rwanda",
@@ -880,10 +880,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "159": {
       "name": "Burundi",
@@ -895,10 +895,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "160": {
       "name": "Placeholder 160 (Color (154, 135, 195))",
@@ -910,10 +910,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "161": {
       "name": "Lesotho",
@@ -925,10 +925,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "162": {
       "name": "Luxembourg",
@@ -940,10 +940,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "163": {
       "name": "Placeholder 163 (Color (171, 190, 152))",
@@ -955,10 +955,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "164": {
       "name": "Placeholder 164 (Color (128, 0, 0))",
@@ -970,10 +970,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "165": {
       "name": "Placeholder 165 (Color (155, 135, 195))",
@@ -985,10 +985,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "166": {
       "name": "Gambia",
@@ -1000,10 +1000,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "167": {
       "name": "Placeholder 167 (Color (16, 114, 5))",
@@ -1015,10 +1015,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "168": {
       "name": "Placeholder 168 (Color (118, 179, 222))",
@@ -1030,10 +1030,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "169": {
       "name": "Placeholder 169 (Color (100, 125, 175))",
@@ -1045,10 +1045,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "170": {
       "name": "Solomon Islands",
@@ -1060,10 +1060,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "171": {
       "name": "Placeholder 171 (Color (231, 228, 185))",
@@ -1075,10 +1075,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "172": {
       "name": "Placeholder 172 (Color (170, 0, 0))",
@@ -1090,10 +1090,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "173": {
       "name": "Brunei",
@@ -1105,10 +1105,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "174": {
       "name": "Placeholder 174 (Color (96, 0, 34))",
@@ -1120,10 +1120,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "175": {
       "name": "Placeholder 175 (Color (95, 216, 121))",
@@ -1135,10 +1135,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "176": {
       "name": "Placeholder 176 (Color (92, 99, 112))",
@@ -1150,10 +1150,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "177": {
       "name": "Liechtenstein",
@@ -1165,10 +1165,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "178": {
       "name": "San Marino",
@@ -1180,10 +1180,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "179": {
       "name": "Monaco",
@@ -1195,10 +1195,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "180": {
       "name": "Andorra",
@@ -1210,10 +1210,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "181": {
       "name": "Vatican City",
@@ -1225,10 +1225,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "182": {
       "name": "Placeholder 182 (Color (97, 103, 126))",
@@ -1240,10 +1240,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "183": {
       "name": "Placeholder 183 (Color (150, 209, 96))",
@@ -1255,10 +1255,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "184": {
       "name": "Jamaica",
@@ -1270,10 +1270,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "185": {
       "name": "Placeholder 185 (Color (0, 64, 0))",
@@ -1285,10 +1285,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "186": {
       "name": "Placeholder 186 (Color (49, 148, 186))",
@@ -1300,10 +1300,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "187": {
       "name": "Placeholder 187 (Color (217, 87, 5))",
@@ -1315,10 +1315,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "188": {
       "name": "Placeholder 188 (Color (0, 193, 0))",
@@ -1330,10 +1330,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "189": {
       "name": "Placeholder 189 (Color (92, 67, 9))",
@@ -1345,10 +1345,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "190": {
       "name": "Placeholder 190 (Color (0, 0, 0))",
@@ -1360,10 +1360,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "191": {
       "name": "Placeholder 191 (Color (255, 230, 221))",
@@ -1375,10 +1375,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "192": {
       "name": "Singapore",
@@ -1390,10 +1390,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "193": {
       "name": "Placeholder 193 (Color (63, 224, 207))",
@@ -1405,10 +1405,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "194": {
       "name": "Placeholder 194 (Color (0, 204, 204))",
@@ -1420,10 +1420,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "195": {
       "name": "Placeholder 195 (Color (160, 18, 10))",
@@ -1435,10 +1435,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "196": {
       "name": "Afghanistan",
@@ -1450,10 +1450,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "000": {
       "name": "Russian Federation",
@@ -1465,10 +1465,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "001": {
       "name": "United States of America",
@@ -1480,10 +1480,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "002": {
       "name": "People's Republic of China",
@@ -1495,10 +1495,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "003": {
       "name": "Republic of India",
@@ -1510,10 +1510,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "004": {
       "name": "Commonwealth of Australia",
@@ -1525,10 +1525,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "005": {
       "name": "Canada",
@@ -1540,10 +1540,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "006": {
       "name": "Federal Republic of Germany",
@@ -1555,10 +1555,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "007": {
       "name": "French Republic",
@@ -1570,10 +1570,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "008": {
       "name": "Myanmar",
@@ -1585,10 +1585,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "009": {
       "name": "Turkey",
@@ -1600,10 +1600,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "010": {
       "name": "Republic of Poland",
@@ -1615,10 +1615,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "011": {
       "name": "Republic of Indonesia",
@@ -1630,10 +1630,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "012": {
       "name": "Kazakhstan",
@@ -1645,10 +1645,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "013": {
       "name": "Republic of the Sudan",
@@ -1660,10 +1660,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "014": {
       "name": "Ukraine",
@@ -1675,10 +1675,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "015": {
       "name": "State of Libya",
@@ -1690,10 +1690,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "016": {
       "name": "Belarus",
@@ -1705,10 +1705,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "017": {
       "name": "Japan",
@@ -1720,10 +1720,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "018": {
       "name": "Iraq",
@@ -1735,10 +1735,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "019": {
       "name": "Kingdom of Sweden",
@@ -1750,10 +1750,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "020": {
       "name": "Federative Republic of Brazil",
@@ -1765,10 +1765,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "021": {
       "name": "Kingdom of Spain",
@@ -1780,10 +1780,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "022": {
       "name": "Italian Republic",
@@ -1795,10 +1795,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "023": {
       "name": "Iran",
@@ -1810,10 +1810,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "024": {
       "name": "Ethiopia",
@@ -1825,10 +1825,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "025": {
       "name": "Egypt",
@@ -1840,10 +1840,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "026": {
       "name": "Saudi Arabia",
@@ -1855,10 +1855,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "027": {
       "name": "South Africa",
@@ -1870,10 +1870,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "028": {
       "name": "Mongolia",
@@ -1885,10 +1885,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "029": {
       "name": "Yemen",
@@ -1900,10 +1900,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "030": {
       "name": "Mexico",
@@ -1915,10 +1915,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "031": {
       "name": "Syria",
@@ -1930,10 +1930,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "032": {
       "name": "Republic of Uzbekistan",
@@ -1945,10 +1945,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "033": {
       "name": "Pakistan",
@@ -1960,10 +1960,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "034": {
       "name": "Argentine Republic",
@@ -1975,10 +1975,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "035": {
       "name": "Congo-Kinshasa",
@@ -1990,10 +1990,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "036": {
       "name": "Republic of the Philippines",
@@ -2005,10 +2005,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "037": {
       "name": "United Kingdom",
@@ -2020,10 +2020,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "038": {
       "name": "Republic of Finland",
@@ -2035,10 +2035,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "039": {
       "name": "Kingdom of Norway",
@@ -2050,10 +2050,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "040": {
       "name": "Cambodia",
@@ -2065,10 +2065,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "041": {
       "name": "People's Democratic Republic of Algeria",
@@ -2080,10 +2080,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "042": {
       "name": "Vietnam",
@@ -2095,10 +2095,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "043": {
       "name": "Thailand",
@@ -2110,10 +2110,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "044": {
       "name": "Somalia",
@@ -2125,10 +2125,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "045": {
       "name": "Mali",
@@ -2140,10 +2140,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "046": {
       "name": "Nigeria",
@@ -2155,10 +2155,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "047": {
       "name": "Centrafrica",
@@ -2170,10 +2170,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "048": {
       "name": "Romania",
@@ -2185,10 +2185,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "049": {
       "name": "Greece",
@@ -2200,10 +2200,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "050": {
       "name": "Turkmenistan",
@@ -2215,10 +2215,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "051": {
       "name": "Bangladesh",
@@ -2230,10 +2230,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "052": {
       "name": "Chad",
@@ -2245,10 +2245,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "053": {
       "name": "Latvia",
@@ -2260,10 +2260,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "054": {
       "name": "Tanzania",
@@ -2275,10 +2275,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "055": {
       "name": "Austria",
@@ -2290,10 +2290,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "056": {
       "name": "Republic of Chile",
@@ -2305,10 +2305,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "057": {
       "name": "Lithuania",
@@ -2320,10 +2320,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "058": {
       "name": "Azerbaijan",
@@ -2335,10 +2335,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "059": {
       "name": "Jordan",
@@ -2350,10 +2350,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "060": {
       "name": "Malaysia",
@@ -2365,10 +2365,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "061": {
       "name": "Mauritania",
@@ -2380,10 +2380,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "062": {
       "name": "Serbia",
@@ -2395,10 +2395,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "063": {
       "name": "North Korea",
@@ -2410,10 +2410,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "064": {
       "name": "Greenland",
@@ -2425,10 +2425,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "065": {
       "name": "Czechia",
@@ -2440,10 +2440,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "066": {
       "name": "Tajikistan",
@@ -2455,10 +2455,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "067": {
       "name": "Angola",
@@ -2470,10 +2470,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "068": {
       "name": "Niger",
@@ -2485,10 +2485,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "069": {
       "name": "Laos",
@@ -2500,10 +2500,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "070": {
       "name": "Cameroon",
@@ -2515,10 +2515,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "071": {
       "name": "Venezuela",
@@ -2530,10 +2530,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "072": {
       "name": "Peru",
@@ -2545,10 +2545,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "073": {
       "name": "Bosnia and Herzegovina",
@@ -2560,10 +2560,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "074": {
       "name": "Belgium",
@@ -2575,10 +2575,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "075": {
       "name": "Croatia",
@@ -2590,10 +2590,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "076": {
       "name": "New Guinea",
@@ -2605,10 +2605,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "077": {
       "name": "Morocco",
@@ -2620,10 +2620,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "078": {
       "name": "Georgia",
@@ -2635,10 +2635,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "079": {
       "name": "Antarctica",
@@ -2650,10 +2650,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "080": {
       "name": "Switzerland",
@@ -2665,10 +2665,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "081": {
       "name": "South Korea",
@@ -2680,10 +2680,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "082": {
       "name": "Mozambique",
@@ -2695,10 +2695,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "083": {
       "name": "Cambodia",
@@ -2710,10 +2710,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "084": {
       "name": "Kyrgyzstan",
@@ -2725,10 +2725,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "085": {
       "name": "Hungary",
@@ -2740,10 +2740,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "086": {
       "name": "Bulgaria",
@@ -2755,10 +2755,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "087": {
       "name": "Slovakia",
@@ -2770,10 +2770,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "088": {
       "name": "Colombia",
@@ -2785,10 +2785,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "089": {
       "name": "Israel",
@@ -2800,10 +2800,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "090": {
       "name": "Portugal",
@@ -2815,10 +2815,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "091": {
       "name": "Kenya",
@@ -2830,10 +2830,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "092": {
       "name": "Sri Lanka",
@@ -2845,10 +2845,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "093": {
       "name": "Namibia",
@@ -2860,10 +2860,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "094": {
       "name": "New Zealand",
@@ -2875,10 +2875,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "095": {
       "name": "Estonia",
@@ -2890,10 +2890,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "096": {
       "name": "Nepal",
@@ -2905,10 +2905,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "097": {
       "name": "Bolivia",
@@ -2920,10 +2920,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "098": {
       "name": "Congo-Brazzaville",
@@ -2935,10 +2935,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "099": {
       "name": "Nicaragua",
@@ -2950,10 +2950,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     }
   },
   "ownership": {
