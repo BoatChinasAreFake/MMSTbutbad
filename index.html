@@ -700,7 +700,7 @@ function selectCountry(tag) {
         editColorInput.value = hex;
     }
 
-    updateAllLutAlphas();
+    updateLutData();
     requestDraw();
 }
 
@@ -1574,7 +1574,7 @@ function initApp() {
         for (const k in countries) delete countries[k];
         for (const k in COLORS) delete COLORS[k];
         
-                                                                                                                                                                                                                                                                                                                                                                                                                                        for (const tag in presetData.countries) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        for (const tag in presetData.countries) {
             const c = presetData.countries[tag];
             const base = BASE_COUNTRY_PRESETS[tag] || {};
             countries[tag] = {
@@ -1602,9 +1602,11 @@ function initApp() {
         provinceToState = {};
         const sourceStates = statesData || (presetData && presetData.states);
         if (sourceStates) {
+            let maxId = 0;
             for (const stateIdStr in sourceStates) {
                 const s = sourceStates[stateIdStr];
                 const stateId = parseInt(stateIdStr);
+                if (stateId > maxId) maxId = stateId;
                 states[stateId] = {
                     id: stateId,
                     name: s.name,
@@ -1614,6 +1616,10 @@ function initApp() {
                 for (const provId of s.provinces) {
                     provinceToState[provId] = stateId;
                 }
+            }
+            const idInput = document.getElementById("stateIdInput");
+            if (idInput) {
+                idInput.value = maxId + 1;
             }
             updateLutData();
         }
@@ -2396,7 +2402,7 @@ function paintInterest() {
     for (const pid of selectedProvinces) {
         interests[selectedColor][pid] = val;
     }
-    updateAllLutAlphas();
+    updateLutData();
     requestDraw();
 }
 
@@ -2408,7 +2414,7 @@ function clearInterest() {
             delete interests[selectedColor][pid];
         }
     }
-    updateAllLutAlphas();
+    updateLutData();
     requestDraw();
 }
 
