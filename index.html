@@ -358,6 +358,11 @@
                 Export States
             </button>
         </div>
+        <div style="display: flex; gap: 4px; margin-top: 2px;">
+            <button onclick="reorderStateIDs()" style="flex: 1; background: #6c757d; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
+                Reorder State IDs (1, 2, 3...)
+            </button>
+        </div>
         <input type="file" id="stateImportInput" onchange="importStatesJSONFile(this)" style="display: none;" accept=".json">
     </div>
 
@@ -1047,6 +1052,41 @@ function importStatesJSONFile(input) {
     input.value = "";
 }
 
+function reorderStateIDs() {
+    const oldStates = { ...states };
+    const sortedIds = Object.keys(oldStates).map(id => parseInt(id)).sort((a, b) => a - b);
+    
+    if (sortedIds.length === 0) {
+        alert("No states currently exist to reorder!");
+        return;
+    }
+    
+    states = {};
+    provinceToState = {};
+    
+    let newId = 1;
+    for (const oldId of sortedIds) {
+        const oldState = oldStates[oldId];
+        states[newId] = {
+            id: newId,
+            name: oldState.name,
+            color: oldState.color,
+            provinces: oldState.provinces
+        };
+        for (const provId of oldState.provinces) {
+            provinceToState[provId] = newId;
+        }
+        newId++;
+    }
+    
+    // Set next available state ID input to the next number
+    document.getElementById("stateIdInput").value = newId;
+    
+    updateLutData();
+    draw();
+    alert(`Successfully reordered ${sortedIds.length} states sequentially from 1 to ${newId - 1}!`);
+}
+
 function compileShader(gl, source, type) {
     const shader = gl.createShader(type);
     gl.shaderSource(shader, source);
@@ -1534,7 +1574,7 @@ function initApp() {
         for (const k in countries) delete countries[k];
         for (const k in COLORS) delete COLORS[k];
         
-                                                                                                                                                                                                                                                                                                                                                                                                                        for (const tag in presetData.countries) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                        for (const tag in presetData.countries) {
             const c = presetData.countries[tag];
             const base = BASE_COUNTRY_PRESETS[tag] || {};
             countries[tag] = {
@@ -2601,7 +2641,7 @@ window.addEventListener("mouseup", e => {
 				}
 			}
 		}
-		if (e.button === 1) { // Middle click to select the state of the clicked province
+		if (e.button === 1) { // Middle click handler (plain or Ctrl + middle click)
 			const dx = e.clientX - startPanX;
 			const dy = e.clientY - startPanY;
 			if (Math.hypot(dx, dy) < 5) {
@@ -2610,9 +2650,52 @@ window.addEventListener("mouseup", e => {
 				if (provId && provId !== 0) {
 					const stateId = provinceToState[provId];
 					if (stateId !== undefined) {
-						selectedProvinces.clear();
-						selectedProvinces.add(provId);
-						selectStateProvinces();
+						// Auto-promote/import preloaded state if not already in states
+						if (!states[stateId] && hoi4Data && hoi4Data.states[stateId]) {
+							const hState = hoi4Data.states[stateId];
+							const r = (stateId * 57) % 200 + 40;
+							const g = (stateId * 113) % 200 + 40;
+							const b = (stateId * 179) % 200 + 40;
+							states[stateId] = {
+								id: parseInt(stateId),
+								name: hState.name || ("State " + stateId),
+								color: [r, g, b],
+								provinces: new Set(hState.provinces)
+							};
+						}
+
+						if (states[stateId]) {
+							const stateProvs = states[stateId].provinces;
+							if (e.ctrlKey) {
+								// Ctrl + Middle-Click toggle logic
+								let isFullySelected = true;
+								for (const p of stateProvs) {
+									if (!selectedProvinces.has(p)) {
+										isFullySelected = false;
+										break;
+									}
+								}
+
+								if (isFullySelected) {
+									// Remove state from selection
+									for (const p of stateProvs) {
+										selectedProvinces.delete(p);
+									}
+								} else {
+									// Select the whole state (add state provinces to selection)
+									for (const p of stateProvs) {
+										selectedProvinces.add(p);
+									}
+								}
+								updateSelectionStatus();
+								draw();
+							} else {
+								// Plain Middle-Click: Select only this state
+								selectedProvinces.clear();
+								selectedProvinces.add(provId);
+								selectStateProvinces();
+							}
+						}
 					}
 				}
 			}
