@@ -1,5 +1,5 @@
 {
-  "province_count": 21142,
+  "province_count": 21141,
   "definitions": {
     "1": {
       "color": [
@@ -232550,17 +232550,6 @@
       "type": "land",
       "terrain": "plains",
       "detailed_terrain": "flatlands"
-    },
-    "21142": {
-      "color": [
-        79,
-        119,
-        48
-      ],
-      "name": "Province 21142",
-      "type": "land",
-      "terrain": "plains",
-      "detailed_terrain": "flatlands"
     }
   },
   "centers": {
@@ -249912,9 +249901,9 @@
     },
     "2479": {
       "index": 2479,
-      "x": 2553.3,
-      "y": 476.7,
-      "count": 46,
+      "x": 2552.8,
+      "y": 475.3,
+      "count": 79,
       "is_water": false
     },
     "2480": {
@@ -380549,13 +380538,6 @@
       "y": 522.0,
       "count": 1,
       "index": 21141,
-      "is_water": false
-    },
-    "21142": {
-      "x": 2552.1,
-      "y": 473.5,
-      "count": 33,
-      "index": 21142,
       "is_water": false
     }
   },
@@ -541487,7 +541469,6 @@
     "21138": [],
     "21139": [],
     "21140": [],
-    "21141": [],
-    "21142": []
+    "21141": []
   }
 }

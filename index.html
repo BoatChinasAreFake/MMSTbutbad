@@ -1405,8 +1405,9 @@ function initLabelWorker() {
 					const r = tempPixels[idx];
 					const g = tempPixels[idx + 1];
 					const b = tempPixels[idx + 2];
-					const key = (((r << 24) >>> 0) | (g << 16) | (b << 8) | 255) >>> 0;
-					provinceIdMap[i] = colorToId[key] || 0;
+					let id = r + g * 256 + b * 65536;
+					if (id === 16777215) id = 0;
+					provinceIdMap[i] = id;
 				}
 				
 				// Reconstruct Set objects
@@ -1541,7 +1542,7 @@ function initApp() {
 
     baseCanvas.width = img.width;
     baseCanvas.height = img.height;
-    baseCtx.drawImage(img, 0, 0);
+    baseCtx.drawImage(indexImg, 0, 0);
 	
 	basePixels =
 		baseCtx.getImageData(
@@ -1574,7 +1575,7 @@ function initApp() {
         for (const k in countries) delete countries[k];
         for (const k in COLORS) delete COLORS[k];
         
-                                                                                                                                                                                                                                                                                                                                                                                                                                                        for (const tag in presetData.countries) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                for (const tag in presetData.countries) {
             const c = presetData.countries[tag];
             const base = BASE_COUNTRY_PRESETS[tag] || {};
             countries[tag] = {
@@ -2548,28 +2549,10 @@ function getProvinceIdAt(x, y) {
 	const r = basePixels[idx];
 	const g = basePixels[idx+1];
 	const b = basePixels[idx+2];
-	const a = 255; // Force 255 to match definitions key
-	let key = (((r << 24) >>> 0) | (g << 16) | (b << 8) | a) >>> 0;
 	
-	let result = 0;
-	if (colorToId[key] !== undefined) {
-		result = colorToId[key];
-	} else {
-		// Fallback closest color match
-		let bestId = 0;
-		let minDiff = Infinity;
-		for (const idStr in definitions) {
-			const d = definitions[idStr];
-			const kr = d.color[0];
-			const kg = d.color[1];
-			const kb = d.color[2];
-			const diff = Math.abs(r - kr) + Math.abs(g - kg) + Math.abs(b - kb);
-			if (diff < minDiff) {
-				minDiff = diff;
-				bestId = parseInt(idStr);
-			}
-		}
-		result = bestId;
+	let result = r + g * 256 + b * 65536;
+	if (result === 16777215) { // Pure white is boundary/ocean background
+		result = 0;
 	}
 	provinceIdCache[cacheKey] = result;
 	return result;
