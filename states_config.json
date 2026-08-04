@@ -664,11 +664,11 @@
   },
   "17": {
     "id": 17,
-    "name": "Anglia",
+    "name": "East of England",
     "color": [
-      231,
-      184,
-      164
+      198,
+      198,
+      177
     ],
     "provinces": [
       2727,
@@ -827,11 +827,11 @@
   },
   "23": {
     "id": 23,
-    "name": "Northumbria",
+    "name": "North West",
     "color": [
-      124,
-      159,
-      228
+      167,
+      105,
+      170
     ],
     "provinces": [
       2259,
@@ -852,11 +852,11 @@
   },
   "24": {
     "id": 24,
-    "name": "Wessex",
+    "name": "South East",
     "color": [
-      162,
-      135,
-      139
+      169,
+      212,
+      160
     ],
     "provinces": [
       3466,
@@ -881,11 +881,11 @@
   },
   "25": {
     "id": 25,
-    "name": "Mercia",
+    "name": "East Midlands",
     "color": [
-      186,
-      208,
-      234
+      98,
+      205,
+      149
     ],
     "provinces": [
       2759,
@@ -9138,11 +9138,11 @@
   },
   "301": {
     "id": 301,
-    "name": "London",
+    "name": "Greater London",
     "color": [
-      81,
-      78,
-      90
+      214,
+      201,
+      219
     ],
     "provinces": [
       3348,
@@ -9156,11 +9156,11 @@
   },
   "302": {
     "id": 302,
-    "name": "State 302",
+    "name": "North East",
     "color": [
-      205,
-      42,
-      86
+      110,
+      139,
+      102
     ],
     "provinces": [
       21104,
@@ -9172,11 +9172,11 @@
   },
   "303": {
     "id": 303,
-    "name": "State 303",
+    "name": "South West",
     "color": [
-      95,
-      230,
-      76
+      106,
+      129,
+      58
     ],
     "provinces": [
       3089,
@@ -9207,11 +9207,11 @@
   },
   "304": {
     "id": 304,
-    "name": "State 304",
+    "name": "West Midlands",
     "color": [
-      144,
       140,
-      185
+      196,
+      54
     ],
     "provinces": [
       2926,
@@ -9229,11 +9229,11 @@
   },
   "305": {
     "id": 305,
-    "name": "State 305",
+    "name": "Yorkshire and the Humber",
     "color": [
-      182,
-      179,
-      42
+      198,
+      119,
+      183
     ],
     "provinces": [
       2133,
