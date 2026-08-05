@@ -868,6 +868,17 @@ function renameCountry(color, newName) {
     requestDraw();
 }
 
+function getNextCountryTag() {
+    let maxId = 0;
+    for (const tag in countries) {
+        const id = parseInt(tag);
+        if (!isNaN(id) && id > maxId) {
+            maxId = id;
+        }
+    }
+    return String(maxId + 1).padStart(3, '0');
+}
+
 function createNewCountryFromUI() {
     const tagInput = document.getElementById("newCountryTag");
     const nameInput = document.getElementById("newCountryName");
@@ -918,7 +929,8 @@ function createNewCountryFromUI() {
     updateCountryList();
     selectCountry(tag);
     
-    tagInput.value = "";
+    // Auto-update to the next available numerical tag
+    tagInput.value = getNextCountryTag();
     nameInput.value = "";
     
     alert(`Successfully created country ${name} [${tag}]!`);
@@ -1662,7 +1674,7 @@ function initApp() {
         for (const k in countries) delete countries[k];
         for (const k in COLORS) delete COLORS[k];
         
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        for (const tag in presetData.countries) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                for (const tag in presetData.countries) {
             const c = presetData.countries[tag];
             const base = BASE_COUNTRY_PRESETS[tag] || {};
             countries[tag] = {
@@ -1684,6 +1696,10 @@ function initApp() {
         
         resetMap();
         updateCountryList();
+        const tagInput = document.getElementById("newCountryTag");
+        if (tagInput) {
+            tagInput.value = getNextCountryTag();
+        }
         
         // Load state configurations from either states_config.json or presetData
         states = {};
