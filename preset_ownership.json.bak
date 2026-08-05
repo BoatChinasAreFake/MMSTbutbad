@@ -10,10 +10,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "101": {
       "name": "Montenegro",
@@ -25,10 +25,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "102": {
       "name": "Madagascar",
@@ -40,10 +40,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "103": {
       "name": "Netherlands",
@@ -55,10 +55,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "104": {
       "name": "Albania",
@@ -70,10 +70,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "105": {
       "name": "Armenia",
@@ -85,10 +85,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "106": {
       "name": "Ireland",
@@ -100,10 +100,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "107": {
       "name": "Paraguay",
@@ -115,10 +115,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "108": {
       "name": "Moldova",
@@ -130,10 +130,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "109": {
       "name": "Palestine",
@@ -145,10 +145,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "110": {
       "name": "Uganda",
@@ -160,10 +160,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "111": {
       "name": "United Arab Emirates",
@@ -175,10 +175,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "112": {
       "name": "Lebanon",
@@ -190,10 +190,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "113": {
       "name": "South Sudan",
@@ -205,10 +205,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "114": {
       "name": "Tunisia",
@@ -220,10 +220,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "115": {
       "name": "Slovenia",
@@ -235,10 +235,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "116": {
       "name": "Botswana",
@@ -250,10 +250,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "117": {
       "name": "Eritrea",
@@ -265,25 +265,25 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "118": {
       "name": "Western Sahara",
       "color": [
-        1,
-        77,
-        153
+        255,
+        178,
+        102
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "119": {
       "name": "North Macedonia",
@@ -295,10 +295,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "120": {
       "name": "Burkina Faso",
@@ -310,10 +310,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "121": {
       "name": "Ivory Coast",
@@ -325,10 +325,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "122": {
       "name": "Zimbabwe",
@@ -340,10 +340,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "123": {
       "name": "Guatemala",
@@ -355,10 +355,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "124": {
       "name": "Kosovo",
@@ -370,10 +370,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "125": {
       "name": "Cuba",
@@ -385,10 +385,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "126": {
       "name": "Costa Rica",
@@ -400,10 +400,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "127": {
       "name": "Cyprus",
@@ -415,10 +415,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "128": {
       "name": "Taiwan",
@@ -430,10 +430,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "129": {
       "name": "Senegal",
@@ -445,10 +445,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "130": {
       "name": "Panama",
@@ -460,10 +460,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "131": {
       "name": "Guyana",
@@ -475,10 +475,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "132": {
       "name": "Guinea",
@@ -490,10 +490,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "133": {
       "name": "Ghan",
@@ -505,10 +505,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "134": {
       "name": "Uruguay",
@@ -520,25 +520,25 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "135": {
-      "name": "Placeholder 135 (Color (153, 75, 0))",
+      "name": "Malta",
       "color": [
-        153,
-        75,
-        0
+        255,
+        255,
+        153
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "136": {
       "name": "Honduras",
@@ -550,10 +550,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "137": {
       "name": "Gabon",
@@ -565,10 +565,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "138": {
       "name": "Sierra Leone",
@@ -580,10 +580,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "139": {
       "name": "Djibouti",
@@ -595,10 +595,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "140": {
       "name": "Togo",
@@ -610,10 +610,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "141": {
       "name": "Ecuador",
@@ -625,10 +625,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "142": {
       "name": "Malawi",
@@ -640,10 +640,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "143": {
       "name": "Bhutan",
@@ -655,10 +655,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "144": {
       "name": "Haiti",
@@ -670,10 +670,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "145": {
       "name": "Liberia",
@@ -685,10 +685,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "146": {
       "name": "Equitorial Guinea",
@@ -700,10 +700,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "147": {
       "name": "Swaziland",
@@ -715,10 +715,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "148": {
       "name": "Iceland",
@@ -730,25 +730,25 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "149": {
-      "name": "Placeholder 149 (Color (63, 60, 96))",
+      "name": "Gibraltar",
       "color": [
-        63,
-        60,
-        96
+        128,
+        128,
+        192
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "150": {
       "name": "Belize",
@@ -760,10 +760,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "151": {
       "name": "Benin",
@@ -775,10 +775,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "152": {
       "name": "Suriname",
@@ -790,25 +790,25 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "153": {
-      "name": "Placeholder 153 (Color (210, 207, 26))",
+      "name": "North Cyprus",
       "color": [
-        210,
-        207,
-        26
+        147,
+        0,
+        0
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "154": {
       "name": "El Salvador",
@@ -820,10 +820,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "155": {
       "name": "Bahamas",
@@ -835,10 +835,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "156": {
       "name": "Dominican Republic",
@@ -850,10 +850,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "157": {
       "name": "Guinea-Bissau",
@@ -865,10 +865,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "158": {
       "name": "Rwanda",
@@ -880,10 +880,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "159": {
       "name": "Burundi",
@@ -895,25 +895,25 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "160": {
-      "name": "Placeholder 160 (Color (154, 135, 195))",
+      "name": "Oman",
       "color": [
-        154,
-        135,
-        195
+        151,
+        101,
+        107
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "161": {
       "name": "Lesotho",
@@ -925,10 +925,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "162": {
       "name": "Luxembourg",
@@ -940,28 +940,43 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "163": {
-      "name": "Placeholder 163 (Color (171, 190, 152))",
+      "name": "Denmark",
       "color": [
-        171,
-        190,
-        152
+        142,
+        68,
+        62
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "164": {
-      "name": "Placeholder 164 (Color (128, 0, 0))",
+      "name": "Faroe Islands",
+      "color": [
+        67,
+        123,
+        237
+      ],
+      "labelOffset": 0,
+      "labelXOffset": 0,
+      "labelArcShift": 0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
+      "labelRotation": 0,
+      "labelStretch": 1
+    },
+    "165": {
+      "name": "Qatar",
       "color": [
         128,
         0,
@@ -970,25 +985,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
-    },
-    "165": {
-      "name": "Placeholder 165 (Color (155, 135, 195))",
-      "color": [
-        155,
-        135,
-        195
-      ],
-      "labelOffset": 0,
-      "labelXOffset": 0,
-      "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
-      "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "166": {
       "name": "Gambia",
@@ -1000,55 +1000,55 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "167": {
-      "name": "Placeholder 167 (Color (16, 114, 5))",
+      "name": "Maldives",
       "color": [
-        16,
-        114,
-        5
+        178,
+        255,
+        102
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "168": {
-      "name": "Placeholder 168 (Color (118, 179, 222))",
+      "name": "Cape Verde",
       "color": [
-        118,
-        179,
-        222
+        0,
+        102,
+        204
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "169": {
-      "name": "Placeholder 169 (Color (100, 125, 175))",
+      "name": "European Union",
       "color": [
         100,
-        125,
-        175
+        100,
+        150
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "170": {
       "name": "Solomon Islands",
@@ -1060,13 +1060,13 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "171": {
-      "name": "Placeholder 171 (Color (231, 228, 185))",
+      "name": "Mauritius",
       "color": [
         231,
         228,
@@ -1075,13 +1075,13 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "172": {
-      "name": "Placeholder 172 (Color (170, 0, 0))",
+      "name": "Antigua and Barbuda",
       "color": [
         170,
         0,
@@ -1090,10 +1090,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "173": {
       "name": "Brunei",
@@ -1105,13 +1105,13 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "174": {
-      "name": "Placeholder 174 (Color (96, 0, 34))",
+      "name": "Sao Tome and Principe",
       "color": [
         96,
         0,
@@ -1120,13 +1120,13 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "175": {
-      "name": "Placeholder 175 (Color (95, 216, 121))",
+      "name": "Comoros",
       "color": [
         95,
         216,
@@ -1135,25 +1135,25 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "176": {
-      "name": "Placeholder 176 (Color (92, 99, 112))",
+      "name": "Grenada",
       "color": [
-        92,
-        99,
-        112
+        255,
+        0,
+        0
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "177": {
       "name": "Liechtenstein",
@@ -1165,10 +1165,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "178": {
       "name": "San Marino",
@@ -1180,10 +1180,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "179": {
       "name": "Monaco",
@@ -1195,10 +1195,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "180": {
       "name": "Andorra",
@@ -1210,10 +1210,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "181": {
       "name": "Vatican City",
@@ -1225,13 +1225,13 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "182": {
-      "name": "Placeholder 182 (Color (97, 103, 126))",
+      "name": "United Nations",
       "color": [
         97,
         103,
@@ -1240,13 +1240,13 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "183": {
-      "name": "Placeholder 183 (Color (150, 209, 96))",
+      "name": "Saint Vincent and the Grenadines",
       "color": [
         150,
         209,
@@ -1255,10 +1255,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "184": {
       "name": "Jamaica",
@@ -1270,13 +1270,13 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "185": {
-      "name": "Placeholder 185 (Color (0, 64, 0))",
+      "name": "Dominica",
       "color": [
         0,
         64,
@@ -1285,13 +1285,13 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "186": {
-      "name": "Placeholder 186 (Color (49, 148, 186))",
+      "name": "Saint Lucia",
       "color": [
         49,
         148,
@@ -1300,43 +1300,43 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "187": {
-      "name": "Placeholder 187 (Color (217, 87, 5))",
+      "name": "Barbados",
       "color": [
-        217,
-        87,
+        116,
+        14,
         5
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "188": {
-      "name": "Placeholder 188 (Color (0, 193, 0))",
+      "name": "Turks and Caicos Islands",
       "color": [
+        64,
         0,
-        193,
-        0
+        64
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "189": {
-      "name": "Placeholder 189 (Color (92, 67, 9))",
+      "name": "North Sentinel Islands",
       "color": [
         92,
         67,
@@ -1345,25 +1345,25 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "190": {
-      "name": "Placeholder 190 (Color (0, 0, 0))",
+      "name": "Trinidad and Tobago",
       "color": [
-        0,
-        0,
-        0
+        16,
+        114,
+        5
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "191": {
       "name": "Placeholder 191 (Color (255, 230, 221))",
@@ -1375,10 +1375,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "192": {
       "name": "Singapore",
@@ -1390,10 +1390,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "193": {
       "name": "Placeholder 193 (Color (63, 224, 207))",
@@ -1405,10 +1405,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "194": {
       "name": "Placeholder 194 (Color (0, 204, 204))",
@@ -1420,10 +1420,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "195": {
       "name": "Placeholder 195 (Color (160, 18, 10))",
@@ -1435,10 +1435,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "196": {
       "name": "Afghanistan",
@@ -1450,10 +1450,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "000": {
       "name": "Russian Federation",
@@ -1465,10 +1465,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "001": {
       "name": "United States of America",
@@ -1480,10 +1480,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "002": {
       "name": "People's Republic of China",
@@ -1495,10 +1495,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "003": {
       "name": "Republic of India",
@@ -1510,10 +1510,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "004": {
       "name": "Commonwealth of Australia",
@@ -1525,10 +1525,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "005": {
       "name": "Canada",
@@ -1540,10 +1540,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "006": {
       "name": "Federal Republic of Germany",
@@ -1555,10 +1555,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "007": {
       "name": "French Republic",
@@ -1570,10 +1570,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "008": {
       "name": "Myanmar",
@@ -1585,10 +1585,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "009": {
       "name": "Turkey",
@@ -1600,10 +1600,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "010": {
       "name": "Republic of Poland",
@@ -1615,10 +1615,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "011": {
       "name": "Republic of Indonesia",
@@ -1630,10 +1630,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "012": {
       "name": "Kazakhstan",
@@ -1645,10 +1645,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "013": {
       "name": "Republic of the Sudan",
@@ -1660,10 +1660,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "014": {
       "name": "Ukraine",
@@ -1675,10 +1675,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "015": {
       "name": "State of Libya",
@@ -1690,10 +1690,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "016": {
       "name": "Belarus",
@@ -1705,10 +1705,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "017": {
       "name": "Japan",
@@ -1720,10 +1720,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "018": {
       "name": "Iraq",
@@ -1735,10 +1735,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "019": {
       "name": "Kingdom of Sweden",
@@ -1750,10 +1750,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "020": {
       "name": "Federative Republic of Brazil",
@@ -1765,10 +1765,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "021": {
       "name": "Kingdom of Spain",
@@ -1780,10 +1780,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "022": {
       "name": "Italian Republic",
@@ -1795,10 +1795,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "023": {
       "name": "Iran",
@@ -1810,10 +1810,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "024": {
       "name": "Ethiopia",
@@ -1825,10 +1825,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "025": {
       "name": "Egypt",
@@ -1840,10 +1840,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "026": {
       "name": "Saudi Arabia",
@@ -1855,10 +1855,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "027": {
       "name": "South Africa",
@@ -1870,10 +1870,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "028": {
       "name": "Mongolia",
@@ -1885,10 +1885,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "029": {
       "name": "Yemen",
@@ -1900,10 +1900,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "030": {
       "name": "Mexico",
@@ -1915,10 +1915,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "031": {
       "name": "Syria",
@@ -1930,10 +1930,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "032": {
       "name": "Republic of Uzbekistan",
@@ -1945,10 +1945,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "033": {
       "name": "Pakistan",
@@ -1960,10 +1960,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "034": {
       "name": "Argentine Republic",
@@ -1975,10 +1975,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "035": {
       "name": "Congo-Kinshasa",
@@ -1990,10 +1990,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "036": {
       "name": "Republic of the Philippines",
@@ -2005,10 +2005,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "037": {
       "name": "United Kingdom",
@@ -2020,10 +2020,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "038": {
       "name": "Republic of Finland",
@@ -2035,10 +2035,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "039": {
       "name": "Kingdom of Norway",
@@ -2050,10 +2050,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "040": {
       "name": "Cambodia",
@@ -2065,10 +2065,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "041": {
       "name": "People's Democratic Republic of Algeria",
@@ -2080,10 +2080,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "042": {
       "name": "Vietnam",
@@ -2095,10 +2095,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "043": {
       "name": "Thailand",
@@ -2110,10 +2110,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "044": {
       "name": "Somalia",
@@ -2125,10 +2125,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "045": {
       "name": "Mali",
@@ -2140,10 +2140,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "046": {
       "name": "Nigeria",
@@ -2155,10 +2155,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "047": {
       "name": "Centrafrica",
@@ -2170,10 +2170,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "048": {
       "name": "Romania",
@@ -2185,10 +2185,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "049": {
       "name": "Greece",
@@ -2200,10 +2200,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "050": {
       "name": "Turkmenistan",
@@ -2215,10 +2215,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "051": {
       "name": "Bangladesh",
@@ -2230,10 +2230,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "052": {
       "name": "Chad",
@@ -2245,10 +2245,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "053": {
       "name": "Latvia",
@@ -2260,10 +2260,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "054": {
       "name": "Tanzania",
@@ -2275,10 +2275,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "055": {
       "name": "Austria",
@@ -2290,10 +2290,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "056": {
       "name": "Republic of Chile",
@@ -2305,10 +2305,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "057": {
       "name": "Lithuania",
@@ -2320,10 +2320,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "058": {
       "name": "Azerbaijan",
@@ -2335,10 +2335,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "059": {
       "name": "Jordan",
@@ -2350,10 +2350,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "060": {
       "name": "Malaysia",
@@ -2365,10 +2365,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "061": {
       "name": "Mauritania",
@@ -2380,10 +2380,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "062": {
       "name": "Serbia",
@@ -2395,10 +2395,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "063": {
       "name": "North Korea",
@@ -2410,25 +2410,25 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "064": {
       "name": "Greenland",
       "color": [
-        142,
-        68,
-        62
+        255,
+        80,
+        80
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "065": {
       "name": "Czechia",
@@ -2440,10 +2440,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "066": {
       "name": "Tajikistan",
@@ -2455,10 +2455,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "067": {
       "name": "Angola",
@@ -2470,10 +2470,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "068": {
       "name": "Niger",
@@ -2485,10 +2485,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "069": {
       "name": "Laos",
@@ -2500,10 +2500,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "070": {
       "name": "Cameroon",
@@ -2515,10 +2515,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "071": {
       "name": "Venezuela",
@@ -2530,10 +2530,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "072": {
       "name": "Peru",
@@ -2545,10 +2545,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "073": {
       "name": "Bosnia and Herzegovina",
@@ -2560,10 +2560,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "074": {
       "name": "Belgium",
@@ -2575,10 +2575,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "075": {
       "name": "Croatia",
@@ -2590,10 +2590,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "076": {
       "name": "New Guinea",
@@ -2605,10 +2605,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "077": {
       "name": "Morocco",
@@ -2620,10 +2620,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "078": {
       "name": "Georgia",
@@ -2635,10 +2635,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "079": {
       "name": "Antarctica",
@@ -2650,10 +2650,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "080": {
       "name": "Switzerland",
@@ -2665,10 +2665,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "081": {
       "name": "South Korea",
@@ -2680,10 +2680,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "082": {
       "name": "Mozambique",
@@ -2695,10 +2695,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "083": {
       "name": "Cambodia",
@@ -2710,10 +2710,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "084": {
       "name": "Kyrgyzstan",
@@ -2725,10 +2725,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "085": {
       "name": "Hungary",
@@ -2740,10 +2740,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "086": {
       "name": "Bulgaria",
@@ -2755,10 +2755,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "087": {
       "name": "Slovakia",
@@ -2770,10 +2770,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "088": {
       "name": "Colombia",
@@ -2785,10 +2785,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "089": {
       "name": "Israel",
@@ -2800,10 +2800,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "090": {
       "name": "Portugal",
@@ -2815,10 +2815,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "091": {
       "name": "Kenya",
@@ -2830,25 +2830,25 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "092": {
       "name": "Sri Lanka",
       "color": [
-        177,
-        255,
-        101
+        204,
+        0,
+        102
       ],
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "093": {
       "name": "Namibia",
@@ -2860,10 +2860,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "094": {
       "name": "New Zealand",
@@ -2875,10 +2875,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "095": {
       "name": "Estonia",
@@ -2890,10 +2890,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "096": {
       "name": "Nepal",
@@ -2905,10 +2905,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "097": {
       "name": "Bolivia",
@@ -2920,10 +2920,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "098": {
       "name": "Congo-Brazzaville",
@@ -2935,10 +2935,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     },
     "099": {
       "name": "Nicaragua",
@@ -2950,10 +2950,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1.0,
-      "fontSizeScale": 1.0,
+      "curvatureScale": 1,
+      "fontSizeScale": 1,
       "labelRotation": 0,
-      "labelStretch": 1.0
+      "labelStretch": 1
     }
   },
   "ownership": {
@@ -3568,7 +3568,7 @@
     "633": "039",
     "634": "019",
     "635": "005",
-    "636": "064",
+    "636": "164",
     "637": "039",
     "638": "039",
     "639": "039",
@@ -4289,7 +4289,7 @@
     "1376": "005",
     "1377": "037",
     "1378": "037",
-    "1379": "064",
+    "1379": "163",
     "1380": "019",
     "1381": "019",
     "1382": "053",
@@ -4367,8 +4367,8 @@
     "1455": "005",
     "1456": "037",
     "1457": "037",
-    "1458": "064",
-    "1459": "064",
+    "1458": "163",
+    "1459": "163",
     "1460": "019",
     "1461": "019",
     "1462": "053",
@@ -4414,7 +4414,7 @@
     "1502": "001",
     "1503": "005",
     "1504": "005",
-    "1505": "064",
+    "1505": "163",
     "1506": "019",
     "1507": "053",
     "1508": "053",
@@ -4447,7 +4447,7 @@
     "1536": "000",
     "1537": "037",
     "1538": "037",
-    "1539": "064",
+    "1539": "163",
     "1540": "019",
     "1541": "053",
     "1542": "053",
@@ -4521,8 +4521,8 @@
     "1611": "000",
     "1612": "000",
     "1613": "000",
-    "1614": "064",
-    "1615": "064",
+    "1614": "163",
+    "1615": "163",
     "1616": "019",
     "1617": "053",
     "1618": "053",
@@ -4557,7 +4557,7 @@
     "1647": "000",
     "1648": "000",
     "1649": "000",
-    "1650": "064",
+    "1650": "163",
     "1651": "019",
     "1652": "057",
     "1653": "053",
@@ -4615,7 +4615,7 @@
     "1705": "000",
     "1706": "000",
     "1708": "037",
-    "1709": "064",
+    "1709": "163",
     "1710": "057",
     "1711": "053",
     "1712": "016",
@@ -4641,7 +4641,7 @@
     "1732": "005",
     "1733": "037",
     "1734": "037",
-    "1735": "064",
+    "1735": "163",
     "1736": "019",
     "1737": "057",
     "1738": "016",
@@ -4651,7 +4651,7 @@
     "1742": "000",
     "1743": "005",
     "1744": "005",
-    "1745": "064",
+    "1745": "163",
     "1746": "019",
     "1747": "019",
     "1748": "057",
@@ -4683,9 +4683,9 @@
     "1774": "000",
     "1775": "037",
     "1776": "037",
-    "1777": "064",
-    "1778": "064",
-    "1779": "064",
+    "1777": "163",
+    "1778": "163",
+    "1779": "163",
     "1780": "057",
     "1781": "057",
     "1782": "057",
@@ -4729,7 +4729,7 @@
     "1822": "005",
     "1823": "005",
     "1824": "037",
-    "1825": "064",
+    "1825": "163",
     "1826": "000",
     "1827": "057",
     "1828": "057",
@@ -4745,7 +4745,7 @@
     "1838": "000",
     "1839": "000",
     "1840": "000",
-    "1841": "064",
+    "1841": "163",
     "1842": "057",
     "1843": "000",
     "1844": "000",
@@ -4759,7 +4759,7 @@
     "1852": "000",
     "1853": "037",
     "1854": "037",
-    "1855": "064",
+    "1855": "163",
     "1856": "057",
     "1857": "057",
     "1858": "057",
@@ -4780,7 +4780,7 @@
     "1873": "005",
     "1874": "005",
     "1875": "106",
-    "1876": "064",
+    "1876": "163",
     "1877": "057",
     "1878": "057",
     "1879": "016",
@@ -4809,8 +4809,8 @@
     "1903": "106",
     "1904": "037",
     "1905": "037",
-    "1906": "064",
-    "1907": "064",
+    "1906": "163",
+    "1907": "163",
     "1908": "000",
     "1909": "057",
     "1910": "016",
@@ -4824,7 +4824,7 @@
     "1918": "000",
     "1919": "005",
     "1920": "037",
-    "1921": "064",
+    "1921": "163",
     "1922": "000",
     "1924": "057",
     "1925": "057",
@@ -4840,7 +4840,7 @@
     "1935": "000",
     "1936": "000",
     "1937": "000",
-    "1938": "064",
+    "1938": "163",
     "1939": "057",
     "1940": "057",
     "1941": "057",
@@ -4856,9 +4856,9 @@
     "1951": "000",
     "1952": "005",
     "1953": "005",
-    "1954": "064",
-    "1955": "064",
-    "1956": "064",
+    "1954": "163",
+    "1955": "163",
+    "1956": "163",
     "1957": "000",
     "1958": "057",
     "1959": "057",
@@ -4871,9 +4871,9 @@
     "1966": "000",
     "1967": "000",
     "1968": "000",
-    "1971": "064",
-    "1972": "064",
-    "1973": "064",
+    "1971": "163",
+    "1972": "163",
+    "1973": "163",
     "1974": "000",
     "1975": "016",
     "1976": "016",
@@ -4891,7 +4891,7 @@
     "1988": "037",
     "1989": "037",
     "1990": "006",
-    "1991": "064",
+    "1991": "163",
     "1992": "000",
     "1993": "057",
     "1994": "057",
@@ -6524,7 +6524,7 @@
     "3643": "007",
     "3644": "074",
     "3645": "074",
-    "3646": "031",
+    "3646": "169",
     "3647": "074",
     "3648": "103",
     "3649": "006",
@@ -7957,6 +7957,7 @@
     "5088": "001",
     "5089": "001",
     "5090": "001",
+    "5091": "005",
     "5092": "007",
     "5093": "007",
     "5094": "007",
@@ -8182,7 +8183,7 @@
     "5317": "028",
     "5318": "001",
     "5319": "005",
-    "5320": "149",
+    "5320": "007",
     "5321": "007",
     "5322": "007",
     "5323": "080",
@@ -8301,6 +8302,7 @@
     "5438": "000",
     "5439": "001",
     "5440": "005",
+    "5441": "007",
     "5442": "007",
     "5443": "007",
     "5444": "080",
@@ -9156,6 +9158,7 @@
     "6303": "001",
     "6304": "001",
     "6305": "001",
+    "6306": "001",
     "6307": "007",
     "6308": "022",
     "6309": "022",
@@ -9389,6 +9392,7 @@
     "6537": "001",
     "6538": "001",
     "6540": "005",
+    "6541": "001",
     "6542": "007",
     "6543": "007",
     "6544": "007",
@@ -13025,7 +13029,7 @@
     "10209": "041",
     "10210": "041",
     "10211": "041",
-    "10212": "022",
+    "10212": "135",
     "10214": "031",
     "10215": "018",
     "10216": "018",
@@ -13054,7 +13058,7 @@
     "10239": "001",
     "10240": "001",
     "10241": "001",
-    "10242": "021",
+    "10242": "149",
     "10243": "041",
     "10244": "041",
     "10245": "031",
@@ -13086,7 +13090,7 @@
     "10271": "001",
     "10272": "001",
     "10273": "114",
-    "10274": "022",
+    "10274": "135",
     "10275": "018",
     "10276": "023",
     "10277": "050",
@@ -13262,7 +13266,7 @@
     "10448": "001",
     "10449": "041",
     "10450": "049",
-    "10451": "042",
+    "10451": "153",
     "10452": "031",
     "10453": "031",
     "10454": "031",
@@ -13310,7 +13314,7 @@
     "10496": "001",
     "10497": "001",
     "10498": "041",
-    "10499": "042",
+    "10499": "153",
     "10500": "031",
     "10501": "031",
     "10502": "031",
@@ -13370,7 +13374,7 @@
     "10556": "041",
     "10557": "114",
     "10558": "049",
-    "10559": "042",
+    "10559": "153",
     "10560": "031",
     "10561": "031",
     "10562": "031",
@@ -13410,9 +13414,9 @@
     "10596": "077",
     "10597": "021",
     "10598": "041",
-    "10599": "042",
-    "10600": "042",
-    "10601": "042",
+    "10599": "153",
+    "10600": "153",
+    "10601": "153",
     "10602": "018",
     "10603": "018",
     "10604": "018",
@@ -13434,13 +13438,13 @@
     "10620": "001",
     "10621": "001",
     "10622": "127",
-    "10623": "042",
+    "10623": "153",
     "10624": "127",
     "10625": "127",
-    "10626": "042",
+    "10626": "153",
     "10627": "127",
-    "10628": "042",
-    "10629": "042",
+    "10628": "153",
+    "10629": "153",
     "10630": "031",
     "10631": "031",
     "10632": "031",
@@ -13473,12 +13477,12 @@
     "10659": "127",
     "10660": "127",
     "10661": "127",
-    "10662": "042",
+    "10662": "153",
     "10663": "127",
     "10664": "037",
-    "10665": "042",
+    "10665": "153",
     "10666": "037",
-    "10667": "042",
+    "10667": "153",
     "10668": "018",
     "10669": "018",
     "10670": "018",
@@ -16206,7 +16210,7 @@
     "13426": "015",
     "13427": "026",
     "13428": "026",
-    "13429": "056",
+    "13429": "160",
     "13430": "033",
     "13431": "003",
     "13432": "003",
@@ -16225,6 +16229,7 @@
     "13447": "002",
     "13448": "002",
     "13449": "128",
+    "13450": "155",
     "13451": "061",
     "13452": "041",
     "13453": "163",
@@ -16254,7 +16259,7 @@
     "13477": "015",
     "13478": "015",
     "13479": "025",
-    "13480": "164",
+    "13480": "165",
     "13481": "033",
     "13482": "003",
     "13483": "003",
@@ -16310,7 +16315,7 @@
     "13535": "015",
     "13536": "025",
     "13537": "025",
-    "13538": "164",
+    "13538": "165",
     "13539": "111",
     "13540": "023",
     "13541": "003",
@@ -16447,7 +16452,7 @@
     "13674": "061",
     "13675": "061",
     "13676": "015",
-    "13677": "164",
+    "13677": "165",
     "13678": "111",
     "13679": "111",
     "13680": "033",
@@ -16492,7 +16497,7 @@
     "13719": "026",
     "13720": "111",
     "13721": "111",
-    "13722": "056",
+    "13722": "160",
     "13723": "003",
     "13724": "003",
     "13725": "003",
@@ -16548,6 +16553,7 @@
     "13775": "002",
     "13776": "002",
     "13777": "002",
+    "13778": "017",
     "13779": "030",
     "13780": "061",
     "13781": "041",
@@ -16582,7 +16588,7 @@
     "13810": "025",
     "13811": "026",
     "13812": "026",
-    "13813": "056",
+    "13813": "160",
     "13814": "111",
     "13815": "003",
     "13816": "003",
@@ -16617,13 +16623,13 @@
     "13845": "003",
     "13846": "008",
     "13847": "128",
-    "13848": "128",
+    "13848": "017",
     "13849": "118",
     "13850": "025",
     "13851": "025",
     "13852": "026",
-    "13853": "056",
-    "13854": "056",
+    "13853": "160",
+    "13854": "160",
     "13855": "003",
     "13856": "003",
     "13857": "051",
@@ -16811,7 +16817,7 @@
     "14039": "025",
     "14040": "026",
     "14041": "026",
-    "14042": "056",
+    "14042": "160",
     "14043": "003",
     "14044": "003",
     "14045": "003",
@@ -16831,7 +16837,7 @@
     "14059": "128",
     "14060": "025",
     "14061": "111",
-    "14062": "056",
+    "14062": "160",
     "14063": "051",
     "14064": "051",
     "14065": "051",
@@ -16910,7 +16916,7 @@
     "14138": "118",
     "14139": "041",
     "14140": "041",
-    "14141": "056",
+    "14141": "160",
     "14142": "003",
     "14143": "003",
     "14144": "003",
@@ -16927,7 +16933,7 @@
     "14155": "118",
     "14156": "025",
     "14157": "026",
-    "14158": "056",
+    "14158": "160",
     "14159": "003",
     "14160": "003",
     "14161": "003",
@@ -16941,11 +16947,12 @@
     "14169": "008",
     "14170": "002",
     "14171": "128",
+    "14172": "017",
     "14173": "045",
     "14174": "026",
     "14175": "026",
     "14176": "026",
-    "14177": "056",
+    "14177": "160",
     "14178": "003",
     "14179": "003",
     "14180": "003",
@@ -16958,8 +16965,8 @@
     "14189": "061",
     "14190": "025",
     "14191": "025",
-    "14192": "056",
-    "14193": "056",
+    "14192": "160",
+    "14193": "160",
     "14194": "003",
     "14195": "003",
     "14196": "003",
@@ -16975,7 +16982,7 @@
     "14206": "026",
     "14207": "026",
     "14208": "026",
-    "14209": "056",
+    "14209": "160",
     "14210": "003",
     "14211": "003",
     "14212": "003",
@@ -17024,6 +17031,7 @@
     "14255": "051",
     "14256": "008",
     "14257": "002",
+    "14258": "125",
     "14259": "052",
     "14260": "003",
     "14261": "051",
@@ -17131,7 +17139,7 @@
     "14364": "061",
     "14365": "045",
     "14366": "068",
-    "14367": "056",
+    "14367": "160",
     "14368": "003",
     "14369": "003",
     "14370": "003",
@@ -17191,7 +17199,7 @@
     "14425": "047",
     "14426": "025",
     "14427": "025",
-    "14428": "056",
+    "14428": "160",
     "14429": "003",
     "14430": "003",
     "14431": "003",
@@ -17248,7 +17256,7 @@
     "14488": "030",
     "14489": "068",
     "14490": "026",
-    "14491": "056",
+    "14491": "160",
     "14492": "003",
     "14493": "003",
     "14495": "008",
@@ -17265,7 +17273,7 @@
     "14506": "068",
     "14507": "025",
     "14508": "026",
-    "14509": "056",
+    "14509": "160",
     "14510": "003",
     "14511": "003",
     "14512": "003",
@@ -17300,7 +17308,7 @@
     "14541": "026",
     "14542": "026",
     "14543": "026",
-    "14544": "056",
+    "14544": "160",
     "14545": "003",
     "14546": "003",
     "14547": "003",
@@ -17342,6 +17350,7 @@
     "14583": "002",
     "14584": "002",
     "14585": "002",
+    "14587": "125",
     "14588": "125",
     "14589": "061",
     "14590": "013",
@@ -17400,7 +17409,8 @@
     "14646": "042",
     "14647": "002",
     "14649": "125",
-    "14651": "155",
+    "14650": "125",
+    "14651": "188",
     "14652": "068",
     "14653": "003",
     "14654": "003",
@@ -17460,9 +17470,9 @@
     "14709": "015",
     "14710": "013",
     "14711": "013",
-    "14712": "056",
-    "14713": "056",
-    "14714": "056",
+    "14712": "160",
+    "14713": "160",
+    "14714": "160",
     "14715": "003",
     "14716": "003",
     "14717": "003",
@@ -17500,11 +17510,11 @@
     "14749": "008",
     "14750": "069",
     "14751": "155",
-    "14752": "155",
+    "14752": "188",
     "14753": "013",
     "14754": "013",
     "14755": "026",
-    "14756": "056",
+    "14756": "160",
     "14757": "003",
     "14758": "003",
     "14759": "008",
@@ -17596,9 +17606,10 @@
     "14847": "008",
     "14848": "008",
     "14849": "069",
+    "14850": "125",
     "14851": "061",
     "14852": "026",
-    "14853": "056",
+    "14853": "160",
     "14854": "003",
     "14855": "003",
     "14856": "003",
@@ -17684,7 +17695,7 @@
     "14936": "030",
     "14937": "125",
     "14938": "068",
-    "14939": "056",
+    "14939": "160",
     "14940": "003",
     "14941": "003",
     "14942": "003",
@@ -17769,7 +17780,7 @@
     "15021": "008",
     "15022": "008",
     "15023": "045",
-    "15024": "056",
+    "15024": "160",
     "15025": "003",
     "15026": "003",
     "15027": "003",
@@ -17781,7 +17792,7 @@
     "15033": "042",
     "15034": "045",
     "15035": "026",
-    "15036": "056",
+    "15036": "160",
     "15037": "003",
     "15038": "008",
     "15039": "043",
@@ -17805,7 +17816,7 @@
     "15057": "013",
     "15058": "013",
     "15059": "013",
-    "15060": "056",
+    "15060": "160",
     "15061": "003",
     "15062": "003",
     "15063": "008",
@@ -17833,7 +17844,7 @@
     "15085": "008",
     "15086": "069",
     "15087": "042",
-    "15088": "056",
+    "15088": "160",
     "15089": "003",
     "15090": "003",
     "15091": "008",
@@ -17841,8 +17852,8 @@
     "15093": "030",
     "15094": "045",
     "15095": "013",
-    "15096": "056",
-    "15097": "056",
+    "15096": "160",
+    "15097": "160",
     "15098": "003",
     "15099": "003",
     "15100": "008",
@@ -17853,7 +17864,7 @@
     "15105": "069",
     "15108": "144",
     "15109": "052",
-    "15110": "056",
+    "15110": "160",
     "15111": "008",
     "15112": "008",
     "15113": "043",
@@ -17875,7 +17886,7 @@
     "15129": "013",
     "15130": "013",
     "15131": "026",
-    "15132": "056",
+    "15132": "160",
     "15133": "003",
     "15134": "003",
     "15135": "003",
@@ -17930,7 +17941,7 @@
     "15185": "156",
     "15187": "041",
     "15188": "026",
-    "15189": "056",
+    "15189": "160",
     "15190": "003",
     "15191": "008",
     "15192": "043",
@@ -18011,20 +18022,21 @@
     "15271": "029",
     "15272": "003",
     "15273": "002",
+    "15274": "172",
     "15275": "061",
     "15276": "061",
     "15277": "061",
     "15278": "061",
     "15279": "026",
-    "15280": "056",
-    "15281": "056",
+    "15280": "160",
+    "15281": "160",
     "15282": "003",
     "15283": "008",
     "15284": "008",
     "15285": "008",
     "15286": "030",
     "15287": "029",
-    "15288": "056",
+    "15288": "160",
     "15289": "003",
     "15290": "008",
     "15291": "069",
@@ -18055,6 +18067,7 @@
     "15316": "030",
     "15317": "144",
     "15318": "144",
+    "15319": "172",
     "15320": "061",
     "15321": "068",
     "15322": "013",
@@ -18068,6 +18081,7 @@
     "15330": "030",
     "15331": "144",
     "15332": "144",
+    "15333": "172",
     "15334": "003",
     "15335": "003",
     "15336": "003",
@@ -18083,6 +18097,8 @@
     "15346": "184",
     "15347": "144",
     "15348": "001",
+    "15349": "001",
+    "15350": "172",
     "15351": "061",
     "15352": "045",
     "15353": "045",
@@ -18110,7 +18126,9 @@
     "15376": "030",
     "15377": "030",
     "15379": "001",
+    "15380": "001",
     "15381": "001",
+    "15382": "172",
     "15383": "061",
     "15384": "052",
     "15385": "052",
@@ -18122,6 +18140,7 @@
     "15391": "003",
     "15392": "150",
     "15393": "001",
+    "15394": "172",
     "15395": "045",
     "15396": "013",
     "15397": "013",
@@ -18144,6 +18163,8 @@
     "15414": "043",
     "15415": "043",
     "15416": "043",
+    "15417": "172",
+    "15418": "007",
     "15419": "045",
     "15420": "052",
     "15421": "013",
@@ -18157,11 +18178,12 @@
     "15429": "069",
     "15430": "069",
     "15432": "030",
+    "15433": "001",
     "15434": "068",
     "15435": "068",
     "15436": "013",
     "15437": "013",
-    "15438": "056",
+    "15438": "160",
     "15439": "003",
     "15440": "003",
     "15441": "003",
@@ -18178,6 +18200,7 @@
     "15452": "029",
     "15453": "036",
     "15454": "001",
+    "15456": "007",
     "15457": "061",
     "15458": "045",
     "15459": "045",
@@ -18204,6 +18227,8 @@
     "15480": "030",
     "15481": "030",
     "15482": "030",
+    "15483": "172",
+    "15484": "103",
     "15485": "045",
     "15486": "045",
     "15487": "052",
@@ -18215,6 +18240,7 @@
     "15493": "008",
     "15494": "008",
     "15495": "042",
+    "15496": "007",
     "15497": "045",
     "15498": "045",
     "15499": "052",
@@ -18248,6 +18274,7 @@
     "15527": "003",
     "15528": "003",
     "15529": "150",
+    "15530": "103",
     "15531": "172",
     "15532": "013",
     "15533": "003",
@@ -18261,6 +18288,7 @@
     "15541": "003",
     "15542": "008",
     "15543": "036",
+    "15545": "103",
     "15546": "061",
     "15547": "045",
     "15548": "029",
@@ -18350,7 +18378,7 @@
     "15633": "030",
     "15634": "030",
     "15635": "172",
-    "15636": "165",
+    "15636": "168",
     "15637": "045",
     "15638": "068",
     "15639": "029",
@@ -18367,6 +18395,7 @@
     "15651": "043",
     "15652": "069",
     "15653": "030",
+    "15655": "037",
     "15656": "061",
     "15657": "045",
     "15658": "013",
@@ -18401,7 +18430,7 @@
     "15687": "042",
     "15688": "042",
     "15690": "037",
-    "15691": "165",
+    "15691": "168",
     "15692": "013",
     "15693": "029",
     "15694": "003",
@@ -18491,6 +18520,7 @@
     "15780": "043",
     "15781": "043",
     "15782": "042",
+    "15783": "007",
     "15784": "061",
     "15785": "045",
     "15786": "045",
@@ -18604,6 +18634,8 @@
     "15896": "003",
     "15897": "003",
     "15898": "003",
+    "15899": "007",
+    "15900": "007",
     "15901": "045",
     "15902": "045",
     "15903": "045",
@@ -18717,7 +18749,7 @@
     "16012": "042",
     "16013": "036",
     "16014": "136",
-    "16015": "165",
+    "16015": "168",
     "16016": "052",
     "16017": "013",
     "16018": "013",
@@ -19133,7 +19165,7 @@
     "16437": "029",
     "16439": "043",
     "16440": "083",
-    "16441": "188",
+    "16441": "183",
     "16442": "068",
     "16443": "068",
     "16444": "068",
@@ -19153,7 +19185,7 @@
     "16458": "083",
     "16459": "083",
     "16460": "042",
-    "16462": "167",
+    "16462": "187",
     "16463": "120",
     "16464": "046",
     "16465": "046",
@@ -19221,6 +19253,7 @@
     "16532": "008",
     "16533": "083",
     "16534": "036",
+    "16535": "183",
     "16536": "120",
     "16538": "029",
     "16539": "029",
@@ -19234,6 +19267,7 @@
     "16548": "052",
     "16549": "029",
     "16550": "003",
+    "16551": "183",
     "16552": "129",
     "16553": "046",
     "16554": "046",
@@ -19275,6 +19309,8 @@
     "16590": "083",
     "16591": "036",
     "16592": "103",
+    "16593": "183",
+    "16594": "183",
     "16595": "157",
     "16596": "157",
     "16597": "132",
@@ -19305,6 +19341,7 @@
     "16623": "099",
     "16624": "099",
     "16625": "088",
+    "16626": "176",
     "16627": "132",
     "16628": "013",
     "16629": "024",
@@ -19342,6 +19379,7 @@
     "16661": "083",
     "16662": "042",
     "16663": "036",
+    "16665": "176",
     "16666": "052",
     "16667": "052",
     "16668": "052",
@@ -19522,7 +19560,7 @@
     "16848": "036",
     "16849": "071",
     "16850": "071",
-    "16851": "167",
+    "16851": "190",
     "16852": "052",
     "16853": "024",
     "16854": "044",
@@ -19569,6 +19607,7 @@
     "16897": "024",
     "16898": "003",
     "16899": "042",
+    "16900": "036",
     "16901": "036",
     "16902": "126",
     "16903": "088",
@@ -19611,10 +19650,12 @@
     "16940": "042",
     "16941": "042",
     "16942": "042",
+    "16943": "036",
+    "16944": "036",
     "16945": "036",
     "16946": "071",
     "16947": "071",
-    "16948": "167",
+    "16948": "190",
     "16949": "046",
     "16950": "052",
     "16951": "013",
@@ -19625,6 +19666,7 @@
     "16956": "003",
     "16957": "003",
     "16958": "083",
+    "16959": "036",
     "16960": "036",
     "16961": "036",
     "16962": "071",
@@ -20219,7 +20261,7 @@
     "17596": "113",
     "17597": "024",
     "17598": "024",
-    "17599": "092",
+    "17599": "167",
     "17600": "036",
     "17601": "036",
     "17603": "088",
@@ -20351,7 +20393,7 @@
     "17738": "047",
     "17739": "047",
     "17740": "024",
-    "17741": "092",
+    "17741": "167",
     "17742": "060",
     "17743": "036",
     "17745": "070",
@@ -20413,7 +20455,7 @@
     "17805": "046",
     "17806": "047",
     "17807": "113",
-    "17808": "092",
+    "17808": "167",
     "17810": "070",
     "17811": "070",
     "17812": "024",
@@ -20516,7 +20558,7 @@
     "17912": "070",
     "17913": "047",
     "17914": "091",
-    "17915": "092",
+    "17915": "167",
     "17916": "060",
     "17917": "011",
     "17920": "121",
@@ -20557,7 +20599,7 @@
     "17958": "035",
     "17959": "091",
     "17960": "044",
-    "17961": "092",
+    "17961": "167",
     "17962": "060",
     "17963": "011",
     "17964": "011",
@@ -20732,7 +20774,7 @@
     "18139": "091",
     "18140": "091",
     "18141": "044",
-    "18142": "092",
+    "18142": "167",
     "18143": "011",
     "18144": "060",
     "18145": "060",
@@ -20905,7 +20947,7 @@
     "18317": "088",
     "18318": "020",
     "18320": "137",
-    "18321": "092",
+    "18321": "167",
     "18322": "011",
     "18323": "011",
     "18324": "011",
@@ -21034,7 +21076,7 @@
     "18457": "011",
     "18459": "035",
     "18460": "110",
-    "18461": "092",
+    "18461": "167",
     "18462": "011",
     "18463": "020",
     "18464": "035",
@@ -22010,6 +22052,7 @@
     "19515": "004",
     "19516": "004",
     "19517": "004",
+    "19518": "037",
     "19519": "067",
     "19520": "004",
     "19521": "004",
@@ -22236,9 +22279,11 @@
     "19779": "097",
     "19780": "020",
     "19781": "122",
+    "19782": "171",
     "19783": "004",
     "19784": "020",
     "19785": "102",
+    "19786": "171",
     "19787": "004",
     "19788": "004",
     "19789": "004",
@@ -23388,7 +23433,8 @@
     "21138": "037",
     "21139": "037",
     "21140": "037",
-    "21141": "037"
+    "21141": "037",
+    "21142": "037"
   },
   "interests": {},
   "states": {
@@ -23681,76 +23727,6 @@
         87
       ],
       "provinces": [
-        2869,
-        2420,
-        2481,
-        2930,
-        2584,
-        2540,
-        3127,
-        2421,
-        2687,
-        2669,
-        2761,
-        2708,
-        3236,
-        3009,
-        2402,
-        2480,
-        2899,
-        3096,
-        3097,
-        2961,
-        2506,
-        2483,
-        2670,
-        2666,
-        2617,
-        2763,
-        2962,
-        3237,
-        2667,
-        2836,
-        2403,
-        2664,
-        2783,
-        2900,
-        3011,
-        3129,
-        3266,
-        3130,
-        3238,
-        2933,
-        2837,
-        3010,
-        2981,
-        2729,
-        2709,
-        2586,
-        2508,
-        2571,
-        2585,
-        2762,
-        2635,
-        2507,
-        2980,
-        2872,
-        2871,
-        3094,
-        3095,
-        2616,
-        2665,
-        2448,
-        2870,
-        2835,
-        2896,
-        2811,
-        2960,
-        3093,
-        2979,
-        2895,
-        3373,
-        2636,
         2925,
         2612,
         3227,
@@ -24057,11 +24033,11 @@
     },
     "17": {
       "id": 17,
-      "name": "Anglia",
+      "name": "East of England",
       "color": [
-        193,
-        41,
-        98
+        198,
+        198,
+        177
       ],
       "provinces": [
         2727,
@@ -24069,18 +24045,14 @@
         2894,
         2780,
         2927,
-        3348,
-        3055,
         3160,
         3004,
         3005,
-        3318,
-        3260,
-        3199,
-        3261,
-        3284,
         2928,
-        3003
+        21128,
+        21131,
+        21124,
+        3161
       ]
     },
     "18": {
@@ -24224,90 +24196,81 @@
     },
     "23": {
       "id": 23,
-      "name": "Northumbria",
+      "name": "North West",
       "color": [
-        124,
-        159,
-        228
+        167,
+        105,
+        170
       ],
       "provinces": [
-        1905,
-        1989,
-        1776,
-        2292,
         2259,
         2419,
         2446,
         1988,
-        2201,
-        2133,
-        2098,
-        2134,
-        2260,
-        2291,
-        2162
+        2162,
+        21103,
+        21107,
+        21108,
+        21110,
+        21111,
+        21113,
+        2569,
+        21115,
+        21112
       ]
     },
     "24": {
       "id": 24,
-      "name": "Wessex",
+      "name": "South East",
       "color": [
-        162,
-        135,
-        139
+        169,
+        212,
+        160
       ],
       "provinces": [
-        3367,
         3466,
         3496,
         3524,
         3394,
         3711,
-        3393,
-        3551,
-        3124,
-        3609,
         3582,
-        3090,
-        3365,
         3228,
         3414,
         3366,
-        3495,
-        3673,
-        3886,
-        3494,
-        3672,
-        3493,
-        3999
+        21132,
+        21136,
+        21137,
+        21138,
+        21139,
+        21130,
+        3055,
+        21129,
+        3003
       ]
     },
     "25": {
       "id": 25,
-      "name": "Mercia",
+      "name": "East Midlands",
       "color": [
-        186,
-        208,
-        234
+        98,
+        205,
+        149
       ],
       "provinces": [
         2759,
-        2926,
         2706,
-        2613,
         2661,
         2537,
         2614,
-        2746,
         2479,
-        2830,
-        3089,
-        2977,
-        2745,
-        2705,
-        2569,
-        2478,
-        2447
+        21114,
+        21116,
+        21118,
+        21119,
+        21120,
+        21123,
+        21125,
+        21127
       ]
     },
     "26": {
@@ -32540,6 +32503,202 @@
       "provinces": [
         10372,
         10373
+      ]
+    },
+    "301": {
+      "id": 301,
+      "name": "Greater London",
+      "color": [
+        214,
+        201,
+        219
+      ],
+      "provinces": [
+        3348,
+        3260,
+        3199,
+        3284,
+        3318,
+        3367,
+        3261
+      ]
+    },
+    "302": {
+      "id": 302,
+      "name": "North East",
+      "color": [
+        110,
+        139,
+        102
+      ],
+      "provinces": [
+        21104,
+        1989,
+        21102,
+        1905,
+        1776
+      ]
+    },
+    "303": {
+      "id": 303,
+      "name": "South West",
+      "color": [
+        106,
+        129,
+        58
+      ],
+      "provinces": [
+        3089,
+        3124,
+        3090,
+        21134,
+        3365,
+        3551,
+        21140,
+        21135,
+        21133,
+        3609,
+        3673,
+        3393,
+        3672,
+        3495,
+        3494,
+        3493,
+        3886,
+        3999,
+        21141,
+        4195,
+        4196,
+        4386,
+        4289,
+        4290
+      ]
+    },
+    "304": {
+      "id": 304,
+      "name": "West Midlands",
+      "color": [
+        140,
+        196,
+        54
+      ],
+      "provinces": [
+        2926,
+        21126,
+        21122,
+        2746,
+        21121,
+        2613,
+        2705,
+        21117,
+        2745,
+        2977,
+        2830
+      ]
+    },
+    "305": {
+      "id": 305,
+      "name": "Yorkshire and the Humber",
+      "color": [
+        198,
+        119,
+        183
+      ],
+      "provinces": [
+        2133,
+        2201,
+        2134,
+        2098,
+        2292,
+        21109,
+        21105,
+        2291,
+        21106,
+        2260,
+        2478,
+        2447,
+        21142
+      ]
+    },
+    "306": {
+      "id": 306,
+      "name": "Niedersachsen",
+      "color": [
+        47,
+        77,
+        190
+      ],
+      "provinces": [
+        2869,
+        2420,
+        2481,
+        2930,
+        2584,
+        2540,
+        3127,
+        2421,
+        2687,
+        2669,
+        2761,
+        2708,
+        3236,
+        3009,
+        2402,
+        2480,
+        2899,
+        3096,
+        3097,
+        2961,
+        2506,
+        2483,
+        2670,
+        2666,
+        2617,
+        2763,
+        2962,
+        3237,
+        2667,
+        2836,
+        2403,
+        2664,
+        2783,
+        2900,
+        3011,
+        3129,
+        3266,
+        3130,
+        3238,
+        2933,
+        2837,
+        3010,
+        2981,
+        2729,
+        2709,
+        2586,
+        2508,
+        2571,
+        2585,
+        2762,
+        2635,
+        2507,
+        2980,
+        2872,
+        2871,
+        3094,
+        3095,
+        2616,
+        2665,
+        2448,
+        2870,
+        2835,
+        2896,
+        2811,
+        2960,
+        3093,
+        2979,
+        2895,
+        3373,
+        2636
       ]
     }
   }
