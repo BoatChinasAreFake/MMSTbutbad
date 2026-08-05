@@ -8,7 +8,7 @@
 7) Run the "start_server.bat" file.
 8) The python script will open a Powershell prompt briefly, then a command prompt which you can safely close.
 9) It should open your browser, with the address of "localhost:8000" as well as a new tab named "Map Sandbox."
-10) Play the mod and enjoy.
+10) Play and enjoy. This application now runs offline as well!
 ---------------
 **Extra notes:**
 - don't expect this application to not be a buggy mess. as OCD-pleasing the mod may be, it's not bug-pleasing.
