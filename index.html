@@ -188,6 +188,16 @@
     <div id="countryList" style="display: flex; flex-direction: column; gap: 3px; max-height: 250px; overflow-y: auto; border: 1px solid #333; padding: 4px; border-radius: 4px; background: #111; margin-bottom: 8px;">
     </div>
     
+    <!-- Create Country Tag Panel -->
+    <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #333; display: flex; flex-direction: column; gap: 4px; font-family: sans-serif; font-size: 12px; color: white;">
+        <div style="font-weight: bold; color: #28a745;">Create Country Tag</div>
+        <div style="display: flex; gap: 4px; align-items: center;">
+            <input type="text" id="newCountryTag" placeholder="TAG" class="glass-input" style="width: 50px; text-transform: uppercase; font-family: monospace;" maxlength="3">
+            <input type="text" id="newCountryName" placeholder="Country Name" class="glass-input" style="flex: 1;">
+            <button onclick="createNewCountryFromUI()" style="background: #28a745; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 11px; transition: all 0.2s;">Create</button>
+        </div>
+    </div>
+    
     <!-- Selection Status -->
     <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #333; display: flex; flex-direction: column; gap: 4px; font-family: sans-serif; font-size: 12px; color: white;">
         <div style="font-weight: bold; color: #007bff;">Selection Status</div>
@@ -857,6 +867,62 @@ function renameCountry(color, newName) {
     clearLabelCache();
     requestDraw();
 }
+
+function createNewCountryFromUI() {
+    const tagInput = document.getElementById("newCountryTag");
+    const nameInput = document.getElementById("newCountryName");
+    if (!tagInput || !nameInput) return;
+    
+    const tag = tagInput.value.trim().toUpperCase();
+    const name = nameInput.value.trim();
+    
+    if (!tag || tag.length !== 3) {
+        alert("Country Tag must be exactly 3 characters!");
+        return;
+    }
+    if (!name) {
+        alert("Please enter a Country Name!");
+        return;
+    }
+    
+    if (countries[tag]) {
+        alert(`Country tag '${tag}' already exists (${countries[tag].name})!`);
+        return;
+    }
+    
+    // Generate distinct random color
+    const r = Math.floor(Math.random() * 200) + 40;
+    const g = Math.floor(Math.random() * 200) + 40;
+    const b = Math.floor(Math.random() * 200) + 40;
+    const color = [r, g, b];
+    
+    countries[tag] = {
+        tag: tag,
+        name: name,
+        color: color,
+        labelOffset: 0,
+        labelXOffset: 0,
+        labelArcShift: 0,
+        curvatureScale: 1.0,
+        fontSizeScale: 1.0,
+        labelRotation: 0,
+        labelStretch: 1.0,
+        provinces: new Set(),
+        spines: []
+    };
+    
+    COLORS[tag] = color;
+    dirtyCountries.add(tag);
+    
+    updateLutData();
+    updateCountryList();
+    selectCountry(tag);
+    
+    tagInput.value = "";
+    nameInput.value = "";
+    
+    alert(`Successfully created country ${name} [${tag}]!`);
+}
 function setCountryTag(color, tag) {
     if (!countries[color]) return;
     countries[color].tag = tag;
@@ -1245,18 +1311,46 @@ const fsSource = `
             float provOpacity = clamp((u_zoom - 3.0) * 0.35, 0.0, 0.25);
             provBorder = clamp(provBorder * provOpacity, 0.0, 1.0);
             
-            float stateHash = floor(lutColor.a * 255.0 + 0.5);
-            #define GET_STATE_HASH(nIdx) floor(texture2D(u_lutTexture, vec2((mod(nIdx, u_lutWidth) + 0.5) / u_lutWidth, (floor(nIdx / u_lutWidth) + 0.5) / u_lutHeight)).a * 255.0 + 0.5)
+            float alphaVal = floor(lutColor.a * 255.0 + 0.5);
+            float cHash = floor(alphaVal / 16.0);
+            float sHash = mod(alphaVal, 16.0);
             
-            float sHashL = GET_STATE_HASH(idxL);
-            float sHashR = GET_STATE_HASH(idxR);
-            float sHashD = GET_STATE_HASH(idxD);
-            float sHashU = GET_STATE_HASH(idxU);
+            #define GET_ALPHA_VAL(nIdx) floor(texture2D(u_lutTexture, vec2((mod(nIdx, u_lutWidth) + 0.5) / u_lutWidth, (floor(nIdx / u_lutWidth) + 0.5) / u_lutHeight)).a * 255.0 + 0.5)
             
-            float sDiffL = step(0.5, abs(stateHash - sHashL));
-            float sDiffR = step(0.5, abs(stateHash - sHashR));
-            float sDiffD = step(0.5, abs(stateHash - sHashD));
-            float sDiffU = step(0.5, abs(stateHash - sHashU));
+            float alphaL = GET_ALPHA_VAL(idxL);
+            float alphaR = GET_ALPHA_VAL(idxR);
+            float alphaD = GET_ALPHA_VAL(idxD);
+            float alphaU = GET_ALPHA_VAL(idxU);
+            
+            float cHashL = floor(alphaL / 16.0);
+            float cHashR = floor(alphaR / 16.0);
+            float cHashD = floor(alphaD / 16.0);
+            float cHashU = floor(alphaU / 16.0);
+            
+            float sHashL = mod(alphaL, 16.0);
+            float sHashR = mod(alphaR, 16.0);
+            float sHashD = mod(alphaD, 16.0);
+            float sHashU = mod(alphaU, 16.0);
+            
+            // Check country hash differences (draws borders between countries of the same color)
+            float dHashL = (u_activeMapmode < 0.5) ? step(0.5, abs(cHash - cHashL)) : 0.0;
+            float dHashR = (u_activeMapmode < 0.5) ? step(0.5, abs(cHash - cHashR)) : 0.0;
+            float dHashD = (u_activeMapmode < 0.5) ? step(0.5, abs(cHash - cHashD)) : 0.0;
+            float dHashU = (u_activeMapmode < 0.5) ? step(0.5, abs(cHash - cHashU)) : 0.0;
+
+            // Combine color distance and hash distance for country borders
+            float diffL = clamp(step(0.002, distance(baseCountryColor, countryL)) + dHashL, 0.0, 1.0);
+            float diffR = clamp(step(0.002, distance(baseCountryColor, countryR)) + dHashR, 0.0, 1.0);
+            float diffD = clamp(step(0.002, distance(baseCountryColor, countryD)) + dHashD, 0.0, 1.0);
+            float diffU = clamp(step(0.002, distance(baseCountryColor, countryU)) + dHashU, 0.0, 1.0);
+            
+            float countryBorder = (diffL + diffR + diffD + diffU) * 0.45;
+            countryBorder = clamp(countryBorder, 0.0, 1.0);
+            
+            float sDiffL = step(0.5, abs(sHash - sHashL));
+            float sDiffR = step(0.5, abs(sHash - sHashR));
+            float sDiffD = step(0.5, abs(sHash - sHashD));
+            float sDiffU = step(0.5, abs(sHash - sHashU));
             
             float stateBorder = (sDiffL + sDiffR + sDiffD + sDiffU) * 0.30;
             stateBorder = clamp(stateBorder, 0.0, 1.0);
@@ -1575,7 +1669,7 @@ function initApp() {
         for (const k in countries) delete countries[k];
         for (const k in COLORS) delete COLORS[k];
         
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                for (const tag in presetData.countries) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                for (const tag in presetData.countries) {
             const c = presetData.countries[tag];
             const base = BASE_COUNTRY_PRESETS[tag] || {};
             countries[tag] = {
@@ -2341,18 +2435,32 @@ function updateLutData() {
         }
     }
     
-    // Populate state hashes in the alpha channel for border detection (if not in interest mapmode)
+    // Populate packed country and state hashes in the alpha channel for border detection (if not in interest mapmode)
     if (activeMapmode !== "interest") {
         for (let i = 0; i < lutWidth * lutHeight; i++) {
             lutData[i * 4 + 3] = 0;
         }
-        for (const provIdStr in provinceToState) {
-            const provId = parseInt(provIdStr);
-            const stateId = provinceToState[provId];
-            if (stateId !== undefined && provinceCenters[provId]) {
-                const idx = provinceCenters[provId].index;
-                const hash = (stateId % 254) + 1;
-                lutData[idx * 4 + 3] = hash;
+        const getCountryHash = (tag) => {
+            if (!tag) return 0;
+            let h = 0;
+            for (let i = 0; i < tag.length; i++) {
+                h = (h * 31 + tag.charCodeAt(i)) & 0xFFFFFFFF;
+            }
+            return (Math.abs(h) % 15) + 1; // 1 to 15
+        };
+        for (const keyStr in provinceCenters) {
+            const provId = parseInt(keyStr);
+            const center = provinceCenters[keyStr];
+            if (center) {
+                const idx = center.index;
+                const tag = ownership[provId];
+                const stateId = provinceToState[provId];
+                
+                const cHash = tag ? getCountryHash(tag) : 0;
+                const sHash = stateId !== undefined ? (stateId % 15) + 1 : 0;
+                
+                // Pack countryHash (upper 4 bits) and stateHash (lower 4 bits)
+                lutData[idx * 4 + 3] = cHash * 16 + sHash;
             }
         }
     } else {
