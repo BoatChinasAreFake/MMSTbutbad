@@ -1293,14 +1293,7 @@ const fsSource = `
             vec3 countryD = GET_COUNTRY(idxD);
             vec3 countryU = GET_COUNTRY(idxU);
             
-            float diffL = step(0.002, distance(baseCountryColor, countryL));
-            float diffR = step(0.002, distance(baseCountryColor, countryR));
-            float diffD = step(0.002, distance(baseCountryColor, countryD));
-            float diffU = step(0.002, distance(baseCountryColor, countryU));
-            
-            // Average neighbor difference to achieve smooth anti-aliased border edges
-            float countryBorder = (diffL + diffR + diffD + diffU) * 0.45;
-            countryBorder = clamp(countryBorder, 0.0, 1.0);
+
             
             float pDiffL = step(0.5, abs(idx - idxL));
             float pDiffR = step(0.5, abs(idx - idxR));
@@ -1669,7 +1662,7 @@ function initApp() {
         for (const k in countries) delete countries[k];
         for (const k in COLORS) delete COLORS[k];
         
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                for (const tag in presetData.countries) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        for (const tag in presetData.countries) {
             const c = presetData.countries[tag];
             const base = BASE_COUNTRY_PRESETS[tag] || {};
             countries[tag] = {
