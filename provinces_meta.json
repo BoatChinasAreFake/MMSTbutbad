@@ -1,5 +1,5 @@
 {
-  "province_count": 21175,
+  "province_count": 21177,
   "definitions": {
     "1": {
       "color": [
@@ -232925,6 +232925,28 @@
       "type": "land",
       "terrain": "plains",
       "detailed_terrain": "flatlands"
+    },
+    "21176": {
+      "color": [
+        182,
+        109,
+        80
+      ],
+      "name": "Province 21176",
+      "type": "land",
+      "terrain": "plains",
+      "detailed_terrain": "flatlands"
+    },
+    "21177": {
+      "color": [
+        143,
+        130,
+        65
+      ],
+      "name": "Province 21177",
+      "type": "land",
+      "terrain": "plains",
+      "detailed_terrain": "flatlands"
     }
   },
   "centers": {
@@ -276526,9 +276548,9 @@
     },
     "6229": {
       "index": 6229,
-      "x": 3116.0,
-      "y": 613.4,
-      "count": 223,
+      "x": 3115.9,
+      "y": 613.6,
+      "count": 214,
       "is_water": false
     },
     "6230": {
@@ -381151,6 +381173,20 @@
       "y": 715.6,
       "count": 19,
       "index": 21175,
+      "is_water": false
+    },
+    "21176": {
+      "x": 3111.8,
+      "y": 608.2,
+      "count": 4,
+      "index": 21176,
+      "is_water": false
+    },
+    "21177": {
+      "x": 3122.2,
+      "y": 608.4,
+      "count": 5,
+      "index": 21177,
       "is_water": false
     }
   },
@@ -542116,6 +542152,8 @@
     "21172": [],
     "21173": [],
     "21174": [],
-    "21175": []
+    "21175": [],
+    "21176": [],
+    "21177": []
   }
 }
