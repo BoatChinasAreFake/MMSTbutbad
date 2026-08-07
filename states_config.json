@@ -1,7 +1,7 @@
 {
   "1": {
     "id": 1,
-    "name": "Baden-Württemberg",
+    "name": "Baden-W\u00fcrttemberg",
     "color": [
       157,
       215,
@@ -359,7 +359,7 @@
   },
   "10": {
     "id": 10,
-    "name": "Thüringen",
+    "name": "Th\u00fcringen",
     "color": [
       198,
       145,
@@ -7007,7 +7007,7 @@
   },
   "219": {
     "id": 219,
-    "name": "Amapá",
+    "name": "Amap\u00e1",
     "color": [
       78,
       52,
@@ -7025,7 +7025,7 @@
   },
   "220": {
     "id": 220,
-    "name": "Pará",
+    "name": "Par\u00e1",
     "color": [
       105,
       145,
@@ -7143,7 +7143,7 @@
   },
   "224": {
     "id": 224,
-    "name": "Rondônia",
+    "name": "Rond\u00f4nia",
     "color": [
       143,
       233,
@@ -7217,7 +7217,7 @@
   },
   "227": {
     "id": 227,
-    "name": "Goiás",
+    "name": "Goi\u00e1s",
     "color": [
       205,
       122,
@@ -7236,7 +7236,7 @@
   },
   "228": {
     "id": 228,
-    "name": "Brasília",
+    "name": "Bras\u00edlia",
     "color": [
       231,
       211,
@@ -7263,7 +7263,7 @@
   },
   "230": {
     "id": 230,
-    "name": "Maranhão",
+    "name": "Maranh\u00e3o",
     "color": [
       128,
       106,
@@ -7324,7 +7324,7 @@
   },
   "234": {
     "id": 234,
-    "name": "Paraíba",
+    "name": "Para\u00edba",
     "color": [
       112,
       159,
@@ -7422,7 +7422,7 @@
   },
   "239": {
     "id": 239,
-    "name": "Espírito Santo",
+    "name": "Esp\u00edrito Santo",
     "color": [
       72,
       69,
@@ -7456,7 +7456,7 @@
   },
   "241": {
     "id": 241,
-    "name": "São Paolo",
+    "name": "S\u00e3o Paolo",
     "color": [
       177,
       143,
@@ -7490,7 +7490,7 @@
   },
   "242": {
     "id": 242,
-    "name": "Paraná",
+    "name": "Paran\u00e1",
     "color": [
       194,
       125,

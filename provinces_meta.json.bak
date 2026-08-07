@@ -1,5 +1,5 @@
 {
-  "province_count": 21179,
+  "province_count": 21181,
   "definitions": {
     "1": {
       "color": [
@@ -232969,6 +232969,28 @@
       "type": "land",
       "terrain": "plains",
       "detailed_terrain": "flatlands"
+    },
+    "21180": {
+      "color": [
+        159,
+        37,
+        85
+      ],
+      "name": "Province 21180",
+      "type": "land",
+      "terrain": "plains",
+      "detailed_terrain": "flatlands"
+    },
+    "21181": {
+      "color": [
+        105,
+        58,
+        210
+      ],
+      "name": "Province 21181",
+      "type": "land",
+      "terrain": "plains",
+      "detailed_terrain": "flatlands"
     }
   },
   "centers": {
@@ -265363,9 +265385,9 @@
     },
     "4628": {
       "index": 4628,
-      "x": 2989.5,
-      "y": 554.5,
-      "count": 80,
+      "x": 2989.8,
+      "y": 555.9,
+      "count": 56,
       "is_water": false
     },
     "4629": {
@@ -269838,7 +269860,7 @@
       "index": 5267,
       "x": 3049.0,
       "y": 632.0,
-      "count": 11522,
+      "count": 11523,
       "is_water": true
     },
     "5268": {
@@ -270151,9 +270173,9 @@
     },
     "5312": {
       "index": 5312,
-      "x": 3026.9,
-      "y": 577.7,
-      "count": 15,
+      "x": 3025.7,
+      "y": 578.2,
+      "count": 10,
       "is_water": false
     },
     "5313": {
@@ -381212,17 +381234,31 @@
       "is_water": false
     },
     "21178": {
-      "x": 3037.6,
-      "y": 615.3,
-      "count": 15,
+      "x": 3037.7,
+      "y": 615.4,
+      "count": 14,
       "index": 21178,
       "is_water": false
     },
     "21179": {
       "x": 3035.5,
-      "y": 614.0,
+      "y": 615.0,
       "count": 2,
       "index": 21179,
+      "is_water": false
+    },
+    "21180": {
+      "x": 2989.0,
+      "y": 551.4,
+      "count": 24,
+      "index": 21180,
+      "is_water": false
+    },
+    "21181": {
+      "x": 3029.2,
+      "y": 576.6,
+      "count": 5,
+      "index": 21181,
       "is_water": false
     }
   },
@@ -542192,6 +542228,8 @@
     "21176": [],
     "21177": [],
     "21178": [],
-    "21179": []
+    "21179": [],
+    "21180": [],
+    "21181": []
   }
 }
