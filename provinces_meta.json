@@ -1,5 +1,5 @@
 {
-  "province_count": 21177,
+  "province_count": 21181,
   "definitions": {
     "1": {
       "color": [
@@ -232947,6 +232947,50 @@
       "type": "land",
       "terrain": "plains",
       "detailed_terrain": "flatlands"
+    },
+    "21178": {
+      "color": [
+        182,
+        78,
+        145
+      ],
+      "name": "Province 21178",
+      "type": "land",
+      "terrain": "plains",
+      "detailed_terrain": "flatlands"
+    },
+    "21179": {
+      "color": [
+        175,
+        170,
+        140
+      ],
+      "name": "Province 21179",
+      "type": "land",
+      "terrain": "plains",
+      "detailed_terrain": "flatlands"
+    },
+    "21180": {
+      "color": [
+        159,
+        37,
+        85
+      ],
+      "name": "Province 21180",
+      "type": "land",
+      "terrain": "plains",
+      "detailed_terrain": "flatlands"
+    },
+    "21181": {
+      "color": [
+        105,
+        58,
+        210
+      ],
+      "name": "Province 21181",
+      "type": "land",
+      "terrain": "plains",
+      "detailed_terrain": "flatlands"
     }
   },
   "centers": {
@@ -265341,9 +265385,9 @@
     },
     "4628": {
       "index": 4628,
-      "x": 2989.5,
-      "y": 554.5,
-      "count": 80,
+      "x": 2989.8,
+      "y": 555.9,
+      "count": 56,
       "is_water": false
     },
     "4629": {
@@ -270129,9 +270173,9 @@
     },
     "5312": {
       "index": 5312,
-      "x": 3026.9,
-      "y": 577.7,
-      "count": 15,
+      "x": 3025.7,
+      "y": 578.2,
+      "count": 10,
       "is_water": false
     },
     "5313": {
@@ -276674,9 +276718,9 @@
     },
     "6247": {
       "index": 6247,
-      "x": 3040.1,
-      "y": 613.2,
-      "count": 71,
+      "x": 3040.9,
+      "y": 612.6,
+      "count": 55,
       "is_water": false
     },
     "6248": {
@@ -381187,6 +381231,34 @@
       "y": 608.4,
       "count": 5,
       "index": 21177,
+      "is_water": false
+    },
+    "21178": {
+      "x": 3037.7,
+      "y": 615.4,
+      "count": 14,
+      "index": 21178,
+      "is_water": false
+    },
+    "21179": {
+      "x": 3035.5,
+      "y": 615.0,
+      "count": 2,
+      "index": 21179,
+      "is_water": false
+    },
+    "21180": {
+      "x": 2989.0,
+      "y": 551.4,
+      "count": 24,
+      "index": 21180,
+      "is_water": false
+    },
+    "21181": {
+      "x": 3029.2,
+      "y": 576.6,
+      "count": 5,
+      "index": 21181,
       "is_water": false
     }
   },
@@ -542154,6 +542226,10 @@
     "21174": [],
     "21175": [],
     "21176": [],
-    "21177": []
+    "21177": [],
+    "21178": [],
+    "21179": [],
+    "21180": [],
+    "21181": []
   }
 }

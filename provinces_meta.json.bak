@@ -1,5 +1,5 @@
 {
-  "province_count": 21175,
+  "province_count": 21179,
   "definitions": {
     "1": {
       "color": [
@@ -232925,6 +232925,50 @@
       "type": "land",
       "terrain": "plains",
       "detailed_terrain": "flatlands"
+    },
+    "21176": {
+      "color": [
+        182,
+        109,
+        80
+      ],
+      "name": "Province 21176",
+      "type": "land",
+      "terrain": "plains",
+      "detailed_terrain": "flatlands"
+    },
+    "21177": {
+      "color": [
+        143,
+        130,
+        65
+      ],
+      "name": "Province 21177",
+      "type": "land",
+      "terrain": "plains",
+      "detailed_terrain": "flatlands"
+    },
+    "21178": {
+      "color": [
+        182,
+        78,
+        145
+      ],
+      "name": "Province 21178",
+      "type": "land",
+      "terrain": "plains",
+      "detailed_terrain": "flatlands"
+    },
+    "21179": {
+      "color": [
+        175,
+        170,
+        140
+      ],
+      "name": "Province 21179",
+      "type": "land",
+      "terrain": "plains",
+      "detailed_terrain": "flatlands"
     }
   },
   "centers": {
@@ -269794,7 +269838,7 @@
       "index": 5267,
       "x": 3049.0,
       "y": 632.0,
-      "count": 11523,
+      "count": 11522,
       "is_water": true
     },
     "5268": {
@@ -276526,9 +276570,9 @@
     },
     "6229": {
       "index": 6229,
-      "x": 3116.0,
-      "y": 613.4,
-      "count": 223,
+      "x": 3115.9,
+      "y": 613.6,
+      "count": 214,
       "is_water": false
     },
     "6230": {
@@ -276652,9 +276696,9 @@
     },
     "6247": {
       "index": 6247,
-      "x": 3040.1,
-      "y": 613.2,
-      "count": 71,
+      "x": 3040.9,
+      "y": 612.6,
+      "count": 55,
       "is_water": false
     },
     "6248": {
@@ -381151,6 +381195,34 @@
       "y": 715.6,
       "count": 19,
       "index": 21175,
+      "is_water": false
+    },
+    "21176": {
+      "x": 3111.8,
+      "y": 608.2,
+      "count": 4,
+      "index": 21176,
+      "is_water": false
+    },
+    "21177": {
+      "x": 3122.2,
+      "y": 608.4,
+      "count": 5,
+      "index": 21177,
+      "is_water": false
+    },
+    "21178": {
+      "x": 3037.6,
+      "y": 615.3,
+      "count": 15,
+      "index": 21178,
+      "is_water": false
+    },
+    "21179": {
+      "x": 3035.5,
+      "y": 614.0,
+      "count": 2,
+      "index": 21179,
       "is_water": false
     }
   },
@@ -542116,6 +542188,10 @@
     "21172": [],
     "21173": [],
     "21174": [],
-    "21175": []
+    "21175": [],
+    "21176": [],
+    "21177": [],
+    "21178": [],
+    "21179": []
   }
 }

@@ -337,6 +337,11 @@
             <span id="selectedProvincesCount" style="font-family: monospace; font-size: 11px; background: rgba(50, 205, 50, 0.2); padding: 2px 6px; border-radius: 4px;">0 selected</span>
         </div>
         
+        <div>
+            <input type="text" id="stateSearchInput" placeholder="Search state by name or ID..." class="glass-input" style="width: 100%; box-sizing: border-box;" oninput="filterStatesList(this.value)" onfocus="filterStatesList(this.value)">
+            <div id="statesSearchResults" style="display: none; max-height: 120px; overflow-y: auto; border: 1px solid #444; border-radius: 4px; background: #111; padding: 2px; margin-top: 2px; margin-bottom: 4px;"></div>
+        </div>
+        
         <div style="display: flex; flex-direction: column; gap: 4px;">
             <div>
                 <label style="display: block; margin-bottom: 2px; font-size: 11px; color: #aaa;">State ID (numeric):</label>
@@ -344,17 +349,27 @@
             </div>
             <div>
                 <label style="display: block; margin-bottom: 2px; font-size: 11px; color: #aaa;">State Name:</label>
-                <input type="text" id="stateNameInput" style="width: 100%; background: #222; border: 1px solid #444; color: white; padding: 4px; border-radius: 4px; box-sizing: border-box; font-size: 11px;">
+                <input type="text" id="stateNameInput" style="width: 100%; background: #222; border: 1px solid #444; color: white; padding: 4px; border-radius: 4px; box-sizing: border-box; font-size: 11px;" oninput="handleStateRename(this.value)">
             </div>
         </div>
         
-        <div style="display: flex; gap: 4px; margin-top: 2px;">
-            <button onclick="createStateFromSelection()" style="flex: 1; background: #28a745; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
-                Create State
-            </button>
-            <button onclick="clearStateFromSelection()" style="flex: 1; background: #dc3545; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
-                Clear State
-            </button>
+        <div style="display: flex; flex-direction: column; gap: 4px; margin-top: 2px;">
+            <div style="display: flex; gap: 4px;">
+                <button onclick="createStateFromSelection()" style="flex: 1; background: #28a745; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;" title="Create a new state from current selection">
+                    Create State
+                </button>
+                <button onclick="addSelectedToState()" style="flex: 1.2; background: #17a2b8; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;" title="Add selected provinces to this state">
+                    Add Selected
+                </button>
+            </div>
+            <div style="display: flex; gap: 4px;">
+                <button onclick="removeSelectedFromState()" style="flex: 1.2; background: #6c757d; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;" title="Remove selected provinces from their states">
+                    Remove Selected
+                </button>
+                <button onclick="deleteState()" style="flex: 0.8; background: #dc3545; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;" title="Delete this state completely">
+                    Delete State
+                </button>
+            </div>
         </div>
         
         <div style="display: flex; gap: 4px;">
@@ -1165,6 +1180,195 @@ function reorderStateIDs() {
     alert(`Successfully reordered ${sortedIds.length} states sequentially from 1 to ${newId - 1}!`);
 }
 
+function handleStateRename(name) {
+    const idVal = document.getElementById("stateIdInput").value.trim();
+    if (!idVal) return;
+    const stateId = parseInt(idVal);
+    if (states[stateId]) {
+        states[stateId].name = name;
+    }
+}
+
+function addSelectedToState() {
+    const idVal = document.getElementById("stateIdInput").value.trim();
+    if (!idVal) {
+        alert("Please enter or select a State ID first!");
+        return;
+    }
+    const stateId = parseInt(idVal);
+    if (!states[stateId]) {
+        alert(`State ID ${stateId} does not exist. Use "Create State" first.`);
+        return;
+    }
+    if (selectedProvinces.size === 0) {
+        alert("No provinces selected to add!");
+        return;
+    }
+    
+    for (const provId of selectedProvinces) {
+        const oldStateId = provinceToState[provId];
+        if (oldStateId !== undefined && states[oldStateId]) {
+            states[oldStateId].provinces.delete(provId);
+        }
+        states[stateId].provinces.add(provId);
+        provinceToState[provId] = stateId;
+    }
+    
+    updateLutData();
+    clearSelection();
+    alert(`Added ${selectedProvinces.size} provinces to state '${states[stateId].name}' [${stateId}]`);
+}
+
+function removeSelectedFromState() {
+    if (selectedProvinces.size === 0) {
+        alert("No provinces selected to remove!");
+        return;
+    }
+    
+    let count = 0;
+    for (const provId of selectedProvinces) {
+        const stateId = provinceToState[provId];
+        if (stateId !== undefined && states[stateId]) {
+            states[stateId].provinces.delete(provId);
+            delete provinceToState[provId];
+            count++;
+        }
+    }
+    
+    updateLutData();
+    clearSelection();
+    alert(`Removed ${count} provinces from their states.`);
+}
+
+function deleteState() {
+    const idVal = document.getElementById("stateIdInput").value.trim();
+    if (!idVal) {
+        alert("Please enter or select a State ID first!");
+        return;
+    }
+    const stateId = parseInt(idVal);
+    if (!states[stateId]) {
+        alert(`State ID ${stateId} does not exist.`);
+        return;
+    }
+    
+    if (confirm(`Are you sure you want to delete state '${states[stateId].name}' [${stateId}]?`)) {
+        for (const provId of states[stateId].provinces) {
+            delete provinceToState[provId];
+        }
+        delete states[stateId];
+        
+        document.getElementById("stateNameInput").value = "";
+        
+        updateLutData();
+        clearSelection();
+        alert(`State ${stateId} deleted.`);
+    }
+}
+
+function filterStatesList(query) {
+    const resultsContainer = document.getElementById("statesSearchResults");
+    if (!resultsContainer) return;
+    
+    resultsContainer.innerHTML = "";
+    const cleanQuery = query.toLowerCase().trim();
+    
+    const matched = [];
+    for (const stateId in states) {
+        const s = states[stateId];
+        if (!cleanQuery || s.name.toLowerCase().includes(cleanQuery) || stateId.includes(cleanQuery)) {
+            matched.push(s);
+        }
+    }
+    
+    if (matched.length === 0) {
+        resultsContainer.style.display = "none";
+        return;
+    }
+    
+    resultsContainer.style.display = "block";
+    for (const s of matched) {
+        const div = document.createElement("div");
+        div.style.padding = "4px";
+        div.style.cursor = "pointer";
+        div.style.borderBottom = "1px solid #222";
+        div.style.fontSize = "11px";
+        div.style.color = "#eee";
+        div.innerText = `[${s.id}] ${s.name} (${s.provinces.size} provs)`;
+        
+        div.onmouseover = () => div.style.background = "#333";
+        div.onmouseout = () => div.style.background = "none";
+        div.onclick = () => selectStateFromSearch(s.id);
+        
+        resultsContainer.appendChild(div);
+    }
+}
+
+function selectStateFromSearch(stateId) {
+    const resultsContainer = document.getElementById("statesSearchResults");
+    const searchInput = document.getElementById("stateSearchInput");
+    
+    if (resultsContainer) resultsContainer.style.display = "none";
+    if (searchInput) searchInput.value = "";
+    
+    document.getElementById("stateIdInput").value = stateId;
+    document.getElementById("stateNameInput").value = states[stateId].name;
+    
+    // Clear selection and select this state's provinces
+    selectedProvinces.clear();
+    for (const p of states[stateId].provinces) {
+        selectedProvinces.add(p);
+    }
+    updateSelectionStatus();
+    draw();
+}
+
+// Hide state search results when clicking elsewhere
+document.addEventListener("click", (e) => {
+    const container = document.getElementById("statesSearchResults");
+    const input = document.getElementById("stateSearchInput");
+    if (container && input && e.target !== input && !container.contains(e.target)) {
+        container.style.display = "none";
+    }
+});
+
+function addSelectedToHoveredState() {
+    const [mapX, mapY] = screenToMap(currentMouseX, currentMouseY);
+    const provId = getProvinceIdAt(mapX, mapY);
+    if (!provId || provId === 0) return;
+    
+    const stateId = provinceToState[provId];
+    if (stateId === undefined || !states[stateId]) {
+        alert("Hovered province does not belong to any state!");
+        return;
+    }
+    
+    if (selectedProvinces.size === 0) {
+        // If nothing is selected, select the hovered state (like middle-click)
+        selectedProvinces.clear();
+        for (const p of states[stateId].provinces) {
+            selectedProvinces.add(p);
+        }
+        document.getElementById("stateIdInput").value = stateId;
+        document.getElementById("stateNameInput").value = states[stateId].name;
+        updateSelectionStatus();
+        draw();
+    } else {
+        // Add selected provinces to the hovered state
+        for (const p of selectedProvinces) {
+            const oldStateId = provinceToState[p];
+            if (oldStateId !== undefined && states[oldStateId]) {
+                states[oldStateId].provinces.delete(p);
+            }
+            states[stateId].provinces.add(p);
+            provinceToState[p] = stateId;
+        }
+        updateLutData();
+        clearSelection();
+        alert(`Added provinces to state '${states[stateId].name}' [${stateId}]`);
+    }
+}
+
 function compileShader(gl, source, type) {
     const shader = gl.createShader(type);
     gl.shaderSource(shader, source);
@@ -1674,7 +1878,7 @@ function initApp() {
         for (const k in countries) delete countries[k];
         for (const k in COLORS) delete COLORS[k];
         
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        for (const tag in presetData.countries) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                for (const tag in presetData.countries) {
             const c = presetData.countries[tag];
             const base = BASE_COUNTRY_PRESETS[tag] || {};
             countries[tag] = {
@@ -2733,7 +2937,8 @@ window.addEventListener("mouseup", e => {
 			deferredWorkerResponses = [];
 		}
 
-		if (e.button === 2) {
+		if (e.button === 2) { // Right click country selection helper
+			e.preventDefault();
 			const dx = e.clientX - startPanX;
 			const dy = e.clientY - startPanY;
 			if (Math.hypot(dx, dy) < 5) {
@@ -2742,12 +2947,37 @@ window.addEventListener("mouseup", e => {
 				if (provId && provId !== 0) {
 					const tag = ownership[provId];
 					if (tag) {
-						selectCountry(tag);
+						if (e.ctrlKey && e.shiftKey) {
+							// Ctrl + Shift + Right-Click: Add all provinces of the country to selection
+							const countryObj = countries[tag];
+							if (countryObj) {
+								for (const p of countryObj.provinces) {
+									selectedProvinces.add(p);
+								}
+								updateSelectionStatus();
+								draw();
+							}
+						} else if (e.shiftKey) {
+							// Shift + Right-Click: Select all provinces of the country (replace selection)
+							const countryObj = countries[tag];
+							if (countryObj) {
+								selectedProvinces.clear();
+								for (const p of countryObj.provinces) {
+									selectedProvinces.add(p);
+								}
+								updateSelectionStatus();
+								draw();
+							}
+						} else {
+							// Plain Right-Click: Select country color brush
+							selectCountry(tag);
+						}
 					}
 				}
 			}
 		}
 		if (e.button === 1) { // Middle click handler (plain or Ctrl + middle click)
+			e.preventDefault();
 			const dx = e.clientX - startPanX;
 			const dy = e.clientY - startPanY;
 			if (Math.hypot(dx, dy) < 5) {
@@ -2795,6 +3025,24 @@ window.addEventListener("mouseup", e => {
 								}
 								updateSelectionStatus();
 								draw();
+							} else if (e.shiftKey) {
+								// Shift + Middle-Click: Add all selected provinces to this clicked state!
+								if (selectedProvinces.size > 0) {
+									const count = selectedProvinces.size;
+									for (const p of selectedProvinces) {
+										const oldStateId = provinceToState[p];
+										if (oldStateId !== undefined && states[oldStateId]) {
+											states[oldStateId].provinces.delete(p);
+										}
+										states[stateId].provinces.add(p);
+										provinceToState[p] = stateId;
+									}
+									updateLutData();
+									clearSelection();
+									alert(`Successfully added ${count} provinces to state '${states[stateId].name}' [${stateId}]`);
+								} else {
+									alert("No provinces selected to add to this state!");
+								}
 							} else {
 								// Plain Middle-Click: Select only this state
 								selectedProvinces.clear();
@@ -2936,6 +3184,42 @@ window.addEventListener("mouseup", e => {
 });
 
 canvas.addEventListener("contextmenu", e => e.preventDefault());
+
+// Double-click to select all provinces of a country (bypasses browser shift-right-click context menu override)
+canvas.addEventListener("dblclick", e => {
+    if (e.button === 0) { // Left double click
+        const [mapX, mapY] = screenToMap(e.clientX, e.clientY);
+        const provId = getProvinceIdAt(mapX, mapY);
+        if (provId && provId !== 0) {
+            const tag = ownership[provId];
+            if (tag) {
+                e.preventDefault();
+                if (e.ctrlKey) {
+                    // Ctrl + Double-Click: Add all provinces of the country to selection
+                    const countryObj = countries[tag];
+                    if (countryObj) {
+                        for (const p of countryObj.provinces) {
+                            selectedProvinces.add(p);
+                        }
+                        updateSelectionStatus();
+                        draw();
+                    }
+                } else {
+                    // Double-Click: Select all provinces of the country (replace selection)
+                    const countryObj = countries[tag];
+                    if (countryObj) {
+                        selectedProvinces.clear();
+                        for (const p of countryObj.provinces) {
+                            selectedProvinces.add(p);
+                        }
+                        updateSelectionStatus();
+                        draw();
+                    }
+                }
+            }
+        }
+    }
+});
 
 canvas.addEventListener("wheel", e => {
 	const rect = canvas.getBoundingClientRect();
