@@ -90,6 +90,7 @@ def main():
             countries[tag] = {
                 tag: tag,
                 name: c.name,
+                fullName: c.fullName || "",
                 color: c.color,
                 labelOffset: c.labelOffset !== undefined ? c.labelOffset : (base.labelOffset || 0),
                 labelXOffset: c.labelXOffset !== undefined ? c.labelXOffset : (base.labelXOffset || 0),

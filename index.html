@@ -96,6 +96,55 @@
         ::-webkit-scrollbar-thumb:hover {
             background: rgba(255,255,255,0.2);
         }
+    
+    /* Accordion styles */
+    .accordion-item {
+        border-bottom: 1px solid #333;
+        border-radius: 4px;
+        margin-bottom: 4px;
+        overflow: hidden;
+    }
+    .accordion-header {
+        background: rgba(28, 28, 28, 0.85);
+        color: #eee;
+        cursor: pointer;
+        padding: 8px 10px;
+        font-weight: bold;
+        font-size: 11px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+        transition: background 0.2s;
+        border: 1px solid #333;
+        border-radius: 4px;
+    }
+    .accordion-header:hover {
+        background: rgba(42, 42, 42, 0.9);
+    }
+    .accordion-header::after {
+        content: '▼';
+        font-size: 8px;
+        color: #888;
+        transition: transform 0.2s;
+    }
+    .accordion-header.active::after {
+        transform: rotate(-180deg);
+        color: #28a745;
+    }
+    .accordion-content {
+        display: none;
+        padding: 10px 6px;
+        background: rgba(20, 20, 20, 0.5);
+        border: 1px solid #222;
+        border-top: none;
+        border-radius: 0 0 4px 4px;
+    }
+    .accordion-content.show {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
     </style>
 </head>
 <body>
@@ -120,10 +169,7 @@
     
     <button onclick="selectAllProvincesOfSelectedCountry()" class="glass-button">Select Country (C)</button>
     
-    <select id="selSelectionLevel" onchange="setSelectionLevel(this.value)" class="glass-input">
-        <option value="province" style="background: #222; color: white;">Province Level</option>
-        <option value="state" style="background: #222; color: white;">HOI4 State Level</option>
-    </select>
+
     
     <select id="selLogicMode" class="glass-input">
         <option value="replace" style="background: #222; color: white;">Replace Mode (1)</option>
@@ -165,7 +211,7 @@
     position: fixed;
     top: 15px;
     left: 15px;
-    max-height: calc(100vh - 30px);
+    max-height: calc(100vh - 110px);
     overflow-y: auto;
     width: 300px;
     padding: 16px;
@@ -176,239 +222,331 @@
         <span>Map Editor</span>
         <button onclick="toggleSidebar()" style="background: none; border: none; color: #aaa; cursor: pointer; font-size: 16px; font-weight: bold; outline: none;">&times;</button>
     </div>
+    
     <div style="display: flex; gap: 4px; margin-bottom: 8px;">
         <button id="btnEraser" onclick="setEraser()" class="glass-button" style="flex: 1;">Eraser (E)</button>
         <button onclick="resetMap()" class="glass-button" style="flex: 1;">Reset</button>
     </div>
     
-    <div style="margin-bottom: 8px;">
-        <input type="text" id="countrySearch" placeholder="Search countries..." class="glass-input" style="width: 100%; box-sizing: border-box;" oninput="filterCountries()">
-    </div>
-    
-    <div id="countryList" style="display: flex; flex-direction: column; gap: 3px; max-height: 250px; overflow-y: auto; border: 1px solid #333; padding: 4px; border-radius: 4px; background: #111; margin-bottom: 8px;">
-    </div>
-    
-    <!-- Create Country Tag Panel -->
-    <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #333; display: flex; flex-direction: column; gap: 4px; font-family: sans-serif; font-size: 12px; color: white;">
-        <div style="font-weight: bold; color: #28a745;">Create Country Tag</div>
-        <div style="display: flex; gap: 4px; align-items: center;">
-            <input type="text" id="newCountryTag" placeholder="TAG" class="glass-input" style="width: 50px; text-transform: uppercase; font-family: monospace;" maxlength="3">
-            <input type="text" id="newCountryName" placeholder="Country Name" class="glass-input" style="flex: 1;">
-            <button onclick="createNewCountryFromUI()" style="background: #28a745; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 11px; transition: all 0.2s;">Create</button>
+    <div class="accordion">
+        <!-- Section 1: Countries & Brush -->
+        <div class="accordion-item">
+            <div class="accordion-header active" onclick="toggleAccordion(this)">Countries &amp; Brush</div>
+            <div class="accordion-content show">
+                <input type="text" id="countrySearch" placeholder="Search countries..." class="glass-input" style="width: 100%; box-sizing: border-box;" oninput="filterCountries()">
+                <div id="countryList" style="display: flex; flex-direction: column; gap: 3px; max-height: 180px; overflow-y: auto; border: 1px solid #333; padding: 4px; border-radius: 4px; background: #111;"></div>
+                
+                <div style="font-weight: bold; color: #28a745; margin-top: 4px; font-size: 11px;">Create Country Tag</div>
+                <div style="display: flex; gap: 4px; align-items: center;">
+                    <input type="text" id="newCountryTag" placeholder="TAG" class="glass-input" style="width: 45px; text-transform: uppercase; font-family: monospace;" maxlength="3">
+                    <input type="text" id="newCountryName" placeholder="Country Name" class="glass-input" style="flex: 1;">
+                    <button onclick="createNewCountryFromUI()" style="background: #28a745; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 11px; transition: all 0.2s;">Create</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Country Options & Labeling -->
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">Label Styling &amp; Colors</div>
+            <div class="accordion-content">
+                <!-- Official/Short Names Map Toggle -->
+                <label style="display: flex; align-items: center; gap: 6px; font-size: 11px; color: #ffc107; cursor: pointer; margin-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 6px; user-select: none;">
+                    <input type="checkbox" id="chkUseOfficialNames" onchange="toggleMapLabelMode(this.checked)" style="cursor: pointer; accent-color: #ffc107;">
+                    Use Official Names on Map
+                </label>
+                
+                <div style="font-weight: bold; color: #007bff; display: flex; align-items: center; justify-content: space-between;">
+                    <span>Active Country</span>
+                    <span id="activeCountryTag" style="font-family: monospace; font-size: 11px; background: rgba(0, 123, 255, 0.2); padding: 2px 6px; border-radius: 4px;">---</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 4px;">
+                    <span style="font-size: 11px; color: #aaa; width: 50px;">Short:</span>
+                    <input type="text" id="editCountryName" class="glass-input" style="flex: 1;" onchange="handleRenameFromInput(this.value)">
+                </div>
+                <div style="display: flex; align-items: center; gap: 4px; margin-top: 4px;">
+                    <span style="font-size: 11px; color: #aaa; width: 50px;">Full:</span>
+                    <input type="text" id="editCountryFullName" class="glass-input" style="flex: 1;" onchange="handleFullNameRenameFromInput(this.value)">
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                    <div style="display: flex; align-items: center; gap: 4px;">
+                        <span style="font-size: 11px; color: #aaa; width: 60px;">V-Shift:</span>
+                        <input type="range" id="labelOffsetSlider" min="-120" max="120" value="0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleLabelOffsetChange(this.value)">
+                        <span id="labelOffsetDisp" style="font-family: monospace; font-size: 10px; width: 25px; text-align: right;">0</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 4px;">
+                        <span style="font-size: 11px; color: #aaa; width: 60px;">H-Shift:</span>
+                        <input type="range" id="labelXOffsetSlider" min="-120" max="120" value="0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleLabelXOffsetChange(this.value)">
+                        <span id="labelXOffsetDisp" style="font-family: monospace; font-size: 10px; width: 25px; text-align: right;">0</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 4px;">
+                        <span style="font-size: 11px; color: #aaa; width: 60px;">Arc-Shift:</span>
+                        <input type="range" id="labelArcShiftSlider" min="-120" max="120" value="0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleLabelArcShiftChange(this.value)">
+                        <span id="labelArcShiftDisp" style="font-family: monospace; font-size: 10px; width: 25px; text-align: right;">0</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 4px;">
+                        <span style="font-size: 11px; color: #aaa; width: 60px;">Curvature:</span>
+                        <input type="range" id="curvatureScaleSlider" min="0.1" max="4.0" step="0.1" value="1.0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleCurvatureScaleChange(this.value)">
+                        <span id="curvatureScaleDisp" style="font-family: monospace; font-size: 10px; width: 25px; text-align: right;">1.0</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 4px;">
+                        <span style="font-size: 11px; color: #aaa; width: 60px;">Rotation:</span>
+                        <input type="range" id="labelRotationSlider" min="-180" max="180" value="0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleLabelRotationChange(this.value)">
+                        <span id="labelRotationDisp" style="font-family: monospace; font-size: 10px; width: 25px; text-align: right;">0</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 4px;">
+                        <span style="font-size: 11px; color: #aaa; width: 60px;">Font Size:</span>
+                        <input type="range" id="fontSizeScaleSlider" min="0.2" max="3.0" step="0.05" value="1.0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleFontSizeScaleChange(this.value)">
+                        <span id="fontSizeScaleDisp" style="font-family: monospace; font-size: 10px; width: 25px; text-align: right;">1.00</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 4px;">
+                        <span style="font-size: 11px; color: #aaa; width: 60px;">Stretching:</span>
+                        <input type="range" id="labelStretchSlider" min="0.5" max="2.0" step="0.1" value="1.0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleLabelStretchChange(this.value)">
+                        <span id="labelStretchDisp" style="font-family: monospace; font-size: 10px; width: 25px; text-align: right;">1.0</span>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px; margin-top: 4px;">
+                    <span style="font-size: 11px; color: #aaa;">Color:</span>
+                    <input type="color" id="editCountryColor" style="width: 28px; height: 20px; border: none; background: none; cursor: pointer; padding: 0;" onchange="handleRecolourFromPicker(this.value)">
+                    <button onclick="activateColorPickerTool()" class="glass-button" style="flex: 1; font-size: 10px; padding: 2px;">Pick from Map (P)</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Custom States Manager -->
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">States Manager</div>
+            <div class="accordion-content">
+                <div style="font-weight: bold; color: #32cd32; display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px;">
+                    <span>State Creator</span>
+                    <span id="selectedProvincesCount" style="font-family: monospace; font-size: 11px; background: rgba(50, 205, 50, 0.2); padding: 2px 6px; border-radius: 4px;">0 selected</span>
+                </div>
+                <input type="text" id="stateSearchInput" placeholder="Search state by name or ID..." class="glass-input" style="width: 100%; box-sizing: border-box;" oninput="filterStatesList(this.value)" onfocus="filterStatesList(this.value)">
+                <div id="statesSearchResults" style="display: none; max-height: 120px; overflow-y: auto; border: 1px solid #444; border-radius: 4px; background: #111; padding: 2px; margin-top: 2px; margin-bottom: 4px;"></div>
+                
+                <div style="display: flex; flex-direction: column; gap: 4px; margin-top: 4px;">
+                    <div>
+                        <label style="display: block; margin-bottom: 2px; font-size: 11px; color: #aaa;">State ID (numeric):</label>
+                        <input type="number" id="stateIdInput" style="width: 100%; background: #222; border: 1px solid #444; color: white; padding: 4px; border-radius: 4px; box-sizing: border-box; font-size: 11px;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 2px; font-size: 11px; color: #aaa;">State Name:</label>
+                        <input type="text" id="stateNameInput" style="width: 100%; background: #222; border: 1px solid #444; color: white; padding: 4px; border-radius: 4px; box-sizing: border-box; font-size: 11px;" oninput="handleStateRename(this.value)">
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 4px; margin-top: 6px;">
+                    <div style="display: flex; gap: 4px;">
+                        <button onclick="createStateFromSelection()" style="flex: 1; background: #28a745; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;" title="Create a new state from current selection">
+                            Create State
+                        </button>
+                        <button onclick="addSelectedToState()" style="flex: 1.2; background: #17a2b8; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;" title="Add selected provinces to this state">
+                            Add Selected
+                        </button>
+                    </div>
+                    <div style="display: flex; gap: 4px;">
+                        <button onclick="removeSelectedFromState()" style="flex: 1.2; background: #6c757d; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;" title="Remove selected provinces from their states">
+                            Remove Selected
+                        </button>
+                        <button onclick="deleteState()" style="flex: 0.8; background: #dc3545; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;" title="Delete this state completely">
+                            Delete State
+                        </button>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 4px; margin-top: 6px;">
+                    <button onclick="selectStateProvinces()" style="flex: 1; background: #007bff; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">Select State</button>
+                    <button onclick="document.getElementById('stateImportInput').click()" style="flex: 1; background: #17a2b8; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">Import States</button>
+                    <button onclick="exportStatesJSON()" style="flex: 1; background: #ffc107; color: black; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">Export States</button>
+                </div>
+                <button onclick="reorderStateIDs()" style="width: 100%; background: #6c757d; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s; margin-top: 4px;">Reorder State IDs (1, 2, 3...)</button>
+                <input type="file" id="stateImportInput" onchange="importStatesJSONFile(this)" style="display: none;" accept=".json">
+            </div>
+        </div>
+
+        <!-- Section 4: Straits & Adjacencies -->
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">Straits &amp; Adjacencies</div>
+            <div class="accordion-content">
+                <div style="font-weight: bold; color: #00e5ff; display: flex; align-items: center; justify-content: space-between;">
+                    <span>Straits</span>
+                    <span id="selectedStraitsCount" style="font-family: monospace; font-size: 11px; background: rgba(0, 229, 255, 0.2); padding: 2px 6px; border-radius: 4px;">0 total</span>
+                </div>
+                <button onclick="toggleStraitsDisplay(this)" class="glass-button" style="width: 100%;">Show Straits</button>
+                <button onclick="saveStraitsJSON()" class="glass-button" style="width: 100%; background: #00e5ff !important; color: black !important; font-weight: bold !important; margin-top: 4px;">Save Straits</button>
+                <div style="font-size: 9px; color: #888; font-style: italic; line-height: 1.2; margin-top: 4px;">
+                    Select 1 province to view, or 2 to create.
+                </div>
+                <button onclick="exportCSV()" class="glass-button" style="width: 100%; margin-top: 4px;">Export CSV</button>
+            </div>
+        </div>
+
+        <!-- Section 5: Overlays & File Tools -->
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">Overlays &amp; Exporters</div>
+            <div class="accordion-content">
+                <div style="font-weight: bold; color: #ff9500; display: flex; align-items: center; justify-content: space-between;">
+                    <span>National Interest</span>
+                    <span id="interestValueDisp" style="font-family: monospace; font-size: 11px; background: rgba(255, 149, 0, 0.2); padding: 2px 6px; border-radius: 4px;">5</span>
+                </div>
+                <input type="range" id="interestSlider" min="1" max="10" value="5" oninput="document.getElementById('interestValueDisp').innerText = this.value" style="width: 100%; accent-color: #ff9500; cursor: pointer;">
+                <div style="display: flex; gap: 4px; margin-top: 2px;">
+                    <button onclick="paintInterest()" class="glass-button" style="flex: 1.2; background: #ff9500 !important; color: black !important; font-weight: bold !important; border-color: #ff9500 !important;">Paint Interest (I)</button>
+                    <button onclick="clearInterest()" class="glass-button" style="flex: 0.8;">Clear</button>
+                </div>
+                
+                <div style="border-top: 1px solid #333; margin-top: 6px; padding-top: 6px; display: flex; flex-direction: column; gap: 4px;">
+                    <button onclick="saveWorldPreset()" style="background: #007bff; color: white; border: none; padding: 5px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s; width: 100%;">
+                        Save Presets (Ctrl+S)
+                    </button>
+                    <button onclick="document.getElementById('hoi4Panel').style.display='block'" style="background: #28a745; color: white; border: none; padding: 5px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s; width: 100%;">
+                        Open HOI4 State Tools
+                    </button>
+                    <div style="display: flex; gap: 4px; margin-top: 2px;">
+                        <button onclick="saveStartingPreset()" class="glass-button" style="flex: 1; font-size: 10px; background: #007bff !important; color: white !important;">Save Starting Preset</button>
+                        <button onclick="exportWorldJSON()" class="glass-button" style="flex: 1; font-size: 10px;">Export JSON</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    
+
     <!-- Selection Status -->
-    <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #333; display: flex; flex-direction: column; gap: 4px; font-family: sans-serif; font-size: 12px; color: white;">
-        <div style="font-weight: bold; color: #007bff;">Selection Status</div>
-        <div id="selectionStatus" style="font-size: 11px; color: #aaa; font-style: italic;">Selected: 0 provinces</div>
+    <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #333; font-family: sans-serif; font-size: 11px; color: #aaa;">
+        <span style="font-weight: bold; color: #007bff;">Selection Status:</span>
+        <span id="selectionStatus" style="font-style: italic;">Selected: 0 provinces</span>
     </div>
 
-    <!-- National Interest Panel -->
-    <div id="interestPanel" style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #333; display: flex; flex-direction: column; gap: 6px; font-family: sans-serif; font-size: 12px; color: white;">
-        <div style="font-weight: bold; color: #ff9500; display: flex; align-items: center; justify-content: space-between;">
-            <span>National Interest</span>
-            <span id="interestValueDisp" style="font-family: monospace; font-size: 11px; background: rgba(255, 149, 0, 0.2); padding: 2px 6px; border-radius: 4px;">5</span>
-        </div>
-        <div style="display: flex; align-items: center; gap: 8px;">
-            <input type="range" id="interestSlider" min="1" max="10" value="5" oninput="document.getElementById('interestValueDisp').innerText = this.value" style="flex: 1; accent-color: #ff9500; cursor: pointer;">
-        </div>
-        <div style="display: flex; gap: 4px;">
-            <button onclick="paintInterest()" class="glass-button" style="flex: 1.2; background: #ff9500 !important; color: black !important; font-weight: bold !important; border-color: #ff9500 !important;">Paint Interest (I)</button>
-            <button onclick="clearInterest()" class="glass-button" style="flex: 0.8;">Clear</button>
-        </div>
-    </div>
-
-    <!-- Selected Country Panel -->
-    <div id="countryControlsPanel" style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #333; display: flex; flex-direction: column; gap: 6px; font-family: sans-serif; font-size: 12px; color: white;">
-        <div style="font-weight: bold; color: #007bff; display: flex; align-items: center; justify-content: space-between;">
-            <span>Country Options</span>
-            <span id="activeCountryTag" style="font-family: monospace; font-size: 11px; background: rgba(0, 123, 255, 0.2); padding: 2px 6px; border-radius: 4px;">None</span>
-        </div>
-        
-        <div style="display: flex; align-items: center; gap: 8px;">
-            <label style="flex-shrink: 0; width: 60px;">Rename:</label>
-            <input type="text" id="editCountryName" class="glass-input" style="flex: 1;" onchange="handleRenameFromInput(this.value)">
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 8px;">
-            <label style="flex-shrink: 0; width: 60px; font-size: 11px;">V-Shift:</label>
-            <input type="range" id="labelOffsetSlider" min="-100" max="100" value="0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleLabelOffsetChange(this.value)">
-            <span id="labelOffsetDisp" style="font-family: monospace; font-size: 11px; background: rgba(0, 123, 255, 0.2); padding: 2px 4px; border-radius: 4px; width: 24px; text-align: center;">0</span>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 8px;">
-            <label style="flex-shrink: 0; width: 60px; font-size: 11px;">H-Shift:</label>
-            <input type="range" id="labelXOffsetSlider" min="-150" max="150" value="0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleLabelXOffsetChange(this.value)">
-            <span id="labelXOffsetDisp" style="font-family: monospace; font-size: 11px; background: rgba(0, 123, 255, 0.2); padding: 2px 4px; border-radius: 4px; width: 24px; text-align: center;">0</span>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 8px;">
-            <label style="flex-shrink: 0; width: 60px; font-size: 11px;">Arc-Shift:</label>
-            <input type="range" id="labelArcShiftSlider" min="-150" max="150" value="0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleLabelArcShiftChange(this.value)">
-            <span id="labelArcShiftDisp" style="font-family: monospace; font-size: 11px; background: rgba(0, 123, 255, 0.2); padding: 2px 4px; border-radius: 4px; width: 24px; text-align: center;">0</span>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 8px;">
-            <label style="flex-shrink: 0; width: 60px; font-size: 11px;">Curvature:</label>
-            <input type="range" id="curvatureScaleSlider" min="-2.0" max="2.0" step="0.1" value="1.0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleCurvatureScaleChange(this.value)">
-            <span id="curvatureScaleDisp" style="font-family: monospace; font-size: 11px; background: rgba(0, 123, 255, 0.2); padding: 2px 4px; border-radius: 4px; width: 24px; text-align: center;">1.0</span>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 8px;">
-            <label style="flex-shrink: 0; width: 60px; font-size: 11px;">Rotation:</label>
-            <input type="range" id="labelRotationSlider" min="-180" max="180" step="1" value="0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleLabelRotationChange(this.value)">
-            <span id="labelRotationDisp" style="font-family: monospace; font-size: 11px; background: rgba(0, 123, 255, 0.2); padding: 2px 4px; border-radius: 4px; width: 24px; text-align: center;">0</span>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 8px;">
-            <label style="flex-shrink: 0; width: 60px; font-size: 11px;">Font Size:</label>
-            <input type="range" id="fontSizeScaleSlider" min="0.2" max="2.5" step="0.05" value="1.0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleFontSizeScaleChange(this.value)">
-            <span id="fontSizeScaleDisp" style="font-family: monospace; font-size: 11px; background: rgba(0, 123, 255, 0.2); padding: 2px 4px; border-radius: 4px; width: 24px; text-align: center;">1.0</span>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 8px;">
-            <label style="flex-shrink: 0; width: 60px; font-size: 11px;">Stretching:</label>
-            <input type="range" id="labelStretchSlider" min="0.2" max="3.0" step="0.1" value="1.0" style="flex: 1; accent-color: #007bff; cursor: pointer;" oninput="handleLabelStretchChange(this.value)">
-            <span id="labelStretchDisp" style="font-family: monospace; font-size: 11px; background: rgba(0, 123, 255, 0.2); padding: 2px 4px; border-radius: 4px; width: 24px; text-align: center;">1.0</span>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 8px;">
-            <label style="flex-shrink: 0; width: 60px;">Recolour:</label>
-            <input type="color" id="editCountryColor" style="width: 40px; height: 22px; border: none; padding: 0; background: none; cursor: pointer;" oninput="handleRecolourFromPicker(this.value)">
-            <button onclick="activateColorPickerTool()" id="btnColorPickerTool" style="flex: 1; padding: 4px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; cursor: pointer; font-size: 11px; transition: all 0.2s ease;">
-                Pick from Map (P)
-            </button>
-        </div>
-
-        <div style="display: flex; gap: 4px; margin-top: 4px;">
-            <button onclick="saveWorldPreset()" style="flex: 1; padding: 5px; background: #007bff; color: white; border: none; font-weight: bold; border-radius: 4px; cursor: pointer; font-size: 11px; transition: all 0.2s ease;">
-                Save Presets (Ctrl+S)
-            </button>
-        </div>
-        <div style="display: flex; gap: 4px; margin-top: 4px;">
-            <button onclick="document.getElementById('hoi4Panel').style.display = 'block'" style="flex: 1; padding: 5px; background: #28a745; color: white; border: none; font-weight: bold; border-radius: 4px; cursor: pointer; font-size: 11px; transition: all 0.2s ease;">
-                Open HOI4 State Tools
-            </button>
-        </div>
-    </div>
-
-    <!-- Adjacency Panel -->
-    <div id="adjacencyPanel" style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #333; display: flex; flex-direction: column; gap: 6px; font-family: sans-serif; font-size: 12px; color: white;">
-        <div style="font-weight: bold; color: #00bfff; display: flex; align-items: center; justify-content: space-between;">
-            <span>Straits & Adjacencies</span>
-            <span id="selectedStraitsCount" style="font-family: monospace; font-size: 11px; background: rgba(0, 191, 255, 0.2); padding: 2px 6px; border-radius: 4px;">0 total</span>
-        </div>
-        
-        <div style="display: flex; gap: 4px; margin-top: 2px;">
-            <button id="btnToggleStraits" onclick="toggleStraits()" style="flex: 1; background: #007bff; color: white; border: 1px solid rgba(255,255,255,0.1); padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
-                Show Straits
-            </button>
-            <button onclick="saveStraits(true)" style="flex: 1; background: #00bfff; color: black; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
-                Save Straits
-            </button>
-        </div>
-        
-        <div id="straitCreateControls" style="display: none; flex-direction: column; gap: 4px; background: rgba(255,255,255,0.03); padding: 6px; border-radius: 4px; border: 1px dashed rgba(255,255,255,0.1);">
-            <div style="font-weight: bold; font-size: 11px; color: #aaa; margin-bottom: 2px;">Create Strait (2 selected)</div>
-            <div style="display: flex; gap: 4px;">
-                <select id="straitType" style="flex: 1; background: #222; border: 1px solid #444; color: white; padding: 3px; border-radius: 3px; font-size: 11px;">
-                    <option value="sea">Strait (Sea)</option>
-                    <option value="canal">Canal</option>
-                    <option value="land">Land Link</option>
-                </select>
-                <button onclick="addStrait()" style="background: #00bfff; color: black; font-weight: bold; border: none; padding: 4px 8px; border-radius: 3px; cursor: pointer; font-size: 11px;">Add</button>
-            </div>
-        </div>
-
-        <div id="straitList" style="display: flex; flex-direction: column; gap: 4px;">
-            <div style="font-style: italic; color: #666;">Select 1 province to view, or 2 to create.</div>
-        </div>
-
-        <button onclick="exportAdjacenciesCSV()" style="background: rgba(255,255,255,0.05); color: #ccc; border: 1px solid rgba(255,255,255,0.1); padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
-            Export CSV
-        </button>
-    </div>
-
-    <!-- State Tools Panel -->
-    <div id="statePanel" style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #333; display: flex; flex-direction: column; gap: 6px; font-family: sans-serif; font-size: 12px; color: white;">
-        <div style="font-weight: bold; color: #32cd32; display: flex; align-items: center; justify-content: space-between;">
-            <span>State Creator</span>
-            <span id="selectedProvincesCount" style="font-family: monospace; font-size: 11px; background: rgba(50, 205, 50, 0.2); padding: 2px 6px; border-radius: 4px;">0 selected</span>
-        </div>
-        
-        <div>
-            <input type="text" id="stateSearchInput" placeholder="Search state by name or ID..." class="glass-input" style="width: 100%; box-sizing: border-box;" oninput="filterStatesList(this.value)" onfocus="filterStatesList(this.value)">
-            <div id="statesSearchResults" style="display: none; max-height: 120px; overflow-y: auto; border: 1px solid #444; border-radius: 4px; background: #111; padding: 2px; margin-top: 2px; margin-bottom: 4px;"></div>
-        </div>
-        
-        <div style="display: flex; flex-direction: column; gap: 4px;">
-            <div>
-                <label style="display: block; margin-bottom: 2px; font-size: 11px; color: #aaa;">State ID (numeric):</label>
-                <input type="number" id="stateIdInput" style="width: 100%; background: #222; border: 1px solid #444; color: white; padding: 4px; border-radius: 4px; box-sizing: border-box; font-size: 11px;">
-            </div>
-            <div>
-                <label style="display: block; margin-bottom: 2px; font-size: 11px; color: #aaa;">State Name:</label>
-                <input type="text" id="stateNameInput" style="width: 100%; background: #222; border: 1px solid #444; color: white; padding: 4px; border-radius: 4px; box-sizing: border-box; font-size: 11px;" oninput="handleStateRename(this.value)">
-            </div>
-        </div>
-        
-        <div style="display: flex; flex-direction: column; gap: 4px; margin-top: 2px;">
-            <div style="display: flex; gap: 4px;">
-                <button onclick="createStateFromSelection()" style="flex: 1; background: #28a745; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;" title="Create a new state from current selection">
-                    Create State
-                </button>
-                <button onclick="addSelectedToState()" style="flex: 1.2; background: #17a2b8; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;" title="Add selected provinces to this state">
-                    Add Selected
-                </button>
-            </div>
-            <div style="display: flex; gap: 4px;">
-                <button onclick="removeSelectedFromState()" style="flex: 1.2; background: #6c757d; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;" title="Remove selected provinces from their states">
-                    Remove Selected
-                </button>
-                <button onclick="deleteState()" style="flex: 0.8; background: #dc3545; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;" title="Delete this state completely">
-                    Delete State
-                </button>
-            </div>
-        </div>
-        
-        <div style="display: flex; gap: 4px;">
-            <button onclick="selectStateProvinces()" style="flex: 1; background: #007bff; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
-                Select State
-            </button>
-            <button onclick="document.getElementById('stateImportInput').click()" style="flex: 1; background: #17a2b8; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
-                Import States
-            </button>
-            <button onclick="exportStatesJSON()" style="flex: 1; background: #ffc107; color: black; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
-                Export States
-            </button>
-        </div>
-        <div style="display: flex; gap: 4px; margin-top: 2px;">
-            <button onclick="reorderStateIDs()" style="flex: 1; background: #6c757d; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s;">
-                Reorder State IDs (1, 2, 3...)
-            </button>
-        </div>
-        <input type="file" id="stateImportInput" onchange="importStatesJSONFile(this)" style="display: none;" accept=".json">
-    </div>
-
+    <!-- Debug Controls (Compact) -->
     <div id="debugControls" style="
         margin-top:8px;
         color:white;
         font-family:sans-serif;
-        font-size:12px;
+        font-size:11px;
         display:flex;
-        flex-direction:column;
-        gap:2px;
+        flex-direction:row;
+        flex-wrap:wrap;
+        gap:6px;
+        border-top: 1px solid #333;
+        padding-top: 6px;
     ">
         <label><input type="checkbox" id="dbgAxis"> Axis</label>
         <label><input type="checkbox" id="dbgBezier"> Bezier</label>
-        <label><input type="checkbox" id="dbgPoints"> Control Points</label>
-        <label><input type="checkbox" id="dbgPanelToggle" checked> Debug Panel</label>
-        <label><input type="checkbox" id="dbgHeightmap" checked> Heightmap</label>
+        <label><input type="checkbox" id="dbgPoints"> Points</label>
+        <label><input type="checkbox" id="dbgPanelToggle" checked> Info</label>
+        <label><input type="checkbox" id="dbgHeightmap" checked> Height</label>
     </div>
 </div>
 
 <div id="debugPanel"></div>
+    
+<!-- Country Diplomacy Panel -->
+<div id="diplomacyPanel" class="glass-panel" style="
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 290px;
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 30;
+    padding: 14px;
+    box-sizing: border-box;
+    display: none;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 12px;
+">
+    <!-- Header -->
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 6px; margin-bottom: 10px;">
+        <span style="font-weight: bold; letter-spacing: 0.05em; text-transform: uppercase; font-size: 11px; color: #ffc107;">Country Diplomacy</span>
+        <button onclick="closeDiplomacyPanel()" style="background: none; border: none; color: #aaa; cursor: pointer; font-size: 16px; font-weight: bold; outline: none;">&times;</button>
+    </div>
+    
+    <!-- Full-Width Rectangular Flag Frame -->
+    <div id="diploFlagContainer" style="
+        width: 100%; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        margin-bottom: 10px;
+    ">
+        <!-- Fallback styled container when no flag image is found -->
+        <div id="diploFlagFallback" style="
+            width: 100%; 
+            height: 120px; 
+            background: #222; 
+            border-radius: 8px; 
+            border: 2px solid rgba(255, 255, 255, 0.15); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            overflow: hidden; 
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.6), 0 4px 10px rgba(0,0,0,0.3); 
+            position: relative;
+        ">
+            <div id="diploFlagColor" style="position: absolute; inset: 0; opacity: 0.85;"></div>
+            <div id="diploFlagTag" style="position: relative; font-weight: bold; font-family: monospace; font-size: 24px; color: white; text-shadow: 0 2px 5px black; z-index: 2; letter-spacing: 0.1em;">---</div>
+        </div>
+        
+        <!-- Flag Image directly with border and shadow, wrapping it tightly -->
+        <img id="diploFlagImage" style="
+            max-width: 100%; 
+            max-height: 120px; 
+            border-radius: 6px; 
+            border: 2px solid rgba(255, 255, 255, 0.25); 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4); 
+            z-index: 3; 
+            display: none;
+        ">
+    </div>
+    
+    <!-- Country Title & Tag below Flag -->
+    <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; gap: 8px; min-width: 0;">
+        <div id="diploCountryName" style="font-size: 15px; font-weight: bold; text-shadow: 0 1px 3px rgba(0,0,0,0.5); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; min-width: 0;">---</div>
+        <div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0;">
+            <span style="font-size: 9px; color: #aaa; text-transform: uppercase; font-weight: bold;">Tag:</span>
+            <span id="diploCountryTag" style="font-family: monospace; font-size: 10px; background: rgba(255,255,255,0.1); padding: 1px 5px; border-radius: 4px; color: #ffc107;">---</span>
+        </div>
+    </div>
+    
+    <!-- Stats Section -->
+    <div style="display: flex; flex-direction: column; gap: 6px; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; margin-bottom: 12px; font-size: 11px;">
+        <div style="display: flex; justify-content: space-between;">
+            <span style="color: #aaa;">Controlled Provinces:</span>
+            <span id="diploProvincesCount" style="font-weight: bold; font-family: monospace;">---</span>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+            <span style="color: #aaa;">Total Land Area:</span>
+            <span id="diploLandArea" style="font-weight: bold; font-family: monospace;">---</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="color: #aaa;">Brush Color:</span>
+            <div style="display: flex; align-items: center; gap: 4px;">
+                <span id="diploColorIndicator" style="width: 8px; height: 8px; border-radius: 50%; display: inline-block;"></span>
+                <span id="diploColorText" style="font-family: monospace; font-size: 9px;">---</span>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+            <span style="color: #aaa;">Interest Claims on Us:</span>
+            <span id="diploClaimsOnUs" style="font-weight: bold; font-family: monospace; color: #ff9500;">---</span>
+        </div>
+    </div>
+    
+    <!-- Actions with clean HTML-safe entities -->
+    <div style="display: flex; flex-direction: column; gap: 5px;">
+        <button onclick="diploSelectCountryProvinces()" class="glass-button" style="width: 100%; text-align: left; padding: 6px 8px; background: rgba(0, 123, 255, 0.15) !important; border-color: #007bff !important; font-weight: bold; font-size: 10px;">
+            &#x1F50D; Select All Provinces
+        </button>
+        <button onclick="diploRenameCountry()" class="glass-button" style="width: 100%; text-align: left; padding: 6px 8px; background: rgba(40, 167, 69, 0.15) !important; border-color: #28a745 !important; font-weight: bold; font-size: 10px;">
+            &#x270F;&#xFE0F; Rename Country
+        </button>
+        <button onclick="diploRecolorCountry()" class="glass-button" style="width: 100%; text-align: left; padding: 6px 8px; background: rgba(255, 193, 7, 0.15) !important; border-color: #ffc107 !important; font-weight: bold; font-size: 10px; color: white !important;">
+            &#x1F3A8; Change Country Color
+        </button>
+    </div>
+</div>
 <div id="hoi4Panel" class="glass-panel" style="
     position: fixed;
     bottom: 15px;
@@ -637,6 +775,7 @@ let countries = {
 };
 
 let selectedColor = "yellow";
+let useOfficialNames = false;
 
 function selectCountry(tag) {
     selectedColor = tag;
@@ -668,6 +807,10 @@ function selectCountry(tag) {
     const editNameInput = document.getElementById("editCountryName");
     if (editNameInput) {
         editNameInput.value = countries[tag] ? countries[tag].name : "";
+    }
+    const editFullNameInput = document.getElementById("editCountryFullName");
+    if (editFullNameInput) {
+        editFullNameInput.value = (countries[tag] && countries[tag].fullName) ? countries[tag].fullName : "";
     }
     const editOffsetSlider = document.getElementById("labelOffsetSlider");
     const editOffsetDisp = document.getElementById("labelOffsetDisp");
@@ -881,6 +1024,22 @@ function renameCountry(color, newName) {
     dirtyCountries.add(color);
     clearLabelCache();
     requestDraw();
+    
+    // Refresh diplomacy panel if open
+    const diploTagSpan = document.getElementById("diploCountryTag");
+    if (diploTagSpan && diploTagSpan.innerText === color) {
+        openDiplomacyPanel(color);
+    }
+}
+
+function toggleAccordion(header) {
+    header.classList.toggle("active");
+    const content = header.nextElementSibling;
+    if (content.classList.contains("show")) {
+        content.classList.remove("show");
+    } else {
+        content.classList.add("show");
+    }
 }
 
 function getNextCountryTag() {
@@ -1331,6 +1490,138 @@ document.addEventListener("click", (e) => {
         container.style.display = "none";
     }
 });
+
+function openDiplomacyPanel(tag) {
+    const country = countries[tag];
+    if (!country) return;
+    
+    const panel = document.getElementById("diplomacyPanel");
+    if (panel) panel.style.display = "block";
+    
+    document.getElementById("diploCountryName").innerText = country.fullName || country.name;
+    document.getElementById("diploCountryTag").innerText = tag;
+    document.getElementById("diploFlagTag").innerText = tag.substring(0, 3).toUpperCase();
+    
+    const rgbStr = `rgb(${country.color[0]}, ${country.color[1]}, ${country.color[2]})`;
+    const flagColorDiv = document.getElementById("diploFlagColor");
+    if (flagColorDiv) {
+        flagColorDiv.style.background = `linear-gradient(135deg, ${rgbStr} 20%, rgba(0,0,0,0.5) 100%)`;
+    }
+    
+    // Check and load country flag image from flags/ directory
+    const flagImg = document.getElementById("diploFlagImage");
+    const flagFallback = document.getElementById("diploFlagFallback");
+    if (flagImg && flagFallback) {
+        flagImg.style.display = "none";
+        flagFallback.style.display = "flex"; // Default to fallback card
+        
+        flagImg.src = `flags/${tag}.png?t=${Date.now()}`; // Bypass cache
+        flagImg.onload = () => {
+            flagImg.style.display = "block";
+            flagFallback.style.display = "none"; // Hide fallback
+        };
+        flagImg.onerror = () => {
+            flagImg.style.display = "none";
+            flagFallback.style.display = "flex"; // Show fallback card
+        };
+    }
+    
+    const colorInd = document.getElementById("diploColorIndicator");
+    if (colorInd) colorInd.style.background = rgbStr;
+    document.getElementById("diploColorText").innerText = `RGB(${country.color.join(", ")})`;
+    
+    let provCount = country.provinces ? country.provinces.size : 0;
+    document.getElementById("diploProvincesCount").innerText = provCount;
+    
+    let totalPixels = 0;
+    if (country.provinces) {
+        for (const provId of country.provinces) {
+            const center = provinceCenters[provId];
+            if (center && center.count) {
+                totalPixels += center.count;
+            }
+        }
+    }
+    document.getElementById("diploLandArea").innerText = `${totalPixels.toLocaleString('en-US')} pixels`;
+    
+    let claimsCount = 0;
+    for (const otherTag in interests) {
+        if (otherTag !== tag) {
+            for (const provId in interests[otherTag]) {
+                if (country.provinces && country.provinces.has(parseInt(provId))) {
+                    claimsCount++;
+                }
+            }
+        }
+    }
+    document.getElementById("diploClaimsOnUs").innerText = claimsCount;
+}
+
+function closeDiplomacyPanel() {
+    const panel = document.getElementById("diplomacyPanel");
+    if (panel) panel.style.display = "none";
+}
+
+function diploSelectCountryProvinces() {
+    const tag = document.getElementById("diploCountryTag").innerText;
+    const country = countries[tag];
+    if (country) {
+        selectedProvinces.clear();
+        for (const p of country.provinces) {
+            selectedProvinces.add(p);
+        }
+        updateSelectionStatus();
+        draw();
+    }
+}
+
+function diploRenameCountry() {
+    const tag = document.getElementById("diploCountryTag").innerText;
+    const country = countries[tag];
+    if (country) {
+        const newShortName = prompt("Enter Short Name (for map labels):", country.name);
+        if (newShortName !== null && newShortName.trim()) {
+            const newFullName = prompt("Enter Full Name (for diplomacy tab):", country.fullName || country.name);
+            if (newFullName !== null) {
+                renameCountryDetails(tag, newShortName.trim(), newFullName.trim());
+            }
+        }
+    }
+}
+
+function renameCountryDetails(tag, shortName, fullName) {
+    if (!countries[tag]) return;
+    countries[tag].name = shortName;
+    countries[tag].fullName = fullName;
+    dirtyCountries.add(tag);
+    clearLabelCache();
+    updateCountryList();
+    requestDraw();
+    openDiplomacyPanel(tag);
+}
+
+function handleFullNameRenameFromInput(val) {
+    if (!selectedColor) return;
+    countries[selectedColor].fullName = val.trim();
+    dirtyCountries.add(selectedColor);
+    
+    // Refresh diplomacy panel if open
+    const diploTagSpan = document.getElementById("diploCountryTag");
+    if (diploTagSpan && diploTagSpan.innerText === selectedColor) {
+        openDiplomacyPanel(selectedColor);
+    }
+}
+
+function diploRecolorCountry() {
+    const tag = document.getElementById("diploCountryTag").innerText;
+    const country = countries[tag];
+    if (country) {
+        const picker = document.getElementById("editCountryColor");
+        if (picker) {
+            picker.click();
+        }
+    }
+}
 
 function addSelectedToHoveredState() {
     const [mapX, mapY] = screenToMap(currentMouseX, currentMouseY);
@@ -1878,12 +2169,13 @@ function initApp() {
         for (const k in countries) delete countries[k];
         for (const k in COLORS) delete COLORS[k];
         
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                for (const tag in presetData.countries) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                for (const tag in presetData.countries) {
             const c = presetData.countries[tag];
             const base = BASE_COUNTRY_PRESETS[tag] || {};
             countries[tag] = {
                 tag: tag,
                 name: c.name,
+                fullName: c.fullName || "",
                 color: c.color,
                 labelOffset: c.labelOffset !== undefined ? c.labelOffset : (base.labelOffset || 0),
                 labelXOffset: c.labelXOffset !== undefined ? c.labelXOffset : (base.labelXOffset || 0),
@@ -2496,6 +2788,7 @@ function getWorldPresetData() {
     for (const tag in countries) {
         data.countries[tag] = {
             name: countries[tag].name,
+            fullName: countries[tag].fullName || "",
             color: countries[tag].color,
             labelOffset: countries[tag].labelOffset || 0,
             labelXOffset: countries[tag].labelXOffset || 0,
@@ -2854,6 +3147,12 @@ function recolourCountry(tag, newRgb) {
     updateLutData();
     updateCountryList();
     requestDraw();
+    
+    // Refresh diplomacy panel if open
+    const diploTagSpan = document.getElementById("diploCountryTag");
+    if (diploTagSpan && diploTagSpan.innerText === tag) {
+        openDiplomacyPanel(tag);
+    }
 }
 
 const provinceIdCache = {};
@@ -2969,8 +3268,9 @@ window.addEventListener("mouseup", e => {
 								draw();
 							}
 						} else {
-							// Plain Right-Click: Select country color brush
+							// Plain Right-Click: Select country color brush and open diplomacy panel
 							selectCountry(tag);
+							openDiplomacyPanel(tag);
 						}
 					}
 				}
@@ -3147,12 +3447,16 @@ window.addEventListener("mouseup", e => {
 		lassoPoints = [];
 	}
 
-	// If state mode is enabled, expand selection to state/subdivision level
-	if (selectionLevel === "state" && typeof provinceToState !== 'undefined' && hoi4Data) {
+	// If state mode is enabled, expand selection to state/subdivision level (check custom states first, then fallback to HOI4 states)
+	if (selectionLevel === "state" && typeof provinceToState !== 'undefined') {
 		const expanded = new Set();
 		for (const key of newSelection) {
 			const stateId = provinceToState[key];
-			if (stateId !== undefined && hoi4Data.states[stateId]) {
+			if (stateId !== undefined && states[stateId]) {
+				for (const provId of states[stateId].provinces) {
+					expanded.add(provId);
+				}
+			} else if (stateId !== undefined && hoi4Data && hoi4Data.states && hoi4Data.states[stateId]) {
 				for (const provId of hoi4Data.states[stateId].provinces) {
 					expanded.add(provId);
 				}
@@ -3781,49 +4085,10 @@ function drawLabels(){
 	}
 
 
-const MAP_LABEL_NAME_OVERRIDES = {
-	"UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND": "UNITED KINGDOM",
-	"FEDERAL REPUBLIC OF GERMANY": "GERMANY",
-	"FRENCH REPUBLIC": "FRANCE",
-	"PEOPLE'S REPUBLIC OF CHINA": "CHINA",
-	"RUSSIAN FEDERATION": "RUSSIA",
-	"UNITED STATES OF AMERICA": "UNITED STATES",
-	"COMMONWEALTH OF AUSTRALIA": "AUSTRALIA",
-	"FEDERATIVE REPUBLIC OF BRAZIL": "BRAZIL",
-	"REPUBLIC OF INDIA": "INDIA",
-	"ARGENTINE REPUBLIC": "ARGENTINA",
-	"REPUBLIC OF POLAND": "POLAND",
-	"REPUBLIC OF TÜRKIYE": "TÜRKIYE",
-	"REPUBLIC OF TURKEY": "TURKEY",
-	"REPUBLIC OF ITALY": "ITALY",
-	"ITALIAN REPUBLIC": "ITALY",
-	"KINGDOM OF SPAIN": "SPAIN",
-	"REPUBLIC OF FINLAND": "FINLAND",
-	"KINGDOM OF SWEDEN": "SWEDEN",
-	"KINGDOM OF NORWAY": "NORWAY",
-	"REPUBLIC OF PERU": "PERU",
-	"REPUBLIC OF CHILE": "CHILE",
-	"REPUBLIC OF INDONESIA": "INDONESIA",
-	"REPUBLIC OF KOREA": "KOREA",
-	"REPUBLIC OF THE PHILIPPINES": "PHILIPPINES",
-	"REPUBLIC OF KAZAKHSTAN": "KAZAKHSTAN",
-	"REPUBLIC OF UZBEKISTAN": "UZBEKISTAN",
-	"REPUBLIC OF TAJIKISTAN": "TAJIKISTAN",
-	"REPUBLIC OF THE SUDAN": "SUDAN",
-	"DEMOCRATIC REPUBLIC OF THE CONGO": "CONGO",
-	"UNITED REPUBLIC OF TANZANIA": "TANZANIA",
-	"PEOPLE'S DEMOCRATIC REPUBLIC OF ALGERIA": "ALGERIA",
-	"STATE OF LIBYA": "LIBYA",
-	"REPUBLIC OF SOUTH AFRICA": "SOUTH AFRICA",
-	"REPUBLIC OF COLOMBIA": "COLOMBIA",
-	"BOLIVARIAN REPUBLIC OF VENEZUELA": "VENEZUELA",
-	"REPUBLIC OF ECUADOR": "ECUADOR",
-	"REPUBLIC OF ANGOLA": "ANGOLA",
-	"REPUBLIC OF ZIMBABWE": "ZIMBABWE",
-	"REPUBLIC OF KENYA": "KENYA",
-	"REPUBLIC OF MOZAMBIQUE": "MOZAMBIQUE",
-	"REPUBLIC OF MADAGASCAR": "MADAGASCAR",
-	"REPUBLIC OF ZAMBIA": "ZAMBIA"
+window.toggleMapLabelMode = function(enabled) {
+    useOfficialNames = enabled;
+    clearLabelCache();
+    requestDraw();
 };
 
 	function generateLabelsForCountry(o, fromWorker = false) {
@@ -3831,16 +4096,18 @@ const MAP_LABEL_NAME_OVERRIDES = {
 		const country = countries[o];
 		if (!country || country.provinces.size === 0) return;
 
-		if (!country.displayName || country._lastCleanName !== country.name) {
-			let text = country.name;
-			const upperName = text.toUpperCase().trim();
-			if (MAP_LABEL_NAME_OVERRIDES[upperName]) {
-				text = MAP_LABEL_NAME_OVERRIDES[upperName];
-			} else if (text.toLowerCase().includes("placeholder")) {
-				text = country.tag;
+		const targetName = useOfficialNames ? (country.fullName || country.name) : country.name;
+		if (!targetName || targetName.trim() === "") {
+			labelCache[o] = { labels: [] };
+			return;
+		}
+		if (!country.displayName || country._lastCleanName !== targetName) {
+			let textVal = targetName;
+			if (textVal.toLowerCase().includes("placeholder")) {
+				textVal = country.tag;
 			}
-			country.displayName = text.toUpperCase();
-			country._lastCleanName = country.name;
+			country.displayName = textVal.toUpperCase();
+			country._lastCleanName = targetName;
 		}
 		const text = country.displayName;
 		const curvatureScale = country.curvatureScale !== undefined ? country.curvatureScale : 1.0;
@@ -4003,8 +4270,9 @@ const MAP_LABEL_NAME_OVERRIDES = {
 			if (text.includes(" ") && text.length > 12) {
 				const baseWidth = ctx.measureText(text).width;
 				const scale_single = len / (baseWidth * 1.20);
+				console.log(`[SPLIT CHECK] ${o} (${text}) | scale_single: ${scale_single.toFixed(3)} | totalLen: ${totalLen.toFixed(1)} | len: ${len.toFixed(1)} | thickness: ${thickness.toFixed(1)} | aspect: ${aspect.toFixed(2)}`);
 				// Split only if single line scales down heavily, and country has enough vertical/horizontal space (and isn't narrow)
-				if (scale_single < 1.15 && totalLen >= 100 && thickness >= 20 && aspect < 3.8) {
+				if (scale_single < 1.15 && totalLen >= 30 && thickness >= 20 && aspect < 3.2) {
 					const parts = splitIntoTwoLines(text);
 					if (parts[1] !== "") {
 						lines = parts;
@@ -4266,8 +4534,13 @@ const MAP_LABEL_NAME_OVERRIDES = {
 				continue;
 			}
 
-			// Size culling BEFORE drawing any debug paths or characters to prevent massive CPU overhead
-			if (label.effectiveFont * zoom < 8.0) {
+			// Size culling: Only remove labels for truly small micro-states (e.g., Kosovo, Montenegro)
+			// For larger countries with long official names, let the font scale down so they remain visible.
+			const isMicroState = label.provCount < 3 || label.thickness < 32;
+			if (isMicroState && label.effectiveFont * zoom < 8.0) {
+				continue;
+			}
+			if (label.effectiveFont * zoom < 3.0) { // Ultimate rendering cutoff for performance
 				continue;
 			}
 

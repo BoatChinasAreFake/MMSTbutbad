@@ -2,6 +2,7 @@
   "countries": {
     "100": {
       "name": "Zambia",
+      "fullName": "Republic of Zambia",
       "color": [
         39,
         10,
@@ -10,13 +11,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "101": {
       "name": "Montenegro",
+      "fullName": "Montenegro",
       "color": [
         77,
         89,
@@ -25,13 +27,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "102": {
       "name": "Madagascar",
+      "fullName": "Republic of Madagascar",
       "color": [
         44,
         140,
@@ -40,13 +43,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "103": {
       "name": "Netherlands",
+      "fullName": "Kingdom of the Netherlands",
       "color": [
         173,
         115,
@@ -55,13 +59,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "104": {
       "name": "Albania",
+      "fullName": "Republic of Albania",
       "color": [
         194,
         59,
@@ -70,13 +75,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "105": {
       "name": "Armenia",
+      "fullName": "Republic of Armenia",
       "color": [
         120,
         67,
@@ -85,13 +91,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "106": {
       "name": "Ireland",
+      "fullName": "Ireland",
       "color": [
         78,
         135,
@@ -100,13 +107,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "107": {
       "name": "Paraguay",
+      "fullName": "Republic of Paraguay",
       "color": [
         59,
         84,
@@ -115,13 +123,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "108": {
       "name": "Moldova",
+      "fullName": "Republic of Moldova",
       "color": [
         255,
         158,
@@ -130,13 +139,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "109": {
       "name": "Palestine",
+      "fullName": "State of Palestine",
       "color": [
         74,
         128,
@@ -145,13 +155,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "110": {
       "name": "Uganda",
+      "fullName": "Republic of Uganda",
       "color": [
         30,
         80,
@@ -160,13 +171,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "111": {
       "name": "United Arab Emirates",
+      "fullName": "United Arab Emirates",
       "color": [
         102,
         102,
@@ -175,13 +187,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "112": {
       "name": "Lebanon",
+      "fullName": "Lebanese Republic",
       "color": [
         130,
         150,
@@ -190,13 +203,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "113": {
       "name": "South Sudan",
+      "fullName": "Republic of South Sudan",
       "color": [
         252,
         221,
@@ -205,13 +219,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "114": {
       "name": "Tunisia",
+      "fullName": "Republic of Tunisia",
       "color": [
         210,
         39,
@@ -220,13 +235,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "115": {
       "name": "Slovenia",
+      "fullName": "Republic of Slovenia",
       "color": [
         9,
         102,
@@ -235,13 +251,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "116": {
       "name": "Botswana",
+      "fullName": "Republic of Botswana",
       "color": [
         190,
         190,
@@ -250,13 +267,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "117": {
       "name": "Eritrea",
+      "fullName": "State of Eritrea",
       "color": [
         79,
         180,
@@ -265,13 +283,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "118": {
       "name": "Western Sahara",
+      "fullName": "Sahrawi Arab Democratic Republic",
       "color": [
         255,
         178,
@@ -280,13 +299,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "119": {
       "name": "North Macedonia",
+      "fullName": "Republic of North Macedonia",
       "color": [
         210,
         69,
@@ -295,13 +315,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "120": {
       "name": "Burkina Faso",
+      "fullName": "Burkina Faso",
       "color": [
         200,
         14,
@@ -310,13 +331,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "121": {
       "name": "Ivory Coast",
+      "fullName": "Republic of C\u00f4te d'Ivoire",
       "color": [
         0,
         150,
@@ -325,13 +347,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "122": {
       "name": "Zimbabwe",
+      "fullName": "Republic of Zimbabwe",
       "color": [
         119,
         159,
@@ -340,13 +363,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "123": {
       "name": "Guatemala",
+      "fullName": "Republic of Guatemala",
       "color": [
         88,
         86,
@@ -355,13 +379,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "124": {
       "name": "Kosovo",
+      "fullName": "Republic of Kosovo",
       "color": [
         57,
         39,
@@ -370,13 +395,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "125": {
       "name": "Cuba",
+      "fullName": "Republic of Cuba",
       "color": [
         139,
         65,
@@ -385,13 +411,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "126": {
       "name": "Costa Rica",
+      "fullName": "Republic of Costa Rica",
       "color": [
         152,
         128,
@@ -400,13 +427,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "127": {
       "name": "Cyprus",
+      "fullName": "Republic of Cyprus",
       "color": [
         255,
         204,
@@ -415,13 +443,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "128": {
       "name": "Taiwan",
+      "fullName": "Republic of China",
       "color": [
         19,
         60,
@@ -430,13 +459,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "129": {
       "name": "Senegal",
+      "fullName": "Republic of Senegal",
       "color": [
         160,
         255,
@@ -445,13 +475,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "130": {
       "name": "Panama",
+      "fullName": "Republic of Panama",
       "color": [
         64,
         167,
@@ -460,13 +491,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "131": {
       "name": "Guyana",
+      "fullName": "Co-operative Republic of Guyana",
       "color": [
         193,
         155,
@@ -475,13 +507,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "132": {
       "name": "Guinea",
+      "fullName": "Republic of Guinea",
       "color": [
         158,
         148,
@@ -490,13 +523,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "133": {
       "name": "Ghan",
+      "fullName": "Republic of Ghana",
       "color": [
         11,
         85,
@@ -505,13 +539,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "134": {
       "name": "Uruguay",
+      "fullName": "Oriental Republic of Uruguay",
       "color": [
         222,
         247,
@@ -520,13 +555,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "135": {
       "name": "Malta",
+      "fullName": "Republic of Malta",
       "color": [
         255,
         255,
@@ -535,13 +571,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "136": {
       "name": "Honduras",
+      "fullName": "Republic of Honduras",
       "color": [
         96,
         124,
@@ -550,13 +587,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "137": {
       "name": "Gabon",
+      "fullName": "Gabonese Republic",
       "color": [
         17,
         207,
@@ -565,13 +603,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "138": {
       "name": "Sierra Leone",
+      "fullName": "Republic of Sierra Leone",
       "color": [
         130,
         250,
@@ -580,13 +619,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "139": {
       "name": "Djibouti",
+      "fullName": "Republic of Djibouti",
       "color": [
         220,
         0,
@@ -595,13 +635,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "140": {
       "name": "Togo",
+      "fullName": "Togolese Republic",
       "color": [
         130,
         150,
@@ -610,13 +651,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "141": {
       "name": "Ecuador",
+      "fullName": "Republic of Ecuador",
       "color": [
         145,
         134,
@@ -625,13 +667,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "142": {
       "name": "Malawi",
+      "fullName": "Republic of Malawi",
       "color": [
         120,
         120,
@@ -640,13 +683,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "143": {
       "name": "Bhutan",
+      "fullName": "Kingdom of Bhutan",
       "color": [
         172,
         122,
@@ -655,13 +699,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "144": {
       "name": "Haiti",
+      "fullName": "Republic of Haiti",
       "color": [
         174,
         113,
@@ -670,13 +715,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "145": {
       "name": "Liberia",
+      "fullName": "Republic of Liberia",
       "color": [
         67,
         129,
@@ -685,13 +731,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "146": {
       "name": "Equitorial Guinea",
+      "fullName": "Republic of Equatorial Guinea",
       "color": [
         158,
         3,
@@ -700,13 +747,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "147": {
       "name": "Swaziland",
+      "fullName": "Kingdom of Eswatini",
       "color": [
         123,
         234,
@@ -715,13 +763,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "148": {
       "name": "Iceland",
+      "fullName": "Iceland",
       "color": [
         132,
         124,
@@ -730,13 +779,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "149": {
       "name": "Gibraltar",
+      "fullName": "Gibraltar",
       "color": [
         128,
         128,
@@ -745,13 +795,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "150": {
       "name": "Belize",
+      "fullName": "Belize",
       "color": [
         80,
         114,
@@ -760,13 +811,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "151": {
       "name": "Benin",
+      "fullName": "Republic of Benin",
       "color": [
         0,
         106,
@@ -775,13 +827,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "152": {
       "name": "Suriname",
+      "fullName": "Republic of Suriname",
       "color": [
         205,
         98,
@@ -790,13 +843,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "153": {
       "name": "North Cyprus",
+      "fullName": "Turkish Republic of Northern Cyprus",
       "color": [
         147,
         0,
@@ -805,13 +859,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "154": {
       "name": "El Salvador",
+      "fullName": "Republic of El Salvador",
       "color": [
         94,
         159,
@@ -820,13 +875,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "155": {
       "name": "Bahamas",
+      "fullName": "Commonwealth of the Bahamas",
       "color": [
         204,
         255,
@@ -835,13 +891,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "156": {
       "name": "Dominican Republic",
+      "fullName": "Dominican Republic",
       "color": [
         114,
         95,
@@ -850,13 +907,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "157": {
       "name": "Guinea-Bissau",
+      "fullName": "Republic of Guinea-Bissau",
       "color": [
         97,
         227,
@@ -865,13 +923,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "158": {
       "name": "Rwanda",
+      "fullName": "Republic of Rwanda",
       "color": [
         200,
         9,
@@ -880,13 +939,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "159": {
       "name": "Burundi",
+      "fullName": "Republic of Burundi",
       "color": [
         23,
         33,
@@ -895,13 +955,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "160": {
       "name": "Oman",
+      "fullName": "Sultanate of Oman",
       "color": [
         151,
         101,
@@ -910,13 +971,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "161": {
       "name": "Lesotho",
+      "fullName": "Kingdom of Lesotho",
       "color": [
         0,
         190,
@@ -925,13 +987,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "162": {
       "name": "Luxembourg",
+      "fullName": "Grand Duchy of Luxembourg",
       "color": [
         85,
         228,
@@ -940,13 +1003,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "163": {
       "name": "Denmark",
+      "fullName": "Kingdom of Denmark",
       "color": [
         142,
         68,
@@ -955,13 +1019,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "164": {
       "name": "Faroe Islands",
+      "fullName": "Faroe Islands",
       "color": [
         67,
         123,
@@ -970,13 +1035,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "165": {
       "name": "Qatar",
+      "fullName": "State of Qatar",
       "color": [
         128,
         0,
@@ -985,13 +1051,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "166": {
       "name": "Gambia",
+      "fullName": "Republic of the Gambia",
       "color": [
         39,
         49,
@@ -1000,13 +1067,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "167": {
       "name": "Maldives",
+      "fullName": "Republic of Maldives",
       "color": [
         178,
         255,
@@ -1015,13 +1083,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "168": {
       "name": "Cape Verde",
+      "fullName": "Republic of Cabo Verde",
       "color": [
         0,
         102,
@@ -1030,13 +1099,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "169": {
       "name": "European Union",
+      "fullName": "European Union",
       "color": [
         100,
         100,
@@ -1045,13 +1115,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "170": {
       "name": "Solomon Islands",
+      "fullName": "Solomon Islands",
       "color": [
         19,
         19,
@@ -1060,13 +1131,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "171": {
       "name": "Mauritius",
+      "fullName": "Republic of Mauritius",
       "color": [
         231,
         228,
@@ -1075,13 +1147,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "172": {
       "name": "Antigua and Barbuda",
+      "fullName": "Antigua and Barbuda",
       "color": [
         170,
         0,
@@ -1090,13 +1163,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "173": {
       "name": "Brunei",
+      "fullName": "Nation of Brunei, the Abode of Peace",
       "color": [
         252,
         242,
@@ -1105,13 +1179,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "174": {
       "name": "Sao Tome and Principe",
+      "fullName": "Democratic Republic of S\u00e3o Tom\u00e9 and Pr\u00edncipe",
       "color": [
         96,
         0,
@@ -1120,13 +1195,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "175": {
       "name": "Comoros",
+      "fullName": "Union of the Comoros",
       "color": [
         95,
         216,
@@ -1135,13 +1211,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "176": {
       "name": "Grenada",
+      "fullName": "Grenada",
       "color": [
         255,
         0,
@@ -1150,13 +1227,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "177": {
       "name": "Liechtenstein",
+      "fullName": "Principality of Liechtenstein",
       "color": [
         47,
         50,
@@ -1165,13 +1243,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "178": {
       "name": "San Marino",
+      "fullName": "Republic of San Marino",
       "color": [
         93,
         182,
@@ -1180,13 +1259,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "179": {
       "name": "Monaco",
+      "fullName": "Principality of Monaco",
       "color": [
         243,
         107,
@@ -1195,13 +1275,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "180": {
       "name": "Andorra",
+      "fullName": "Principality of Andorra",
       "color": [
         246,
         168,
@@ -1210,13 +1291,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "181": {
       "name": "Vatican City",
+      "fullName": "Vatican City State",
       "color": [
         216,
         208,
@@ -1225,13 +1307,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "182": {
       "name": "United Nations",
+      "fullName": "United Nations",
       "color": [
         97,
         103,
@@ -1240,13 +1323,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "183": {
       "name": "Saint Vincent and the Grenadines",
+      "fullName": "Saint Vincent and the Grenadines",
       "color": [
         150,
         209,
@@ -1255,13 +1339,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "184": {
       "name": "Jamaica",
+      "fullName": "Jamaica",
       "color": [
         12,
         157,
@@ -1270,13 +1355,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "185": {
       "name": "Dominica",
+      "fullName": "Commonwealth of Dominica",
       "color": [
         0,
         64,
@@ -1285,13 +1371,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "186": {
       "name": "Saint Lucia",
+      "fullName": "Saint Saint Lucia",
       "color": [
         49,
         148,
@@ -1300,13 +1387,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "187": {
       "name": "Barbados",
+      "fullName": "Barbados",
       "color": [
         116,
         14,
@@ -1315,13 +1403,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "188": {
       "name": "Turks and Caicos Islands",
+      "fullName": "Turks and Caicos Islands",
       "color": [
         64,
         0,
@@ -1330,13 +1419,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "189": {
       "name": "North Sentinel Islands",
+      "fullName": "North Sentinel Island",
       "color": [
         92,
         67,
@@ -1345,13 +1435,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "190": {
       "name": "Trinidad and Tobago",
+      "fullName": "Republic of Trinidad and Tobago",
       "color": [
         16,
         114,
@@ -1360,13 +1451,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "191": {
       "name": "Placeholder 191 (Color (255, 230, 221))",
+      "fullName": "Placeholder 191 (Color (255, 230, 221))",
       "color": [
         255,
         230,
@@ -1375,13 +1467,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "192": {
       "name": "Singapore",
+      "fullName": "Republic of Singapore",
       "color": [
         128,
         64,
@@ -1390,13 +1483,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "193": {
       "name": "Tonga",
+      "fullName": "Kingdom of Tonga",
       "color": [
         63,
         224,
@@ -1405,13 +1499,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "194": {
       "name": "Fiji",
+      "fullName": "Republic of Fiji",
       "color": [
         0,
         204,
@@ -1420,13 +1515,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "195": {
       "name": "Pitcairn Islands",
+      "fullName": "Pitcairn, Henderson, Ducie and Oeno Islands",
       "color": [
         160,
         18,
@@ -1435,13 +1531,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "196": {
       "name": "Afghanistan",
+      "fullName": "Islamic Emirate of Afghanistan",
       "color": [
         24,
         61,
@@ -1450,13 +1547,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "197": {
       "name": "Saint Kitts and Nevis",
+      "fullName": "Federation of Saint Christopher and Nevis",
       "color": [
         112,
         161,
@@ -1465,13 +1563,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "198": {
       "name": "Cayman Islands",
+      "fullName": "Cayman Islands",
       "color": [
         100,
         132,
@@ -1480,13 +1579,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "199": {
       "name": "Bermuda",
+      "fullName": "Bermuda",
       "color": [
         63,
         120,
@@ -1495,13 +1595,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "200": {
       "name": "Vanuatu",
+      "fullName": "Republic of Vanuatu",
       "color": [
         125,
         231,
@@ -1510,13 +1611,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "201": {
       "name": "Kiribati",
+      "fullName": "Republic of Kiribati",
       "color": [
         184,
         71,
@@ -1525,13 +1627,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "202": {
       "name": "Tuvalu",
+      "fullName": "Tuvalu",
       "color": [
         207,
         41,
@@ -1540,13 +1643,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "203": {
       "name": "Marshall Islands",
+      "fullName": "Republic of the Marshall Islands",
       "color": [
         85,
         55,
@@ -1555,13 +1659,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "204": {
       "name": "Micronesia",
+      "fullName": "Federated States of Micronesia",
       "color": [
         95,
         82,
@@ -1570,13 +1675,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "205": {
       "name": "Northern Mariana Islands",
+      "fullName": "Commonwealth of the Northern Mariana Islands",
       "color": [
         125,
         201,
@@ -1585,13 +1691,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "206": {
       "name": "Guam",
+      "fullName": "Territory of Guam",
       "color": [
         130,
         137,
@@ -1600,13 +1707,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "207": {
       "name": "Palau",
+      "fullName": "Republic of Palau",
       "color": [
         42,
         203,
@@ -1615,13 +1723,30 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
+    },
+    "208": {
+      "name": "Bahrain",
+      "fullName": "Kingdom of Bahrain",
+      "color": [
+        96,
+        211,
+        54
+      ],
+      "labelOffset": 0,
+      "labelXOffset": 0,
+      "labelArcShift": 0,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
+      "labelRotation": 0,
+      "labelStretch": 1.0
     },
     "000": {
-      "name": "Russian Federation",
+      "name": "Russia",
+      "fullName": "Russian Federation",
       "color": [
         0,
         127,
@@ -1630,13 +1755,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "001": {
-      "name": "United States of America",
+      "name": "United States",
+      "fullName": "United States of America",
       "color": [
         53,
         104,
@@ -1645,13 +1771,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "002": {
-      "name": "People's Republic of China",
+      "name": "China",
+      "fullName": "People's Republic of China",
       "color": [
         178,
         34,
@@ -1660,13 +1787,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "003": {
-      "name": "Republic of India",
+      "name": "India",
+      "fullName": "Republic of India",
       "color": [
         204,
         95,
@@ -1675,13 +1803,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "004": {
-      "name": "Commonwealth of Australia",
+      "name": "Australia",
+      "fullName": "Commonwealth of Australia",
       "color": [
         73,
         186,
@@ -1690,13 +1819,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "005": {
       "name": "Canada",
+      "fullName": "Canada",
       "color": [
         117,
         55,
@@ -1705,13 +1835,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "006": {
-      "name": "Federal Republic of Germany",
+      "name": "Germany",
+      "fullName": "Federal Republic of Germany",
       "color": [
         92,
         99,
@@ -1720,13 +1851,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "007": {
-      "name": "French Republic",
+      "name": "France",
+      "fullName": "French Republic",
       "color": [
         37,
         72,
@@ -1735,13 +1867,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "008": {
       "name": "Myanmar",
+      "fullName": "Republic of the Union of Myanmar",
       "color": [
         127,
         63,
@@ -1750,13 +1883,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "009": {
       "name": "Turkey",
+      "fullName": "Republic of Turkey",
       "color": [
         168,
         37,
@@ -1765,13 +1899,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "010": {
-      "name": "Republic of Poland",
+      "name": "Poland",
+      "fullName": "Republic of Poland",
       "color": [
         165,
         76,
@@ -1780,13 +1915,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "011": {
-      "name": "Republic of Indonesia",
+      "name": "Indonesia",
+      "fullName": "Republic of Indonesia",
       "color": [
         214,
         83,
@@ -1795,13 +1931,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "012": {
       "name": "Kazakhstan",
+      "fullName": "Republic of Kazakhstan",
       "color": [
         75,
         186,
@@ -1810,13 +1947,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "013": {
-      "name": "Republic of the Sudan",
+      "name": "Sudan",
+      "fullName": "Republic of the Sudan",
       "color": [
         230,
         160,
@@ -1825,13 +1963,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "014": {
       "name": "Ukraine",
+      "fullName": "Ukraine",
       "color": [
         72,
         131,
@@ -1840,13 +1979,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "015": {
-      "name": "State of Libya",
+      "name": "Libya",
+      "fullName": "State of Libya",
       "color": [
         200,
         180,
@@ -1855,13 +1995,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "016": {
       "name": "Belarus",
+      "fullName": "Republic of Belarus",
       "color": [
         91,
         137,
@@ -1870,13 +2011,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "017": {
       "name": "Japan",
+      "fullName": "Japan",
       "color": [
         165,
         69,
@@ -1885,13 +2027,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "018": {
       "name": "Iraq",
+      "fullName": "Republic of Iraq",
       "color": [
         178,
         113,
@@ -1900,13 +2043,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "019": {
-      "name": "Kingdom of Sweden",
+      "name": "Sweden",
+      "fullName": "Kingdom of Sweden",
       "color": [
         29,
         108,
@@ -1915,13 +2059,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "020": {
-      "name": "Federative Republic of Brazil",
+      "name": "Brazil",
+      "fullName": "Federative Republic of Brazil",
       "color": [
         10,
         112,
@@ -1930,13 +2075,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "021": {
-      "name": "Kingdom of Spain",
+      "name": "Spain",
+      "fullName": "Kingdom of Spain",
       "color": [
         224,
         198,
@@ -1945,13 +2091,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "022": {
-      "name": "Italian Republic",
+      "name": "Italy",
+      "fullName": "Italian Republic",
       "color": [
         55,
         119,
@@ -1960,13 +2107,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "023": {
       "name": "Iran",
+      "fullName": "Islamic Republic of Iran",
       "color": [
         0,
         166,
@@ -1975,13 +2123,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "024": {
       "name": "Ethiopia",
+      "fullName": "Federal Democratic Republic of Ethiopia",
       "color": [
         115,
         100,
@@ -1990,13 +2139,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "025": {
       "name": "Egypt",
+      "fullName": "Arab Republic of Egypt",
       "color": [
         230,
         230,
@@ -2005,13 +2155,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "026": {
       "name": "Saudi Arabia",
+      "fullName": "Kingdom of Saudi Arabia",
       "color": [
         46,
         109,
@@ -2020,13 +2171,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "027": {
       "name": "South Africa",
+      "fullName": "Republic of South Africa",
       "color": [
         185,
         105,
@@ -2035,13 +2187,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "028": {
       "name": "Mongolia",
+      "fullName": "Mongolia",
       "color": [
         209,
         247,
@@ -2050,13 +2203,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "029": {
       "name": "Yemen",
+      "fullName": "Republic of Yemen",
       "color": [
         233,
         155,
@@ -2065,13 +2219,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "030": {
       "name": "Mexico",
+      "fullName": "United Mexican States",
       "color": [
         72,
         130,
@@ -2080,13 +2235,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "031": {
       "name": "Syria",
+      "fullName": "Syrian Arab Republic",
       "color": [
         100,
         100,
@@ -2095,13 +2251,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "032": {
-      "name": "Republic of Uzbekistan",
+      "name": "Uzbekistan",
+      "fullName": "Republic of Uzbekistan",
       "color": [
         121,
         83,
@@ -2110,13 +2267,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "033": {
       "name": "Pakistan",
+      "fullName": "Islamic Republic of Pakistan",
       "color": [
         0,
         102,
@@ -2125,13 +2283,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "034": {
-      "name": "Argentine Republic",
+      "name": "Argentina",
+      "fullName": "Argentine Republic",
       "color": [
         189,
         204,
@@ -2140,13 +2299,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "035": {
       "name": "Congo-Kinshasa",
+      "fullName": "Democratic Republic of the Congo",
       "color": [
         20,
         107,
@@ -2155,13 +2315,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "036": {
-      "name": "Republic of the Philippines",
+      "name": "Philippines",
+      "fullName": "Republic of the Philippines",
       "color": [
         166,
         82,
@@ -2170,13 +2331,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "037": {
       "name": "United Kingdom",
+      "fullName": "United Kingdom of Great Britain and Northern Ireland",
       "color": [
         150,
         26,
@@ -2185,13 +2347,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "038": {
-      "name": "Republic of Finland",
+      "name": "Finland",
+      "fullName": "Republic of Finland",
       "color": [
         205,
         212,
@@ -2200,13 +2363,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "039": {
-      "name": "Kingdom of Norway",
+      "name": "Norway",
+      "fullName": "Kingdom of Norway",
       "color": [
         119,
         156,
@@ -2215,13 +2379,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "040": {
       "name": "Cambodia",
+      "fullName": "Kingdom of Cambodia",
       "color": [
         61,
         83,
@@ -2230,13 +2395,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "041": {
-      "name": "People's Democratic Republic of Algeria",
+      "name": "Algeria",
+      "fullName": "People's Democratic Republic of Algeria",
       "color": [
         0,
         98,
@@ -2245,13 +2411,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "042": {
       "name": "Vietnam",
+      "fullName": "Socialist Republic of Vietnam",
       "color": [
         147,
         0,
@@ -2260,13 +2427,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "043": {
       "name": "Thailand",
+      "fullName": "Kingdom of Thailand",
       "color": [
         114,
         153,
@@ -2275,13 +2443,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "044": {
       "name": "Somalia",
+      "fullName": "Federal Republic of Somalia",
       "color": [
         120,
         219,
@@ -2290,13 +2459,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "045": {
       "name": "Mali",
+      "fullName": "Republic of Mali",
       "color": [
         154,
         119,
@@ -2305,13 +2475,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "046": {
       "name": "Nigeria",
+      "fullName": "Federal Republic of Nigeria",
       "color": [
         225,
         85,
@@ -2320,13 +2491,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "047": {
       "name": "Centrafrica",
+      "fullName": "Central African Republic",
       "color": [
         0,
         19,
@@ -2335,13 +2507,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "048": {
       "name": "Romania",
+      "fullName": "Romania",
       "color": [
         255,
         255,
@@ -2350,13 +2523,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "049": {
       "name": "Greece",
+      "fullName": "Hellenic Republic",
       "color": [
         113,
         166,
@@ -2365,13 +2539,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "050": {
       "name": "Turkmenistan",
+      "fullName": "Turkmenistan",
       "color": [
         31,
         168,
@@ -2380,13 +2555,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "051": {
       "name": "Bangladesh",
+      "fullName": "People's Republic of Bangladesh",
       "color": [
         204,
         204,
@@ -2395,13 +2571,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "052": {
       "name": "Chad",
+      "fullName": "Republic of Chad",
       "color": [
         179,
         230,
@@ -2410,13 +2587,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "053": {
       "name": "Latvia",
+      "fullName": "Republic of Latvia",
       "color": [
         123,
         125,
@@ -2425,13 +2603,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "054": {
       "name": "Tanzania",
+      "fullName": "United Republic of Tanzania",
       "color": [
         248,
         48,
@@ -2440,13 +2619,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "055": {
       "name": "Austria",
+      "fullName": "Republic of Austria",
       "color": [
         200,
         200,
@@ -2455,13 +2635,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "056": {
-      "name": "Republic of Chile",
+      "name": "Chile",
+      "fullName": "Republic of Chile",
       "color": [
         202,
         131,
@@ -2470,13 +2651,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "057": {
       "name": "Lithuania",
+      "fullName": "Republic of Lithuania",
       "color": [
         154,
         69,
@@ -2485,13 +2667,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "058": {
       "name": "Azerbaijan",
+      "fullName": "Republic of Azerbaijan",
       "color": [
         194,
         172,
@@ -2500,13 +2683,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "059": {
       "name": "Jordan",
+      "fullName": "Hashemite Kingdom of Jordan",
       "color": [
         111,
         55,
@@ -2515,13 +2699,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "060": {
       "name": "Malaysia",
+      "fullName": "Malaysia",
       "color": [
         67,
         33,
@@ -2530,13 +2715,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "061": {
       "name": "Mauritania",
+      "fullName": "Islamic Republic of Mauritania",
       "color": [
         255,
         196,
@@ -2545,13 +2731,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "062": {
       "name": "Serbia",
+      "fullName": "Republic of Serbia",
       "color": [
         48,
         82,
@@ -2560,13 +2747,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "063": {
       "name": "North Korea",
+      "fullName": "Democratic People's Republic of Korea",
       "color": [
         255,
         196,
@@ -2575,13 +2763,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "064": {
       "name": "Greenland",
+      "fullName": "Greenland (Kalaallit Nunaat)",
       "color": [
         255,
         80,
@@ -2590,13 +2779,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "065": {
       "name": "Czechia",
+      "fullName": "Czech Republic",
       "color": [
         78,
         136,
@@ -2605,13 +2795,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "066": {
       "name": "Tajikistan",
+      "fullName": "Republic of Tajikistan",
       "color": [
         168,
         138,
@@ -2620,13 +2811,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "067": {
       "name": "Angola",
+      "fullName": "Republic of Angola",
       "color": [
         112,
         250,
@@ -2635,13 +2827,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "068": {
       "name": "Niger",
+      "fullName": "Republic of Niger",
       "color": [
         0,
         140,
@@ -2650,13 +2843,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "069": {
       "name": "Laos",
+      "fullName": "Lao People's Democratic Republic",
       "color": [
         180,
         105,
@@ -2665,13 +2859,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "070": {
       "name": "Cameroon",
+      "fullName": "Republic of Cameroon",
       "color": [
         80,
         130,
@@ -2680,13 +2875,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "071": {
       "name": "Venezuela",
+      "fullName": "Bolivarian Republic of Venezuela",
       "color": [
         216,
         153,
@@ -2695,13 +2891,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "072": {
       "name": "Peru",
+      "fullName": "Republic of Peru",
       "color": [
         160,
         56,
@@ -2710,13 +2907,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "073": {
       "name": "Bosnia and Herzegovina",
+      "fullName": "Bosnia and Herzegovina",
       "color": [
         25,
         25,
@@ -2725,13 +2923,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "074": {
       "name": "Belgium",
+      "fullName": "Kingdom of Belgium",
       "color": [
         196,
         141,
@@ -2740,13 +2939,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "075": {
       "name": "Croatia",
+      "fullName": "Republic of Croatia",
       "color": [
         0,
         119,
@@ -2755,13 +2955,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "076": {
       "name": "New Guinea",
+      "fullName": "Independent State of Papua New Guinea",
       "color": [
         153,
         0,
@@ -2770,13 +2971,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "077": {
       "name": "Morocco",
+      "fullName": "Kingdom of Morocco",
       "color": [
         255,
         0,
@@ -2785,13 +2987,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "078": {
       "name": "Georgia",
+      "fullName": "Georgia",
       "color": [
         161,
         58,
@@ -2800,13 +3003,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "079": {
-      "name": "Antarctica",
+      "name": "",
+      "fullName": "Antarctica",
       "color": [
         255,
         255,
@@ -2815,13 +3019,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "080": {
       "name": "Switzerland",
+      "fullName": "Swiss Confederation",
       "color": [
         193,
         81,
@@ -2830,13 +3035,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "081": {
       "name": "South Korea",
+      "fullName": "Republic of Korea",
       "color": [
         195,
         217,
@@ -2845,13 +3051,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "082": {
       "name": "Mozambique",
+      "fullName": "Republic of Mozambique",
       "color": [
         0,
         113,
@@ -2860,13 +3067,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "083": {
       "name": "Cambodia",
+      "fullName": "Kingdom of Cambodia",
       "color": [
         109,
         211,
@@ -2875,13 +3083,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "084": {
       "name": "Kyrgyzstan",
+      "fullName": "Kyrgyz Republic",
       "color": [
         204,
         10,
@@ -2890,13 +3099,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "085": {
       "name": "Hungary",
+      "fullName": "Hungary",
       "color": [
         143,
         76,
@@ -2905,13 +3115,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "086": {
       "name": "Bulgaria",
+      "fullName": "Republic of Bulgaria",
       "color": [
         72,
         122,
@@ -2920,13 +3131,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "087": {
       "name": "Slovakia",
+      "fullName": "Slovak Republic",
       "color": [
         158,
         161,
@@ -2935,13 +3147,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "088": {
       "name": "Colombia",
+      "fullName": "Republic of Colombia",
       "color": [
         214,
         177,
@@ -2950,13 +3163,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "089": {
       "name": "Israel",
+      "fullName": "State of Israel",
       "color": [
         78,
         135,
@@ -2965,13 +3179,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "090": {
       "name": "Portugal",
+      "fullName": "Portuguese Republic",
       "color": [
         51,
         151,
@@ -2980,13 +3195,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "091": {
       "name": "Kenya",
+      "fullName": "Republic of Kenya",
       "color": [
         210,
         150,
@@ -2995,13 +3211,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "092": {
       "name": "Sri Lanka",
+      "fullName": "Democratic Socialist Republic of Sri Lanka",
       "color": [
         204,
         0,
@@ -3010,13 +3227,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "093": {
       "name": "Namibia",
+      "fullName": "Republic of Namibia",
       "color": [
         183,
         138,
@@ -3025,13 +3243,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "094": {
       "name": "New Zealand",
+      "fullName": "New Zealand",
       "color": [
         170,
         165,
@@ -3040,13 +3259,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "095": {
       "name": "Estonia",
+      "fullName": "Republic of Estonia",
       "color": [
         99,
         204,
@@ -3055,13 +3275,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "096": {
       "name": "Nepal",
+      "fullName": "Federal Democratic Republic of Nepal",
       "color": [
         125,
         99,
@@ -3070,13 +3291,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "097": {
       "name": "Bolivia",
+      "fullName": "Plurinational State of Bolivia",
       "color": [
         255,
         234,
@@ -3085,13 +3307,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "098": {
       "name": "Congo-Brazzaville",
+      "fullName": "Republic of the Congo",
       "color": [
         30,
         120,
@@ -3100,13 +3323,14 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     },
     "099": {
       "name": "Nicaragua",
+      "fullName": "Republic of Nicaragua",
       "color": [
         140,
         78,
@@ -3115,10 +3339,10 @@
       "labelOffset": 0,
       "labelXOffset": 0,
       "labelArcShift": 0,
-      "curvatureScale": 1,
-      "fontSizeScale": 1,
+      "curvatureScale": 1.0,
+      "fontSizeScale": 1.0,
       "labelRotation": 0,
-      "labelStretch": 1
+      "labelStretch": 1.0
     }
   },
   "ownership": {
@@ -12854,7 +13078,7 @@
     "9861": "023",
     "9862": "196",
     "9863": "196",
-    "9864": "033",
+    "9864": "003",
     "9865": "002",
     "9866": "002",
     "9867": "002",
@@ -12940,7 +13164,7 @@
     "9947": "018",
     "9948": "023",
     "9949": "066",
-    "9950": "033",
+    "9950": "003",
     "9951": "002",
     "9952": "002",
     "9953": "081",
@@ -13039,7 +13263,7 @@
     "10046": "023",
     "10047": "023",
     "10048": "050",
-    "10049": "033",
+    "10049": "003",
     "10050": "002",
     "10051": "002",
     "10052": "002",
@@ -13066,7 +13290,7 @@
     "10073": "023",
     "10074": "023",
     "10075": "023",
-    "10076": "033",
+    "10076": "003",
     "10077": "002",
     "10078": "002",
     "10079": "001",
@@ -13163,7 +13387,7 @@
     "10170": "018",
     "10171": "018",
     "10172": "018",
-    "10173": "002",
+    "10173": "003",
     "10174": "002",
     "10175": "002",
     "10176": "081",
@@ -13211,7 +13435,7 @@
     "10219": "018",
     "10220": "196",
     "10221": "196",
-    "10222": "033",
+    "10222": "003",
     "10223": "002",
     "10224": "002",
     "10225": "002",
@@ -13268,7 +13492,7 @@
     "10276": "023",
     "10277": "050",
     "10278": "050",
-    "10279": "002",
+    "10279": "003",
     "10280": "002",
     "10281": "002",
     "10282": "002",
@@ -13305,7 +13529,7 @@
     "10313": "018",
     "10314": "018",
     "10315": "018",
-    "10316": "033",
+    "10316": "003",
     "10317": "002",
     "10318": "081",
     "10319": "017",
@@ -13356,8 +13580,8 @@
     "10365": "018",
     "10366": "023",
     "10367": "050",
-    "10368": "033",
-    "10369": "002",
+    "10368": "003",
+    "10369": "003",
     "10370": "081",
     "10371": "017",
     "10372": "017",
@@ -13422,8 +13646,8 @@
     "10431": "031",
     "10432": "050",
     "10433": "196",
-    "10434": "033",
-    "10435": "033",
+    "10434": "003",
+    "10435": "003",
     "10436": "002",
     "10437": "002",
     "10438": "002",
@@ -13450,7 +13674,7 @@
     "10459": "196",
     "10460": "033",
     "10461": "033",
-    "10462": "033",
+    "10462": "003",
     "10463": "002",
     "10464": "002",
     "10465": "081",
@@ -13473,8 +13697,8 @@
     "10482": "023",
     "10483": "196",
     "10484": "033",
-    "10485": "002",
-    "10486": "002",
+    "10485": "003",
+    "10486": "003",
     "10487": "002",
     "10488": "017",
     "10489": "017",
@@ -13554,7 +13778,7 @@
     "10563": "031",
     "10564": "018",
     "10565": "033",
-    "10566": "002",
+    "10566": "003",
     "10567": "002",
     "10568": "002",
     "10569": "002",
@@ -13595,7 +13819,7 @@
     "10604": "018",
     "10605": "196",
     "10606": "033",
-    "10607": "002",
+    "10607": "003",
     "10608": "002",
     "10609": "081",
     "10610": "081",
@@ -13692,8 +13916,8 @@
     "10701": "018",
     "10702": "018",
     "10703": "023",
-    "10704": "033",
-    "10705": "033",
+    "10704": "003",
+    "10705": "003",
     "10706": "002",
     "10707": "002",
     "10708": "002",
@@ -13777,7 +14001,7 @@
     "10787": "018",
     "10788": "018",
     "10789": "018",
-    "10790": "033",
+    "10790": "003",
     "10791": "002",
     "10792": "002",
     "10793": "017",
@@ -13907,7 +14131,7 @@
     "10918": "196",
     "10919": "033",
     "10920": "033",
-    "10921": "002",
+    "10921": "003",
     "10922": "002",
     "10923": "002",
     "10924": "017",
@@ -13937,7 +14161,7 @@
     "10949": "023",
     "10950": "196",
     "10951": "003",
-    "10952": "002",
+    "10952": "003",
     "10953": "002",
     "10954": "002",
     "10955": "002",
@@ -13993,7 +14217,7 @@
     "11005": "196",
     "11006": "196",
     "11007": "196",
-    "11008": "033",
+    "11008": "003",
     "11009": "003",
     "11010": "002",
     "11011": "002",
@@ -16395,7 +16619,7 @@
     "13435": "002",
     "13436": "002",
     "13439": "015",
-    "13440": "163",
+    "13440": "208",
     "13441": "003",
     "13442": "003",
     "13443": "003",
@@ -16408,7 +16632,7 @@
     "13450": "155",
     "13451": "061",
     "13452": "041",
-    "13453": "163",
+    "13453": "208",
     "13454": "111",
     "13455": "033",
     "13456": "003",
@@ -16559,7 +16783,7 @@
     "13603": "015",
     "13604": "026",
     "13605": "026",
-    "13606": "163",
+    "13606": "208",
     "13607": "003",
     "13608": "003",
     "13609": "003",
@@ -19366,6 +19590,7 @@
     "16435": "029",
     "16436": "029",
     "16437": "029",
+    "16438": "003",
     "16439": "043",
     "16440": "083",
     "16441": "183",
@@ -19725,7 +19950,7 @@
     "16804": "139",
     "16805": "139",
     "16806": "044",
-    "16807": "189",
+    "16807": "003",
     "16808": "083",
     "16809": "099",
     "16810": "099",
@@ -20298,6 +20523,7 @@
     "17385": "138",
     "17386": "121",
     "17387": "047",
+    "17388": "003",
     "17389": "092",
     "17390": "060",
     "17391": "088",
@@ -24573,7 +24799,8 @@
         3796,
         3353,
         3376,
-        3168
+        3168,
+        21279
       ]
     },
     "17": {
@@ -37006,8 +37233,7 @@
         3837,
         4045,
         4105,
-        3432,
-        3627
+        3432
       ]
     },
     "453": {
@@ -37029,8 +37255,7 @@
         2991,
         2992,
         3113,
-        3191,
-        3539
+        3191
       ]
     },
     "454": {
@@ -39499,8 +39724,8 @@
         622
       ]
     },
-    "537": {
-      "id": 537,
+    "536": {
+      "id": 536,
       "name": "Kaluga",
       "color": [
         225,
@@ -39523,8 +39748,8 @@
         2049
       ]
     },
-    "538": {
-      "id": 538,
+    "537": {
+      "id": 537,
       "name": "Oryol",
       "color": [
         142,
@@ -39544,8 +39769,8 @@
         2496
       ]
     },
-    "539": {
-      "id": 539,
+    "538": {
+      "id": 538,
       "name": "Lipetsk",
       "color": [
         224,
@@ -39561,8 +39786,8 @@
         2525
       ]
     },
-    "542": {
-      "id": 542,
+    "539": {
+      "id": 539,
       "name": "Tambov",
       "color": [
         115,
@@ -39581,8 +39806,8 @@
         2652
       ]
     },
-    "543": {
-      "id": 543,
+    "540": {
+      "id": 540,
       "name": "Ryazan",
       "color": [
         188,
@@ -39607,8 +39832,8 @@
         2030
       ]
     },
-    "544": {
-      "id": 544,
+    "541": {
+      "id": 541,
       "name": "Tula",
       "color": [
         82,
@@ -39631,8 +39856,8 @@
         2384
       ]
     },
-    "545": {
-      "id": 545,
+    "542": {
+      "id": 542,
       "name": "Podmoskovye",
       "color": [
         94,
@@ -39666,8 +39891,8 @@
         1836
       ]
     },
-    "547": {
-      "id": 547,
+    "543": {
+      "id": 543,
       "name": "Moscow",
       "color": [
         186,
@@ -39682,8 +39907,8 @@
         1739
       ]
     },
-    "548": {
-      "id": 548,
+    "544": {
+      "id": 544,
       "name": "Vladimir",
       "color": [
         198,
@@ -39706,8 +39931,8 @@
         1649
       ]
     },
-    "549": {
-      "id": 549,
+    "545": {
+      "id": 545,
       "name": "Nizhny Novgorod",
       "color": [
         155,
@@ -39718,8 +39943,8 @@
         1786
       ]
     },
-    "550": {
-      "id": 550,
+    "546": {
+      "id": 546,
       "name": "Nizhny Novgorod",
       "color": [
         173,
@@ -39741,8 +39966,8 @@
         1352
       ]
     },
-    "551": {
-      "id": 551,
+    "547": {
+      "id": 547,
       "name": "Kostroma",
       "color": [
         208,
@@ -39763,8 +39988,8 @@
         1388
       ]
     },
-    "552": {
-      "id": 552,
+    "548": {
+      "id": 548,
       "name": "Vologda",
       "color": [
         44,
@@ -39831,8 +40056,8 @@
         818
       ]
     },
-    "553": {
-      "id": 553,
+    "549": {
+      "id": 549,
       "name": "Yaroslavl",
       "color": [
         89,
@@ -39859,8 +40084,8 @@
         1266
       ]
     },
-    "554": {
-      "id": 554,
+    "550": {
+      "id": 550,
       "name": "Ivanovo",
       "color": [
         225,
@@ -39884,8 +40109,8 @@
         1492
       ]
     },
-    "555": {
-      "id": 555,
+    "551": {
+      "id": 551,
       "name": "Adygea",
       "color": [
         148,
@@ -39902,13 +40127,13 @@
         21176
       ]
     },
-    "556": {
-      "id": 556,
+    "552": {
+      "id": 552,
       "name": "Donetsk",
       "color": [
-        56,
-        66,
-        67
+        188,
+        91,
+        45
       ],
       "provinces": [
         4551,
@@ -39924,11 +40149,13 @@
         5028,
         5077,
         4896,
-        4822
+        4822,
+        4404,
+        4455
       ]
     },
-    "557": {
-      "id": 557,
+    "553": {
+      "id": 553,
       "name": "Luhansk",
       "color": [
         103,
@@ -39952,8 +40179,8 @@
         4283
       ]
     },
-    "558": {
-      "id": 558,
+    "554": {
+      "id": 554,
       "name": "Zaporizhzhia",
       "color": [
         56,
@@ -39972,8 +40199,8 @@
         5123
       ]
     },
-    "559": {
-      "id": 559,
+    "555": {
+      "id": 555,
       "name": "Kherson",
       "color": [
         204,
@@ -39994,8 +40221,8 @@
         21181
       ]
     },
-    "560": {
-      "id": 560,
+    "556": {
+      "id": 556,
       "name": "Crimea",
       "color": [
         41,
@@ -40016,8 +40243,8 @@
         21178
       ]
     },
-    "561": {
-      "id": 561,
+    "557": {
+      "id": 557,
       "name": "Kharkiv",
       "color": [
         75,
@@ -40032,16 +40259,14 @@
         3909,
         3910,
         4076,
-        4404,
-        4455,
         4330,
         4179,
         4268,
         4269
       ]
     },
-    "562": {
-      "id": 562,
+    "558": {
+      "id": 558,
       "name": "Dnipropetrovsk",
       "color": [
         172,
@@ -40063,8 +40288,8 @@
         4677
       ]
     },
-    "563": {
-      "id": 563,
+    "559": {
+      "id": 559,
       "name": "Mykolaiv",
       "color": [
         219,
@@ -40084,8 +40309,8 @@
         5312
       ]
     },
-    "564": {
-      "id": 564,
+    "560": {
+      "id": 560,
       "name": "Odesa",
       "color": [
         219,
@@ -40111,13 +40336,13 @@
         5633
       ]
     },
-    "565": {
-      "id": 565,
+    "561": {
+      "id": 561,
       "name": "Sumy",
       "color": [
-        180,
-        141,
-        201
+        207,
+        45,
+        215
       ],
       "provinces": [
         3598,
@@ -40134,11 +40359,13 @@
         3188,
         3112,
         3147,
-        2990
+        2990,
+        3627,
+        3539
       ]
     },
-    "566": {
-      "id": 566,
+    "562": {
+      "id": 562,
       "name": "Poltava",
       "color": [
         50,
@@ -40160,8 +40387,8 @@
         4178
       ]
     },
-    "567": {
-      "id": 567,
+    "563": {
+      "id": 563,
       "name": "Kirovohrad",
       "color": [
         179,
@@ -40184,8 +40411,8 @@
         4575
       ]
     },
-    "568": {
-      "id": 568,
+    "564": {
+      "id": 564,
       "name": "Cherkasy",
       "color": [
         48,
@@ -40208,8 +40435,8 @@
         21180
       ]
     },
-    "569": {
-      "id": 569,
+    "565": {
+      "id": 565,
       "name": "Chernihiv",
       "color": [
         108,
@@ -40235,8 +40462,8 @@
         2989
       ]
     },
-    "570": {
-      "id": 570,
+    "566": {
+      "id": 566,
       "name": "Kyivshchyna",
       "color": [
         48,
@@ -40262,8 +40489,8 @@
         3768
       ]
     },
-    "571": {
-      "id": 571,
+    "567": {
+      "id": 567,
       "name": "Kyiv",
       "color": [
         180,
@@ -40274,8 +40501,8 @@
         3835
       ]
     },
-    "572": {
-      "id": 572,
+    "568": {
+      "id": 568,
       "name": "Zhytomyr",
       "color": [
         140,
@@ -40299,8 +40526,8 @@
         3357
       ]
     },
-    "573": {
-      "id": 573,
+    "569": {
+      "id": 569,
       "name": "Vinnytsia",
       "color": [
         116,
@@ -40318,8 +40545,8 @@
         4430
       ]
     },
-    "574": {
-      "id": 574,
+    "570": {
+      "id": 570,
       "name": "Khmelnytskyi",
       "color": [
         152,
@@ -40340,8 +40567,8 @@
         3834
       ]
     },
-    "575": {
-      "id": 575,
+    "571": {
+      "id": 571,
       "name": "Chernivtsi",
       "color": [
         97,
@@ -40357,8 +40584,8 @@
         4792
       ]
     },
-    "576": {
-      "id": 576,
+    "572": {
+      "id": 572,
       "name": "Ivano-Frankivsk",
       "color": [
         114,
@@ -40373,8 +40600,8 @@
         4428
       ]
     },
-    "577": {
-      "id": 577,
+    "573": {
+      "id": 573,
       "name": "Zakarpattia",
       "color": [
         147,
@@ -40394,8 +40621,8 @@
         4672
       ]
     },
-    "578": {
-      "id": 578,
+    "574": {
+      "id": 574,
       "name": "Lviv",
       "color": [
         123,
@@ -40416,8 +40643,8 @@
         3936
       ]
     },
-    "579": {
-      "id": 579,
+    "575": {
+      "id": 575,
       "name": "Ternopil",
       "color": [
         48,
@@ -40433,8 +40660,8 @@
         3988
       ]
     },
-    "580": {
-      "id": 580,
+    "576": {
+      "id": 576,
       "name": "Rivne",
       "color": [
         112,
@@ -40452,8 +40679,8 @@
         3335
       ]
     },
-    "581": {
-      "id": 581,
+    "577": {
+      "id": 577,
       "name": "Volyn",
       "color": [
         145,
@@ -40472,8 +40699,8 @@
         3182
       ]
     },
-    "582": {
-      "id": 582,
+    "578": {
+      "id": 578,
       "name": "Sevastopol",
       "color": [
         186,
@@ -40484,8 +40711,8 @@
         21179
       ]
     },
-    "583": {
-      "id": 583,
+    "579": {
+      "id": 579,
       "name": "Central Hungary",
       "color": [
         180,
@@ -40503,8 +40730,8 @@
         4941
       ]
     },
-    "584": {
-      "id": 584,
+    "580": {
+      "id": 580,
       "name": "Transdanubia",
       "color": [
         148,
@@ -40564,8 +40791,8 @@
         5451
       ]
     },
-    "585": {
-      "id": 585,
+    "581": {
+      "id": 581,
       "name": "Pannonian Basin",
       "color": [
         80,
@@ -40613,8 +40840,8 @@
         21222
       ]
     },
-    "586": {
-      "id": 586,
+    "582": {
+      "id": 582,
       "name": "Hainan",
       "color": [
         120,
@@ -40630,6 +40857,39 @@
         15212,
         15273,
         15643
+      ]
+    },
+    "587": {
+      "id": 587,
+      "name": "West Pomerania",
+      "color": [
+        185,
+        40,
+        43
+      ],
+      "provinces": [
+        2452,
+        2453,
+        2322,
+        2544,
+        2731,
+        2712,
+        2486,
+        2262,
+        2203,
+        2427,
+        2588,
+        21252,
+        2545,
+        2619,
+        2546,
+        2487,
+        2294,
+        21247,
+        21249,
+        2099,
+        21233,
+        2428
       ]
     }
   }
