@@ -267,6 +267,12 @@
                     <span style="font-size: 11px; color: #aaa; width: 50px;">Full:</span>
                     <input type="text" id="editCountryFullName" class="glass-input" style="flex: 1;" onchange="handleFullNameRenameFromInput(this.value)">
                 </div>
+                <button onclick="clearActiveCountryTerritory()" class="glass-button" style="width: 100%; margin-top: 6px; background: rgba(220, 53, 69, 0.15) !important; border-color: #dc3545 !important; font-weight: bold; font-size: 10px; color: white !important;">
+                    &#x274C; Clear All Territory
+                </button>
+                <button onclick="clearActiveCountryTerritory()" class="glass-button" style="width: 100%; margin-top: 6px; background: rgba(220, 53, 69, 0.15) !important; border-color: #dc3545 !important; font-weight: bold; font-size: 10px; color: white !important;">
+                    &#x274C; Clear All Territory
+                </button>
                 <div style="display: flex; flex-direction: column; gap: 4px;">
                     <div style="display: flex; align-items: center; gap: 4px;">
                         <span style="font-size: 11px; color: #aaa; width: 60px;">V-Shift:</span>
@@ -332,6 +338,7 @@
                         <label style="display: block; margin-bottom: 2px; font-size: 11px; color: #aaa;">State Name:</label>
                         <input type="text" id="stateNameInput" style="width: 100%; background: #222; border: 1px solid #444; color: white; padding: 4px; border-radius: 4px; box-sizing: border-box; font-size: 11px;" oninput="handleStateRename(this.value)">
                     </div>
+                    
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 4px; margin-top: 6px;">
                     <div style="display: flex; gap: 4px;">
@@ -377,11 +384,16 @@
                 <button onclick="exportCSV()" class="glass-button" style="width: 100%; margin-top: 4px;">Export CSV</button>
             </div>
         </div>
-
+ 
         <!-- Section 5: Overlays & File Tools -->
         <div class="accordion-item">
             <div class="accordion-header" onclick="toggleAccordion(this)">Overlays &amp; Exporters</div>
             <div class="accordion-content">
+                <label style="display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: #4fc3f7; font-weight: bold; margin-bottom: 8px; cursor: pointer;">
+                    <span>Rivers Overlay</span>
+                    <input type="checkbox" id="riversToggle" checked onchange="toggleRivers(this.checked)" style="accent-color: #4fc3f7; cursor: pointer;">
+                </label>
+
                 <div style="font-weight: bold; color: #ff9500; display: flex; align-items: center; justify-content: space-between;">
                     <span>National Interest</span>
                     <span id="interestValueDisp" style="font-family: monospace; font-size: 11px; background: rgba(255, 149, 0, 0.2); padding: 2px 6px; border-radius: 4px;">5</span>
@@ -544,6 +556,9 @@
         </button>
         <button onclick="diploRecolorCountry()" class="glass-button" style="width: 100%; text-align: left; padding: 6px 8px; background: rgba(255, 193, 7, 0.15) !important; border-color: #ffc107 !important; font-weight: bold; font-size: 10px; color: white !important;">
             &#x1F3A8; Change Country Color
+        </button>
+        <button onclick="diploRemoveCountryProvinces()" class="glass-button" style="width: 100%; text-align: left; padding: 6px 8px; background: rgba(220, 53, 69, 0.15) !important; border-color: #dc3545 !important; font-weight: bold; font-size: 10px; color: white !important;">
+            &#x274C; Remove Owner (Set Unowned)
         </button>
     </div>
 </div>
@@ -1243,8 +1258,7 @@ function selectStateProvinces() {
         selectedProvinces.add(p);
     }
     
-    document.getElementById("stateIdInput").value = stateId;
-    document.getElementById("stateNameInput").value = states[stateId].name;
+    updateStateUIControls(stateId);
     
     updateSelectionStatus();
     draw();
@@ -1258,6 +1272,8 @@ function exportStatesJSON() {
             id: s.id,
             name: s.name,
             color: s.color,
+            controlStrength: s.controlStrength !== undefined ? s.controlStrength : 100,
+            showGradient: s.showGradient || false,
             provinces: Array.from(s.provinces)
         };
     }
@@ -1470,8 +1486,7 @@ function selectStateFromSearch(stateId) {
     if (resultsContainer) resultsContainer.style.display = "none";
     if (searchInput) searchInput.value = "";
     
-    document.getElementById("stateIdInput").value = stateId;
-    document.getElementById("stateNameInput").value = states[stateId].name;
+    updateStateUIControls(stateId);
     
     // Clear selection and select this state's provinces
     selectedProvinces.clear();
@@ -1557,6 +1572,51 @@ function openDiplomacyPanel(tag) {
     document.getElementById("diploClaimsOnUs").innerText = claimsCount;
 }
 
+function diploRemoveCountryProvinces() {
+    const tag = document.getElementById("diploCountryTag").innerText;
+    const country = countries[tag];
+    if (country) {
+        if (confirm(`Are you sure you want to remove ownership from all provinces owned by ${country.fullName || country.name}?`)) {
+            removeOwnershipForCountry(tag);
+            closeDiplomacyPanel();
+        }
+    }
+}
+
+function clearActiveCountryTerritory() {
+    if (!selectedColor) return;
+    const country = countries[selectedColor];
+    if (country) {
+        if (confirm(`Are you sure you want to clear all territory owned by ${country.fullName || country.name}?`)) {
+            removeOwnershipForCountry(selectedColor);
+        }
+    }
+}
+
+function removeOwnershipForCountry(tag) {
+    const country = countries[tag];
+    if (!country) return;
+    
+    const provs = Array.from(country.provinces);
+    for (const provId of provs) {
+        // Set ownership back to unowned
+        ownership[provId] = "";
+        
+        // Update WebGL LUT data to base grey color
+        const offset = provId * 4;
+        lutData[offset] = 180;
+        lutData[offset+1] = 180;
+        lutData[offset+2] = 180;
+    }
+    
+    country.provinces.clear();
+    dirtyCountries.add(tag);
+    lutNeedsUpdate = true;
+    clearLabelCache();
+    updateCountryList();
+    requestDraw();
+}
+
 function closeDiplomacyPanel() {
     const panel = document.getElementById("diplomacyPanel");
     if (panel) panel.style.display = "none";
@@ -1640,8 +1700,7 @@ function addSelectedToHoveredState() {
         for (const p of states[stateId].provinces) {
             selectedProvinces.add(p);
         }
-        document.getElementById("stateIdInput").value = stateId;
-        document.getElementById("stateNameInput").value = states[stateId].name;
+        updateStateUIControls(stateId);
         updateSelectionStatus();
         draw();
     } else {
@@ -1689,6 +1748,8 @@ let program;
 let indexTexture;
 let lutTexture;
 let heightmapTexture;
+let riversTexture;
+let showRivers = 1.0;
 let lutData;
 let lutWidth = 2048;
 let lutHeight = 16;
@@ -1719,6 +1780,8 @@ const fsSource = `
     uniform sampler2D u_indexTexture;
     uniform sampler2D u_lutTexture;
     uniform sampler2D u_heightmapTexture;
+    uniform sampler2D u_riversTexture;
+    uniform float u_showRivers;
     uniform vec2 u_texelSize;
     uniform float u_lutWidth;
     uniform float u_lutHeight;
@@ -1727,6 +1790,10 @@ const fsSource = `
     uniform vec2 u_mapSize;
     uniform float u_zoom;
     uniform float u_activeMapmode;
+    
+    #define DECODE_IDX(col) (floor(col.r * 255.0 + 0.5) + floor(col.g * 255.0 + 0.5) * 256.0 + floor(col.b * 255.0 + 0.5) * 65536.0)
+    #define GET_COUNTRY(nIdx) texture2D(u_lutTexture, vec2((mod(nIdx, u_lutWidth) + 0.5) / u_lutWidth, (floor(nIdx / u_lutWidth) + 0.5) / u_lutHeight)).rgb
+    #define GET_ALPHA_VAL(nIdx) floor(texture2D(u_lutTexture, vec2((mod(nIdx, u_lutWidth) + 0.5) / u_lutWidth, (floor(nIdx / u_lutWidth) + 0.5) / u_lutHeight)).a * 255.0 + 0.5)
 
     void main() {
         vec4 indexColor = texture2D(u_indexTexture, v_texCoord);
@@ -1735,6 +1802,17 @@ const fsSource = `
         float g = floor(indexColor.g * 255.0 + 0.5);
         float b = floor(indexColor.b * 255.0 + 0.5);
         float idx = r + g * 256.0 + b * 65536.0;
+
+        vec2 sStep = 1.0 / (u_mapSize * u_zoom);
+        vec4 nL = texture2D(u_indexTexture, v_texCoord + vec2(-sStep.x, 0.0));
+        vec4 nR = texture2D(u_indexTexture, v_texCoord + vec2(sStep.x, 0.0));
+        vec4 nD = texture2D(u_indexTexture, v_texCoord + vec2(0.0, -sStep.y));
+        vec4 nU = texture2D(u_indexTexture, v_texCoord + vec2(0.0, sStep.y));
+        
+        float idxL = DECODE_IDX(nL);
+        float idxR = DECODE_IDX(nR);
+        float idxD = DECODE_IDX(nD);
+        float idxU = DECODE_IDX(nU);
         
         float u = (mod(idx, u_lutWidth) + 0.5) / u_lutWidth;
         float v = (floor(idx / u_lutWidth) + 0.5) / u_lutHeight;
@@ -1742,6 +1820,17 @@ const fsSource = `
         vec4 color = vec4(lutColor.rgb, 1.0);
         vec3 baseCountryColor = color.rgb;
         
+
+        
+        if (u_showRivers > 0.5) {
+            vec4 riverCol = texture2D(u_riversTexture, v_texCoord);
+            if (riverCol.a > 0.5) {
+                float lum = dot(color.rgb, vec3(0.299, 0.587, 0.114));
+                vec3 riverWater = riverCol.rgb * (0.7 + 0.3 * clamp(lum / 0.70588, 0.0, 1.5));
+                color.rgb = mix(color.rgb, riverWater, 0.95);
+            }
+        }
+
         if (u_showHeightmap > 0.5) {
             float h = texture2D(u_heightmapTexture, v_texCoord).r;
             float hR = texture2D(u_heightmapTexture, v_texCoord + vec2(u_texelSize.x, 0.0)).r;
@@ -1779,21 +1868,6 @@ const fsSource = `
         }
         
         if (u_showBorders > 0.5) {
-            #define DECODE_IDX(col) (floor(col.r * 255.0 + 0.5) + floor(col.g * 255.0 + 0.5) * 256.0 + floor(col.b * 255.0 + 0.5) * 65536.0)
-            #define GET_COUNTRY(nIdx) texture2D(u_lutTexture, vec2((mod(nIdx, u_lutWidth) + 0.5) / u_lutWidth, (floor(nIdx / u_lutWidth) + 0.5) / u_lutHeight)).rgb
-
-            // Screen-space step size to ensure consistent, perfectly anti-aliased 1-pixel borders at any zoom level
-            vec2 sStep = 1.0 / (u_mapSize * u_zoom);
-            
-            vec4 nL = texture2D(u_indexTexture, v_texCoord + vec2(-sStep.x, 0.0));
-            vec4 nR = texture2D(u_indexTexture, v_texCoord + vec2(sStep.x, 0.0));
-            vec4 nD = texture2D(u_indexTexture, v_texCoord + vec2(0.0, -sStep.y));
-            vec4 nU = texture2D(u_indexTexture, v_texCoord + vec2(0.0, sStep.y));
-            
-            float idxL = DECODE_IDX(nL);
-            float idxR = DECODE_IDX(nR);
-            float idxD = DECODE_IDX(nD);
-            float idxU = DECODE_IDX(nU);
             
             vec3 countryL = GET_COUNTRY(idxL);
             vec3 countryR = GET_COUNTRY(idxR);
@@ -1812,8 +1886,6 @@ const fsSource = `
             provBorder = clamp(provBorder * provOpacity, 0.0, 1.0);
             
             float alphaVal = floor(lutColor.a * 255.0 + 0.5);
-            float cHash = floor(alphaVal / 16.0);
-            float sHash = mod(alphaVal, 16.0);
             
             #define GET_ALPHA_VAL(nIdx) floor(texture2D(u_lutTexture, vec2((mod(nIdx, u_lutWidth) + 0.5) / u_lutWidth, (floor(nIdx / u_lutWidth) + 0.5) / u_lutHeight)).a * 255.0 + 0.5)
             
@@ -1822,23 +1894,24 @@ const fsSource = `
             float alphaD = GET_ALPHA_VAL(idxD);
             float alphaU = GET_ALPHA_VAL(idxU);
             
+            float cHash = floor(alphaVal / 16.0);
+            float sHash = mod(alphaVal, 16.0);
+
             float cHashL = floor(alphaL / 16.0);
             float cHashR = floor(alphaR / 16.0);
             float cHashD = floor(alphaD / 16.0);
             float cHashU = floor(alphaU / 16.0);
-            
+
             float sHashL = mod(alphaL, 16.0);
             float sHashR = mod(alphaR, 16.0);
             float sHashD = mod(alphaD, 16.0);
             float sHashU = mod(alphaU, 16.0);
-            
-            // Check country hash differences (draws borders between countries of the same color)
+
             float dHashL = (u_activeMapmode < 0.5) ? step(0.5, abs(cHash - cHashL)) : 0.0;
             float dHashR = (u_activeMapmode < 0.5) ? step(0.5, abs(cHash - cHashR)) : 0.0;
             float dHashD = (u_activeMapmode < 0.5) ? step(0.5, abs(cHash - cHashD)) : 0.0;
             float dHashU = (u_activeMapmode < 0.5) ? step(0.5, abs(cHash - cHashU)) : 0.0;
 
-            // Combine color distance and hash distance for country borders
             float diffL = clamp(step(0.002, distance(baseCountryColor, countryL)) + dHashL, 0.0, 1.0);
             float diffR = clamp(step(0.002, distance(baseCountryColor, countryR)) + dHashR, 0.0, 1.0);
             float diffD = clamp(step(0.002, distance(baseCountryColor, countryD)) + dHashD, 0.0, 1.0);
@@ -1852,17 +1925,17 @@ const fsSource = `
             float sDiffD = step(0.5, abs(sHash - sHashD));
             float sDiffU = step(0.5, abs(sHash - sHashU));
             
-            float stateBorder = (sDiffL + sDiffR + sDiffD + sDiffU) * 0.30;
+            float stateBorder = (sDiffL + sDiffR + sDiffD + sDiffU) * 0.25;
             stateBorder = clamp(stateBorder, 0.0, 1.0);
             
-            // Fade state borders out when zoomed out on the political map to avoid clutter (starts at 1.2x zoom)
-            float stateOpacity = clamp((u_zoom - 1.2) * 0.8, 0.0, 1.0);
+            // Subtle, delicate state border opacity when zoomed in (starts at 1.35x zoom)
+            float stateOpacity = clamp((u_zoom - 1.35) * 0.7, 0.0, 1.0);
 
             if (countryBorder > 0.0) {
                 color.rgb = mix(color.rgb, vec3(0.0), countryBorder * 0.9);
-            } else if (stateBorder > 0.0 && u_activeMapmode < 0.5) {
-                // Apply zoom-based opacity to state borders
-                color.rgb = mix(color.rgb, vec3(0.0), stateBorder * 0.6 * stateOpacity);
+            } else if (stateBorder > 0.0 && stateOpacity > 0.01 && u_activeMapmode < 0.5) {
+                // Soft, refined, subtle state border line
+                color.rgb = mix(color.rgb, vec3(0.0), stateBorder * 0.45 * stateOpacity);
             } else if (provBorder > 0.0) {
                 color.rgb = mix(color.rgb, vec3(0.0), provBorder);
             }
@@ -1947,9 +2020,23 @@ function initWebGL() {
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+
+    riversTexture = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, riversTexture);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 1, 1, 0, gl.RGBA, gl.UNSIGNED_BYTE, new Uint8Array([0, 0, 0, 0]));
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+
+    const riversImg = new Image();
+    riversImg.onload = () => {
+        gl.bindTexture(gl.TEXTURE_2D, riversTexture);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, riversImg);
+        draw();
+    };
+    riversImg.src = "rivers_index.png?v=" + Date.now();
 }
-
-
 
 let labelWorker = null;
 
@@ -2111,6 +2198,15 @@ function buildStraitAdjacency() {
 	}
 }
 
+function updateStateUIControls(stateId) {
+    if (!states[stateId]) return;
+    const st = states[stateId];
+    const idInput = document.getElementById("stateIdInput");
+    const nameInput = document.getElementById("stateNameInput");
+    if (idInput) idInput.value = stateId;
+    if (nameInput) nameInput.value = st.name;
+}
+
 function initApp() {
     buildStraitAdjacency();
     definitions = meta.definitions || {};
@@ -2169,7 +2265,7 @@ function initApp() {
         for (const k in countries) delete countries[k];
         for (const k in COLORS) delete COLORS[k];
         
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                for (const tag in presetData.countries) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        for (const tag in presetData.countries) {
             const c = presetData.countries[tag];
             const base = BASE_COUNTRY_PRESETS[tag] || {};
             countries[tag] = {
@@ -2211,6 +2307,8 @@ function initApp() {
                     id: stateId,
                     name: s.name,
                     color: s.color,
+                    controlStrength: s.controlStrength !== undefined ? s.controlStrength : 100,
+                    showGradient: s.showGradient !== undefined ? s.showGradient : false,
                     provinces: new Set(s.provinces)
                 };
                 for (const provId of s.provinces) {
@@ -2611,13 +2709,13 @@ function toggleSelectedWater() {
             if (lutData) {
                 const index = center.index;
                 if (center.isWater) {
-                    updateLutForProvince(index, [150, 180, 210]);
+                    updateLutForProvince(index, [150, 180, 210], pid);
                 } else {
                     const owner = ownership[pid];
                     if (owner && COLORS[owner]) {
-                        updateLutForProvince(index, COLORS[owner]);
+                        updateLutForProvince(index, COLORS[owner], pid);
                     } else {
-                        updateLutForProvince(index, [180, 180, 180]);
+                        updateLutForProvince(index, [180, 180, 180], pid);
                     }
                 }
             }
@@ -2697,7 +2795,7 @@ function selectProvince(key, isShift) {
 		}
 		delete ownership[key];
         if (provinceCenters[key]) {
-            updateLutForProvince(provinceCenters[key].index, [180, 180, 180]);
+            updateLutForProvince(provinceCenters[key].index, [180, 180, 180], key);
         }
 	}
 	else {
@@ -2712,7 +2810,7 @@ function selectProvince(key, isShift) {
 		countries[selectedColor].provinces.add(key);
 		dirtyCountries.add(selectedColor);
         if (provinceCenters[key]) {
-            updateLutForProvince(provinceCenters[key].index, COLORS[selectedColor]);
+            updateLutForProvince(provinceCenters[key].index, COLORS[selectedColor], key);
         }
 	}
 
@@ -2750,14 +2848,14 @@ function saveProvinceDetails() {
         if (lutData) {
             const index = provinceCenters[parsedId].index;
             if (newType === "water") {
-                updateLutForProvince(index, [150, 180, 210]);
+                updateLutForProvince(index, [150, 180, 210], parsedId);
             } else {
                 // Check if owned by a country
                 const owner = ownership[parsedId];
                 if (owner && COLORS[owner]) {
-                    updateLutForProvince(index, COLORS[owner]);
+                    updateLutForProvince(index, COLORS[owner], parsedId);
                 } else {
-                    updateLutForProvince(index, [180, 180, 180]);
+                    updateLutForProvince(index, [180, 180, 180], parsedId);
                 }
             }
         }
@@ -2818,6 +2916,8 @@ function getWorldPresetData() {
             id: s.id,
             name: s.name,
             color: s.color,
+            controlStrength: s.controlStrength !== undefined ? s.controlStrength : 100,
+            showGradient: s.showGradient || false,
             provinces: Array.from(s.provinces)
         };
     }
@@ -2858,12 +2958,93 @@ function exportWorldJSON() {
     downloadAnchor.remove();
 }
 
-function updateLutForProvince(idx, colorRgb) {
+function updateLutForProvince(idx, colorRgb, provId) {
+    if (provId !== undefined && provinceToState[provId] !== undefined) {
+        const stateId = provinceToState[provId];
+        if (states[stateId]) {
+            const st = states[stateId];
+            if (st.showGradient && (st.controlStrength !== undefined ? st.controlStrength : 100) < 100) {
+                // Force to neutral grey so it receives the blurred gradient overlay
+                colorRgb = [180, 180, 180];
+            }
+        }
+    }
     const offset = idx * 4;
     lutData[offset] = colorRgb[0];
     lutData[offset+1] = colorRgb[1];
     lutData[offset+2] = colorRgb[2];
     lutNeedsUpdate = true;
+}
+
+let stateColoring = {};
+let countryColoring = {};
+
+function buildGraphColoring() {
+    stateColoring = {};
+    countryColoring = {};
+
+    const stateNeighbors = {};
+    for (const sid in states) {
+        stateNeighbors[sid] = new Set();
+    }
+    const countryNeighbors = {};
+    for (const tag in countries) {
+        countryNeighbors[tag] = new Set();
+    }
+
+    if (meta && meta.neighbors) {
+        for (const p1Str in meta.neighbors) {
+            const p1 = parseInt(p1Str, 10);
+            const s1 = provinceToState[p1];
+            const t1 = ownership[p1];
+            const nbrs = meta.neighbors[p1Str];
+
+            if (nbrs && Array.isArray(nbrs)) {
+                for (let i = 0; i < nbrs.length; i++) {
+                    const p2 = parseInt(nbrs[i], 10);
+                    const s2 = provinceToState[p2];
+                    const t2 = ownership[p2];
+
+                    if (s1 !== undefined && s2 !== undefined && s1 !== s2 && states[s1] && states[s2]) {
+                        stateNeighbors[s1].add(s2);
+                        stateNeighbors[s2].add(s1);
+                    }
+                    if (t1 && t2 && t1 !== t2 && countries[t1] && countries[t2]) {
+                        countryNeighbors[t1].add(t2);
+                        countryNeighbors[t2].add(t1);
+                    }
+                }
+            }
+        }
+    }
+
+    for (const sid in stateNeighbors) {
+        const used = new Set();
+        for (const nbrSid of stateNeighbors[sid]) {
+            if (stateColoring[nbrSid] !== undefined) {
+                used.add(stateColoring[nbrSid]);
+            }
+        }
+        let h = 1;
+        while (used.has(h) && h < 15) {
+            h++;
+        }
+        stateColoring[sid] = h;
+    }
+
+    for (const tag in countryNeighbors) {
+        const used = new Set();
+        for (const nbrTag of countryNeighbors[tag]) {
+            if (countryColoring[nbrTag] !== undefined) {
+                used.add(countryColoring[nbrTag]);
+            }
+        }
+        let h = 1;
+        while (used.has(h) && h < 15) {
+            h++;
+        }
+        countryColoring[tag] = h;
+    }
 }
 
 function updateLutData() {
@@ -2909,6 +3090,8 @@ function updateLutData() {
                     lutData[offset] = rgb[0];
                     lutData[offset+1] = rgb[1];
                     lutData[offset+2] = rgb[2];
+                    let sHash = ((parseInt(stateId, 10) || 1) * 101 + 17) % 254 + 1;
+                    lutData[offset+3] = sHash;
                 }
             }
         }
@@ -2924,36 +3107,36 @@ function updateLutData() {
                 lutData[offset+2] = 210;
             }
         }
-        // Draw country ownership
+        // Draw country ownership with proper country and state border hash encoding in LUT alpha
         for (const provIdStr in ownership) {
             const provId = parseInt(provIdStr);
             const tag = ownership[provIdStr];
             if (countries[tag] && provinceCenters[provId]) {
+                const stateId = provinceToState[provId];
                 const idx = provinceCenters[provId].index;
                 const colorRgb = COLORS[tag];
-                if (colorRgb) {
-                    const offset = idx * 4;
-                    lutData[offset] = colorRgb[0];
-                    lutData[offset+1] = colorRgb[1];
-                    lutData[offset+2] = colorRgb[2];
+                if (!colorRgb) continue;
+
+                const offset = idx * 4;
+                lutData[offset] = colorRgb[0];
+                lutData[offset+1] = colorRgb[1];
+                lutData[offset+2] = colorRgb[2];
+
+                let sHash = 255;
+                if (stateId !== undefined) {
+                    sHash = ((parseInt(stateId, 10) || 1) * 101 + 17) % 254 + 1;
                 }
+                lutData[offset+3] = sHash;
             }
         }
     }
     
-    // Populate packed country and state hashes in the alpha channel for border detection (if not in interest mapmode)
+    // Populate packed country and state hashes in the alpha channel using Greedy Graph Coloring (0 adjacent collisions)
     if (activeMapmode !== "interest") {
+        buildGraphColoring();
         for (let i = 0; i < lutWidth * lutHeight; i++) {
             lutData[i * 4 + 3] = 0;
         }
-        const getCountryHash = (tag) => {
-            if (!tag) return 0;
-            let h = 0;
-            for (let i = 0; i < tag.length; i++) {
-                h = (h * 31 + tag.charCodeAt(i)) & 0xFFFFFFFF;
-            }
-            return (Math.abs(h) % 15) + 1; // 1 to 15
-        };
         for (const keyStr in provinceCenters) {
             const provId = parseInt(keyStr);
             const center = provinceCenters[keyStr];
@@ -2962,10 +3145,9 @@ function updateLutData() {
                 const tag = ownership[provId];
                 const stateId = provinceToState[provId];
                 
-                const cHash = tag ? getCountryHash(tag) : 0;
-                const sHash = stateId !== undefined ? (stateId % 15) + 1 : 0;
+                const cHash = (tag && countryColoring[tag]) ? countryColoring[tag] : 1;
+                const sHash = (stateId !== undefined && stateColoring[stateId]) ? stateColoring[stateId] : 1;
                 
-                // Pack countryHash (upper 4 bits) and stateHash (lower 4 bits)
                 lutData[idx * 4 + 3] = cHash * 16 + sHash;
             }
         }
@@ -3615,6 +3797,13 @@ function performDraw() {
     gl.activeTexture(gl.TEXTURE2);
     gl.bindTexture(gl.TEXTURE_2D, heightmapTexture);
     gl.uniform1i(gl.getUniformLocation(program, "u_heightmapTexture"), 2);
+
+    gl.activeTexture(gl.TEXTURE3);
+    gl.bindTexture(gl.TEXTURE_2D, riversTexture);
+    gl.uniform1i(gl.getUniformLocation(program, "u_riversTexture"), 3);
+    gl.uniform1f(gl.getUniformLocation(program, "u_showRivers"), showRivers);
+
+
 
     gl.uniform2f(gl.getUniformLocation(program, "u_offset"), offsetX, offsetY);
     gl.uniform1f(gl.getUniformLocation(program, "u_zoom"), zoom);
@@ -4746,5 +4935,7 @@ window.addEventListener("keydown", (e) => {
     }
 });
 </script>
-</body>
+
+    <!-- Floating Live Debug Panel for Gradient & Influence Diagnostics -->
+    </body>
 </html>
