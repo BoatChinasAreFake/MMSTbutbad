@@ -6,13 +6,13 @@
     <meta http-equiv="Expires" content="0">
     <title>Map Sandbox</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        /* Offline system font stack fallback */
 
         body { 
             margin: 0; 
             overflow: hidden; 
             background: #121212; 
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         /* Glassmorphism styling */
@@ -414,6 +414,20 @@
                     <div style="display: flex; gap: 4px; margin-top: 2px;">
                         <button onclick="saveStartingPreset()" class="glass-button" style="flex: 1; font-size: 10px; background: #007bff !important; color: white !important;">Save Starting Preset</button>
                         <button onclick="exportWorldJSON()" class="glass-button" style="flex: 1; font-size: 10px;">Export JSON</button>
+                    </div>
+                    
+                    <!-- Save & Load Progress Controls -->
+                    <div style="border-top: 1px dashed rgba(255, 255, 255, 0.15); margin-top: 6px; padding-top: 6px;">
+                        <div style="font-size: 11px; font-weight: bold; color: #ffc107; margin-bottom: 4px;">Save / Load Progress</div>
+                        <div style="display: flex; gap: 4px; margin-bottom: 4px;">
+                            <button onclick="exportSaveFile()" class="glass-button" style="flex: 1; background: #0288d1 !important; color: white !important; font-weight: bold;">Download Save (.json)</button>
+                            <button onclick="document.getElementById('importSaveFileInput').click()" class="glass-button" style="flex: 1; background: #388e3c !important; color: white !important; font-weight: bold;">Load Save (.json)</button>
+                        </div>
+                        <input type="file" id="importSaveFileInput" accept=".json" onchange="importSaveFile(event)" style="display: none;">
+                        <div style="display: flex; gap: 4px;">
+                            <button onclick="quickSaveLocalStorage()" class="glass-button" style="flex: 1; background: #f57c00 !important; color: white !important;">Quick Save (Browser)</button>
+                            <button onclick="quickLoadLocalStorage()" class="glass-button" style="flex: 1; background: #7b1fa2 !important; color: white !important;">Quick Load (Browser)</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -997,13 +1011,31 @@ function resetMap(){
     ownership = {};
     interests = {};
 
-    for(const c in countries){
-        countries[c].provinces.clear();
-        interests[c] = {};
+    // Reset country colors back to original preset or base values
+    if (presetData && presetData.countries) {
+        for (const tag in countries) {
+            if (presetData.countries[tag] && presetData.countries[tag].color) {
+                countries[tag].color = [...presetData.countries[tag].color];
+                COLORS[tag] = [...presetData.countries[tag].color];
+            } else if (BASE_COUNTRY_PRESETS[tag] && BASE_COUNTRY_PRESETS[tag].color) {
+                countries[tag].color = [...BASE_COUNTRY_PRESETS[tag].color];
+                COLORS[tag] = [...BASE_COUNTRY_PRESETS[tag].color];
+            }
+            countries[tag].provinces.clear();
+            interests[tag] = {};
+        }
+    } else {
+        for (const c in countries) {
+            if (BASE_COUNTRY_PRESETS[c] && BASE_COUNTRY_PRESETS[c].color) {
+                countries[c].color = [...BASE_COUNTRY_PRESETS[c].color];
+                COLORS[c] = [...BASE_COUNTRY_PRESETS[c].color];
+            }
+            countries[c].provinces.clear();
+            interests[c] = {};
+        }
     }
 
     dirtyCountries.clear();
-
 	clearLabelCache();
 
     // Reload preset ownership and interests if available
@@ -1030,6 +1062,7 @@ function resetMap(){
         dirtyCountries.add(tag);
     }
 
+    updateCountryList();
     updateLutData();
     draw();
 }
@@ -2265,7 +2298,7 @@ function initApp() {
         for (const k in countries) delete countries[k];
         for (const k in COLORS) delete COLORS[k];
         
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        for (const tag in presetData.countries) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                for (const tag in presetData.countries) {
             const c = presetData.countries[tag];
             const base = BASE_COUNTRY_PRESETS[tag] || {};
             countries[tag] = {
@@ -2797,6 +2830,8 @@ function selectProvince(key, isShift) {
         if (provinceCenters[key]) {
             updateLutForProvince(provinceCenters[key].index, [180, 180, 180], key);
         }
+        clearLabelCache();
+        draw();
 	}
 	else {
 		const old = ownership[key];
@@ -2925,6 +2960,146 @@ function getWorldPresetData() {
     return data;
 }
 
+
+// --- Save & Load Progress System ---
+
+function exportSaveFile() {
+    const data = getWorldPresetData();
+    data.saveDate = new Date().toISOString();
+    const jsonStr = JSON.stringify(data, null, 2);
+    const blob = new Blob([jsonStr], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const dateStr = new Date().toISOString().slice(0, 10);
+    
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `mappa_mundi_save_${dateStr}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+
+function importSaveFile(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        try {
+            const data = JSON.parse(e.target.result);
+            applyLoadedSaveData(data);
+            alert("Save file loaded successfully!");
+        } catch (err) {
+            console.error("Failed to parse save file:", err);
+            alert("Error loading save file. Invalid JSON format.");
+        }
+    };
+    reader.readAsText(file);
+    event.target.value = "";
+}
+
+function quickSaveLocalStorage() {
+    try {
+        const data = getWorldPresetData();
+        data.saveDate = new Date().toISOString();
+        localStorage.setItem("mappa_mundi_quicksave", JSON.stringify(data));
+        alert("Quick Save successful! Progress saved to browser storage.");
+    } catch (e) {
+        console.error("Quick save failed:", e);
+        alert("Quick Save failed. Storage limit exceeded or storage blocked.");
+    }
+}
+
+function quickLoadLocalStorage() {
+    try {
+        const jsonStr = localStorage.getItem("mappa_mundi_quicksave");
+        if (!jsonStr) {
+            alert("No Quick Save found in browser storage.");
+            return;
+        }
+        const data = JSON.parse(jsonStr);
+        applyLoadedSaveData(data);
+        alert("Quick Load successful! Restored session from browser storage.");
+    } catch (e) {
+        console.error("Quick load failed:", e);
+        alert("Failed to restore Quick Save.");
+    }
+}
+
+function applyLoadedSaveData(data) {
+    if (!data) return;
+    
+    // Restore countries
+    if (data.countries) {
+        for (const k in countries) delete countries[k];
+        for (const k in COLORS) delete COLORS[k];
+        for (const tag in data.countries) {
+            const c = data.countries[tag];
+            countries[tag] = {
+                tag: tag,
+                name: c.name,
+                fullName: c.fullName || "",
+                color: c.color,
+                labelOffset: c.labelOffset || 0,
+                labelXOffset: c.labelXOffset || 0,
+                labelArcShift: c.labelArcShift || 0,
+                curvatureScale: c.curvatureScale !== undefined ? c.curvatureScale : 1.0,
+                fontSizeScale: c.fontSizeScale !== undefined ? c.fontSizeScale : 1.0,
+                labelRotation: c.labelRotation || 0,
+                labelStretch: c.labelStretch !== undefined ? c.labelStretch : 1.0,
+                provinces: new Set(),
+                spines: c.spines || []
+            };
+            COLORS[tag] = c.color;
+        }
+    }
+    
+    // Restore ownership
+    if (data.ownership) {
+        for (const provId in ownership) delete ownership[provId];
+        for (const provId in data.ownership) {
+            const tag = data.ownership[provId];
+            ownership[provId] = tag;
+            if (countries[tag]) {
+                countries[tag].provinces.add(parseInt(provId));
+            }
+        }
+    }
+    
+    // Restore states
+    if (data.states) {
+        states = {};
+        provinceToState = {};
+        for (const stateIdStr in data.states) {
+            const s = data.states[stateIdStr];
+            const stateId = parseInt(stateIdStr);
+            states[stateId] = {
+                id: stateId,
+                name: s.name,
+                color: s.color,
+                controlStrength: s.controlStrength !== undefined ? s.controlStrength : 100,
+                showGradient: s.showGradient || false,
+                provinces: new Set(s.provinces)
+            };
+            for (const provId of s.provinces) {
+                provinceToState[provId] = stateId;
+            }
+        }
+    }
+    
+    // Restore interests
+    if (data.interests) {
+        interests = {};
+        for (const tag in data.interests) {
+            interests[tag] = { ...data.interests[tag] };
+        }
+    }
+    
+    updateCountryList();
+    updateLutData();
+    draw();
+}
+
 function saveWorldPreset() {
     const data = getWorldPresetData();
     fetch("/save", {
@@ -2964,7 +3139,6 @@ function updateLutForProvince(idx, colorRgb, provId) {
         if (states[stateId]) {
             const st = states[stateId];
             if (st.showGradient && (st.controlStrength !== undefined ? st.controlStrength : 100) < 100) {
-                // Force to neutral grey so it receives the blurred gradient overlay
                 colorRgb = [180, 180, 180];
             }
         }
@@ -2973,6 +3147,16 @@ function updateLutForProvince(idx, colorRgb, provId) {
     lutData[offset] = colorRgb[0];
     lutData[offset+1] = colorRgb[1];
     lutData[offset+2] = colorRgb[2];
+    
+    // Also update packed alpha channel (cHash * 16 + sHash) for border rendering
+    if (provId !== undefined) {
+        const tag = ownership[provId];
+        const stateId = provinceToState[provId];
+        const cHash = (tag && countryColoring[tag]) ? countryColoring[tag] : 1;
+        const sHash = (stateId !== undefined && stateColoring[stateId]) ? stateColoring[stateId] : 1;
+        lutData[offset+3] = (cHash * 16) + sHash;
+    }
+    
     lutNeedsUpdate = true;
 }
 

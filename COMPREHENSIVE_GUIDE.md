@@ -1,6 +1,6 @@
 # Comprehensive Guide: Mappa Mundi sine Tempore
 
-Welcome to the official comprehensive guide for **Mappa Mundi sine Tempore**. This document provides an in-depth reference covering what the application is, how it works under the hood, how to use all of its features, and step-by-step instructions for modders and developers looking to insert custom provinces, states, or nations.
+Welcome to the official comprehensive guide for **Mappa Mundi sine Tempore**. This document provides an in-depth reference covering what the application is, how to install all prerequisite software, how it works under the hood, how to use all of its features, and step-by-step instructions for modders and developers looking to insert custom provinces, states, or nations.
 
 ---
 
@@ -17,12 +17,91 @@ Welcome to the official comprehensive guide for **Mappa Mundi sine Tempore**. Th
   - **Dynamic State & Country Borders**: Uses a 4-Color Planar Graph Coloring algorithm to guarantee 0 border collisions.
   - **3D Terrain Heightmap**: GPU hillshading using real elevation data (`heightmap.png`).
   - **Pixel-Perfect Rivers**: Point-sampled river system overlay (`rivers_index.png`).
-- **Disk Persistence**: Built-in Python server endpoint for direct JSON persistence (`preset_ownership.json` and `straits.json`).
+- **Disk & File Persistence**: Save and load progress via standalone `.json` save files, browser Quick Saves, or Python server presets.
 - **Paradox / HOI4 Export**: Import and export Paradox-compatible state files, country definitions, and CSV data.
 
 ---
 
-## 2. Technical Architecture & File Structure
+## 2. Prerequisites & Installation Guide
+
+Before running the application or using processing scripts, ensure you have Python and the necessary dependencies installed.
+
+### A. Downloading & Installing Python
+
+#### Windows
+1. Visit the official Python download page: [python.org/downloads](https://www.python.org/downloads/).
+2. Click **Download Python 3.x.x** (Python 3.10 or newer is recommended).
+3. Run the downloaded installer (`python-3.x.x-amd64.exe`).
+4. > [!IMPORTANT]
+   > **CRITICAL STEP**: On the very first setup screen, check the box at the bottom that says **"Add python.exe to PATH"**. If you skip this step, Windows will not recognize `python` commands in terminal/cmd.
+5. Click **Install Now** and approve Windows Administrator privileges when prompted.
+
+#### macOS
+1. Install Homebrew (if not already installed) or download the macOS installer from [python.org/downloads/macos](https://www.python.org/downloads/macos/).
+2. Alternatively, run in Terminal:
+   ```bash
+   brew install python
+   ```
+
+#### Linux (Ubuntu / Debian / Fedora)
+Python 3 is pre-installed on most modern distributions. You can verify or install it via your package manager:
+```bash
+sudo apt update
+sudo apt install python3 python3-pip python3-pil python3-numpy
+```
+
+#### Verifying Python Installation
+Open Command Prompt (`cmd`), PowerShell, or Terminal and run:
+```bash
+python --version
+```
+*(If on Linux/macOS, use `python3 --version`). You should see `Python 3.10.x` or similar.*
+
+---
+
+### B. Installing Required Python Packages (`pip`)
+
+The background data utility scripts (`sync_provinces.py`, `scratch/process_rivers_png.py`, `scratch/bake_and_reset.py`) require image manipulation and array processing libraries.
+
+Open Command Prompt / Terminal and run:
+```bash
+pip install Pillow numpy
+```
+
+#### What these packages do:
+* **Pillow (`PIL`)**: Image processing library used to parse, color-index, and generate 5120x2560 map texture PNG files.
+* **NumPy**: High-performance multidimensional array library used for rapid matrix pixel calculations across 13-million-pixel map layers.
+
+---
+
+### C. Recommended Map Editing Software
+
+If you plan to modify map graphics (`provinces_index.png` or `rivers.png`), you will need an image editor that supports pixel-perfect editing without anti-aliasing.
+
+> [!WARNING]
+> **Avoid Anti-Aliased Brushes**: Never use soft brushes, airbrushes, or anti-aliased eraser tools when editing map textures. Blended border pixels create invalid RGB colors that break province ID mappings!
+
+#### Recommended Editors:
+1. **Paint.NET** (Free, Windows) - Highly recommended. Easy to set pencil tool to hard pixel edges.
+2. **GIMP** (Free, Open Source, Cross-Platform) - Use the **Pencil Tool** (shortcut `N`) which draws strictly hard pixel edges.
+3. **Adobe Photoshop** - Select the **Pencil Tool** (hidden under Brush tool) with Hardness 100% and Smoothing 0%.
+
+---
+
+### D. Running Mappa Mundi sine Tempore
+
+1. Navigate to the project root directory.
+2. **Start Server**:
+   - On Windows: Double-click [`start_server.bat`](file:///c:/Users/Faaz/Documents/GitHub/Mappa%20Mundi%20sine%20Tempore/start_server.bat).
+   - Alternatively, open terminal and run:
+     ```bash
+     python server.py
+     ```
+3. Open your web browser to `http://localhost:8000`.
+
+---
+
+## 3. Technical Architecture & File Structure
 
 ### Frontend Stack (`index.html`)
 The application runs as a single-page HTML5/WebGL application with an embedded glassmorphic UI overlay.
@@ -60,13 +139,7 @@ The application runs as a single-page HTML5/WebGL application with an embedded g
 
 ---
 
-## 3. How to Use Features & Controls
-
-### Launching the Application
-1. Run [`start_server.bat`](file:///c:/Users/Faaz/Documents/GitHub/Mappa%20Mundi%20sine%20Tempore/start_server.bat).
-2. Open your web browser to `http://localhost:8000`.
-
----
+## 4. How to Use Features & Controls
 
 ### Canvas Controls & Mouse Navigation
 - **Pan Map**: Left-click drag or Middle-click drag across the map.
@@ -99,6 +172,15 @@ Located in the **Overlays & Exporters** accordion panel:
 
 ---
 
+### Save & Load Progress System
+Located under **Overlays & Exporters** in the sidebar:
+- **Download Save (.json)**: Exports your entire active session (countries, tags, names, colors, states, province ownerships, interests) to a timestamped JSON file (`mappa_mundi_save_YYYY-MM-DD.json`).
+- **Load Save (.json)**: Restores any previously saved `.json` file directly from your computer into the active canvas.
+- **Quick Save (Browser)**: Instantly saves your session to browser `localStorage` without generating a file download.
+- **Quick Load (Browser)**: Restores your `localStorage` quick-save session.
+
+---
+
 ### State Creator & Editor
 1. Click **State Mode** or select a province.
 2. The **State Editor** panel will display the state's ID, Name, and Province Count.
@@ -117,7 +199,7 @@ Located in the **Overlays & Exporters** accordion panel:
 
 ---
 
-## 4. Developer Guide: Adding Custom Data
+## 5. Developer Guide: Adding Custom Data
 
 ### A. How to Add or Modify Custom Provinces
 
@@ -204,7 +286,7 @@ To add a custom nation with starting ownership:
 
 ---
 
-## 5. Maintenance & Utility Scripts
+## 6. Maintenance & Utility Scripts
 
 The project includes several scratch utilities to verify code health and bake changes:
 
