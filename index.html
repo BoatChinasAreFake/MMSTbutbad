@@ -393,6 +393,18 @@
                     <span>Rivers Overlay</span>
                     <input type="checkbox" id="riversToggle" checked onchange="toggleRivers(this.checked)" style="accent-color: #4fc3f7; cursor: pointer;">
                 </label>
+                <label style="display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: #90caf9; font-weight: bold; margin-bottom: 8px; cursor: pointer;">
+                    <span>Province Borders</span>
+                    <input type="checkbox" id="bordersToggle" checked onchange="toggleBorders(this.checked)" style="accent-color: #90caf9; cursor: pointer;">
+                </label>
+                <label style="display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: #81c784; font-weight: bold; margin-bottom: 8px; cursor: pointer;">
+                    <span>Heightmap Shading</span>
+                    <input type="checkbox" id="graphicsHeightmapToggle" checked onchange="toggleHeightmapShading(this.checked)" style="accent-color: #81c784; cursor: pointer;">
+                </label>
+                <label style="display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: #ce93d8; font-weight: bold; margin-bottom: 8px; cursor: pointer;">
+                    <span>Country Labels</span>
+                    <input type="checkbox" id="labelsToggle" checked onchange="toggleCountryLabels(this.checked)" style="accent-color: #ce93d8; cursor: pointer;">
+                </label>
 
                 <div style="font-weight: bold; color: #ff9500; display: flex; align-items: center; justify-content: space-between;">
                     <span>National Interest</span>
@@ -1788,6 +1800,7 @@ let lutWidth = 2048;
 let lutHeight = 16;
 let lutNeedsUpdate = true;
 let showBorders = 1.0;
+let showLabels = 1.0;
 let waterIdx = -1;
 
 const vsSource = `
@@ -2259,6 +2272,12 @@ function initApp() {
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, heightmapImg);
         showHeightmap = 1.0;
     }
+    const heightmapToggle = document.getElementById("graphicsHeightmapToggle");
+    if (heightmapToggle) {
+        heightmapToggle.checked = showHeightmap > 0.5;
+        heightmapToggle.disabled = !hasHeightmap;
+        heightmapToggle.style.cursor = hasHeightmap ? "pointer" : "not-allowed";
+    }
 
     overlayCanvas.width = canvas.width = window.innerWidth;
     overlayCanvas.height = canvas.height = window.innerHeight;
@@ -2384,8 +2403,7 @@ function initApp() {
 	});
 
 	document.getElementById("dbgHeightmap").addEventListener("change", e=>{
-		showHeightmap = e.target.checked ? 1.0 : 0.0;
-		draw();
+		toggleHeightmapShading(e.target.checked);
 	});
 
     // Fetch HOI4 state mappings database
@@ -4068,7 +4086,11 @@ function performDraw() {
     drawStraits();
     const afterOverlay = performance.now();
     
-    drawLabels();
+    if (showLabels > 0.5) {
+        drawLabels();
+    } else if (DEBUG.panel) {
+        debugPanel.innerHTML = window.debugPanelHeader || "";
+    }
     const end = performance.now();
     
     dirtyCountries.clear();
@@ -5011,6 +5033,30 @@ window.toggleMapLabelMode = function(enabled) {
 	}
 }
 // Convenient hotkey listeners
+function toggleRivers(enabled) {
+	showRivers = enabled ? 1.0 : 0.0;
+	requestDraw();
+}
+
+function toggleBorders(enabled) {
+	showBorders = enabled ? 1.0 : 0.0;
+	requestDraw();
+}
+
+function toggleHeightmapShading(enabled) {
+	showHeightmap = enabled ? 1.0 : 0.0;
+	const dbgHeightToggle = document.getElementById("dbgHeightmap");
+	if (dbgHeightToggle && dbgHeightToggle.checked !== enabled) {
+		dbgHeightToggle.checked = enabled;
+	}
+	requestDraw();
+}
+
+function toggleCountryLabels(enabled) {
+	showLabels = enabled ? 1.0 : 0.0;
+	requestDraw();
+}
+
 function toggleSidebar() {
 	const panel = document.getElementById("sidebarPanel");
 	const toggleBtn = document.getElementById("btnSidebarToggle");
