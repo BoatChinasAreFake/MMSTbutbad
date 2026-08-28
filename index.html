@@ -405,6 +405,10 @@
                     <span>Country Labels</span>
                     <input type="checkbox" id="labelsToggle" checked onchange="toggleCountryLabels(this.checked)" style="accent-color: #ce93d8; cursor: pointer;">
                 </label>
+                <label style="display: flex; align-items: center; justify-content: space-between; font-size: 10px; color: #ce93d8; margin-bottom: 8px; cursor: pointer; opacity: 0.9;">
+                    <span>Always Show Tiny Country Labels</span>
+                    <input type="checkbox" id="alwaysShowSmallLabelsToggle" onchange="toggleAlwaysShowSmallCountryLabels(this.checked)" style="accent-color: #ce93d8; cursor: pointer;">
+                </label>
 
                 <div style="font-weight: bold; color: #ff9500; display: flex; align-items: center; justify-content: space-between;">
                     <span>National Interest</span>
@@ -817,6 +821,7 @@ let countries = {
 
 let selectedColor = "yellow";
 let useOfficialNames = false;
+let alwaysShowSmallCountryLabels = false;
 
 function selectCountry(tag) {
     selectedColor = tag;
@@ -4929,14 +4934,17 @@ window.toggleMapLabelMode = function(enabled) {
 				continue;
 			}
 
-			// Size culling: Only remove labels for truly small micro-states (e.g., Kosovo, Montenegro)
-			// For larger countries with long official names, let the font scale down so they remain visible.
-			const isMicroState = label.provCount < 3 || label.thickness < 32;
-			if (isMicroState && label.effectiveFont * zoom < 8.0) {
-				continue;
-			}
-			if (label.effectiveFont * zoom < 3.0) { // Ultimate rendering cutoff for performance
-				continue;
+			// Size culling: only applied when tiny labels are not forced visible.
+			if (!alwaysShowSmallCountryLabels) {
+				// Only remove labels for truly small micro-states (e.g., Kosovo, Montenegro)
+				// For larger countries with long official names, let the font scale down so they remain visible.
+				const isMicroState = label.provCount < 3 || label.thickness < 32;
+				if (isMicroState && label.effectiveFont * zoom < 8.0) {
+					continue;
+				}
+				if (label.effectiveFont * zoom < 3.0) { // Ultimate rendering cutoff for performance
+					continue;
+				}
 			}
 
 			ctx.setTransform(zoom, 0, 0, zoom, -offsetX * zoom, -offsetY * zoom);
@@ -5054,6 +5062,11 @@ function toggleHeightmapShading(enabled) {
 
 function toggleCountryLabels(enabled) {
 	showLabels = enabled ? 1.0 : 0.0;
+	requestDraw();
+}
+
+function toggleAlwaysShowSmallCountryLabels(enabled) {
+	alwaysShowSmallCountryLabels = !!enabled;
 	requestDraw();
 }
 
