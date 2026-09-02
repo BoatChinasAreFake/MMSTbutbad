@@ -148,6 +148,15 @@ The application runs as a single-page HTML5/WebGL application with an embedded g
 
 ---
 
+### Undo & Redo
+Every ownership edit is recorded in an edit history (up to 100 steps), so mistakes are always reversible:
+- **Undo**: `Ctrl+Z`, or the **Undo** button in the top toolbar.
+- **Redo**: `Ctrl+Shift+Z` or `Ctrl+Y`, or the **Redo** button.
+
+Tracked operations include painting a selection, erasing, single-province paint/erase, the Land/Water toggle, and "Clear territory" from the diplomacy panel. Each operation is one step, and a toast at the bottom of the screen confirms what was reverted. Loading a save, a preset, or resetting the map clears the history, since those replace the whole world state.
+
+---
+
 ### Selection Modes
 Located in the **Selection & Tools** sidebar panel:
 - **Province Mode**: Single-clicking selects individual provinces.

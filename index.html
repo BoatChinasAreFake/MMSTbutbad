@@ -164,7 +164,12 @@
     <button onclick="setTool('box')" id="btnToolBox" class="glass-button active">Box Select (B)</button>
     <button onclick="setTool('lasso')" id="btnToolLasso" class="glass-button">Lasso Select (L)</button>
     <button onclick="setTool('pan')" id="btnToolPan" class="glass-button">Pan / Move (H)</button>
-    
+
+    <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.15); margin: 0 4px;"></div>
+
+    <button onclick="undoEdit()" id="btnUndo" class="glass-button" style="opacity: 0.4;" title="Nothing to undo" disabled>&#8630; Undo</button>
+    <button onclick="redoEdit()" id="btnRedo" class="glass-button" style="opacity: 0.4;" title="Nothing to redo" disabled>&#8631; Redo</button>
+
     <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.15); margin: 0 4px;"></div>
     
     <button onclick="selectAllProvincesOfSelectedCountry()" class="glass-button">Select Country (C)</button>
@@ -1025,6 +1030,7 @@ function clearLabelCache() {
 }
 function resetMap(){
 
+    clearHistory();
     ownership = {};
     interests = {};
 
@@ -1648,18 +1654,21 @@ function removeOwnershipForCountry(tag) {
     if (!country) return;
     
     const provs = Array.from(country.provinces);
+    beginEdit("Clear territory of " + tag);
     for (const provId of provs) {
         // Set ownership back to unowned
-        ownership[provId] = "";
+        delete ownership[provId];
         
-        // Update WebGL LUT data to base grey color
-        const offset = provId * 4;
-        lutData[offset] = 180;
-        lutData[offset+1] = 180;
-        lutData[offset+2] = 180;
+        // Update WebGL LUT data to base grey color. The LUT is indexed by the
+        // province's palette index, not by its ID.
+        const center = provinceCenters[provId];
+        if (center && lutData) {
+            updateLutForProvince(center.index, [180, 180, 180], provId);
+        }
     }
     
     country.provinces.clear();
+    commitEdit();
     dirtyCountries.add(tag);
     lutNeedsUpdate = true;
     clearLabelCache();
@@ -2739,6 +2748,7 @@ function selectAllProvincesOfSelectedCountry() {
 
 function toggleSelectedWater() {
     if (selectedProvinces.size === 0) return;
+    beginEdit("Toggle land/water");
     
     for (const pid of selectedProvinces) {
         const center = provinceCenters[pid];
@@ -2778,16 +2788,196 @@ function toggleSelectedWater() {
         }
     }
     
+    commitEdit();
     // Clear cache to recalculate labels
     clearLabelCache();
     
     requestDraw();
 }
 
+/* ============================================================
+   EDIT HISTORY (Undo / Redo)
+   Diff-based: an edit records only the province entries whose
+   ownership (or land/water flag) actually changed, so a 100-step
+   history costs a few KB instead of full map snapshots.
+   ============================================================ */
+const HISTORY_LIMIT = 100;
+let undoStack = [];
+let redoStack = [];
+let pendingEdit = null;
+
+function normOwner(tag) { return tag ? tag : null; }
+
+function snapshotOwnershipState() {
+    const own = {};
+    for (const pid in ownership) {
+        const t = normOwner(ownership[pid]);
+        if (t) own[pid] = t;
+    }
+    const water = {};
+    for (const pid in provinceCenters) {
+        if (provinceCenters[pid]) water[pid] = !!provinceCenters[pid].isWater;
+    }
+    return { own, water };
+}
+
+// Opens an edit transaction. Re-entrant: nested calls keep the outermost
+// snapshot so a compound operation lands as a single undo step.
+function beginEdit(label) {
+    if (pendingEdit) { pendingEdit.depth++; return; }
+    pendingEdit = { label: label || "Edit", depth: 1, base: snapshotOwnershipState() };
+}
+
+function cancelEdit() {
+    if (!pendingEdit) return;
+    if (--pendingEdit.depth > 0) return;
+    pendingEdit = null;
+}
+
+// Closes the transaction and pushes an undo entry if anything changed.
+function commitEdit() {
+    if (!pendingEdit) return false;
+    if (--pendingEdit.depth > 0) return false;
+
+    const base = pendingEdit.base;
+    const label = pendingEdit.label;
+    pendingEdit = null;
+
+    const now = snapshotOwnershipState();
+    const ownDiff = {};
+    const waterDiff = {};
+    let changed = 0;
+
+    const ownKeys = new Set(Object.keys(base.own).concat(Object.keys(now.own)));
+    for (const pid of ownKeys) {
+        const b = base.own[pid] || null;
+        const a = now.own[pid] || null;
+        if (b !== a) { ownDiff[pid] = [b, a]; changed++; }
+    }
+    for (const pid in now.water) {
+        if (base.water[pid] !== undefined && base.water[pid] !== now.water[pid]) {
+            waterDiff[pid] = [base.water[pid], now.water[pid]];
+            changed++;
+        }
+    }
+
+    if (changed === 0) return false;
+
+    undoStack.push({ label, own: ownDiff, water: waterDiff, count: changed });
+    if (undoStack.length > HISTORY_LIMIT) undoStack.shift();
+    redoStack.length = 0;
+    updateHistoryUI();
+    return true;
+}
+
+function setProvinceOwner(pid, tag) {
+    const old = normOwner(ownership[pid]);
+    if (old && countries[old]) {
+        countries[old].provinces.delete(Number(pid));
+        countries[old].provinces.delete(pid);
+        dirtyCountries.add(old);
+    }
+    if (tag) {
+        ownership[pid] = tag;
+        if (countries[tag]) {
+            countries[tag].provinces.add(Number(pid));
+            dirtyCountries.add(tag);
+        }
+    } else {
+        delete ownership[pid];
+    }
+}
+
+function applyHistoryEntry(entry, direction) {
+    const idx = direction === "undo" ? 0 : 1;
+
+    for (const pid in entry.water) {
+        const center = provinceCenters[pid];
+        if (!center) continue;
+        center.isWater = entry.water[pid][idx];
+        if (definitions[pid]) definitions[pid].type = center.isWater ? "water" : "land";
+    }
+    for (const pid in entry.own) {
+        setProvinceOwner(pid, entry.own[pid][idx]);
+    }
+
+    updateLutData();
+    clearLabelCache();
+    updateCountryList();
+    updateSelectionStatus();
+    draw();
+}
+
+function undoEdit() {
+    if (pendingEdit) cancelEdit();
+    const entry = undoStack.pop();
+    if (!entry) { showToast("Nothing to undo"); return; }
+    applyHistoryEntry(entry, "undo");
+    redoStack.push(entry);
+    updateHistoryUI();
+    showToast("Undo: " + entry.label + " (" + entry.count + " provinces)");
+}
+
+function redoEdit() {
+    const entry = redoStack.pop();
+    if (!entry) { showToast("Nothing to redo"); return; }
+    applyHistoryEntry(entry, "redo");
+    undoStack.push(entry);
+    updateHistoryUI();
+    showToast("Redo: " + entry.label + " (" + entry.count + " provinces)");
+}
+
+function clearHistory() {
+    undoStack = [];
+    redoStack = [];
+    pendingEdit = null;
+    updateHistoryUI();
+}
+
+function updateHistoryUI() {
+    const u = document.getElementById("btnUndo");
+    const r = document.getElementById("btnRedo");
+    if (u) {
+        u.disabled = undoStack.length === 0;
+        u.style.opacity = undoStack.length ? "1" : "0.4";
+        u.title = undoStack.length ? "Undo " + undoStack[undoStack.length - 1].label + " (Ctrl+Z)" : "Nothing to undo";
+    }
+    if (r) {
+        r.disabled = redoStack.length === 0;
+        r.style.opacity = redoStack.length ? "1" : "0.4";
+        r.title = redoStack.length ? "Redo " + redoStack[redoStack.length - 1].label + " (Ctrl+Shift+Z)" : "Nothing to redo";
+    }
+}
+
+let toastTimer = null;
+function showToast(message) {
+    let el = document.getElementById("appToast");
+    if (!el) {
+        el = document.createElement("div");
+        el.id = "appToast";
+        el.className = "glass-panel";
+        el.style.cssText = "position: fixed; bottom: 70px; left: 50%; transform: translateX(-50%) translateY(10px);" +
+            "padding: 8px 16px; font-size: 12px; color: #fff; z-index: 3000; pointer-events: none;" +
+            "opacity: 0; transition: opacity 0.18s ease, transform 0.18s ease; white-space: nowrap;";
+        document.body.appendChild(el);
+    }
+    el.textContent = message;
+    requestAnimationFrame(() => {
+        el.style.opacity = "1";
+        el.style.transform = "translateX(-50%) translateY(0)";
+    });
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+        el.style.opacity = "0";
+        el.style.transform = "translateX(-50%) translateY(10px)";
+    }, 2200);
+}
+
 function paintSelection() {
     if (selectedProvinces.size === 0) return;
     
     const targetTag = eraserMode ? null : selectedColor;
+    beginEdit(targetTag ? ("Paint " + targetTag) : "Erase ownership");
     
     for (const key of selectedProvinces) {
         const old = ownership[key];
@@ -2806,6 +2996,7 @@ function paintSelection() {
     }
     
     selectedProvinces.clear();
+    commitEdit();
     updateSelectionStatus();
     updateLutData();
     clearLabelCache();
@@ -2844,6 +3035,7 @@ function selectProvince(key, isShift) {
 	}
 
 	if (eraserMode) {
+		beginEdit("Erase province");
 		const old = ownership[key];
 		if (old && countries[old]) {
 			countries[old].provinces.delete(key);	
@@ -2853,10 +3045,12 @@ function selectProvince(key, isShift) {
         if (provinceCenters[key]) {
             updateLutForProvince(provinceCenters[key].index, [180, 180, 180], key);
         }
+        commitEdit();
         clearLabelCache();
         draw();
 	}
 	else {
+		beginEdit("Paint province");
 		const old = ownership[key];
 
 		if (old && countries[old]) {
@@ -2870,6 +3064,7 @@ function selectProvince(key, isShift) {
         if (provinceCenters[key]) {
             updateLutForProvince(provinceCenters[key].index, COLORS[selectedColor], key);
         }
+        commitEdit();
 	}
 
 	// Show the province panel with details
@@ -3051,6 +3246,7 @@ function quickLoadLocalStorage() {
 
 function applyLoadedSaveData(data) {
     if (!data) return;
+    clearHistory();
     
     // Restore countries
     if (data.countries) {
@@ -5134,6 +5330,16 @@ window.addEventListener("keydown", (e) => {
     if ((e.ctrlKey || e.metaKey) && key === "s") {
         e.preventDefault();
         saveWorldPreset();
+        return;
+    }
+    if ((e.ctrlKey || e.metaKey) && key === "z") {
+        e.preventDefault();
+        if (e.shiftKey) redoEdit(); else undoEdit();
+        return;
+    }
+    if ((e.ctrlKey || e.metaKey) && key === "y") {
+        e.preventDefault();
+        redoEdit();
         return;
     }
     
