@@ -58,6 +58,106 @@ let lastSpikeData = null;
 let deferredWorkerResponses = [];
 let currentMouseX = 0, currentMouseY = 0;
 
+// ---------------------------------------------------------------------------
+// Unsaved-changes protection: dirty tracking, autosave, and a save-status badge.
+// Editing a map represents real user effort, so guard against accidental loss.
+// ---------------------------------------------------------------------------
+let appReady = false;          // becomes true once the initial load finishes
+let documentDirty = false;     // true when there are edits not yet persisted
+let lastAutosaveAt = 0;
+const AUTOSAVE_INTERVAL_MS = 30000;   // periodic autosave cadence
+const AUTOSAVE_DEBOUNCE_MS = 4000;    // quiet period after an edit before autosaving
+const AUTOSAVE_KEY = "mappa_mundi_autosave";
+let autosaveDebounceTimer = null;
+
+function markDirty() {
+    // Ignore mutations that happen during initial load / data restore.
+    if (!appReady) return;
+    if (!documentDirty) {
+        documentDirty = true;
+        updateSaveStatusBadge();
+    }
+    // Debounced autosave so a burst of edits only writes once when it settles.
+    if (autosaveDebounceTimer) clearTimeout(autosaveDebounceTimer);
+    autosaveDebounceTimer = setTimeout(runAutosave, AUTOSAVE_DEBOUNCE_MS);
+}
+
+function markSaved() {
+    documentDirty = false;
+    updateSaveStatusBadge();
+}
+
+function runAutosave() {
+    if (!appReady || !documentDirty) return;
+    try {
+        const data = getWorldPresetData();
+        data.saveDate = new Date().toISOString();
+        data.autosave = true;
+        localStorage.setItem(AUTOSAVE_KEY, JSON.stringify(data));
+        lastAutosaveAt = Date.now();
+        updateSaveStatusBadge();
+    } catch (e) {
+        // Storage may be full or blocked; fail quietly, the badge still warns.
+        console.warn("Autosave failed:", e);
+    }
+}
+
+function updateSaveStatusBadge() {
+    const badge = document.getElementById("saveStatusBadge");
+    if (!badge) return;
+    if (documentDirty) {
+        let txt = "\u25CF Unsaved changes";
+        if (lastAutosaveAt) {
+            const t = new Date(lastAutosaveAt);
+            const hh = String(t.getHours()).padStart(2, "0");
+            const mm = String(t.getMinutes()).padStart(2, "0");
+            txt += ` \u00B7 autosaved ${hh}:${mm}`;
+        }
+        badge.textContent = txt;
+        badge.className = "save-badge dirty";
+        badge.title = "You have changes that are not saved to preset_ownership.json. Use Save Presets (Ctrl+S) to persist them.";
+    } else {
+        badge.textContent = "\u2713 All changes saved";
+        badge.className = "save-badge clean";
+        badge.title = "All changes are saved.";
+    }
+}
+
+// Offer to recover a newer browser autosave than the file preset on load.
+function maybeOfferAutosaveRecovery() {
+    let raw;
+    try { raw = localStorage.getItem(AUTOSAVE_KEY); } catch (e) { return; }
+    if (!raw) return;
+    let data;
+    try { data = JSON.parse(raw); } catch (e) { return; }
+    if (!data || !data.saveDate) return;
+
+    const when = new Date(data.saveDate);
+    if (isNaN(when.getTime())) return;
+
+    const ownedCount = data.ownership ? Object.keys(data.ownership).length : 0;
+    const ok = confirm(
+        `A browser autosave from ${when.toLocaleString()} was found ` +
+        `(${ownedCount} owned provinces).\n\n` +
+        `Restore it? Choose Cancel to keep the currently loaded map.`
+    );
+    if (ok) {
+        applyLoadedSaveData(data);
+        markSaved();
+        showToast("Recovered autosave from " + when.toLocaleTimeString());
+    }
+}
+
+window.addEventListener("beforeunload", (e) => {
+    if (documentDirty) {
+        e.preventDefault();
+        e.returnValue = "";   // triggers the browser's native "leave site?" prompt
+        return "";
+    }
+});
+
+setInterval(runAutosave, AUTOSAVE_INTERVAL_MS);
+
 let COLORS = {
     yellow: [255,255,0],
     red: [255,0,0],
@@ -364,6 +464,7 @@ function renameCountry(color, newName) {
     countries[color].name = newName;
     dirtyCountries.add(color);
     clearLabelCache();
+    markDirty();
     requestDraw();
     
     // Refresh diplomacy panel if open
@@ -985,6 +1086,7 @@ function renameCountryDetails(tag, shortName, fullName) {
     dirtyCountries.add(tag);
     clearLabelCache();
     updateCountryList();
+    markDirty();
     requestDraw();
     openDiplomacyPanel(tag);
 }
@@ -993,6 +1095,7 @@ function handleFullNameRenameFromInput(val) {
     if (!selectedColor) return;
     countries[selectedColor].fullName = val.trim();
     dirtyCountries.add(selectedColor);
+    markDirty();
     
     // Refresh diplomacy panel if open
     const diploTagSpan = document.getElementById("diploCountryTag");
@@ -1719,6 +1822,12 @@ function initApp() {
 	initLabelWorker();
     fitToScreen();
     draw();
+
+    // Initial load is complete: enable dirty tracking, show the save badge,
+    // and offer to recover a browser autosave if one is present.
+    appReady = true;
+    updateSaveStatusBadge();
+    maybeOfferAutosaveRecovery();
 }
 
 Promise.all([
@@ -2159,6 +2268,7 @@ function commitEdit() {
     if (undoStack.length > HISTORY_LIMIT) undoStack.shift();
     redoStack.length = 0;
     updateHistoryUI();
+    markDirty();
     return true;
 }
 
@@ -2197,6 +2307,7 @@ function applyHistoryEntry(entry, direction) {
     clearLabelCache();
     updateCountryList();
     updateSelectionStatus();
+    markDirty();
     draw();
 }
 
@@ -2488,6 +2599,7 @@ function exportSaveFile() {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+    markSaved();
 }
 
 function importSaveFile(event) {
@@ -2498,6 +2610,7 @@ function importSaveFile(event) {
         try {
             const data = JSON.parse(e.target.result);
             applyLoadedSaveData(data);
+            markSaved();
             alert("Save file loaded successfully!");
         } catch (err) {
             console.error("Failed to parse save file:", err);
@@ -2513,6 +2626,7 @@ function quickSaveLocalStorage() {
         const data = getWorldPresetData();
         data.saveDate = new Date().toISOString();
         localStorage.setItem("mappa_mundi_quicksave", JSON.stringify(data));
+        markSaved();
         alert("Quick Save successful! Progress saved to browser storage.");
     } catch (e) {
         console.error("Quick save failed:", e);
@@ -2529,6 +2643,7 @@ function quickLoadLocalStorage() {
         }
         const data = JSON.parse(jsonStr);
         applyLoadedSaveData(data);
+        markSaved();
         alert("Quick Load successful! Restored session from browser storage.");
     } catch (e) {
         console.error("Quick load failed:", e);
@@ -2622,6 +2737,7 @@ function saveWorldPreset() {
     })
     .then(r => {
         if (r.ok) {
+            markSaved();
             alert("Starting preset saved successfully to preset_ownership.json!");
         } else {
             alert("Failed to save starting preset.");
@@ -2742,8 +2858,13 @@ function buildGraphColoring() {
     }
 }
 
+let suppressDirtyOnLut = false; // set while a view-only refresh (e.g. mapmode switch) runs
+
 function updateLutData() {
     if (!lutData) return;
+    // Any LUT rebuild after load reflects a state change; treat it as an edit
+    // unless it was triggered by a view-only operation such as a mapmode switch.
+    if (!suppressDirtyOnLut) markDirty();
     
     // Clear all to default unowned background (color 180, 180, 180)
     for (let i = 0; i < lutWidth * lutHeight; i++) {
@@ -2874,7 +2995,9 @@ function updateAllLutAlphas() {
 
 function setMapmode(mode) {
     activeMapmode = mode;
+    suppressDirtyOnLut = true;   // switching mapmode is a view change, not an edit
     updateLutData();
+    suppressDirtyOnLut = false;
     requestDraw();
 }
 
