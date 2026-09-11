@@ -2289,12 +2289,17 @@ function setProvinceOwner(pid, tag) {
         countries[old].provinces.delete(Number(pid));
         countries[old].provinces.delete(pid);
         dirtyCountries.add(old);
+        // The country's shape changed, so its cached label spine is now stale.
+        // Clearing it routes recomputation through the async worker (off the
+        // render thread) instead of a stale synchronous main-thread relayout.
+        countries[old].spines = null;
     }
     if (tag) {
         ownership[pid] = tag;
         if (countries[tag]) {
             countries[tag].provinces.add(Number(pid));
             dirtyCountries.add(tag);
+            countries[tag].spines = null;
         }
     } else {
         delete ownership[pid];
@@ -4624,7 +4629,11 @@ window.toggleMapLabelMode = function(enabled) {
 			// Synchronous update for manual/dirty triggers (e.g. painting)
 			if (dirtyCountries.has(o)) {
 				generateLabelsForCountry(o);
-				cached = labelCache[o];
+				// generateLabelsForCountry may defer to the async worker (when the
+				// spine was invalidated by a territory change), leaving the cache
+				// unset. In that case fall back to the previous cached labels for
+				// this frame; the worker callback will refresh them shortly.
+				cached = labelCache[o] || cached;
 				labelGenerationQueue.delete(o);
 			} else {
 				// Queue for asynchronous generation on subsequent frames if not already generating or queued
@@ -4635,6 +4644,9 @@ window.toggleMapLabelMode = function(enabled) {
 				continue;
 			}
 		}
+
+		// Nothing to draw yet (e.g. first layout still pending in the worker).
+		if (!cached || !cached.labels) continue;
 
 		// Draw curved/rotated labels along spine using cached layout
 		for (const label of cached.labels) {
