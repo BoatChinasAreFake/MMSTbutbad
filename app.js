@@ -289,7 +289,11 @@ function selectCountry(tag) {
         editColorInput.value = hex;
     }
 
+    // Selecting a brush country is not an edit: refresh visuals without
+    // flagging the document as having unsaved changes.
+    suppressDirtyOnLut = true;
     updateLutData();
+    suppressDirtyOnLut = false;
     requestDraw();
 }
 
