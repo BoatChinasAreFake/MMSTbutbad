@@ -414,6 +414,10 @@
                     <span>Always Show Tiny Country Labels</span>
                     <input type="checkbox" id="alwaysShowSmallLabelsToggle" onchange="toggleAlwaysShowSmallCountryLabels(this.checked)" style="accent-color: #ce93d8; cursor: pointer;">
                 </label>
+                <label style="display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: #4dd0e1; font-weight: bold; margin-bottom: 8px; cursor: pointer;">
+                    <span>Hover Info Tooltip</span>
+                    <input type="checkbox" id="hoverReadoutToggle" checked onchange="toggleHoverReadout(this.checked)" style="accent-color: #4dd0e1; cursor: pointer;">
+                </label>
 
                 <div style="font-weight: bold; color: #ff9500; display: flex; align-items: center; justify-content: space-between;">
                     <span>National Interest</span>
@@ -483,6 +487,26 @@
 </div>
 
 <div id="debugPanel"></div>
+
+<!-- Live hover readout tooltip -->
+<div id="hoverTooltip" style="
+    position: fixed;
+    display: none;
+    z-index: 60;
+    pointer-events: none;
+    background: rgba(18, 18, 18, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    color: #eee;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 11px;
+    line-height: 1.5;
+    padding: 6px 9px;
+    border-radius: 8px;
+    max-width: 240px;
+"></div>
     
 <!-- Country Diplomacy Panel -->
 <div id="diplomacyPanel" class="glass-panel" style="
@@ -1804,6 +1828,7 @@ function linkProgram(gl, vs, fs) {
 
 let gl;
 let program;
+let uniformLocations = {};
 let indexTexture;
 let lutTexture;
 let heightmapTexture;
@@ -2017,6 +2042,18 @@ function initWebGL() {
     const fs = compileShader(gl, fsSource, gl.FRAGMENT_SHADER);
     program = linkProgram(gl, vs, fs);
     gl.useProgram(program);
+
+    // Cache uniform locations once. getUniformLocation is a relatively expensive
+    // GL query; calling it ~15x per frame in performDraw was pure overhead.
+    uniformLocations = {};
+    for (const name of [
+        "u_indexTexture", "u_lutTexture", "u_heightmapTexture", "u_riversTexture",
+        "u_showRivers", "u_offset", "u_zoom", "u_resolution", "u_mapSize",
+        "u_texelSize", "u_lutWidth", "u_lutHeight", "u_showHeightmap",
+        "u_showBorders", "u_activeMapmode"
+    ]) {
+        uniformLocations[name] = gl.getUniformLocation(program, name);
+    }
 
     const positionBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
@@ -3805,9 +3842,75 @@ canvas.addEventListener("mousemove", e => {
 	currentMouseY = e.clientY;
 
 	if (isPanning || isDragging) {
+		hideHoverTooltip();
 		requestDraw();
+	} else {
+		updateHoverTooltip(e.clientX, e.clientY);
 	}
 });
+
+canvas.addEventListener("mouseleave", hideHoverTooltip);
+
+// Live hover readout: shows the province under the cursor (id, owner, name)
+// without triggering a full redraw. Throttled to only recompute when the
+// cursor lands on a different province.
+let lastHoverProvId = -1;
+function updateHoverTooltip(clientX, clientY) {
+	const tooltip = document.getElementById("hoverTooltip");
+	if (!tooltip || !window.hoverReadoutEnabled) { if (tooltip) tooltip.style.display = "none"; return; }
+	if (typeof img === "undefined" || !img) return;
+
+	const [mapX, mapY] = screenToMap(clientX, clientY);
+	const provId = getProvinceIdAt(mapX, mapY);
+
+	if (!provId || provId === 0) {
+		lastHoverProvId = -1;
+		tooltip.style.display = "none";
+		return;
+	}
+
+	if (provId !== lastHoverProvId) {
+		lastHoverProvId = provId;
+		const tag = ownership ? ownership[provId] : null;
+		const country = tag && countries ? countries[tag] : null;
+		const def = (typeof definitions !== "undefined") ? definitions[provId] : null;
+		const provName = def && def.name ? def.name : "";
+		const stateId = (typeof provinceToState !== "undefined") ? provinceToState[provId] : undefined;
+
+		let html = `<span style="color:#7fbfff;font-weight:bold;">Province ${provId}</span>`;
+		if (provName) html += ` <span style="color:#ccc;">${escapeHoverText(provName)}</span>`;
+		if (country) {
+			const c = country.color || [150, 150, 150];
+			html += `<br><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:rgb(${c[0]},${c[1]},${c[2]});margin-right:4px;vertical-align:middle;"></span>`;
+			html += `<span style="color:#ffd479;">${escapeHoverText(country.name || tag)}</span> <span style="color:#888;font-family:monospace;">[${tag}]</span>`;
+		} else {
+			html += `<br><span style="color:#888;">Unowned</span>`;
+		}
+		if (stateId !== undefined) html += `<br><span style="color:#9c9;font-size:9px;">State ${stateId}</span>`;
+		tooltip.innerHTML = html;
+	}
+
+	tooltip.style.display = "block";
+	// Offset from cursor, keep on-screen near the right/bottom edges
+	const pad = 14;
+	let left = clientX + pad;
+	let top = clientY + pad;
+	const rect = tooltip.getBoundingClientRect();
+	if (left + rect.width > window.innerWidth) left = clientX - rect.width - pad;
+	if (top + rect.height > window.innerHeight) top = clientY - rect.height - pad;
+	tooltip.style.left = left + "px";
+	tooltip.style.top = top + "px";
+}
+
+function hideHoverTooltip() {
+	const tooltip = document.getElementById("hoverTooltip");
+	if (tooltip) tooltip.style.display = "none";
+	lastHoverProvId = -1;
+}
+
+function escapeHoverText(s) {
+	return String(s).replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+}
 
 window.addEventListener("mouseup", e => {
 	if (isPanning) {
@@ -4183,9 +4286,11 @@ function performDraw() {
 
     gl.useProgram(program);
 
+    const U = uniformLocations;
+
     gl.activeTexture(gl.TEXTURE0);
     gl.bindTexture(gl.TEXTURE_2D, indexTexture);
-    gl.uniform1i(gl.getUniformLocation(program, "u_indexTexture"), 0);
+    gl.uniform1i(U.u_indexTexture, 0);
 
     if (lutNeedsUpdate) {
         gl.activeTexture(gl.TEXTURE1);
@@ -4195,29 +4300,29 @@ function performDraw() {
     }
     gl.activeTexture(gl.TEXTURE1);
     gl.bindTexture(gl.TEXTURE_2D, lutTexture);
-    gl.uniform1i(gl.getUniformLocation(program, "u_lutTexture"), 1);
+    gl.uniform1i(U.u_lutTexture, 1);
 
     gl.activeTexture(gl.TEXTURE2);
     gl.bindTexture(gl.TEXTURE_2D, heightmapTexture);
-    gl.uniform1i(gl.getUniformLocation(program, "u_heightmapTexture"), 2);
+    gl.uniform1i(U.u_heightmapTexture, 2);
 
     gl.activeTexture(gl.TEXTURE3);
     gl.bindTexture(gl.TEXTURE_2D, riversTexture);
-    gl.uniform1i(gl.getUniformLocation(program, "u_riversTexture"), 3);
-    gl.uniform1f(gl.getUniformLocation(program, "u_showRivers"), showRivers);
+    gl.uniform1i(U.u_riversTexture, 3);
+    gl.uniform1f(U.u_showRivers, showRivers);
 
 
 
-    gl.uniform2f(gl.getUniformLocation(program, "u_offset"), offsetX, offsetY);
-    gl.uniform1f(gl.getUniformLocation(program, "u_zoom"), zoom);
-    gl.uniform2f(gl.getUniformLocation(program, "u_resolution"), canvas.width, canvas.height);
-    gl.uniform2f(gl.getUniformLocation(program, "u_mapSize"), img.width, img.height);
-    gl.uniform2f(gl.getUniformLocation(program, "u_texelSize"), 1.0 / img.width, 1.0 / img.height);
-    gl.uniform1f(gl.getUniformLocation(program, "u_lutWidth"), lutWidth);
-    gl.uniform1f(gl.getUniformLocation(program, "u_lutHeight"), lutHeight);
-    gl.uniform1f(gl.getUniformLocation(program, "u_showHeightmap"), showHeightmap);
-    gl.uniform1f(gl.getUniformLocation(program, "u_showBorders"), showBorders);
-    gl.uniform1f(gl.getUniformLocation(program, "u_activeMapmode"), activeMapmode === "interest" ? 1.0 : 0.0);
+    gl.uniform2f(U.u_offset, offsetX, offsetY);
+    gl.uniform1f(U.u_zoom, zoom);
+    gl.uniform2f(U.u_resolution, canvas.width, canvas.height);
+    gl.uniform2f(U.u_mapSize, img.width, img.height);
+    gl.uniform2f(U.u_texelSize, 1.0 / img.width, 1.0 / img.height);
+    gl.uniform1f(U.u_lutWidth, lutWidth);
+    gl.uniform1f(U.u_lutHeight, lutHeight);
+    gl.uniform1f(U.u_showHeightmap, showHeightmap);
+    gl.uniform1f(U.u_showBorders, showBorders);
+    gl.uniform1f(U.u_activeMapmode, activeMapmode === "interest" ? 1.0 : 0.0);
 
     gl.drawArrays(gl.TRIANGLES, 0, 6);
     const afterWebGL = performance.now();
@@ -5264,6 +5369,13 @@ function toggleCountryLabels(enabled) {
 function toggleAlwaysShowSmallCountryLabels(enabled) {
 	alwaysShowSmallCountryLabels = !!enabled;
 	requestDraw();
+}
+
+// Hover readout is enabled by default; the toggle lets users disable the tooltip.
+window.hoverReadoutEnabled = true;
+function toggleHoverReadout(enabled) {
+	window.hoverReadoutEnabled = !!enabled;
+	if (!enabled) hideHoverTooltip();
 }
 
 function toggleSidebar() {
