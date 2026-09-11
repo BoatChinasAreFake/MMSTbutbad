@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -25,6 +26,8 @@
     <button onclick="setTool('lasso')" id="btnToolLasso" class="glass-button">Lasso Select (L)</button>
     <button onclick="setTool('pan')" id="btnToolPan" class="glass-button">Pan / Move (H)</button>
     <button onclick="toggleHelpOverlay()" id="btnHelp" class="glass-button" title="Show controls &amp; shortcuts (?)" style="font-weight: bold;">? Help</button>
+
+    <span id="saveStatusBadge" class="save-badge clean" title="All changes are saved.">&#10003; All changes saved</span>
 
     <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.15); margin: 0 4px;"></div>
 
