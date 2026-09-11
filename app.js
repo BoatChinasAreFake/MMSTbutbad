@@ -1256,7 +1256,12 @@ const fsSource = `
         
 
         
-        if (u_showRivers > 0.5) {
+        // Detect water provinces by their fixed sentinel LUT colour (150,180,210).
+        // Rivers must not be drawn on top of ocean/lake provinces.
+        vec3 waterSentinel = vec3(150.0, 180.0, 210.0) / 255.0;
+        bool isWaterProvince = all(lessThan(abs(baseCountryColor - waterSentinel), vec3(0.51 / 255.0)));
+
+        if (u_showRivers > 0.5 && !isWaterProvince) {
             vec4 riverCol = texture2D(u_riversTexture, v_texCoord);
             if (riverCol.a > 0.5) {
                 float lum = dot(color.rgb, vec3(0.299, 0.587, 0.114));

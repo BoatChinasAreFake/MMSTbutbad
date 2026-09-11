@@ -233318,9 +233318,9 @@
         58
       ],
       "name": "Province 21211",
-      "type": "land",
-      "terrain": "plains",
-      "detailed_terrain": "flatlands"
+      "type": "water",
+      "terrain": "coastal_waters",
+      "detailed_terrain": "ocean"
     },
     "21212": {
       "color": [
@@ -233373,9 +233373,9 @@
         52
       ],
       "name": "Province 21216",
-      "type": "land",
-      "terrain": "plains",
-      "detailed_terrain": "flatlands"
+      "type": "water",
+      "terrain": "coastal_waters",
+      "detailed_terrain": "ocean"
     },
     "21217": {
       "color": [
@@ -382954,7 +382954,7 @@
       "y": 578.8,
       "count": 16,
       "index": 21211,
-      "is_water": false
+      "is_water": true
     },
     "21212": {
       "x": 2844.6,
@@ -382989,7 +382989,7 @@
       "y": 581.0,
       "count": 4,
       "index": 21216,
-      "is_water": false
+      "is_water": true
     },
     "21217": {
       "x": 2828.6,
