@@ -18,3 +18,22 @@
 **Credits:**
  - Developers: Faaz Noushad & Pioneerwada.
  - Special thanks to some of those who have worked with us in the past, including:  Nozza, Bonkey Donk, Linus Mapping Tips, Elizabeth.
+
+---------------
+**Project layout / development:**
+- `index.html` — markup only.
+- `styles.css` — all styling.
+- `app.js` — the application, loaded as an ES module (`<script type="module">`).
+  Pure, side-effect-free helpers are imported from `lib/`.
+- `lib/pure.mjs` — geometry, province-id encode/decode, label-text helpers.
+- `lib/saveData.mjs` — validation/sanitisation for untrusted loaded save files.
+- `test/` — unit tests for the `lib/` modules.
+- `server.py` — the local dev/save server (`start_server.bat`).
+
+Run the tests (Node 18+, no dependencies to install):
+
+```
+npm test
+```
+
+(equivalently: `node --test`)

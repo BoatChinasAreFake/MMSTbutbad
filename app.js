@@ -1,4 +1,21 @@
 
+import {
+    isPointInPolygon,
+    splitIntoTwoLines,
+    escapeHoverText,
+    normalizeDisplayName,
+    normOwner,
+} from "./lib/pure.mjs";
+// NOTE: resamplePath / computeSpineForComponent / MinHeap intentionally remain
+// defined locally in this file because their source text is injected into the
+// label Web Worker via Function.prototype.toString(); lib/pure.mjs keeps a
+// tested copy of resamplePath for the unit suite.
+import {
+    sanitizeCountry,
+    sanitizeState,
+    isPlainObject,
+} from "./lib/saveData.mjs";
+
 const canvas = document.getElementById("mapCanvas");
 const overlayCanvas = document.getElementById("overlayCanvas");
 const overlayCtx = overlayCanvas.getContext("2d");
@@ -2218,7 +2235,6 @@ let undoStack = [];
 let redoStack = [];
 let pendingEdit = null;
 
-function normOwner(tag) { return tag ? tag : null; }
 
 function snapshotOwnershipState() {
     const own = {};
@@ -2422,18 +2438,6 @@ function paintSelection() {
     draw();
 }
 
-function isPointInPolygon(pt, poly) {
-	let x = pt.x, y = pt.y;
-	let inside = false;
-	for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
-		let xi = poly[i].x, yi = poly[i].y;
-		let xj = poly[j].x, yj = poly[j].y;
-		let intersect = ((yi > y) !== (yj > y))
-			&& (x < (xj - xi) * (y - yi) / (yj - yi || 1) + xi);
-		if (intersect) inside = !inside;
-	}
-	return inside;
-}
 
 let selectionBox = null;
 let isDragging = false;
@@ -2674,48 +2678,22 @@ function applyLoadedSaveData(data) {
     }
     clearHistory();
 
-    // Accept only a valid [r,g,b] triple; fall back to neutral grey otherwise so a
-    // malformed colour can never corrupt the LUT / shader.
-    const normColor = (col) => {
-        if (Array.isArray(col) && col.length >= 3 &&
-            col.slice(0, 3).every(n => typeof n === "number" && isFinite(n))) {
-            return [col[0] & 255, col[1] & 255, col[2] & 255];
-        }
-        return [150, 150, 150];
-    };
-    const asProvinceList = (v) => Array.isArray(v) ? v.filter(p => Number.isFinite(Number(p))) : [];
-
-    // Restore countries
-    if (data.countries && typeof data.countries === "object") {
+    // Restore countries (validation/sanitisation lives in lib/saveData.mjs and is
+    // exercised by the test suite; loaded data is treated as untrusted).
+    if (isPlainObject(data.countries)) {
         for (const k in countries) delete countries[k];
         for (const k in COLORS) delete COLORS[k];
         for (const tag in data.countries) {
-            const c = data.countries[tag];
-            if (!c || typeof c !== "object") continue;
-            const color = normColor(c.color);
-            countries[tag] = {
-                tag: tag,
-                name: (typeof c.name === "string" && c.name) ? c.name : tag,
-                fullName: typeof c.fullName === "string" ? c.fullName : "",
-                color: color,
-                labelOffset: Number(c.labelOffset) || 0,
-                labelXOffset: Number(c.labelXOffset) || 0,
-                labelArcShift: Number(c.labelArcShift) || 0,
-                curvatureScale: c.curvatureScale !== undefined ? (Number(c.curvatureScale) || 1.0) : 1.0,
-                fontSizeScale: c.fontSizeScale !== undefined ? (Number(c.fontSizeScale) || 1.0) : 1.0,
-                labelRotation: Number(c.labelRotation) || 0,
-                labelStretch: c.labelStretch !== undefined ? (Number(c.labelStretch) || 1.0) : 1.0,
-                provinces: new Set(),
-                // Recompute spines from scratch (via the worker) rather than trusting
-                // persisted geometry, which may be stale for the loaded territory.
-                spines: null
-            };
-            COLORS[tag] = color;
+            const record = sanitizeCountry(tag, data.countries[tag]);
+            if (!record) continue;
+            record.provinces = new Set();
+            countries[tag] = record;
+            COLORS[tag] = record.color;
         }
     }
     
     // Restore ownership
-    if (data.ownership && typeof data.ownership === "object") {
+    if (isPlainObject(data.ownership)) {
         for (const provId in ownership) delete ownership[provId];
         for (const provId in data.ownership) {
             const tag = data.ownership[provId];
@@ -2726,31 +2704,23 @@ function applyLoadedSaveData(data) {
     }
     
     // Restore states
-    if (data.states && typeof data.states === "object") {
+    if (isPlainObject(data.states)) {
         states = {};
         provinceToState = {};
         for (const stateIdStr in data.states) {
-            const s = data.states[stateIdStr];
-            if (!s || typeof s !== "object") continue;
-            const stateId = parseInt(stateIdStr);
-            if (!Number.isFinite(stateId)) continue;
-            const provList = asProvinceList(s.provinces);
-            states[stateId] = {
-                id: stateId,
-                name: (typeof s.name === "string" && s.name) ? s.name : ("State " + stateId),
-                color: normColor(s.color),
-                controlStrength: s.controlStrength !== undefined ? (Number(s.controlStrength) || 100) : 100,
-                showGradient: !!s.showGradient,
-                provinces: new Set(provList)
-            };
-            for (const provId of provList) {
+            const parsed = sanitizeState(stateIdStr, data.states[stateIdStr]);
+            if (!parsed) continue;
+            const { id: stateId, record } = parsed;
+            record.provinces = new Set(record.provinces);
+            states[stateId] = record;
+            for (const provId of record.provinces) {
                 provinceToState[provId] = stateId;
             }
         }
     }
     
     // Restore interests
-    if (data.interests && typeof data.interests === "object") {
+    if (isPlainObject(data.interests)) {
         interests = {};
         for (const tag in data.interests) {
             if (data.interests[tag] && typeof data.interests[tag] === "object") {
@@ -3324,9 +3294,7 @@ function hideHoverTooltip() {
 	lastHoverProvId = -1;
 }
 
-function escapeHoverText(s) {
-	return String(s).replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
-}
+
 
 window.addEventListener("mouseup", e => {
 	if (isPanning) {
@@ -4169,26 +4137,6 @@ function computeSpineForComponent(component, countryColor, countryName, curvatur
 	};
 }
 
-function splitIntoTwoLines(text) {
-	const words = text.trim().split(/\s+/);
-	if (words.length < 2) return [text, ""];
-
-	let bestSplit = 1;
-	let minDiff = Infinity;
-	for (let i = 1; i < words.length; i++) {
-		const part1 = words.slice(0, i).join(" ");
-		const part2 = words.slice(i).join(" ");
-		const diff = Math.abs(part1.length - part2.length);
-		if (diff < minDiff) {
-			minDiff = diff;
-			bestSplit = i;
-		}
-	}
-	return [
-		words.slice(0, bestSplit).join(" "),
-		words.slice(bestSplit).join(" ")
-	];
-}
 function drawLabels(){
 	if (zoom >= 1.5) {
 		if (DEBUG.panel) {
@@ -4233,11 +4181,7 @@ window.toggleMapLabelMode = function(enabled) {
 			return;
 		}
 		if (!country.displayName || country._lastCleanName !== targetName) {
-			let textVal = targetName;
-			if (textVal.toLowerCase().includes("placeholder")) {
-				textVal = country.tag;
-			}
-			country.displayName = textVal.toUpperCase();
+			country.displayName = normalizeDisplayName(targetName, country.tag);
 			country._lastCleanName = targetName;
 		}
 		const text = country.displayName;
@@ -4950,4 +4894,41 @@ window.addEventListener("keydown", (e) => {
             select.value = modes[parseInt(key) - 1];
         }
     }
+});
+
+// ---------------------------------------------------------------------------
+// Inline-handler bridge.
+// This file is loaded as an ES module (<script type="module">), so its
+// top-level functions are module-scoped rather than global. The markup uses
+// inline on* handlers (onclick="saveWorldPreset()" etc.), which resolve names
+// against `window`. Expose every handler referenced from HTML here.
+//
+// The last four entries are ALIASES that also fix previously-broken buttons
+// whose markup referenced a name that never existed:
+//   exportCSV -> exportAdjacenciesCSV, saveStartingPreset -> saveWorldPreset,
+//   saveStraitsJSON -> saveStraits, toggleStraitsDisplay -> toggleStraits.
+Object.assign(window, {
+    activateColorPickerTool, addSelectedToState, clearActiveCountryTerritory,
+    clearInterest, clearSelection, closeDiplomacyPanel, createNewCountryFromUI,
+    createStateFromSelection, deleteState, deleteStrait, diploRecolorCountry,
+    diploRemoveCountryProvinces, diploRenameCountry, diploSelectCountryProvinces,
+    exportDefinitions, exportSaveFile, exportStatesJSON, exportWorldJSON,
+    filterCountries, filterStatesList, handleCurvatureScaleChange,
+    handleFontSizeScaleChange, handleFullNameRenameFromInput,
+    handleLabelArcShiftChange, handleLabelOffsetChange, handleLabelRotationChange,
+    handleLabelStretchChange, handleLabelXOffsetChange, handleRecolourFromPicker,
+    handleRenameFromInput, handleStateRename, importSaveFile, importStatesJSONFile,
+    paintHoi4States, paintInterest, paintSelection, quickLoadLocalStorage,
+    quickSaveLocalStorage, redoEdit, removeSelectedFromState, reorderStateIDs,
+    resetMap, saveProvinceDetails, saveWorldPreset, selectAllProvincesOfSelectedCountry,
+    selectHoi4States, selectStateFromSearch, selectStateProvinces, setEraser,
+    setMapmode, setTool, toggleAccordion, toggleAlwaysShowSmallCountryLabels,
+    toggleBorders, toggleCountryLabels, toggleHeightmapShading, toggleHelpOverlay,
+    toggleHoverReadout, toggleRivers, toggleSelectedWater, toggleSidebar,
+    toggleStraits, undoEdit,
+    // aliases (also repair previously dead buttons)
+    exportCSV: exportAdjacenciesCSV,
+    saveStartingPreset: saveWorldPreset,
+    saveStraitsJSON: saveStraits,
+    toggleStraitsDisplay: toggleStraits,
 });
