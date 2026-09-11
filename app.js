@@ -539,7 +539,7 @@ function createNewCountryFromUI() {
         labelRotation: 0,
         labelStretch: 1.0,
         provinces: new Set(),
-        spines: []
+        spines: null
     };
     
     COLORS[tag] = color;
@@ -1742,7 +1742,9 @@ function initApp() {
                 labelRotation: c.labelRotation !== undefined ? c.labelRotation : (base.labelRotation !== undefined ? base.labelRotation : 0),
                 labelStretch: c.labelStretch !== undefined ? c.labelStretch : (base.labelStretch !== undefined ? base.labelStretch : 1.0),
                 provinces: new Set(),
-                spines: c.spines || []
+                // null = "spine not yet computed"; the label worker will build it.
+                // An empty array would read as truthy and suppress that computation.
+                spines: null
             };
             COLORS[tag] = c.color;
         }
@@ -2661,72 +2663,94 @@ function quickLoadLocalStorage() {
 }
 
 function applyLoadedSaveData(data) {
-    if (!data) return;
+    if (!data || typeof data !== "object") {
+        alert("Could not load save: the file is empty or not a valid save object.");
+        return;
+    }
     clearHistory();
-    
+
+    // Accept only a valid [r,g,b] triple; fall back to neutral grey otherwise so a
+    // malformed colour can never corrupt the LUT / shader.
+    const normColor = (col) => {
+        if (Array.isArray(col) && col.length >= 3 &&
+            col.slice(0, 3).every(n => typeof n === "number" && isFinite(n))) {
+            return [col[0] & 255, col[1] & 255, col[2] & 255];
+        }
+        return [150, 150, 150];
+    };
+    const asProvinceList = (v) => Array.isArray(v) ? v.filter(p => Number.isFinite(Number(p))) : [];
+
     // Restore countries
-    if (data.countries) {
+    if (data.countries && typeof data.countries === "object") {
         for (const k in countries) delete countries[k];
         for (const k in COLORS) delete COLORS[k];
         for (const tag in data.countries) {
             const c = data.countries[tag];
+            if (!c || typeof c !== "object") continue;
+            const color = normColor(c.color);
             countries[tag] = {
                 tag: tag,
-                name: c.name,
-                fullName: c.fullName || "",
-                color: c.color,
-                labelOffset: c.labelOffset || 0,
-                labelXOffset: c.labelXOffset || 0,
-                labelArcShift: c.labelArcShift || 0,
-                curvatureScale: c.curvatureScale !== undefined ? c.curvatureScale : 1.0,
-                fontSizeScale: c.fontSizeScale !== undefined ? c.fontSizeScale : 1.0,
-                labelRotation: c.labelRotation || 0,
-                labelStretch: c.labelStretch !== undefined ? c.labelStretch : 1.0,
+                name: (typeof c.name === "string" && c.name) ? c.name : tag,
+                fullName: typeof c.fullName === "string" ? c.fullName : "",
+                color: color,
+                labelOffset: Number(c.labelOffset) || 0,
+                labelXOffset: Number(c.labelXOffset) || 0,
+                labelArcShift: Number(c.labelArcShift) || 0,
+                curvatureScale: c.curvatureScale !== undefined ? (Number(c.curvatureScale) || 1.0) : 1.0,
+                fontSizeScale: c.fontSizeScale !== undefined ? (Number(c.fontSizeScale) || 1.0) : 1.0,
+                labelRotation: Number(c.labelRotation) || 0,
+                labelStretch: c.labelStretch !== undefined ? (Number(c.labelStretch) || 1.0) : 1.0,
                 provinces: new Set(),
-                spines: c.spines || []
+                // Recompute spines from scratch (via the worker) rather than trusting
+                // persisted geometry, which may be stale for the loaded territory.
+                spines: null
             };
-            COLORS[tag] = c.color;
+            COLORS[tag] = color;
         }
     }
     
     // Restore ownership
-    if (data.ownership) {
+    if (data.ownership && typeof data.ownership === "object") {
         for (const provId in ownership) delete ownership[provId];
         for (const provId in data.ownership) {
             const tag = data.ownership[provId];
+            if (!countries[tag]) continue; // ignore ownership referencing unknown countries
             ownership[provId] = tag;
-            if (countries[tag]) {
-                countries[tag].provinces.add(parseInt(provId));
-            }
+            countries[tag].provinces.add(parseInt(provId));
         }
     }
     
     // Restore states
-    if (data.states) {
+    if (data.states && typeof data.states === "object") {
         states = {};
         provinceToState = {};
         for (const stateIdStr in data.states) {
             const s = data.states[stateIdStr];
+            if (!s || typeof s !== "object") continue;
             const stateId = parseInt(stateIdStr);
+            if (!Number.isFinite(stateId)) continue;
+            const provList = asProvinceList(s.provinces);
             states[stateId] = {
                 id: stateId,
-                name: s.name,
-                color: s.color,
-                controlStrength: s.controlStrength !== undefined ? s.controlStrength : 100,
-                showGradient: s.showGradient || false,
-                provinces: new Set(s.provinces)
+                name: (typeof s.name === "string" && s.name) ? s.name : ("State " + stateId),
+                color: normColor(s.color),
+                controlStrength: s.controlStrength !== undefined ? (Number(s.controlStrength) || 100) : 100,
+                showGradient: !!s.showGradient,
+                provinces: new Set(provList)
             };
-            for (const provId of s.provinces) {
+            for (const provId of provList) {
                 provinceToState[provId] = stateId;
             }
         }
     }
     
     // Restore interests
-    if (data.interests) {
+    if (data.interests && typeof data.interests === "object") {
         interests = {};
         for (const tag in data.interests) {
-            interests[tag] = { ...data.interests[tag] };
+            if (data.interests[tag] && typeof data.interests[tag] === "object") {
+                interests[tag] = { ...data.interests[tag] };
+            }
         }
     }
     
