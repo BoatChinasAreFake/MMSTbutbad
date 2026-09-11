@@ -1,0 +1,237 @@
+        /* Offline system font stack fallback */
+
+        body { 
+            margin: 0; 
+            overflow: hidden; 
+            background: #121212; 
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Glassmorphism styling */
+        .glass-panel {
+            background: rgba(18, 18, 18, 0.8) !important;
+            backdrop-filter: blur(14px) saturate(180%) !important;
+            -webkit-backdrop-filter: blur(14px) saturate(180%) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4) !important;
+            color: #f5f5f5 !important;
+            border-radius: 12px !important;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .glass-button {
+            background: rgba(255, 255, 255, 0.06) !important;
+            color: rgba(255, 255, 255, 0.9) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            outline: none;
+        }
+
+        .glass-button:hover {
+            background: rgba(255, 255, 255, 0.12) !important;
+            border-color: rgba(255, 255, 255, 0.2) !important;
+            transform: translateY(-1px);
+        }
+
+        .glass-button:active {
+            transform: translateY(1px);
+        }
+
+        .glass-input {
+            background: rgba(0, 0, 0, 0.3) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            color: white !important;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            transition: all 0.2s ease;
+            outline: none;
+        }
+
+        .glass-input:focus {
+            border-color: rgba(0, 123, 255, 0.5) !important;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2) !important;
+        }
+
+        #debugPanel {
+            position: fixed;
+            top: 75px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.75) !important;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 0, 0.15);
+            color: #0f0;
+            font-family: monospace;
+            font-size: 11px;
+            padding: 12px;
+            border-radius: 8px;
+            z-index: 20;
+            max-width: 240px;
+        }
+
+        /* Custom scrollbar for list containers */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.1);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.2);
+        }
+    
+    /* Accordion styles */
+    .accordion-item {
+        border-bottom: 1px solid #333;
+        border-radius: 4px;
+        margin-bottom: 4px;
+        overflow: hidden;
+    }
+    .accordion-header {
+        background: rgba(28, 28, 28, 0.85);
+        color: #eee;
+        cursor: pointer;
+        padding: 8px 10px;
+        font-weight: bold;
+        font-size: 11px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+        transition: background 0.2s;
+        border: 1px solid #333;
+        border-radius: 4px;
+    }
+    .accordion-header:hover {
+        background: rgba(42, 42, 42, 0.9);
+    }
+    .accordion-header::after {
+        content: '▼';
+        font-size: 8px;
+        color: #888;
+        transition: transform 0.2s;
+    }
+    .accordion-header.active::after {
+        transform: rotate(-180deg);
+        color: #28a745;
+    }
+    .accordion-content {
+        display: none;
+        padding: 10px 6px;
+        background: rgba(20, 20, 20, 0.5);
+        border: 1px solid #222;
+        border-top: none;
+        border-radius: 0 0 4px 4px;
+    }
+    .accordion-content.show {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+
+    /* Keyboard & mouse controls help overlay */
+    #helpOverlay {
+        position: fixed;
+        inset: 0;
+        z-index: 200;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.55);
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+    }
+    #helpOverlay.open {
+        display: flex;
+    }
+    #helpDialog {
+        width: min(760px, 92vw);
+        max-height: 86vh;
+        overflow-y: auto;
+        padding: 18px 20px;
+        color: #f0f0f0;
+        font-family: 'Inter', system-ui, sans-serif;
+    }
+    #helpDialog .help-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        padding-bottom: 10px;
+        margin-bottom: 12px;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: #ffc107;
+    }
+    #helpDialog .help-close {
+        background: none;
+        border: none;
+        color: #aaa;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 1;
+        outline: none;
+    }
+    #helpDialog .help-close:hover {
+        color: #fff;
+    }
+    #helpDialog .help-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 28px;
+    }
+    @media (max-width: 620px) {
+        #helpDialog .help-body {
+            grid-template-columns: 1fr;
+        }
+    }
+    #helpDialog .help-section-title {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #7fbfff;
+        margin: 12px 0 5px;
+    }
+    #helpDialog .help-section-title:first-child {
+        margin-top: 0;
+    }
+    #helpDialog .help-row {
+        display: flex;
+        align-items: baseline;
+        gap: 4px;
+        font-size: 12px;
+        line-height: 1.7;
+        color: #ddd;
+    }
+    #helpDialog .help-row span {
+        color: #bbb;
+        margin-left: 6px;
+    }
+    #helpDialog kbd {
+        display: inline-block;
+        min-width: 12px;
+        text-align: center;
+        padding: 1px 6px;
+        font-family: 'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace;
+        font-size: 11px;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-bottom-width: 2px;
+        border-radius: 4px;
+        white-space: nowrap;
+    }
