@@ -671,6 +671,42 @@
     <canvas id="overlayCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></canvas>
 </div>
 
+<!-- Startup guard (classic script, always runs): the app is an ES module and
+     must be served over http:// . Opening index.html directly from disk
+     (file://) blocks module loading, and if a script fails to load the page
+     would otherwise be silently blank. Show a clear message instead. -->
+<script>
+    window.__mapAppStarted = false;
+    (function () {
+        function showError(msg) {
+            if (document.getElementById("startupError")) return;
+            var d = document.createElement("div");
+            d.id = "startupError";
+            d.style.cssText = "position:fixed;inset:0;z-index:99999;display:flex;" +
+                "align-items:center;justify-content:center;padding:32px;" +
+                "background:#121212;color:#eee;font-family:system-ui,Arial,sans-serif;text-align:center;";
+            d.innerHTML = '<div style="max-width:560px;line-height:1.6;">' +
+                '<div style="font-size:20px;font-weight:700;color:#ff9500;margin-bottom:12px;">Map Sandbox could not start</div>' +
+                '<div>' + msg + '</div></div>';
+            document.body.appendChild(d);
+        }
+        if (location.protocol === "file:") {
+            showError("This app must be run through its local server, not opened directly from disk.<br><br>" +
+                "Please launch it with <b>start_server.bat</b> and open <b>http://localhost:8000</b>.");
+            return;
+        }
+        // If the module never signals startup, surface a generic hint.
+        window.addEventListener("load", function () {
+            setTimeout(function () {
+                if (!window.__mapAppStarted) {
+                    showError("The application scripts did not load.<br><br>" +
+                        "Make sure you opened <b>http://localhost:8000</b> via <b>start_server.bat</b> " +
+                        "(not the file directly), then refresh.");
+                }
+            }, 4000);
+        });
+    })();
+</script>
 <script type="module" src="app.js"></script>
 
     <!-- Floating Live Debug Panel for Gradient & Influence Diagnostics -->
