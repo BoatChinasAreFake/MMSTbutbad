@@ -3,6 +3,17 @@ import json
 import os
 
 class CustomHandler(http.server.SimpleHTTPRequestHandler):
+    # Force correct JavaScript MIME types regardless of the host OS registry.
+    # ES modules (<script type="module">) are refused by browsers under strict
+    # MIME checking unless served as a JavaScript type. On some systems
+    # (notably Windows) SimpleHTTPRequestHandler maps .js to text/plain and
+    # doesn't map .mjs at all, which silently breaks the whole app.
+    extensions_map = {
+        **http.server.SimpleHTTPRequestHandler.extensions_map,
+        '.js': 'text/javascript',
+        '.mjs': 'text/javascript',
+    }
+
     def end_headers(self):
         self.send_header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
         self.send_header('Pragma', 'no-cache')

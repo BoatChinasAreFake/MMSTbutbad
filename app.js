@@ -16,6 +16,10 @@ import {
     isPlainObject,
 } from "./lib/saveData.mjs";
 
+// Signal to the startup guard in index.html that the module loaded and began
+// executing (i.e. imports resolved and the browser accepted the module).
+window.__mapAppStarted = true;
+
 const canvas = document.getElementById("mapCanvas");
 const overlayCanvas = document.getElementById("overlayCanvas");
 const overlayCtx = overlayCanvas.getContext("2d");
