@@ -1,0 +1,10 @@
+{
+  "name": "mappa-mundi-sine-tempore",
+  "version": "1.0.0",
+  "description": "Offline HOI4-style map sandbox / editor.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}
