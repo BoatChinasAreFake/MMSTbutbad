@@ -2,6 +2,48 @@ import json
 import os
 from PIL import Image
 
+
+def compute_interior_point(coords):
+    """Return an (x, y) point (rounded to 0.1) that is inside the province.
+
+    Uses the pixel-average centroid when it already lands on a province pixel
+    (fast, and identical to the historical behaviour for well-behaved shapes).
+    Otherwise it falls back to the "pole of inaccessibility": the interior pixel
+    farthest from the province boundary, which is always inside the shape and
+    visually well-centered. This keeps labels and selection markers on the
+    province even for non-convex, C-shaped, or map-wrapping provinces.
+    """
+    n = len(coords)
+    sum_x = sum(pt[0] for pt in coords)
+    sum_y = sum(pt[1] for pt in coords)
+    cx = sum_x / n
+    cy = sum_y / n
+
+    pixel_set = set(coords)
+    if (int(round(cx)), int(round(cy))) in pixel_set:
+        return round(cx, 1), round(cy, 1)
+
+    # Fallback: distance transform over the province's bounding-box mask.
+    try:
+        import numpy as np
+        from scipy.ndimage import distance_transform_edt
+
+        xs = [p[0] for p in coords]
+        ys = [p[1] for p in coords]
+        min_x, min_y = min(xs), min(ys)
+        max_x, max_y = max(xs), max(ys)
+        mask = np.zeros((max_y - min_y + 1, max_x - min_x + 1), dtype=bool)
+        for (x, y) in coords:
+            mask[y - min_y, x - min_x] = True
+        dt = distance_transform_edt(mask)
+        my, mx = np.unravel_index(int(np.argmax(dt)), dt.shape)
+        return round(float(min_x + mx), 1), round(float(min_y + my), 1)
+    except Exception:
+        # scipy/numpy unavailable: snap the centroid to the nearest province pixel.
+        best = min(coords, key=lambda p: (p[0] - cx) ** 2 + (p[1] - cy) ** 2)
+        return round(float(best[0]), 1), round(float(best[1]), 1)
+
+
 def main():
     image_path = "provinces.png"
     index_path = "provinces_index.png"
@@ -82,11 +124,10 @@ def main():
             new_id = str(next_id)
             print(f"Adding new province ID {new_id} for color {color}...")
             
-            # Calculate center coordinates
-            sum_x = sum(pt[0] for pt in coords)
-            sum_y = sum(pt[1] for pt in coords)
-            center_x = round(sum_x / len(coords), 1)
-            center_y = round(sum_y / len(coords), 1)
+            # Calculate a center point that is guaranteed to be inside the province.
+            # A plain pixel-average centroid falls outside non-convex / C-shaped /
+            # wrapping provinces, which misplaces labels and selection markers.
+            center_x, center_y = compute_interior_point(coords)
             
             # Add to definitions
             definitions[new_id] = {
